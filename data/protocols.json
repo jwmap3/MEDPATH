@@ -3,7 +3,7 @@
     "source": "Toledo Fire & Rescue Department, Bureau of EMS - Patient Care Protocols",
     "source_review_date": "2026-04-22",
     "extracted_from": "Patient Care Protocols - Responsoft 4-22-2026.pdf",
-    "status": "MVP subset - 18 of 259 source entries converted. Remainder pending (see /data/manifest.json).",
+    "status": "70 of 259 source entries converted. Remainder pending (see /data/manifest.json).",
     "disclaimer": "Reference tool only. Verify against the current official protocol book before clinical use. Not a substitute for medical direction, training, or clinical judgment."
   },
   "protocols": [
@@ -1419,7 +1419,7 @@
             },
             {
               "text": "Suspected overdose/toxic/cyanide exposure? -> go to that protocol.",
-              "goto_protocol": "pediatric_overdose_toxic_exposure"
+              "goto_protocol": "pediatric_overdose_toxic_exposure_cyanide_exposure"
             },
             {
               "text": "Fever/suspected sepsis? -> go to that protocol."
@@ -1721,6 +1721,5257 @@
             {
               "text": "Epinephrine Push Dose 10-20 mcg IVP, IO. Dilution: discard 9 mL Epi 1:10,000 (0.1 mg/mL), draw 9 mL NS to make Epi 1:100,000 (10 mcg/mL). Give 1-2 mL every 3 minutes until BP/HR goals met. LABEL syringe.",
               "drug_id": "epi_push_dose"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bradycardia_unstable",
+      "title": "Bradycardia-Unstable",
+      "demographic": "adult",
+      "section": "Adult Cardiovascular",
+      "source_pages": [
+        30,
+        31
+      ],
+      "chief_complaint_tags": [
+        "bradycardia",
+        "slow heart rate",
+        "low heart rate"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Past medical history",
+          "Medications (beta-blocker, calcium channel blocker, clonidine, digoxin)",
+          "Events",
+          "Pacemaker"
+        ],
+        "signs_symptoms": [
+          "HR < 60 bpm",
+          "Chest pain",
+          "Hypotension or shock",
+          "Altered mental status",
+          "Syncope"
+        ],
+        "differential": [
+          "MI",
+          "Hypoxia",
+          "Hypothermia",
+          "Sinus bradycardia",
+          "Athletes",
+          "Head injury",
+          "CVA",
+          "Spinal cord injury",
+          "Sick sinus syndrome",
+          "AV block",
+          "Overdose"
+        ],
+        "pearls": [
+          "Use of lidocaine in heart block can worsen bradycardia and lead to asystole or death.",
+          "Pharmacologic treatment is based on presence/absence of symptoms - if symptomatic, treat; if asymptomatic, monitor only.",
+          "Consider treatable causes (e.g. beta or calcium channel blocker OD).",
+          "Remember to oxygenate and support ventilatory effort."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Symptomatic bradycardia",
+          "steps": [
+            {
+              "text": "12-Lead ECG (EMT may set up and transmit). Adult IV/IO protocol. Fluid bolus as needed."
+            },
+            {
+              "text": "Atropine 1 mg IVP, IO. May repeat every 3-5 minutes. Maximum total 3 mg.",
+              "drug_id": "atropine"
+            },
+            {
+              "text": "Consider immediate Transcutaneous Pacing in unstable patients with high-degree heart block when IV access not available."
+            },
+            {
+              "text": "No improvement, poor peripheral perfusion, altered mental status, hypotension - consider sedation with: Ketamine (Ketalar) (50 mg/mL) 0.2 mg/kg IVP, IO, maximum single dose 25 mg, may repeat x1 in 10 min to total max 50 mg.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "OR Ketamine (Ketalar) (100 mg/mL) 0.5 mg/kg IN, IM. May repeat x1 in 10 minutes. Maximum single dose 25 mg, total max 50 mg.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Additional sedation required: Midazolam (Versed) 2 mg IVP, IO, IN. Maximum dose 4 mg.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Refractory: Epinephrine Drip 1 mg mixed into 1,000 mL NS (60 gtt set). Infuse until HR > 60 and MAP > 65 mmHg. LABEL the bag.",
+              "drug_id": "epi_drip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hypertensive_emergencies",
+      "title": "Hypertensive Emergencies",
+      "demographic": "adult",
+      "section": "Adult Cardiovascular",
+      "source_pages": [
+        34,
+        35
+      ],
+      "chief_complaint_tags": [
+        "hypertension",
+        "high blood pressure",
+        "hypertensive emergency",
+        "hypertensive crisis"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Documented hypertension",
+          "Related diseases: diabetes, CVA, renal failure, cardiac",
+          "Medications (compliance?)",
+          "Pregnancy?"
+        ],
+        "signs_symptoms": [
+          "Systolic BP > 200",
+          "Diastolic BP > 120",
+          "Headache",
+          "Nosebleed",
+          "Blurred vision",
+          "Dizziness"
+        ],
+        "differential": [
+          "Hypertensive encephalopathy",
+          "CNS injury",
+          "Cushing response (bradycardia with hypertension)",
+          "MI",
+          "Aortic dissection",
+          "Pre-eclampsia/Eclampsia"
+        ],
+        "pearls": [
+          "Never treat elevated blood pressure based on one set of vital signs.",
+          "Symptomatic hypertension usually reveals through end-organ damage to cardiac, CNS, or renal systems.",
+          "Transport symptomatic hypertensive patients with head elevated.",
+          "Adverse reactions to treatment: thrombophlebitis, headache, flushing, tachycardia, dizziness, nausea."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Hypertensive emergency",
+          "steps": [
+            {
+              "text": "Check BP in both arms manually. 12-Lead ECG (EMT may set up and transmit). Adult IV/IO protocol."
+            },
+            {
+              "text": "Acute stroke suspected: DO NOT lower blood pressure."
+            },
+            {
+              "text": "Acute MI, not Inferior STEMI: administer SL Nitroglycerin per Chest Pain protocol.",
+              "goto_protocol": "chest_pain_acs"
+            },
+            {
+              "text": "Note: routine lowering of blood pressure in the field is NOT indicated except in the above scenarios."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "post_rosc_care",
+      "title": "Post ROSC Care",
+      "demographic": "adult",
+      "section": "Adult Cardiovascular",
+      "source_pages": [
+        38,
+        39
+      ],
+      "chief_complaint_tags": [
+        "post rosc",
+        "rosc",
+        "return of spontaneous circulation",
+        "post cardiac arrest"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Respiratory arrest",
+          "Cardiac arrest"
+        ],
+        "signs_symptoms": [
+          "Return of pulse (ROSC)"
+        ],
+        "differential": [
+          "Continue to address specific differential with original arrhythmia."
+        ],
+        "pearls": [
+          "Avoid hyperventilation.",
+          "Most patients post-resuscitation will require ventilatory assistance.",
+          "Post-resuscitation condition of patient changes rapidly.",
+          "Consult OLMC as needed regarding management."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Post ROSC",
+          "steps": [
+            {
+              "text": "Goals of care: MAP > 65 mmHg. Oxygenation target SpO2 94-98%. Ventilation target EtCO2 35-45 mmHg. Temperature control - avoid shivering/fever."
+            },
+            {
+              "text": "Post-ROSC 10-minute monitoring goals: perform 12-Lead ECG, anticipate hypotension (prepare epi drip), plan for packaging/egress, monitor EtCO2/BP/pulse ox/ECG, attend to goals of care, anticipate sedation needs."
+            },
+            {
+              "text": "Adult IV/IO protocol. Monitor EtCO2 (>20 mmHg) with RR 10/min. DO NOT HYPERVENTILATE."
+            },
+            {
+              "text": "Dysrhythmia present? Go to the appropriate protocol (e.g. Bradycardia)."
+            },
+            {
+              "text": "Hypotension (non-cardiac, non-trauma)? Consider Normal Saline 0.9% 20 mL/kg Fluid Bolus to achieve MAP > 65 mmHg.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Refractory: Epinephrine Drip 1 mg mixed into 1,000 mL NS (60 gtt set). Infuse until HR > 60 and MAP > 65 mmHg. LABEL the bag.",
+              "drug_id": "epi_drip"
+            },
+            {
+              "text": "Post-ROSC sedation, 1st line: Fentanyl (Sublimaze) 50-100 mcg IVP, IO WITH Midazolam (Versed) 2.5-5 mg IVP, IO. May repeat x1.",
+              "drug_id": "fentanyl"
+            },
+            {
+              "text": "Additional sedation required: Ketamine (Ketalar) 50-100 mg IVP, IO. May repeat 50-100 mg x1. Maximum 200 mg.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Paralysis required to avoid extubation? Vecuronium (Norcuron) 10 mg IVP, IO. Not for patients with a supraglottic airway.",
+              "drug_id": "vecuronium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tachycardia_w_pulse",
+      "title": "Tachycardia w/Pulse (SVT, A-Fib/A-Flutter, VT)",
+      "demographic": "adult",
+      "section": "Adult Cardiovascular",
+      "source_pages": [
+        40,
+        41
+      ],
+      "chief_complaint_tags": [
+        "tachycardia",
+        "svt",
+        "a-fib",
+        "afib",
+        "atrial fibrillation",
+        "atrial flutter",
+        "fast heart rate",
+        "palpitations"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Medications (theophylline, diet pills, thyroid, decongestants, digoxin)",
+          "Diet (caffeine, chocolate)",
+          "Drugs (nicotine, cocaine)",
+          "Past medical history",
+          "Palpitations",
+          "Syncope"
+        ],
+        "signs_symptoms": [
+          "HR > 160/min (varies)",
+          "QRS < 0.12 sec",
+          "Dizziness, chest pain, dyspnea",
+          "Possible rhythms: sinus tach, atrial fib/flutter, multifocal atrial tachycardia"
+        ],
+        "differential": [
+          "Heart disease (WPW, valvular)",
+          "Sick sinus syndrome",
+          "MI",
+          "Electrolyte imbalance",
+          "Exertion, pain, emotional stress",
+          "Fever",
+          "Hypoxia",
+          "Hypovolemia/anemia",
+          "Overdose",
+          "Hyperthyroidism",
+          "PE"
+        ],
+        "pearls": [
+          "Do not give AV nodal blockers (diltiazem, beta blockers, digoxin) to suspected pre-excited atrial fib/flutter (WPW).",
+          "Paramedic may maintain diltiazem infusions begun at referring facilities - discontinue if hypotension, bradycardia, or allergic reaction occurs; notify OLMC.",
+          "Document all effects of therapy/rhythm changes.",
+          "Maximum dose Diltiazem is 10 mg per dose."
+        ]
+      },
+      "branches": [
+        {
+          "id": "identify_rhythm",
+          "label": "Identify rhythm / stable initial workup",
+          "steps": [
+            {
+              "text": "Airway, breathing, circulation. Oxygen as indicated. Apply monitor / fast patches, pulse ox, BP. 12-lead ECG."
+            },
+            {
+              "text": "Identify and treat underlying cause."
+            },
+            {
+              "text": "Tachycardia causing hypotension, AMS, shock, ischemic chest pain, or acute heart failure? If unstable, go to Synchronized Cardioversion."
+            }
+          ]
+        },
+        {
+          "id": "unstable_cardioversion",
+          "label": "Unstable \u2014 Synchronized Cardioversion",
+          "steps": [
+            {
+              "text": "Synchronized Cardioversion: 100J, may escalate to 200J, 300J, 360J."
+            },
+            {
+              "text": "Sedation for cardioversion: Ketamine (Ketalar) (50 mg/mL) 0.2 mg/kg IVP, IO. May repeat x1. Maximum 25 mg.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "OR Ketamine (Ketalar) (100 mg/mL) 0.5 mg/kg IN.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Additional sedation needed: Midazolam (Versed) 2.5 mg IVP, IO, IN, IM. May repeat x1.",
+              "drug_id": "midazolam"
+            }
+          ]
+        },
+        {
+          "id": "narrow_regular_svt",
+          "label": "Narrow complex (<0.12 sec), regular \u2014 SVT",
+          "steps": [
+            {
+              "text": "Vagal maneuvers first."
+            },
+            {
+              "text": "1st dose: Adenosine (Adenocard) 6 mg Rapid IVP. Always flush with NS after each dose.",
+              "drug_id": "adenosine"
+            },
+            {
+              "text": "2nd dose: Adenosine (Adenocard) 12 mg Rapid IVP.",
+              "drug_id": "adenosine"
+            },
+            {
+              "text": "3rd dose: Adenosine (Adenocard) 12 mg Rapid IVP.",
+              "drug_id": "adenosine"
+            }
+          ]
+        },
+        {
+          "id": "irregular_afib_flutter_rvr",
+          "label": "Rapid, irregular \u2014 A-Fib/A-Flutter with RVR",
+          "steps": [
+            {
+              "text": "Check for WPW (short PR, delta wave, wide complex, RVR) - if suspected WPW, do NOT use Diltiazem."
+            },
+            {
+              "text": "Diltiazem (Cardizem) 10 mg Slow IVP. May repeat x1. Do not use in suspected WPW.",
+              "drug_id": "diltiazem"
+            }
+          ]
+        },
+        {
+          "id": "wide_regular_vt",
+          "label": "Wide complex (>0.12 sec), regular \u2014 VT with pulse",
+          "steps": [
+            {
+              "text": "Amiodarone (Cordarone) 150 mg IV Infusion over 10 minutes. Mix 150 mg in 250 mL D5W, infuse over 10 min with 10 gtt set at 4 drops/sec = 250 drops/min.",
+              "drug_id": "amiodarone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fever_suspected_sepsis",
+      "title": "Fever/Suspected Sepsis",
+      "demographic": "adult",
+      "section": "Adult General Medical",
+      "source_pages": [
+        64,
+        65
+      ],
+      "chief_complaint_tags": [
+        "fever",
+        "sepsis",
+        "septic",
+        "infection",
+        "suspected sepsis"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Elderly and very young",
+          "Bed confined, immobile",
+          "Recent surgery, invasive procedure",
+          "Immunosuppressants/chemotherapy",
+          "Immunocompromised (HIV, transplant, diabetes, cancer)",
+          "Source of infection: illness, recent surgery/procedure, respiratory/GI/GU, recent antibiotics/steroids/immunosuppressants"
+        ],
+        "signs_symptoms": [
+          "Vital sign warnings: Temp > 38 or < 36; Pulse > 90 bpm; BP < 90 systolic or MAP < 65; RR > 20; EtCO2 < 26"
+        ],
+        "differential": [
+          "Infection/sepsis",
+          "Cancer/tumors/lymphomas",
+          "Medication reaction",
+          "Connective tissue disease",
+          "Hyperthyroid",
+          "Heat stroke",
+          "Meningitis"
+        ],
+        "pearls": [
+          "SIRS = fever >38 or <36, HR >90, RR >20, arterial PCO2 <32.",
+          "Sepsis = one or more end organs begin to fail. Septic shock = sustained hypotension after aggressive fluid resuscitation.",
+          "Avoid hypoxia - adequately oxygenate; consider CPAP for moderate respiratory distress, intubate for AMS/respiratory failure.",
+          "Avoid overventilation to prevent acute lung injury.",
+          "Avoid pressor therapy until adequate fluid resuscitation performed."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Suspected sepsis",
+          "steps": [
+            {
+              "text": "Consider droplet, airborne, contact precautions."
+            },
+            {
+              "text": "Assess pulse, RR, BP, EtCO2, temperature. Support airway. Establish 2 large-bore IVs."
+            },
+            {
+              "text": "Normal Saline 0.9% 30 mL/kg Fluid Bolus.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Reassess vitals/lung sounds. Notify receiving facility of suspected sepsis."
+            },
+            {
+              "text": "Persistent hypotension? Refer to Hypotension protocol.",
+              "goto_protocol": "hypotension_shock_non_trauma"
+            },
+            {
+              "text": "Otherwise: monitor/trend vital signs, limit on-scene time to 15 minutes, prevent hypothermia."
+            },
+            {
+              "text": "Refractory hypotension: Epinephrine Push Dose 10-20 mcg IVP, IO. Dilution: discard 9 mL Epi 1:10,000, draw 9 mL NS to make 1:100,000 (10 mcg/mL). Give 1-2 mL every 3 minutes until BP/HR goals met. LABEL syringe.",
+              "drug_id": "epi_push_dose"
+            },
+            {
+              "text": "Requires large-bore IV (18 or 16 gauge preferred): Epinephrine Drip 1 mg mixed into 1,000 mL NS (60 gtt set). Infuse until HR > 60 and MAP > 65 mmHg. LABEL the bag.",
+              "drug_id": "epi_drip"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hypoglycemia_hyperglycemia",
+      "title": "Hypoglycemia/Hyperglycemia",
+      "demographic": "adult",
+      "section": "Adult General Medical",
+      "source_pages": [
+        66,
+        67
+      ],
+      "chief_complaint_tags": [
+        "hypoglycemia",
+        "hyperglycemia",
+        "low blood sugar",
+        "high blood sugar",
+        "diabetic emergency",
+        "blood sugar"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "pearls": [
+          "Dextrose 10% is the preferred concentration; Dextrose 50% is an alternate if D10 unavailable \u2014 always follow this protocol's dosing guidance.",
+          "Safer to assume hypoglycemia than hyperglycemia if doubt exists; recheck blood glucose after Dextrose or Glucagon.",
+          "Do not give oral glucose to patients unable to swallow or protect their airway.",
+          "For symptomatic low blood sugar with absent IV access, give Glucagon IN/IM (age-appropriate dosing).",
+          "Patients with prolonged hypoglycemia may not respond to Glucagon.",
+          "Consider restraints for altered, combative/aggressive patients.",
+          "OLMC contact required for any treat/release or refusal of treatment/transport."
+        ]
+      },
+      "branches": [
+        {
+          "id": "blood_sugar_low",
+          "label": "Blood sugar < 60 mg/dL",
+          "steps": [
+            {
+              "text": "Patient using an insulin pump: assist the patient/caretaker in discontinuing it (only the patient, family, or someone familiar with it should do this). Inform receiving hospital the pump was discontinued."
+            },
+            {
+              "text": "Awake, alert, but symptomatic: consider Oral Glucose 15 gm PO.",
+              "drug_id": "oral_glucose"
+            },
+            {
+              "text": "Preferred: Dextrose 10% (D10) 5 gm IV Infusion (50 mL). Withdraw 50 mL from 250 mL NS bag, add 1 amp D50 = D10. Give 50 mL (5g) increments until normal mentation. Maximum total 25 gm (250 mL).",
+              "drug_id": "dextrose_10"
+            },
+            {
+              "text": "Alternative at paramedic discretion: Dextrose 50% 25 gm IVP, IO."
+            },
+            {
+              "text": "No IV/IO access: Glucagon 1 mg IM, IN.",
+              "drug_id": "glucagon"
+            }
+          ]
+        },
+        {
+          "id": "blood_sugar_normal",
+          "label": "Blood sugar 60-249 mg/dL",
+          "steps": [
+            {
+              "text": "Consider other causes: head injury, ingestion, hypoxia, etc."
+            }
+          ]
+        },
+        {
+          "id": "blood_sugar_high",
+          "label": "Blood sugar > 250 mg/dL",
+          "steps": [
+            {
+              "text": "Assess for signs of dehydration: dry mucous membranes, tachycardia, tachypnea (Kussmaul), low EtCO2."
+            },
+            {
+              "text": "Normal Saline 500 mL Fluid Bolus. Maximum 1,000 mL (1 liter).",
+              "drug_id": "normal_saline"
+            }
+          ]
+        },
+        {
+          "id": "refusal_criteria",
+          "label": "Refusal criteria reference (all must be met)",
+          "steps": [
+            {
+              "text": "Post-treatment serum glucose > 60 mg/dL."
+            },
+            {
+              "text": "Patient returned to normal state within 10 minutes of treatment."
+            },
+            {
+              "text": "Patient can tolerate food by mouth and has access to food."
+            },
+            {
+              "text": "Patient does not use sulfonylureas or long-acting insulin."
+            },
+            {
+              "text": "IO was not used for glucose administration, and glucagon was not administered."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pain_control",
+      "title": "Pain Control",
+      "demographic": "adult",
+      "section": "Adult General Medical",
+      "source_pages": [
+        68,
+        69
+      ],
+      "chief_complaint_tags": [
+        "pain",
+        "pain control",
+        "pain management",
+        "analgesia"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Age",
+          "Location",
+          "Duration",
+          "Severity",
+          "Past medical history",
+          "Medications",
+          "Drug allergies"
+        ],
+        "signs_symptoms": [
+          "Severity",
+          "Quality",
+          "Radiation",
+          "Relation to movement",
+          "Increased with palpation"
+        ],
+        "differential": [
+          "Per the specific protocol",
+          "Musculoskeletal",
+          "Visceral (abdominal)",
+          "Cardiac",
+          "Pleural/respiratory",
+          "Neurogenic",
+          "Renal"
+        ],
+        "pearls": [
+          "Pain severity is a vital sign - record pre and post IV/IM pain medications.",
+          "Vitals should be obtained pre, post, and at disposition with all pain medications.",
+          "Contraindications to Morphine: hypotension, altered mental status, head injury, respiratory distress, severe COPD.",
+          "Document drug allergies.",
+          "Ketamine requires monitor, SpO2, ETCO2, IV, and oxygen.",
+          "Nausea from pain medication: use Ondansetron (Zofran) per Vomiting/Diarrhea protocol."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Pain requiring medication",
+          "steps": [
+            {
+              "text": "Care based on complaint-specific protocol. Assess pain severity and need for pain control. Adult IV/IO protocol."
+            },
+            {
+              "text": "All patients receiving pain medications/sedatives require continuous EtCO2 and SpO2 monitoring in addition to NIBP and ECG."
+            },
+            {
+              "text": "Fentanyl (Sublimaze) 50-100 mcg IVP, IN, IM. May repeat 50-100 mcg x1. Maximum 200 mcg.",
+              "drug_id": "fentanyl"
+            },
+            {
+              "text": "Morphine 2-6 mg IVP, IM. Maximum 10 mg. (See Pearls for contraindications.)",
+              "drug_id": "morphine"
+            },
+            {
+              "text": "Ketamine (Ketalar) 25 mg IV Infusion, mixed in 50 mL D5, given over 10 minutes.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Ketamine (Ketalar) (100 mg/mL) 0.5 mg/kg IN, IM. May repeat x1 in 10 minutes. Maximum single dose 25 mg, total max 50 mg.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Ketorolac (Toradol) 30 mg IVP, IM - for musculoskeletal/kidney stone pain. Not in pregnancy, GI bleed, patients on blood thinners, or kidney failure.",
+              "drug_id": "ketorolac"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abdominal_pain",
+      "title": "Abdominal Pain",
+      "demographic": "adult",
+      "section": "Adult Gastrointestinal",
+      "source_pages": [
+        49,
+        50,
+        51
+      ],
+      "chief_complaint_tags": [
+        "abdominal pain",
+        "stomach pain",
+        "belly pain"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Age",
+          "Past medical/surgical history",
+          "Medications",
+          "Onset",
+          "Palliation/provocation",
+          "Quality",
+          "Region/radiation/referred",
+          "Severity",
+          "Time",
+          "Fever",
+          "Last meal",
+          "Last bowel movement/emesis",
+          "Menstrual history (pregnant?)"
+        ],
+        "signs_symptoms": [
+          "Pain",
+          "Tenderness",
+          "Nausea/vomiting/diarrhea",
+          "Dysuria",
+          "Constipation",
+          "Vaginal bleeding/discharge",
+          "Pregnancy"
+        ],
+        "differential": [
+          "Pneumonia/PE",
+          "Liver",
+          "Peptic ulcer/gastritis",
+          "Gallbladder",
+          "MI",
+          "Pancreatitis",
+          "Kidney stone",
+          "AAA",
+          "Appendicitis",
+          "Bladder/prostate",
+          "Pelvic (ectopic, PID, ovarian cyst)",
+          "Spleen",
+          "Diverticulitis",
+          "Bowel obstruction",
+          "Gastroenteritis"
+        ],
+        "pearls": [
+          "Abdominal pain in women of childbearing age: ectopic pregnancy until proven otherwise.",
+          "Consider AAA in patients > 50 years old with abdominal pain.",
+          "Repeat vital signs after therapeutic interventions.",
+          "Zofran (Ondansetron) ODT may be given on the tongue (4 mg ODT)."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Abdominal pain",
+          "steps": [
+            {
+              "text": "Adult IV/IO protocol. Orthostatic vital signs."
+            },
+            {
+              "text": "Vomiting present? Ondansetron (Zofran) 4 mg IVP, ODT, IM. May repeat x1.",
+              "drug_id": "ondansetron"
+            },
+            {
+              "text": "12-Lead ECG."
+            },
+            {
+              "text": "Consider Pain Control protocol.",
+              "goto_protocol": "pain_control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vomiting_diarrhea",
+      "title": "Vomiting/Diarrhea",
+      "demographic": "adult",
+      "section": "Adult Gastrointestinal",
+      "source_pages": [
+        52,
+        53,
+        54
+      ],
+      "chief_complaint_tags": [
+        "vomiting",
+        "diarrhea",
+        "nausea",
+        "gastroenteritis"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Age",
+          "Last meal",
+          "Last BM/emesis",
+          "Duration",
+          "Sick contacts",
+          "Past medical/surgical history",
+          "Medications",
+          "Menstrual history",
+          "Travel history",
+          "Bloody emesis/diarrhea"
+        ],
+        "signs_symptoms": [
+          "Pain (constant, sharp, dull)",
+          "Distention",
+          "Constipation",
+          "Diarrhea",
+          "Anorexia",
+          "Radiation"
+        ],
+        "differential": [
+          "CNS",
+          "MI",
+          "Drugs",
+          "GI/renal",
+          "DKA",
+          "Gynecologic",
+          "Infections",
+          "Electrolyte imbalance",
+          "Food or toxin induced",
+          "Medication/substance abuse",
+          "Pregnancy",
+          "Psychologic"
+        ],
+        "pearls": [
+          "Maintain high suspicion of cardiac event in persons with diabetes or neuropathies.",
+          "Zofran (Ondansetron) ODT obviates need for IV if one can't be established - place 4 mg tablet on tongue to dissolve."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Vomiting / diarrhea",
+          "steps": [
+            {
+              "text": "Adult IV/IO protocol. Blood Glucose Analysis. Orthostatic vitals."
+            },
+            {
+              "text": "Normal Saline 0.9% 1 L Fluid Bolus.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Vomiting / severe nausea? Ondansetron (Zofran) 4 mg IVP, ODT, IM. May repeat x1.",
+              "drug_id": "ondansetron"
+            },
+            {
+              "text": "Recheck orthostatic vitals."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "back_pain",
+      "title": "Back Pain",
+      "demographic": "adult",
+      "section": "Adult General Medical",
+      "source_pages": [
+        57,
+        58
+      ],
+      "chief_complaint_tags": [
+        "back pain"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Age",
+          "Past medical history",
+          "Past surgical history",
+          "Medications",
+          "Onset of pain/injury",
+          "Previous back injury",
+          "Traumatic mechanism",
+          "Location of pain",
+          "Fever",
+          "Better or worse with activity"
+        ],
+        "signs_symptoms": [
+          "Pain",
+          "Swelling",
+          "Pain with ROM",
+          "Extremity weakness",
+          "Extremity numbness",
+          "Shooting pain into an extremity",
+          "Bowel or bladder dysfunction"
+        ],
+        "differential": [
+          "Muscle spasm/strain",
+          "Herniated disc with nerve compression",
+          "Sciatica",
+          "Spine fracture",
+          "Kidney stone",
+          "Pyelonephritis",
+          "Aortic aneurysm",
+          "Pneumonia",
+          "Cardiac"
+        ],
+        "pearls": [
+          "Consider AAA in patients > 50 years old with sudden onset back pain and syncope or hypotension.",
+          "Kidney stones typically present with acute onset flank pain radiating to the groin.",
+          "Patients with midline pain over the spinous process should be spinally immobilized.",
+          "Any bowel or bladder incontinence is a significant finding requiring immediate medical evaluation."
+        ]
+      },
+      "branches": [
+        {
+          "id": "traumatic",
+          "label": "Injury or traumatic mechanism positive",
+          "steps": [
+            {
+              "text": "Spinal Motion Restriction (SMR)."
+            },
+            {
+              "text": "Adult IV/IO protocol. Normal Saline 0.9% bolus as needed.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Consider Pain Control protocol.",
+              "goto_protocol": "pain_control"
+            }
+          ]
+        },
+        {
+          "id": "non_traumatic",
+          "label": "No injury / traumatic mechanism negative",
+          "steps": [
+            {
+              "text": "Orthostatic vital signs. Positive orthostatics = systolic drop of 20 points, diastolic drop of 10, or HR elevation of 30 points."
+            },
+            {
+              "text": "Adult IV/IO protocol. Normal Saline 0.9% bolus as needed.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Consider Pain Control protocol.",
+              "goto_protocol": "pain_control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acute_pulmonary_edema",
+      "title": "Acute Pulmonary Edema",
+      "demographic": "adult",
+      "section": "Adult Respiratory",
+      "source_pages": [
+        98,
+        99
+      ],
+      "chief_complaint_tags": [
+        "pulmonary edema",
+        "chf",
+        "flash pulmonary edema",
+        "congestive heart failure"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "CHF",
+          "Past medical history",
+          "Medications (digoxin, lasix)",
+          "Viagra, Levitra, Cialis",
+          "Cardiac history (e.g. MI)"
+        ],
+        "signs_symptoms": [
+          "Respiratory distress, bilateral rales",
+          "Apprehension, orthopnea",
+          "JVD",
+          "Pink, frothy sputum (late sign)",
+          "Peripheral edema, diaphoresis",
+          "Hypotension, shock",
+          "Chest pain"
+        ],
+        "differential": [
+          "MI",
+          "CHF",
+          "Asthma",
+          "Anaphylaxis",
+          "Aspiration",
+          "COPD",
+          "Pleural effusion/pneumonia",
+          "PE",
+          "Tamponade",
+          "Toxic exposure"
+        ],
+        "pearls": [
+          "Early aggressive treatment avoids intubation.",
+          "Avoid Nitro in patients who used Viagra/Levitra in the past 24 hours or Cialis in the past 36 hours.",
+          "Consider MI (cardiogenic shock) in all these patients.",
+          "Careful monitoring of LOC, BP, respiratory status is essential.",
+          "Allow patient to remain in position of comfort to maximize breathing effort."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Acute pulmonary edema",
+          "steps": [
+            {
+              "text": "Clinical features: rapid onset dyspnea, severe hypertension, pulmonary edema causing hypoxemia."
+            },
+            {
+              "text": "12-Lead ECG. Obtain EtCO2 and pulse oximetry."
+            },
+            {
+              "text": "Apply CPAP: start at 5 cm H2O, if no improvement move to 7.5 cm H2O, then 10 cm H2O if not improved."
+            },
+            {
+              "text": "Adult IV/IO protocol."
+            },
+            {
+              "text": "Nitroglycerin 0.4 mg SL (spray or tablet) every 2-3 minutes, titrating toward SBP < 140-160 and/or MAP < 110 mmHg.",
+              "drug_id": "nitroglycerin"
+            },
+            {
+              "text": "Anxiety/intolerance to CPAP (paramedic discretion): Ketamine (Ketalar) (100 mg/mL) 0.5 mg/kg IN, IM.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "OR Ketamine (Ketalar) 25 mg IVP, IO mixed with 50 mL NS over 10 minutes.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Additional sedation needed: Midazolam (Versed) 2-5 mg IVP. Maximum 5 mg.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "If needed and SBP > 100 and patient not tolerating mask: Midazolam (Versed) 2 mg IN.",
+              "drug_id": "midazolam"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adult_airway",
+      "title": "Adult Airway",
+      "demographic": "adult",
+      "section": "Adult Respiratory",
+      "source_pages": [
+        92,
+        93
+      ],
+      "chief_complaint_tags": [
+        "airway",
+        "not breathing",
+        "airway management",
+        "obstructed airway"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "pearls": [
+          "For this protocol, Adult is >= 16 years of age.",
+          "Capnography used to assess adequacy of ventilation; oximetry mandatory to assess adequacy of oxygenation.",
+          "Capnometry is mandatory with all methods of intubation - document results.",
+          "Continuous EtCO2 monitoring is mandatory for all advanced airway/intubated patients.",
+          "Do not assume hyperventilation is psychogenic - use oxygen.",
+          "ELM (external laryngeal manipulation) may assist difficult intubations.",
+          "Place an SGA when unable to intubate.",
+          "Place C-collar to avoid extubation during transport/movement; may remove on arrival for non-trauma patients.",
+          "Bougie should be used on any attempt, except hyperangulated Video Laryngoscopy."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Airway management",
+          "steps": [
+            {
+              "text": "Assess ABCs, respiratory rate, effort, adequacy. Assess SpO2 and EtCO2 and ventilatory status."
+            },
+            {
+              "text": "Basic maneuvers first: open airway, nasal/oral airway, BVM, suction. Per AHA guidelines for obstructed airway."
+            },
+            {
+              "text": "Inadequate/unsuccessful? Airway-Orotracheal Intubation OR Supraglottic Airway. Modify technique / use intubating stylet as needed. If unsuccessful, move to Adult Failed Airway Algorithm.",
+              "goto_protocol": "adult_failed_airway_algorithm"
+            },
+            {
+              "text": "Pulse oximetry, supplemental oxygen. Ventilate to maintain SpO2 > 92% and EtCO2 35-45 mmHg."
+            },
+            {
+              "text": "PEEP: add PEEP at 5 cm H2O, titrate up to 15 cm H2O as needed to maintain SpO2/EtCO2 parameters. Do NOT use PEEP in cardiac arrest."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_hypoglycemia_hyperglycemia",
+      "title": "Pediatric Hypoglycemia/Hyperglycemia",
+      "demographic": "pediatric",
+      "section": "Pediatric General Medical",
+      "source_pages": [
+        143,
+        144
+      ],
+      "chief_complaint_tags": [
+        "hypoglycemia",
+        "hyperglycemia",
+        "low blood sugar",
+        "high blood sugar",
+        "diabetic emergency",
+        "blood sugar"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "pearls": [
+          "Dextrose 10% is preferred; Dextrose 50% is an alternate only if D10 unavailable.",
+          "Safer to assume hypoglycemia than hyperglycemia if doubt exists; recheck glucose after treatment.",
+          "Do not give oral glucose if patient can't swallow or protect their airway.",
+          "For symptomatic low blood sugar with no IV access, give Glucagon IN/IM (age-appropriate dosing).",
+          "Prolonged hypoglycemia may not respond to Glucagon.",
+          "Consider restraints for altered, combative patients.",
+          "OLMC contact required for any treat/release or refusal of treatment/transport."
+        ]
+      },
+      "branches": [
+        {
+          "id": "blood_sugar_low",
+          "label": "Blood sugar < 60 mg/dL",
+          "steps": [
+            {
+              "text": "Patient using an insulin pump: assist the patient/caretaker/family member familiar with it to discontinue it; inform receiving hospital."
+            },
+            {
+              "text": "Awake, alert, but symptomatic: consider Oral Glucose 7.5-15 gm PO, age-appropriate.",
+              "drug_id": "oral_glucose"
+            },
+            {
+              "text": "Dextrose 10% (D10) (0.1 gm/mL) 0.1 gm/kg IV Infusion (50 mL). Same reconstitution as adult. Maximum 25 gm (250 mL).",
+              "drug_id": "dextrose_10"
+            },
+            {
+              "text": "No IV/IO access: Glucagon (1 mg/mL) 0.025 mg/kg IM, IN. Maximum 1 mg (1 mL).",
+              "drug_id": "glucagon"
+            }
+          ]
+        },
+        {
+          "id": "blood_sugar_normal",
+          "label": "Blood sugar 60-249 mg/dL",
+          "steps": [
+            {
+              "text": "Consider other causes: head injury, ingestion, hypoxia, etc."
+            }
+          ]
+        },
+        {
+          "id": "blood_sugar_high",
+          "label": "Blood sugar > 250 mg/dL",
+          "steps": [
+            {
+              "text": "Assess for signs of dehydration: dry mucous membranes, tachycardia, tachypnea (Kussmaul), low EtCO2."
+            },
+            {
+              "text": "Normal Saline 20 mL/kg Fluid Bolus. Maximum 1,000 mL (1 liter).",
+              "drug_id": "normal_saline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_hypotension_sepsis_shock_non_trauma",
+      "title": "Pediatric Hypotension/Sepsis/Shock Non-Trauma",
+      "demographic": "pediatric",
+      "section": "Pediatric General Medical",
+      "source_pages": [
+        145,
+        146
+      ],
+      "chief_complaint_tags": [
+        "hypotension",
+        "shock",
+        "sepsis",
+        "septic shock",
+        "low blood pressure"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Blood loss",
+          "Fluid loss - vomiting, diarrhea, fever",
+          "Infection",
+          "Medications",
+          "Allergic reaction",
+          "Poor PO intake history"
+        ],
+        "signs_symptoms": [
+          "Restless, confused",
+          "Weakness, dizziness",
+          "Weak, rapid pulse",
+          "Pale, cool, clammy skin",
+          "Delayed capillary refill",
+          "Hypotension",
+          "Rapid pulse",
+          "Decreased BP"
+        ],
+        "differential": [
+          "Trauma",
+          "Infection",
+          "Dehydration (vomiting, diarrhea, fever)",
+          "Congenital heart disease",
+          "Medication or toxin"
+        ],
+        "pearls": [
+          "Consider all causes of shock and treat per appropriate protocol.",
+          "Decreasing heart rate is a sign of impending collapse."
+        ]
+      },
+      "branches": [
+        {
+          "id": "trauma_present",
+          "label": "Evidence or history of trauma",
+          "steps": [
+            {
+              "text": "Go to Pediatric Multiple Trauma protocol.",
+              "goto_protocol": "pediatric_multiple_trauma"
+            }
+          ]
+        },
+        {
+          "id": "glucose_low",
+          "label": "No trauma, blood glucose < 60 mg/dL",
+          "steps": [
+            {
+              "text": "Go to Pediatric Hypoglycemia/Hyperglycemia protocol.",
+              "goto_protocol": "pediatric_hypoglycemia_hyperglycemia"
+            }
+          ]
+        },
+        {
+          "id": "glucose_normal",
+          "label": "No trauma, blood glucose > 60 mg/dL",
+          "steps": [
+            {
+              "text": "Pediatric IV. Normal Saline 20 mL/kg Fluid Bolus, repeat as needed x2. Maximum total 60 mL/kg.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Refractory / patient in extremis with fluid bolus in progress: move immediately to pressors."
+            },
+            {
+              "text": "Normal Saline 0.9% 60 mL/kg Fluid Bolus.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Epinephrine Push Dose 10-20 mcg IVP, IO. Dilution: discard 9 mL Epi 1:10,000, draw 9 mL NS to make 1:100,000 (10 mcg/mL). Give 1-2 mL every 3 minutes until BP/HR goals met. LABEL syringe.",
+              "drug_id": "epi_push_dose"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_pain_control",
+      "title": "Pediatric Pain Control",
+      "demographic": "pediatric",
+      "section": "Pediatric General Medical",
+      "source_pages": [
+        147,
+        148
+      ],
+      "chief_complaint_tags": [
+        "pain",
+        "pain control",
+        "pain management",
+        "analgesia"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Age",
+          "Location",
+          "Duration",
+          "Severity (1-10)",
+          "Past medical history",
+          "Medications",
+          "Drug allergies"
+        ],
+        "signs_symptoms": [
+          "Severity",
+          "Quality",
+          "Radiation",
+          "Relation to movement",
+          "Increased with palpation"
+        ],
+        "differential": [
+          "Per the specific protocol",
+          "Musculoskeletal",
+          "Visceral (abdominal)",
+          "Cardiac",
+          "Pleural/respiratory",
+          "Neurogenic",
+          "Renal"
+        ],
+        "pearls": [
+          "Pain severity is a vital sign - record pre and post IV/IM/IN pain medications.",
+          "Vitals should be obtained pre, post, and at disposition with all pain medications.",
+          "Document drug allergies and observe for drug reaction.",
+          "Monitor pulse oximetry and EtCO2 when giving pain medications.",
+          "Use lower doses of narcotic pain medication initially in pediatrics and monitor for effect."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Pediatric pain requiring medication",
+          "steps": [
+            {
+              "text": "Care based on complaint-specific protocol. Evaluate pain severity."
+            },
+            {
+              "text": "Indication for IV/IM pain medication: Pediatric IV/IO. Pulse oximetry and EtCO2 mandatory with pain medication administration."
+            },
+            {
+              "text": "Fentanyl (Sublimaze) (50 mcg/mL) 0.5-1 mcg/kg IVP, IN. Maximum single dose 25 mcg. May repeat x1.",
+              "drug_id": "fentanyl"
+            },
+            {
+              "text": "Pain not relieved with Fentanyl - move to Ketamine: Ketamine (Ketalar) (50 mg/mL) 0.3 mg/kg IV Infusion, diluted in 50 mL NS or D5W, infused over 10-15 minutes.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "OR Ketamine (Ketalar) (100 mg/mL) 1 mg/kg IN, divided between nares. Maximum 1 mL/nostril.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Contact OLMC. Consider antiemetic: Ondansetron (Zofran) per Pediatric Vomiting/Diarrhea protocol.",
+              "drug_id": "ondansetron"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drowning_near_drowning",
+      "title": "Drowning/Near Drowning",
+      "demographic": "adult",
+      "section": "Adult Environmental",
+      "source_pages": [
+        43,
+        44
+      ],
+      "chief_complaint_tags": [
+        "drowning",
+        "near drowning",
+        "submersion",
+        "water rescue"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Submersion in water regardless of depth.",
+          "Possible history of trauma.",
+          "Duration of immersion.",
+          "Temperature of water.",
+          "Fresh or salt water."
+        ],
+        "signs_symptoms": [
+          "Unresponsive.",
+          "Mental status change.",
+          "Decreased or absent vital signs.",
+          "Vomiting.",
+          "Coughing."
+        ],
+        "differential": [
+          "Trauma.",
+          "Pre-existing medical condition.",
+          "Pressure injury (diving).",
+          "Incident barotrauma and decompression sickness."
+        ],
+        "pearls": [
+          "Exam: trauma survey; head; neck; chest; pelvis; back; extremities; skin; neuro.",
+          "With cold water there is no time limit - resuscitate all.",
+          "All victims should be transported for evaluation due to potential for worsening over next several hours.",
+          "All appropriately trained rescuers to remove victims from areas of danger.",
+          "With pressure injuries, consider transport to a hyperbaric chamber."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Drowning/Near Drowning management",
+          "steps": [
+            {
+              "text": "Spinal Motion Restriction (SMR) Protocol.",
+              "goto_protocol": "spinal_motion_restriction"
+            },
+            {
+              "text": "Adult Airway Protocol OR Respiratory Distress Protocol OR other appropriate protocol."
+            },
+            {
+              "text": "Adult IV/IO Protocol.",
+              "goto_protocol": "adult_iv_io"
+            },
+            {
+              "text": "Cardiac monitor / pulse oximetry / ETCO2."
+            },
+            {
+              "text": "Consider CPAP for respiratory distress/signs of pulmonary edema. Start at 5 cmH2O and adjust up to 10 cmH2O."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hypothermia",
+      "title": "Hypothermia",
+      "demographic": "adult",
+      "section": "Adult Environmental",
+      "source_pages": [
+        45,
+        46
+      ],
+      "chief_complaint_tags": [
+        "hypothermia",
+        "cold exposure",
+        "frostbite",
+        "cold emergency",
+        "low body temperature"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Age.",
+          "Exposure to environment, even in normal temperatures.",
+          "Past medical history.",
+          "Medications.",
+          "Exposure to extreme cold.",
+          "Length of exposure/wetness.",
+          "Drug use.",
+          "Infection/sepsis.",
+          "Extremes of age."
+        ],
+        "signs_symptoms": [
+          "Cold, clammy.",
+          "Shivering.",
+          "Mental status change.",
+          "Extremity pain/sensory abnormality.",
+          "Bradycardia.",
+          "Hypotension.",
+          "Shock."
+        ],
+        "differential": [
+          "Sepsis.",
+          "Environmental exposure.",
+          "Hypoglycemia.",
+          "CNS dysfunction: CVA; head injury; spinal cord injury."
+        ],
+        "pearls": [
+          "Exam: mental status; skin; HEENT; heart; lungs; neuro.",
+          "No patient considered dead until warm.",
+          "Core temperature < 35 C (95 F).",
+          "Extremes of age susceptible.",
+          "Temp. less than 31 C (88 F) V-Fib is common cause of death. Handle these patients gently to prevent V-Fib.",
+          "Hypothermia may produce severe bradycardia.",
+          "Shivering stops below 32 C (90 F).",
+          "If T < 86 F, hold medications and limit to single defibrillation until T > 90 F."
+        ]
+      },
+      "branches": [
+        {
+          "id": "general_management",
+          "label": "General management - Temperature < 95 F (35 C)",
+          "steps": [
+            {
+              "text": "Document patient temperature."
+            },
+            {
+              "text": "Remove wet clothing."
+            },
+            {
+              "text": "Handle very gently."
+            },
+            {
+              "text": "Blankets / external rewarming."
+            },
+            {
+              "text": "Adult IV/IO Protocol.",
+              "goto_protocol": "adult_iv_io"
+            },
+            {
+              "text": "Normal Saline 0.9% (NS).",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Appropriate protocol based on symptoms."
+            }
+          ]
+        },
+        {
+          "id": "mild_hypothermia",
+          "label": "Mild Hypothermia (32-35 C / 90-95 F)",
+          "steps": [
+            {
+              "text": "Shivering and cold skin."
+            }
+          ]
+        },
+        {
+          "id": "moderate_hypothermia",
+          "label": "Moderate Hypothermia (28-32 C / 82-90 F)",
+          "steps": [
+            {
+              "text": "Altered mental status; absent shivering; reflexes may be absent."
+            }
+          ]
+        },
+        {
+          "id": "severe_hypothermia",
+          "label": "Severe Hypothermia (Below 28 C or 82 F)",
+          "steps": [
+            {
+              "text": "Unconsciousness and potential cardiac arrest."
+            },
+            {
+              "text": "Muscle rigidity and dilated pupils may be present."
+            }
+          ]
+        },
+        {
+          "id": "hypothermic_cardiac_arrest",
+          "label": "Hypothermic Cardiac Arrest Considerations",
+          "steps": [
+            {
+              "text": "When not to start resuscitation: frozen chest wall, snow or ice occluding airway, unsurvivable traumatic injuries."
+            },
+            {
+              "text": "Generally not declared dead until core temp > 32 degrees C."
+            },
+            {
+              "text": "Do not start compressions unless there is no organized cardiac activity."
+            },
+            {
+              "text": "Use caution with excessive ACLS medication administration until warmed above 30 degrees C."
+            },
+            {
+              "text": "Consider transfer to a facility with ECMO."
+            },
+            {
+              "text": "Rule out reversible causes (e.g. hypoglycemia)."
+            },
+            {
+              "text": "Defibrillation attempts in hypothermic cardiac arrest: Temp < 30 C attempt defib at least once and up to 3 times. Temp > 30 C defib as indicated based on presence of shockable rhythm."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hyperthermia",
+      "title": "Hyperthermia",
+      "demographic": "adult",
+      "section": "Adult Environmental",
+      "source_pages": [
+        47
+      ],
+      "chief_complaint_tags": [
+        "hyperthermia",
+        "heat stroke",
+        "heat exhaustion",
+        "heat cramps",
+        "overheating"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [
+          "Heat Cramps: severe muscle cramps.",
+          "Heat Exhaustion: altered mental status, dizziness, nausea & vomiting, headache, elevated core body temperature.",
+          "Heat Stroke: extremely elevated core body temperature, the absence of sweating, with hot red or flushed dry skin, rapid pulse, difficulty breathing, strange behavior, hallucinations, confusion, agitation, disorientation, seizure, coma."
+        ],
+        "differential": [
+          "High temperatures in the environment or excessive exercise in moderate to extremely high temperatures.",
+          "Older or ill incapacitated patient, a failing of the temperature regulating center."
+        ],
+        "pearls": []
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Hyperthermia general management",
+          "steps": [
+            {
+              "text": "Document patient temperature."
+            },
+            {
+              "text": "Move to cooler environment, remove all outer clothing."
+            },
+            {
+              "text": "Apply room temperature water to skin and increase air flow around patient."
+            },
+            {
+              "text": "Consider cold packs to major artery sites."
+            },
+            {
+              "text": "Adult IV/IO Protocol.",
+              "goto_protocol": "adult_iv_io"
+            },
+            {
+              "text": "Maintain systolic B/P greater than 100 mmHg."
+            },
+            {
+              "text": "For control of shivering during cooling: Midazolam (Versed) 2.5 mg IVP, IM. May repeat x 1.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Be prepared for seizures. Direct fan on patient if available. Don't give fluids orally."
+            },
+            {
+              "text": "Monitor and reassess."
+            },
+            {
+              "text": "Appropriate protocol based on patient symptoms."
+            }
+          ]
+        },
+        {
+          "id": "athletic_field_heat_emergency",
+          "label": "Athletic Field Heat Emergency",
+          "steps": [
+            {
+              "text": "If available on scene, immediately immerse patient in ice bath if safe to do so before transport. Typical month is August."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "determining_death",
+      "title": "Determining Death",
+      "demographic": "adult",
+      "section": "Adult General Medical",
+      "source_pages": [
+        59,
+        60
+      ],
+      "chief_complaint_tags": [
+        "death",
+        "obvious death",
+        "dnr",
+        "deceased",
+        "unresponsive not breathing"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Patient encountered by EMS who meets criteria for obvious death.",
+          "Patient with duly executed DNR who is apneic.",
+          "Patient for whom resuscitation efforts are ceased on-scene."
+        ],
+        "signs_symptoms": [
+          "Name of primary care physician.",
+          "Known medical conditions.",
+          "Last time known to be alive."
+        ],
+        "differential": [
+          "Attended death: death is attended when a person passes away in the presence of family and friends.",
+          "Attended death also includes: patient in a hospital or medical center; a resident of long-term care or nursing facility; an individual in hospice care; an individual in regular contact with a primary care physician who has suffered from an extended illness; the individual saw a primary care physician within a 30-day period prior to death.",
+          "Unattended death: a death in which the body is not found for days, weeks, or in some cases, months.",
+          "Suspicious death (law enforcement)."
+        ],
+        "pearls": []
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Determining Death",
+          "steps": [
+            {
+              "text": "Patient meets criteria for obvious death? In the opinion of the paramedic on scene, resuscitation would be futile or would fail to produce a positive outcome."
+            },
+            {
+              "text": "Contact law enforcement and/or county coroner."
+            },
+            {
+              "text": "Leave all medical devices in place. If devices have been removed, tape them to the chest of the patient."
+            },
+            {
+              "text": "Do not place sharps under tape; note them on the tape."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dystonic_reaction",
+      "title": "Dystonic Reaction",
+      "demographic": "adult",
+      "section": "Adult General Medical",
+      "source_pages": [
+        61
+      ],
+      "chief_complaint_tags": [
+        "dystonic reaction",
+        "dystonia",
+        "muscle spasm",
+        "antipsychotic reaction",
+        "extrapyramidal symptoms"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [
+          "Involuntary muscle contractions/tremors/spasms/twisting/turning.",
+          "Abnormal postures/movements.",
+          "Difficulty speaking/swallowing.",
+          "Drooling.",
+          "Eye movements.",
+          "Anxiety."
+        ],
+        "differential": [
+          "Triggers: antipsychotics.",
+          "Triggers: antiemetics."
+        ],
+        "pearls": []
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Dystonic Reaction management",
+          "steps": [
+            {
+              "text": "Monitor vital signs."
+            },
+            {
+              "text": "Adult IV/IO Protocol.",
+              "goto_protocol": "adult_iv_io"
+            },
+            {
+              "text": "Administer Diphenhydramine (Benadryl) 50 mg IVP, IO, IM.",
+              "drug_id": "diphenhydramine"
+            },
+            {
+              "text": "No improvement? Midazolam (Versed) 2.5 mg IVP, IO, IM.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Transport to closest appropriate ED."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epistaxis",
+      "title": "Epistaxis",
+      "demographic": "adult",
+      "section": "Adult General Medical",
+      "source_pages": [
+        62,
+        63
+      ],
+      "chief_complaint_tags": [
+        "epistaxis",
+        "nosebleed",
+        "nasal bleeding",
+        "bloody nose"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Age.",
+          "Past medical history.",
+          "Medications (BP, anticoagulants).",
+          "Trauma.",
+          "Previous nosebleeds.",
+          "Duration.",
+          "Quantity."
+        ],
+        "signs_symptoms": [
+          "Bleeding from nasal passage.",
+          "Pain.",
+          "Nausea.",
+          "Vomiting."
+        ],
+        "differential": [
+          "Trauma.",
+          "Infection.",
+          "Allergic rhinitis.",
+          "Lesions (polyps/ulcers).",
+          "Hypertension."
+        ],
+        "pearls": [
+          "Exam: mental status; HEENT; neck; heart; lungs; neuro.",
+          "It is difficult to quantify the amount of blood loss in epistaxis.",
+          "Bleeding may be posterior and you may see the patient expel blood clots from the mouth.",
+          "Anticoagulants include aspirin, coumadin, Plavix, NSAIDS, Xarelto, etc."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Epistaxis - initial management",
+          "steps": [
+            {
+              "text": "Upright position."
+            },
+            {
+              "text": "Compress nostrils together."
+            },
+            {
+              "text": "Ice pack."
+            },
+            {
+              "text": "Immediately apply direct firm pressure to nostrils or nose clamp if available."
+            },
+            {
+              "text": "Using MADD device, atomize Tranexamic Acid (TXA) 200 mg IN into the nostril that is bleeding. Have patient blow clots out first. Once clots are cleared, instill TXA as above.",
+              "drug_id": "txa"
+            }
+          ]
+        },
+        {
+          "id": "hypotension_tachycardia",
+          "label": "Hypotension and/or Tachycardia present",
+          "steps": [
+            {
+              "text": "Adult IV/IO Protocol.",
+              "goto_protocol": "adult_iv_io"
+            },
+            {
+              "text": "Normal Saline 0.9% (NS) 500 mL fluid bolus.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Reassess."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "well_person_check",
+      "title": "Well Person Check",
+      "demographic": "adult",
+      "section": "Adult General Medical",
+      "source_pages": [
+        70,
+        71
+      ],
+      "chief_complaint_tags": [
+        "well person check",
+        "vital sign check",
+        "lift assist",
+        "welfare check",
+        "blood pressure check"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Patient presents requesting blood pressure check.",
+          "EMS response to \"assist invalid.\"",
+          "Other situation in which patient does not have a medical complaint or obvious injury."
+        ],
+        "signs_symptoms": [
+          "Assess for medical complaint.",
+          "For patients with hypertension, check for chest pain, dyspnea, neuro changes.",
+          "For invalid assist calls, check for syncope, chest pain, trauma, inability to ambulate."
+        ],
+        "differential": [
+          "Hypertensive urgency.",
+          "Hypertensive emergency.",
+          "Syncope.",
+          "Cardiac ischemia/dysrhythmia.",
+          "Fracture.",
+          "Head trauma."
+        ],
+        "pearls": [
+          "Patients who are denying more severe symptoms may initially present for a routine check.",
+          "All persons who request service shall have a PCR completed.",
+          "If patient has ANY medical complaint, a complete set of vitals must be obtained and documented in the PCR. If there are no complaints of illness or injury and it is simply a lift assist, then demographic data and a brief synopsis of the reason for the call is sufficient. Always have a high index of suspicion for illness on \"well person checks\" and \"lift assist\" calls."
+        ]
+      },
+      "branches": [
+        {
+          "id": "has_complaint",
+          "label": "Patient has medical complaint or obvious trauma",
+          "steps": [
+            {
+              "text": "Go to appropriate protocol and recommend transport."
+            }
+          ]
+        },
+        {
+          "id": "no_complaint",
+          "label": "No medical complaint or obvious trauma",
+          "steps": [
+            {
+              "text": "Obtain BP, pulse, SpO2, temperature, EtCO2 if applicable; consider 12 Lead ECG."
+            },
+            {
+              "text": "Assess patient for abnormal vital signs."
+            },
+            {
+              "text": "If vital signs abnormal: recommend transport for evaluation. Have patient sign refusal if transport declined."
+            },
+            {
+              "text": "If vital signs normal: confirm patient has no medical complaint. Provide patient with vital sign results and have them contact their doctor to report results."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "behavioral_emergency_sedation",
+      "title": "Behavioral Emergency / Sedation",
+      "demographic": "adult",
+      "section": "Adult Neurological",
+      "source_pages": [
+        75,
+        76,
+        77
+      ],
+      "chief_complaint_tags": [
+        "behavioral emergency",
+        "agitation",
+        "violent patient",
+        "chemical sedation",
+        "combative"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Situational crisis.",
+          "Psychiatric illness/medications.",
+          "Injury to self or threats to others.",
+          "Medical alert tag.",
+          "Substance abuse/OD.",
+          "Diabetes."
+        ],
+        "signs_symptoms": [
+          "Anxiety.",
+          "Agitation.",
+          "Confusion.",
+          "Affect change.",
+          "Hallucinations.",
+          "Delusional thoughts.",
+          "Bizarre behavior.",
+          "Competitive/violent.",
+          "Expression of suicidal/homicidal thoughts."
+        ],
+        "differential": [
+          "See Altered Mental Status.",
+          "Hypoxia.",
+          "Alcohol intoxication.",
+          "Medication effect/OD.",
+          "Withdrawal syndromes.",
+          "Depression.",
+          "Bipolar.",
+          "Schizophrenia."
+        ],
+        "pearls": [
+          "Exam: mental status; skin; heart; lungs; neuro.",
+          "All patients given sedation must have IV, ETCO2, SpO2, cardiac monitoring, supplemental oxygen.",
+          "Consider ALL causes for behavior - trauma vs. medical (hypoglycemia, OD, hypoxia, head injury, substance abuse).",
+          "Do not overlook possibility of domestic violence or child abuse.",
+          "Patients with Behavioral Emergency are often dehydrated and acidotic.",
+          "All patients with physical or chemical restraints must be continuously observed by ALS personnel on scene."
+        ]
+      },
+      "branches": [
+        {
+          "id": "scene_safety",
+          "label": "Scene Safety / Initial Approach",
+          "steps": [
+            {
+              "text": "Scene safety. Universal Patient Care (treat suspected medical or trauma problems per protocol)."
+            },
+            {
+              "text": "Remove patient from stressful environment."
+            },
+            {
+              "text": "Patient represents a violent threat to self or EMS: AEMT / Paramedic scope applies as below."
+            }
+          ]
+        },
+        {
+          "id": "anxious_disruptive_not_violent",
+          "label": "Anxious, Disruptive, Not Violent - able to calm and redirect",
+          "steps": [
+            {
+              "text": "Adult: Midazolam (Versed) 2.5 mg IVP, IO, IM, IN. May repeat x 1. Maximum total dose 5 mg.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Pediatric: Midazolam (Versed) (1 mg/mL) 0.1 mg/kg IVP, IO, IM, IN. May repeat up to maximum. Maximum single dose 2.5 mg. Maximum total dose 5 mg.",
+              "drug_id": "midazolam"
+            }
+          ]
+        },
+        {
+          "id": "anxious_and_violent",
+          "label": "Anxious and Violent",
+          "steps": [
+            {
+              "text": "Adult (age > 12): Midazolam (Versed) 10 mg IM.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Adult (age > 65): Midazolam (Versed) 5 mg IM.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "If IVP, IO, initial dose: Midazolam (Versed) 5 mg IVP, IO. Maximum 10 mg.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Repeat dosing: Midazolam (Versed) 2.5 mg IM, IVP, IO, IN. Repeat every 5 minutes. Maximum 20 mg.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Pediatric: Midazolam (Versed) (5 mg/mL) 0.1 mg/kg IM, IVP, IN. May repeat every 5 minutes. Maximum single dose 2.5 mg. Maximum total dose 10 mg.",
+              "drug_id": "midazolam"
+            }
+          ]
+        },
+        {
+          "id": "mandatory_monitoring",
+          "label": "Mandatory Monitoring & Treatment",
+          "steps": [
+            {
+              "text": "Cardiac monitor, EtCO2, pulse oximetry, NIBP mandatory."
+            },
+            {
+              "text": "Head elevated 30 degrees."
+            },
+            {
+              "text": "If tachycardia or hypotension present - Adult: Normal Saline 0.9% (NS) 1 L fluid bolus.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "If tachycardia or hypotension present - Pediatric: Normal Saline 0.9% (NS) 20 mL/kg fluid bolus.",
+              "drug_id": "normal_saline"
+            }
+          ]
+        },
+        {
+          "id": "violent_refractory",
+          "label": "Violent Behavior Refractory to Above Therapy",
+          "steps": [
+            {
+              "text": "Ketamine (Ketalar) (100 mg/mL) 4 mg/kg IM. Maximum 400 mg.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Contact On-Line Medical Control (OLMC)."
+            }
+          ]
+        },
+        {
+          "id": "chemically_restrained",
+          "label": "Patient Chemically Restrained - positioning",
+          "steps": [
+            {
+              "text": "At no time should a violent patient being chemically restrained have pressure applied to the back. All patients must be supine with head elevated, oxygen applied, full monitoring equipment, with IV/IO established when able."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "syncope",
+      "title": "Syncope",
+      "demographic": "adult",
+      "section": "Adult Neurological",
+      "source_pages": [
+        82,
+        83
+      ],
+      "chief_complaint_tags": [
+        "syncope",
+        "fainting",
+        "passed out",
+        "loss of consciousness",
+        "near syncope"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Cardiac, CVA, seizures.",
+          "Occult blood loss (GI, ectopic).",
+          "Females: LMP, vaginal bleeding.",
+          "Fluid loss, N/V/D.",
+          "Past medical history.",
+          "Medications."
+        ],
+        "signs_symptoms": [
+          "LOC with recovery.",
+          "Light-headedness, dizzy.",
+          "Palpitations, slow or rapid pulse.",
+          "Pulse irregularity.",
+          "Low blood pressure."
+        ],
+        "differential": [
+          "Vasovagal.",
+          "Orthostatic hypotension.",
+          "Cardiac.",
+          "Micturition/defecation syncope.",
+          "Psychiatric.",
+          "CVA.",
+          "Hypoglycemia.",
+          "Seizure.",
+          "PE.",
+          "Shock.",
+          "Toxicologic.",
+          "Medication effect.",
+          "Aortic disease/dissection."
+        ],
+        "pearls": [
+          "Exam: mental status; skin; HEENT; heart; lungs; abdomen; extremities; neuro.",
+          "Assess for trauma.",
+          "Consider dysrhythmias, GI bleed, ectopic pregnancy, seizure as causes of syncope.",
+          "More than 25% of geriatric syncope is cardiac dysrhythmia related."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Syncope evaluation and management",
+          "steps": [
+            {
+              "text": "Consider other protocols as indicated: Altered Mental Status, Hypoglycemia/Hyperglycemia, Hypotension/Shock Non-Trauma, Seizure, Suspected Stroke."
+            },
+            {
+              "text": "Adult Airway Protocol.",
+              "goto_protocol": "adult_airway"
+            },
+            {
+              "text": "Spinal Motion Restriction (SMR) Protocol.",
+              "goto_protocol": "spinal_motion_restriction"
+            },
+            {
+              "text": "Orthostatic vital signs."
+            },
+            {
+              "text": "Blood glucose analysis."
+            },
+            {
+              "text": "Adult IV/IO Protocol.",
+              "goto_protocol": "adult_iv_io"
+            },
+            {
+              "text": "12 Lead ECG."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "childbirth_labor",
+      "title": "Childbirth/Labor",
+      "demographic": "adult",
+      "section": "Adult OB/GYN",
+      "source_pages": [
+        85,
+        86
+      ],
+      "chief_complaint_tags": [
+        "childbirth",
+        "labor",
+        "contractions",
+        "crowning",
+        "delivery",
+        "pregnant"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Due date.",
+          "Time contractions started/how often.",
+          "Rupture of membranes.",
+          "Time/amount of vaginal bleeding.",
+          "Sensation of fetal activity.",
+          "Past medical and delivery history.",
+          "Medications.",
+          "Drug use.",
+          "Gravida/para status.",
+          "High risk pregnancy?"
+        ],
+        "signs_symptoms": [
+          "Spasmodic pain.",
+          "Vaginal discharge or bleeding.",
+          "Crowning or urge to push.",
+          "Meconium."
+        ],
+        "differential": [
+          "Abnormal presentation: buttock, foot, hand.",
+          "Prolapsed cord.",
+          "Placenta previa.",
+          "Abruptio placenta."
+        ],
+        "pearls": [
+          "Exam (mother): mental status; heart; lungs; abdomen; neuro.",
+          "Document at all times (delivery, contractions frequency/length).",
+          "Transport: Mother may lay in position of comfort if no fetal distress present; preferred position is left lateral recumbent.",
+          "After delivery, massage uterus (lower abdomen) which will promote uterine contraction to control postpartum bleeding.",
+          "Some perineal bleeding is normal with childbirth; large quantities or free bleeding is abnormal.",
+          "Record APGAR at 1 and 5 minutes after birth."
+        ]
+      },
+      "branches": [
+        {
+          "id": "initial_assessment",
+          "label": "Initial assessment - crowning > 36 weeks gestation",
+          "steps": [
+            {
+              "text": "Priority symptoms: crowning, < 36 weeks gestation, abnormal presentation, severe vaginal bleeding, multiple gestation."
+            },
+            {
+              "text": "Universal Patient Care. Left lateral position. Assess for hypertension and abnormal vaginal bleeding."
+            },
+            {
+              "text": "Visually inspect perineum for crowning (No digital exam). Adult IV/IO protocol."
+            }
+          ]
+        },
+        {
+          "id": "no_crowning",
+          "label": "No crowning",
+          "steps": [
+            {
+              "text": "Monitor and reassess. Document frequency and duration of contractions."
+            },
+            {
+              "text": "Treat suspected medical or trauma problems per protocol."
+            }
+          ]
+        },
+        {
+          "id": "crowning_cephalic",
+          "label": "Crowning - normal cephalic delivery",
+          "steps": [
+            {
+              "text": "Allow head to deliver spontaneously. Suction mouth and nose as needed."
+            },
+            {
+              "text": "Head entrapped? IMMEDIATE transport."
+            },
+            {
+              "text": "After delivery, go to Newly Born protocol.",
+              "goto_protocol": "newly_born"
+            }
+          ]
+        },
+        {
+          "id": "breech_delivery",
+          "label": "Breech delivery",
+          "steps": [
+            {
+              "text": "Allow spontaneous delivery. Support the body. Avoid traction."
+            },
+            {
+              "text": "Check for cord prolapse; if present, attempt to slip over head."
+            }
+          ]
+        },
+        {
+          "id": "prolapsed_cord",
+          "label": "Prolapsed cord",
+          "steps": [
+            {
+              "text": "Knee to chest position. Do not push cord back in."
+            },
+            {
+              "text": "Keep cord moist and warm with sterile saline."
+            },
+            {
+              "text": "Manually elevate the presenting part of the fetus (usually head). If prolapsed cord, push up on head."
+            },
+            {
+              "text": "Administer oxygen to mother.",
+              "drug_id": "oxygen"
+            },
+            {
+              "text": "Rapid safe transport."
+            }
+          ]
+        },
+        {
+          "id": "abnormal_presentation",
+          "label": "Abnormal presentation - presenting part (arm or leg)",
+          "steps": [
+            {
+              "text": "Do not attempt delivery vaginally."
+            },
+            {
+              "text": "Place mother in head down (Trendelenburg) or knee-chest position."
+            },
+            {
+              "text": "Rapid safe transport to OB facility with neonatal care facility: Mercy St. Vincent OR ProMedica Toledo Hospital."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maternal_arrest",
+      "title": "Maternal Arrest",
+      "demographic": "adult",
+      "section": "Adult OB/GYN",
+      "source_pages": [
+        87
+      ],
+      "chief_complaint_tags": [
+        "maternal arrest",
+        "pregnant cardiac arrest",
+        "pregnancy cpr",
+        "maternal cpr"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [
+          "Causes: cardiomyopathy, cardiovascular disease, amniotic fluid embolism, infection, hemorrhage.",
+          "Correctable causes: hypovolemia, hypoxia, thrombosis/thromboembolism, cardiac tamponade (aortic dissection)."
+        ],
+        "pearls": [
+          "< 20 weeks gestation: follow standard ALS treatment.",
+          "Manual uterine displacement > 20 weeks gestation - \"up, off and over.\"",
+          "Viability of fetus > 24 weeks - increased survivability.",
+          "If no ROSC, be off scene in 5 minutes to an ED with an OB unit; pre-alert ED to prepare for Resuscitative Hysterotomy.",
+          "Destination decisions: trauma related maternal arrest - closest Trauma Center; medical related maternal arrest - closest OB Center."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Maternal cardiac arrest (> 20 weeks gestation, fundus at or above umbilicus)",
+          "steps": [
+            {
+              "text": "Universal Patient Care. BLS first: high quality CPR. Early defibrillation - AED or manual defibrillation."
+            },
+            {
+              "text": "Manually displace uterus to mother's left, simultaneous to CPR."
+            },
+            {
+              "text": "Advanced airway: SGA first choice; may need to switch out to ETT."
+            },
+            {
+              "text": "Adult IV/IO access above the diaphragm."
+            },
+            {
+              "text": "Manual CPR unless transporting, then use LUCAS."
+            },
+            {
+              "text": "If no ROSC, be off scene in 5 minutes to an ED with an OB unit. Pre-alert ED to prepare for Resuscitative Hysterotomy."
+            },
+            {
+              "text": "< 20 weeks gestation: follow standard ALS treatment.",
+              "goto_protocol": "cardiac_arrest"
+            },
+            {
+              "text": "Destination: trauma related maternal arrest - closest Trauma Center. Medical related maternal arrest - closest OB Center."
+            }
+          ]
+        },
+        {
+          "id": "polymorphic_vt",
+          "label": "Polymorphic VT",
+          "steps": [
+            {
+              "text": "Magnesium Sulfate 2 gm IVP.",
+              "drug_id": "magnesium_sulfate"
+            }
+          ]
+        },
+        {
+          "id": "eclampsia",
+          "label": "Eclampsia",
+          "steps": [
+            {
+              "text": "Magnesium Sulfate 4 gm IVP.",
+              "drug_id": "magnesium_sulfate"
+            }
+          ]
+        },
+        {
+          "id": "hemorrhage_cause",
+          "label": "Hemorrhage suspected as cause of arrest",
+          "steps": [
+            {
+              "text": "Tranexamic Acid (TXA) 2 gm IVP.",
+              "drug_id": "txa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "newly_born",
+      "title": "Newly Born",
+      "demographic": "adult",
+      "section": "Adult OB/GYN",
+      "source_pages": [
+        88
+      ],
+      "chief_complaint_tags": [
+        "newborn",
+        "neonatal resuscitation",
+        "newly born",
+        "neonate",
+        "apgar"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [],
+        "pearls": [
+          "AirQ SGA sizing: < 2 kg = size 0; 2 - 4 kg = size 0.5; 4 - 7 kg = size 1.0; 7 - 17 kg = size 1.5; 17 - 30 kg = size 2; 30 - 60 kg = size 3; 60 - 80 kg = size 4; > 80 kg = size 5.",
+          "Target pre-ductal SpO2 after birth: 1 min 60-65%; 2 min 65-70%; 3 min 70-75%; 4 min 75-80%; 5 min 80-85%; 10 min 85-95%.",
+          "See Apgar Score in tools."
+        ]
+      },
+      "branches": [
+        {
+          "id": "birth_assessment",
+          "label": "Birth - initial assessment",
+          "steps": [
+            {
+              "text": "Birth. Assess: Term? Tone? Breathing or crying?"
+            }
+          ]
+        },
+        {
+          "id": "routine_care",
+          "label": "Term, good tone, breathing/crying - routine care",
+          "steps": [
+            {
+              "text": "Stay with mother for routine care."
+            },
+            {
+              "text": "Warm and maintain normal temperature. Position airway. Clear secretions. Dry."
+            },
+            {
+              "text": "Ongoing evaluation."
+            },
+            {
+              "text": "Labored breathing or persistent cyanosis? Positive Pressure Ventilation. SpO2 monitor. ECG monitor."
+            }
+          ]
+        },
+        {
+          "id": "initial_resuscitation",
+          "label": "Not vigorous at birth - initial steps",
+          "steps": [
+            {
+              "text": "Warm and maintain normal temperature."
+            },
+            {
+              "text": "Position airway. Clear secretions, dry, stimulate."
+            },
+            {
+              "text": "Apnea, gasping, or HR below 100 bpm? Positive Pressure Ventilation. SpO2 monitor. ECG monitor. Check chest movement. Ventilation corrective steps. ETT or SGA if needed."
+            },
+            {
+              "text": "HR below 100 bpm? Continue Positive Pressure Ventilation with corrective steps as above."
+            }
+          ]
+        },
+        {
+          "id": "hr_below_60",
+          "label": "HR below 60 bpm",
+          "steps": [
+            {
+              "text": "Begin CPR."
+            },
+            {
+              "text": "IV Epinephrine."
+            },
+            {
+              "text": "Epinephrine 1 mg/10 mL (0.1 mg/mL) 0.01 - 0.03 mg/kg IVP, IO.",
+              "drug_id": "epi_1_10"
+            },
+            {
+              "text": "If HR persists below 60 bpm, consider hypovolemia, consider pneumothorax."
+            },
+            {
+              "text": "Post Resuscitation Care."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "obstetrical_emergency",
+      "title": "Obstetrical Emergency",
+      "demographic": "adult",
+      "section": "Adult OB/GYN",
+      "source_pages": [
+        89,
+        90
+      ],
+      "chief_complaint_tags": [
+        "vaginal bleeding",
+        "pregnancy complication",
+        "abdominal pain pregnant",
+        "seizure pregnant",
+        "pre-eclampsia",
+        "eclampsia"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Past medical history.",
+          "Hypertensive meds.",
+          "Prenatal care.",
+          "Prior pregnancies.",
+          "G/P."
+        ],
+        "signs_symptoms": [
+          "Vaginal bleeding.",
+          "Abdominal pain.",
+          "Seizures.",
+          "Hypertension.",
+          "Headache.",
+          "Visual changes.",
+          "Facial/hand edema."
+        ],
+        "differential": [
+          "Pre-eclampsia/eclampsia.",
+          "Placenta previa.",
+          "Placenta abruptio.",
+          "Spontaneous abortion.",
+          "Post partum pre-eclampsia: severe headache, visual changes, upper abdominal pain, mental status changes, SBP > 140 mmHg, DBP > 90 mmHg; can happen 48 hours to 6 weeks postpartum; transport these patients."
+        ],
+        "pearls": [
+          "Exam: mental status; abdomen; heart; lungs; neuro.",
+          "Severe headache, vision changes, RUQ pain may indicate pre-eclampsia. SBP > 140 mmHg and/or DBP > 90 mmHg.",
+          "In pregnancy, HTN = BP > 140/90.",
+          "Maintain patient in left lateral position to minimize risk of supine hypotensive syndrome.",
+          "Quantify bleeding = number of pads per hour.",
+          "Any pregnant patient in MVC should be seen by physician for evaluation and fetal monitoring.",
+          "Magnesium, in high doses (i.e., 6 grams), may cause hypotension and decreased respiratory drive. Use cautiously."
+        ]
+      },
+      "branches": [
+        {
+          "id": "hypertension_seizure",
+          "label": "Known pregnancy - hypertension or seizure during transport",
+          "steps": [
+            {
+              "text": "Left lateral position. Blood glucose analysis."
+            },
+            {
+              "text": "Hypertension during transport? Initiate Magnesium Sulfate 4 gm IVP over 20 minutes.",
+              "drug_id": "magnesium_sulfate"
+            },
+            {
+              "text": "Seizure during transport - active seizure activity (grand mal): Midazolam (Versed) 2 - 5 mg Slow IVP.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "OR Midazolam (Versed) 10 mg IM for active grand mal seizure.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Go to Seizure protocol.",
+              "goto_protocol": "seizure"
+            }
+          ]
+        },
+        {
+          "id": "vaginal_bleeding_abdominal_pain",
+          "label": "Vaginal bleeding / abdominal pain",
+          "steps": [
+            {
+              "text": "Known pregnancy / missed period? Orthostatic vital signs."
+            },
+            {
+              "text": "Normal Saline 0.9% (NS) 500 mL Fluid Bolus.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Complaint of labor? If no: place left lateral recumbent, transport. Universal Patient Care. Adult IV/IO protocol."
+            },
+            {
+              "text": "Complaint of labor? If yes: go to Childbirth/Labor protocol.",
+              "goto_protocol": "childbirth_labor"
+            },
+            {
+              "text": "Not known pregnancy: go to Abdominal Pain protocol.",
+              "goto_protocol": "abdominal_pain"
+            }
+          ]
+        },
+        {
+          "id": "postpartum_hemorrhage",
+          "label": "Severe postpartum hemorrhage",
+          "steps": [
+            {
+              "text": "Tranexamic Acid (TXA) 2 gm IVP. May repeat x1 if bleeding persists.",
+              "drug_id": "txa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adult_failed_airway_algorithm",
+      "title": "Adult Failed Airway Algorithm",
+      "demographic": "adult",
+      "section": "Adult Respiratory",
+      "source_pages": [
+        94,
+        95
+      ],
+      "chief_complaint_tags": [
+        "failed airway",
+        "difficult airway",
+        "cant intubate cant oxygenate",
+        "cricothyrotomy",
+        "surgical airway"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [],
+        "pearls": [
+          "EMT may place supraglottic airway only in apneic and pulseless patients.",
+          "Continuous pulse oximetry should be used in all patients with inadequate respiratory function.",
+          "Continuous EtCO2 should be applied to all patients with respiratory failure and to all patients with advanced airway.",
+          "Notify OLMC as soon as possible about failed airway."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Failed airway algorithm",
+          "steps": [
+            {
+              "text": "Laryngoscopy #1 by most skilled intubator. Maximize first pass success (head up, collar off, pre-oxygenate)."
+            },
+            {
+              "text": "If SpO2 drops to 93% at any point: facemask + OPA or SGA."
+            },
+            {
+              "text": "Success: confirmation / post-tube management."
+            },
+            {
+              "text": "Failure: place Supraglottic Airway (SGA).",
+              "goto_protocol": "airway_supraglottic"
+            },
+            {
+              "text": "SGA failure, or can't oxygenate/can't ventilate: progress to FONA (Front of Neck Airway) - Surgical Airway - Cricothyrotomy (FONA)."
+            },
+            {
+              "text": "Can't intubate, can't oxygenate? Progress directly to Cricothyrotomy (FONA)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invasive_ventilation",
+      "title": "Invasive Ventilation",
+      "demographic": "adult",
+      "section": "Adult Respiratory",
+      "source_pages": [
+        102,
+        103
+      ],
+      "chief_complaint_tags": [
+        "ventilator",
+        "mechanical ventilation",
+        "invasive ventilation",
+        "advanced airway ventilation"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [],
+        "pearls": [
+          "Determine mode of invasive ventilation based on patient presentation."
+        ]
+      },
+      "branches": [
+        {
+          "id": "patient_selection",
+          "label": "Patient selection (adult with advanced airway in place: SGA, ETT, cric, trach)",
+          "steps": [
+            {
+              "text": "Indications: active CPR, post-ROSC, failure of NIV now with advanced airway in place, patients who have undergone MAI/RSI procedure, respiratory failure."
+            }
+          ]
+        },
+        {
+          "id": "cpr_mode",
+          "label": "Active CPR in progress - CPR mode",
+          "steps": [
+            {
+              "text": "Select CPR mode on ventilator."
+            },
+            {
+              "text": "Prompts display for CPR @ 100/min. Prompts display ventilation @ 10/min."
+            },
+            {
+              "text": "Presets: Tidal Volume (Vt) preset to 500 mL. Pressure (Pmax) preset to 60 cmH2O. Ventilations preset to 10/min."
+            }
+          ]
+        },
+        {
+          "id": "pulse_advanced_airway",
+          "label": "Patient has pulse and advanced airway in place - A/C V mode",
+          "steps": [
+            {
+              "text": "Select A/C V (Assist/Control Volume Ventilation)."
+            },
+            {
+              "text": "Key features: ventilator delivers breaths at set Tidal Volume (Vt) and Rate (BPM). In a spontaneously breathing patient, the patient can initiate a breath above the preset parameters."
+            },
+            {
+              "text": "Adjust PEEP to 5 cmH2O."
+            },
+            {
+              "text": "Presets: Tidal Volume (Vt) preset to 500 mL. Pressure (Pmax) preset to 30 cmH2O. Ventilations preset to 10/min. PEEP preset to 5 cmH2O."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "non_invasive_ventilation",
+      "title": "Non-Invasive Ventilation (CPAP and BiPAP)",
+      "demographic": "adult",
+      "section": "Adult Respiratory",
+      "source_pages": [
+        104,
+        105,
+        106
+      ],
+      "chief_complaint_tags": [
+        "cpap",
+        "bipap",
+        "non-invasive ventilation",
+        "respiratory distress",
+        "copd exacerbation"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [],
+        "pearls": []
+      },
+      "branches": [
+        {
+          "id": "patient_selection",
+          "label": "Patient selection criteria (adult without advanced airway)",
+          "steps": [
+            {
+              "text": "Patient must be: awake, alert, cooperative; spontaneously breathing; able to protect airway; hemodynamically stable (i.e. not in shock); no facial trauma, active vomiting, or massive secretions."
+            }
+          ]
+        },
+        {
+          "id": "oxygenation_primary_cpap",
+          "label": "Oxygenation is the primary problem - use CPAP",
+          "steps": [
+            {
+              "text": "Signs and symptoms: low SpO2, EtCO2 normal/low, cyanosis, crackles, pneumonia, near drowning, pulmonary edema."
+            },
+            {
+              "text": "First Responder Disposable CPAP: set CPAP to 5 - 15 cmH2O. Monitor comfort, chest rise, work of breathing, oxygenation."
+            },
+            {
+              "text": "If O-Two ventilator available: set CPAP to 5 - 15 cmH2O, FiO2 60 or 100%. Monitor comfort, chest rise, work of breathing, oxygenation."
+            }
+          ]
+        },
+        {
+          "id": "oxygenation_ventilation_bipap",
+          "label": "Oxygenation AND ventilation are the primary problem - use BiPAP",
+          "steps": [
+            {
+              "text": "Signs and symptoms: low SpO2, rising EtCO2 > 45, respiratory fatigue, COPD, severe asthma, pulmonary edema, flail chest."
+            },
+            {
+              "text": "Set CPAP to 6 cmH2O. Typical starting point is CPAP 6 and PSV 6. (CPAP, aka EPAP, + PSV = IPAP; BiPAP = IPAP/EPAP; you would report a BiPAP of 12/6.)"
+            },
+            {
+              "text": "Add PSV 5 - 15 cmH2O (titrate by 2 - 3 cm). FiO2 60% or 100%. Use lowest FiO2 to maintain SpO2 i.e. 60%. Peak airway pressure < 30 cmH2O."
+            }
+          ]
+        },
+        {
+          "id": "treatment_failure",
+          "label": "Treatment failure - escalate",
+          "steps": [
+            {
+              "text": "Treatment failure: worsening hypoxia/hypercapnia, decreasing LOC, mask intolerance."
+            },
+            {
+              "text": "Move to Adult Failed Airway Algorithm.",
+              "goto_protocol": "adult_failed_airway_algorithm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multiple_trauma",
+      "title": "Multiple Trauma",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        111,
+        112
+      ],
+      "chief_complaint_tags": [
+        "multiple trauma",
+        "polytrauma",
+        "MVC",
+        "major trauma",
+        "blunt trauma",
+        "penetrating trauma"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Time and MOI.",
+          "Damage to structure/vehicle.",
+          "Location in structure/vehicle.",
+          "Others injured/dead.",
+          "Speed and details of MVC.",
+          "Restraints/protective equipment.",
+          "Past medical history.",
+          "Medications."
+        ],
+        "signs_symptoms": [
+          "Pain.",
+          "Swelling.",
+          "Altered mental status.",
+          "Unconscious.",
+          "Deformity.",
+          "Bleeding.",
+          "Hypotension/shock.",
+          "Arrest."
+        ],
+        "differential": [
+          "Chest: Tension pneumothorax.",
+          "Chest: Flail chest.",
+          "Chest: Pericardial tamponade.",
+          "Chest: Open chest wound.",
+          "Chest: Hemothorax.",
+          "Intra-abdominal bleeding.",
+          "Pelvis/femur fracture.",
+          "Spine fracture/cord injury.",
+          "Head injury.",
+          "Extremity fracture/dislocation.",
+          "Airway obstruction.",
+          "Hypothermia."
+        ],
+        "pearls": [
+          "Examples of anticoagulants include warfarin, Plavix, Lovenox, Pradaxa, Eliquis, Xarelto.",
+          "Exam: mental status; HEENT; heart; lungs; abdomen; extremities; back; neuro.",
+          "In prolonged extrications/serious trauma, consider air transport.",
+          "Immediately control hemorrhage from extremity trauma with tourniquet if direct pressure is ineffective.",
+          "Apply tourniquet until bleeding stops. Note time of application on pts. forehead.",
+          "TXA = antifibrinolytic for use in major ongoing hemorrhage."
+        ]
+      },
+      "branches": [
+        {
+          "id": "initial_assessment",
+          "label": "Initial Assessment & Hemorrhage Control",
+          "steps": [
+            {
+              "text": "Universal Patient Care.",
+              "goto_protocol": "universal_patient_care"
+            },
+            {
+              "text": "Rapid trauma assessment and GCS."
+            },
+            {
+              "text": "Control all external hemorrhage (pressure, hemostatic gauze, tourniquets)."
+            },
+            {
+              "text": "Spinal Motion Restriction.",
+              "goto_protocol": "spinal_motion_restriction"
+            },
+            {
+              "text": "Adult IV.",
+              "goto_protocol": "adult_iv"
+            },
+            {
+              "text": "Check vital signs and perfusion."
+            },
+            {
+              "text": "Concern for Tension Pneumothorax -> Needle Chest Decompression."
+            },
+            {
+              "text": "Transport ALL trauma patients to closest appropriate trauma center."
+            },
+            {
+              "text": "Normal Saline 0.9 (NS) 500 mL Fluid Bolus.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Permissive Hypotension: maintain target SBP 90 mmHg for patients with on-going uncontrolled bleeding."
+            },
+            {
+              "text": "Local Trauma Centers - Level 1: Mercy St. Vincent, Promedica Toledo Hospital. Level 2: UTMC. Level 3: St. Charles, Promedica Bay Park."
+            }
+          ]
+        },
+        {
+          "id": "continued_hypotension",
+          "label": "Abnormal - Continued Hypotension (SBP <90)",
+          "steps": [
+            {
+              "text": "Pull all long bone fractures to length."
+            },
+            {
+              "text": "Wound Care/CAT Tourniquet - apply.",
+              "goto_protocol": "wound_care_cat_tourniquet"
+            },
+            {
+              "text": "Pelvic Binder - Indications: suspected or confirmed pelvic fracture with unstable vital signs and/or multiple traumatic injuries."
+            },
+            {
+              "text": "Tranexamic Acid (TXA) 2 gm IVP. Indications: Age >= 16; Uncontrolled hemorrhage; SBP <90; HR >110; Time from injury <3 hrs; Onset >3 hrs / Patient on anticoagulants / Active intravasc clotting.",
+              "drug_id": "txa"
+            },
+            {
+              "text": "Transport to Trauma Center."
+            }
+          ]
+        },
+        {
+          "id": "normal_stable",
+          "label": "Normal - Ongoing Assessment (SBP >90, GCS 15)",
+          "steps": [
+            {
+              "text": "Ongoing assessment."
+            },
+            {
+              "text": "Consider Pain Control Protocol if SBP > 90 and GCS = 15.",
+              "goto_protocol": "pain_control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burns",
+      "title": "Burns",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        113,
+        114
+      ],
+      "chief_complaint_tags": [
+        "burn",
+        "thermal burn",
+        "chemical burn",
+        "scald",
+        "cyanide exposure"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Type of exposure (heat, gas, chemical).",
+          "Inhalation injury.",
+          "Time of injury.",
+          "Past medical history.",
+          "Medications.",
+          "Other trauma.",
+          "LOC."
+        ],
+        "signs_symptoms": [
+          "Burns, pain, swelling.",
+          "Dizziness.",
+          "LOC.",
+          "Hypotension/shock.",
+          "Airway compromise/distress.",
+          "Singed facial or nasal hair.",
+          "Hoarseness or wheezing."
+        ],
+        "differential": [
+          "Superficial (1st degree) \u2013 red and painful.",
+          "Partial thickness (2nd degree) \u2013 blistering.",
+          "Full thickness (3rd degree) \u2013 painless/charred leathery skin.",
+          "Chemical.",
+          "Thermal.",
+          "Electrical.",
+          "Radiation."
+        ],
+        "pearls": [
+          "Exam: mental status; HEENT; neck; heart; lungs; abdomen; extremities; back; neuro.",
+          "Critical Burns: > 25% BSA; 3rd degree burns > 10% BSA; 2nd or 3rd degree burns to face, eyes, hands, feet, or genitals; electrical burns; respiratory burns; deep chemical burns; burns with extremes of age or chronic disease; burns associated with major traumatic injury. These burns require admission or transfer to a burn center.",
+          "Early intubation required in significant inhalation injuries.",
+          "Consider transport to closest verified burn center.",
+          "Treat potential CO exposure with 100% Oxygen.",
+          "Circumferential burns to extremities are dangerous due to potential vascular compromise due to soft tissue swelling.",
+          "Burn patients are prone to hypothermia.",
+          "Do not overlook possibility of multi-system trauma.",
+          "Do not overlook possibility of child abuse. NOTE: the palm of the patient = 1% total BSA burned."
+        ]
+      },
+      "branches": [
+        {
+          "id": "general_precautions",
+          "label": "General Precautions (All Burns)",
+          "steps": [
+            {
+              "text": "Universal Patient Care.",
+              "goto_protocol": "universal_patient_care"
+            },
+            {
+              "text": "Remove rings, bracelets, and other constricting items."
+            },
+            {
+              "text": "Do not transport burn patients (thermal/chemical/electrical) to ProMedica Toledo Hospital."
+            }
+          ]
+        },
+        {
+          "id": "thermal",
+          "label": "Thermal Burns",
+          "steps": [
+            {
+              "text": "If burn < 10% BSA (rule of 9's): Cool down wound with normal saline."
+            },
+            {
+              "text": "Cover with dry sterile sheet or dressings."
+            },
+            {
+              "text": "Adult IV.",
+              "goto_protocol": "adult_iv"
+            },
+            {
+              "text": "Normal Saline 0.9 (NS) 500 mL/hr Fluid Bolus. Do not overhydrate.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Pain Control Protocol.",
+              "goto_protocol": "pain_control"
+            },
+            {
+              "text": "Suspected Cyanide Poisoning: Cyanokit.",
+              "drug_id": "cyanokit"
+            },
+            {
+              "text": "Adult >70 kg (154 lbs) with Suspected Cyanide Poisoning: Cyanokit (Hydroxocobalamin) 5 gm IV Infusion.",
+              "drug_id": "cyanokit"
+            },
+            {
+              "text": "Add 200 mL NS to upright vial using transfer spike up to fill line. Invert vial for 60 seconds."
+            },
+            {
+              "text": "Use vented tubing and filter line and infuse over 15 minutes."
+            }
+          ]
+        },
+        {
+          "id": "chemical",
+          "label": "Chemical Burns",
+          "steps": [
+            {
+              "text": "Remove clothing or expose area."
+            },
+            {
+              "text": "Brush off any visible dry chemical or powder."
+            },
+            {
+              "text": "Flush area with water or normal saline for 10 - 15 minutes."
+            },
+            {
+              "text": "Eye involvement: Saline flush in affected eye. See Eye Injury/Complaint Protocol.",
+              "goto_protocol": "eye_injury_complaint"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electrical_injuries",
+      "title": "Electrical Injuries",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        115,
+        116
+      ],
+      "chief_complaint_tags": [
+        "electrical injury",
+        "electrocution",
+        "lightning strike",
+        "electrical burn"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Lightning or electrical exposure.",
+          "Single or multiple victims.",
+          "Trauma from fall or MVC into pole.",
+          "Duration of exposure.",
+          "Voltage and current (AC/DC)."
+        ],
+        "signs_symptoms": [
+          "Burns.",
+          "Pain.",
+          "Entry and exit wounds.",
+          "Hypotension or shock.",
+          "Arrest."
+        ],
+        "differential": [
+          "Cardiac arrest.",
+          "Seizure.",
+          "Burns.",
+          "Multiple trauma.",
+          "Spinal Motion Restriction protocol.",
+          "Pain Control protocol.",
+          "Appropriate protocol."
+        ],
+        "pearls": [
+          "Exam: mental status; HEENT; neck; heart; lungs; abdomen; extremities; back; neuro.",
+          "Ventricular fibrillation and asystole are most common dysrhythmias.",
+          "Damage often hidden - most severe damage to muscle, vessels, and nerves.",
+          "In multiple victim lightning incident, attend to victims in full arrest first. IF the victim did not arrest initially, it is likely they will survive. These patients are often resuscitated with adequate CPR and ALS.",
+          "Do not overlook other trauma.",
+          "Lightning is a massive DC shock, most often leading to asystole as the dysrhythmia.",
+          "In lightning injuries, most of the current will travel over the body surface producing flash burns."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Electrical Injury Assessment & Treatment",
+          "steps": [
+            {
+              "text": "Scene Safety."
+            },
+            {
+              "text": "Universal Patient Care.",
+              "goto_protocol": "universal_patient_care"
+            },
+            {
+              "text": "Spinal Motion Restriction.",
+              "goto_protocol": "spinal_motion_restriction"
+            },
+            {
+              "text": "Adult IV.",
+              "goto_protocol": "adult_iv"
+            },
+            {
+              "text": "Focused history and physical exam. Look for entry and exit wounds."
+            },
+            {
+              "text": "Pain Control Protocol.",
+              "goto_protocol": "pain_control"
+            },
+            {
+              "text": "12 Lead ECG."
+            },
+            {
+              "text": "Appropriate protocol based on symptoms."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "extremity_trauma",
+      "title": "Extremity Trauma",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        117,
+        118
+      ],
+      "chief_complaint_tags": [
+        "extremity injury",
+        "fracture",
+        "amputation",
+        "extremity bleeding",
+        "dislocation"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Type of injury.",
+          "Mechanism: crush/penetrating/amputation.",
+          "Time of injury.",
+          "Open vs. Closed wound/fracture.",
+          "Wound contamination.",
+          "Medical history.",
+          "Medications."
+        ],
+        "signs_symptoms": [
+          "Pain.",
+          "Swelling.",
+          "Deformity.",
+          "Altered sensation/motor function.",
+          "Diminished pulse/cap refill.",
+          "Decreased extremity temperature."
+        ],
+        "differential": [
+          "Abrasion.",
+          "Confusion.",
+          "Laceration.",
+          "Sprain.",
+          "Dislocation.",
+          "Fracture.",
+          "Amputations."
+        ],
+        "pearls": [
+          "Exam: mental status; extremities; neuro.",
+          "In amputations, time is critical. Consider transport to Trauma center (see flowchart for more information).",
+          "Hip dislocation and knee and elbow fracture/dislocations have a high incidence of vascular compromise.",
+          "Urgently transport any injury with vascular compromise.",
+          "Blood loss may be concealed or not apparent with extremity injuries.",
+          "Severe bleeding not rapidly controlled may necessitate application of a tourniquet.",
+          "Lacerations must be evaluated for repair within 6 hours from the time of injury."
+        ]
+      },
+      "branches": [
+        {
+          "id": "isolated_injury_assessment",
+          "label": "Isolated Extremity Injury Assessment",
+          "steps": [
+            {
+              "text": "Universal Patient Care.",
+              "goto_protocol": "universal_patient_care"
+            },
+            {
+              "text": "Isolated extremity injury? If NO -> Multiple Trauma.",
+              "goto_protocol": "multiple_trauma"
+            },
+            {
+              "text": "If YES: Immobilize extremity as indicated."
+            },
+            {
+              "text": "Apply ice to reduce swelling."
+            }
+          ]
+        },
+        {
+          "id": "hemorrhage_control",
+          "label": "Uncontrolled Severe Hemorrhage / Pain Control",
+          "steps": [
+            {
+              "text": "Uncontrolled severe hemorrhage? Apply CAT Tourniquet."
+            },
+            {
+              "text": "Wound Care/CAT Tourniquet.",
+              "goto_protocol": "wound_care_cat_tourniquet"
+            },
+            {
+              "text": "Limb or life threatening event? Pain medication needed?"
+            },
+            {
+              "text": "Adult IV.",
+              "goto_protocol": "adult_iv"
+            }
+          ]
+        },
+        {
+          "id": "hemodialysis_fistula_bleeding",
+          "label": "Bleeding Hemodialysis Fistula",
+          "steps": [
+            {
+              "text": "Avoid placing tourniquet if possible."
+            },
+            {
+              "text": "Most AV fistula bleeding can be controlled with focused direct pressure (finger tips) over the previous puncture site."
+            }
+          ]
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "steps": [
+            {
+              "text": "Clean amputated part."
+            },
+            {
+              "text": "Wrap part in sterile dressing soaked with normal saline."
+            },
+            {
+              "text": "Place in air tight container."
+            },
+            {
+              "text": "Place container on ice if available."
+            }
+          ]
+        },
+        {
+          "id": "open_femur_fracture",
+          "label": "Suspected Open Femur Fracture",
+          "steps": [
+            {
+              "text": "Leave in position found (i.e. don't use traction splint) unless the foot on the same side is pulse-less."
+            },
+            {
+              "text": "If pulse-less, pull gentle in-line traction until pulses return and splint in place."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eye_injury_complaint",
+      "title": "Eye Injury/Complaint",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        119,
+        120
+      ],
+      "chief_complaint_tags": [
+        "eye injury",
+        "eye pain",
+        "chemical eye exposure",
+        "vision loss",
+        "globe rupture"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Time of injury/onset.",
+          "Blunt/penetrating/chemical.",
+          "Open vs. closed injury.",
+          "Involved chemical/MSDS.",
+          "Wound contamination.",
+          "Medical history.",
+          "Tetanus status.",
+          "Normal visual acuity.",
+          "Medications."
+        ],
+        "signs_symptoms": [
+          "Pain, swelling, blood.",
+          "Deformity, contusion.",
+          "Visual deficit.",
+          "Leaking aqueous/vitreous humor.",
+          "Upwardly fixed eye.",
+          "Shooting or streaking light.",
+          "Visible contaminants.",
+          "Lacrimation."
+        ],
+        "differential": [
+          "Abrasion/laceration.",
+          "Globe rupture.",
+          "Retinal nerve damage detachment.",
+          "Chemical/thermal/agent of terror.",
+          "Orbital fracture.",
+          "Orbital compartment syndrome.",
+          "Neurological event.",
+          "Acute glaucoma.",
+          "Retinal artery occlusion."
+        ],
+        "pearls": [
+          "Normal visual acuity can be present even with severe eye injury.",
+          "Remove contact lenses when possible.",
+          "Any chemical or thermal burn to the face/eyes should raise suspicion of respiratory insult.",
+          "Orbital fractures raise concern of globe or nerve injury and need repeated assessments of visual status.",
+          "Should cover both eyes to prevent injury.",
+          "Use shields for physical trauma to eyes (not pads).",
+          "Do not remove impaled objects."
+        ]
+      },
+      "branches": [
+        {
+          "id": "initial_assessment",
+          "label": "Initial Assessment",
+          "steps": [
+            {
+              "text": "Universal Patient Care.",
+              "goto_protocol": "universal_patient_care"
+            },
+            {
+              "text": "Determine nature: Burn/Chemical injury or Physical trauma (mechanism)."
+            },
+            {
+              "text": "Isolated to eye(s)? If NO -> Appropriate protocol."
+            },
+            {
+              "text": "Assess visual acuity."
+            },
+            {
+              "text": "Evaluate pupils."
+            },
+            {
+              "text": "Complete neuro exam."
+            },
+            {
+              "text": "Screen for unrecognized chemical exposure."
+            }
+          ]
+        },
+        {
+          "id": "burn_chemical",
+          "label": "Burn/Chemical Injury",
+          "steps": [
+            {
+              "text": "Brush away powders."
+            },
+            {
+              "text": "Immediate irrigation with saline or water."
+            },
+            {
+              "text": "Irrigate with Normal Saline.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Cover unaffected eye."
+            },
+            {
+              "text": "Pain Control Protocol.",
+              "goto_protocol": "pain_control"
+            }
+          ]
+        },
+        {
+          "id": "physical_trauma",
+          "label": "Physical Trauma",
+          "steps": [
+            {
+              "text": "Assess Orbital Stability."
+            },
+            {
+              "text": "Assess visual acuity when able."
+            },
+            {
+              "text": "Penetrating trauma or globe rupture? If YES -> Shield orbit."
+            },
+            {
+              "text": "Cover both eyes."
+            },
+            {
+              "text": "If globe out of socket -> Cover with saline-soaked gauze."
+            },
+            {
+              "text": "If globe in socket and no penetrating trauma or rupture -> Appropriate protocol."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "head_trauma",
+      "title": "Head Trauma",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        121,
+        122
+      ],
+      "chief_complaint_tags": [
+        "head injury",
+        "head trauma",
+        "concussion",
+        "closed head injury",
+        "GCS"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Time of injury.",
+          "Mechanism: blunt/penetrating.",
+          "LOC.",
+          "Bleeding.",
+          "Medical history.",
+          "Medication.",
+          "Evidence of multi-trauma.",
+          "Helmet use/damage to helmet."
+        ],
+        "signs_symptoms": [
+          "Pain.",
+          "Swelling.",
+          "Bleeding.",
+          "Altered mental status.",
+          "Unconsciousness.",
+          "Respiratory distress/failure.",
+          "Vomiting.",
+          "Significant MOI."
+        ],
+        "differential": [
+          "Skull fracture.",
+          "Brain injury (concussion, contusion, hemorrhage, laceration).",
+          "Epidural hematoma.",
+          "Subdural hematoma.",
+          "Subarachnoid hemorrhage.",
+          "Spinal injury.",
+          "Abuse."
+        ],
+        "pearls": [
+          "Exam: mental status; skin; HEENT; heart; lungs; abdomen; extremities; back; neuro.",
+          "Cushing's Response: Elevated ICP causing hypertension and bradycardia.",
+          "Hypotension usually indicates injury or shock unrelated to head injury and should be aggressively treated.",
+          "Monitor and document changes in LOC and GCS.",
+          "Consider restraints if necessary for safety of patient and/or personnel protection.",
+          "Concussions are periods of confusion or LOC associated with trauma and may be resolved upon arrival of EMS.",
+          "Any prolonged period of confusion or mental status abnormality that does not return to normal within 15 minutes should be evaluated by a physician."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Head Trauma Assessment & Management",
+          "steps": [
+            {
+              "text": "Universal Patient Care.",
+              "goto_protocol": "universal_patient_care"
+            },
+            {
+              "text": "Isolated head trauma? If NO -> Multiple Trauma.",
+              "goto_protocol": "multiple_trauma"
+            },
+            {
+              "text": "If YES: Spinal Motion Restriction.",
+              "goto_protocol": "spinal_motion_restriction"
+            },
+            {
+              "text": "Adult IV.",
+              "goto_protocol": "adult_iv"
+            },
+            {
+              "text": "Normal Saline 0.9 (NS) IV fluid as necessary to maintain SBP > 90.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Obtain Glasgow Coma Score."
+            },
+            {
+              "text": "Assist with basic airway maneuvers, for GCS <8 with gag reflex."
+            },
+            {
+              "text": "Maintain Pulse Oximetry > 90%."
+            },
+            {
+              "text": "Remove helmet if indicated."
+            },
+            {
+              "text": "Avoid Hypoxia and Hypotension."
+            },
+            {
+              "text": "Seizure? Go to Seizure protocol.",
+              "goto_protocol": "seizure"
+            },
+            {
+              "text": "Consider Midazolam (Versed) 2.5 - 5 mg IVP for sedation if intubated.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Monitor and reassess."
+            },
+            {
+              "text": "Transport ALL trauma patients to closest appropriate trauma center."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "traumatic_brain_injury",
+      "title": "Traumatic Brain Injury",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        123
+      ],
+      "chief_complaint_tags": [
+        "traumatic brain injury",
+        "TBI",
+        "severe head injury",
+        "hypoxia",
+        "GCS"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "branches": [
+        {
+          "id": "initial_actions",
+          "label": "Any Suspicion of TBI - Initial Actions",
+          "steps": [
+            {
+              "text": "Any Suspicion of TBI (Mechanism, GCS, Exam)."
+            },
+            {
+              "text": "Automatically: 15 L/min O2 NRB.",
+              "drug_id": "oxygen"
+            },
+            {
+              "text": "IV Access."
+            },
+            {
+              "text": "Every 3 - 5 minutes: Monitor O2, BP, HR."
+            }
+          ]
+        },
+        {
+          "id": "airway_breathing",
+          "label": "Airway/Breathing",
+          "steps": [
+            {
+              "text": "O2 sat <90 &/or hypoventilation (despite NRB)? If NO -> Continue careful monitoring of O2 sat and airway."
+            },
+            {
+              "text": "If YES: BLS airway maneuvers. BVM 10 bpm."
+            },
+            {
+              "text": "O2 sat <90 despite BLS? If NO -> Continue careful monitoring of O2 sat and airway."
+            },
+            {
+              "text": "If YES: Consider ALS airway if experienced provider available: Place advanced airway."
+            },
+            {
+              "text": "Pre-oxygenate: BVM with 100% O2 @ age appropriate rate."
+            },
+            {
+              "text": "Check placement using EtCO2 monitor/detector."
+            },
+            {
+              "text": "AVOID even MILD hyperventilation with Ventilation Rate Timer and Pressure-controlled Bag: Carefully keep rate @ age appropriate rate."
+            },
+            {
+              "text": "EtCO2 available: Target EtCO2 40 mmHg (range: 35 - 45)."
+            },
+            {
+              "text": "Control Ventilatory volume - Ventilator available: utilize as soon as possible. Tidal volume = 7 mL/kg."
+            },
+            {
+              "text": "Control Ventilatory volume - Ventilator not available: Continue Pressure-controlled BVM."
+            },
+            {
+              "text": "Monitor: O2 sat and airway every 3 - 5 minutes."
+            },
+            {
+              "text": "If O2 sat <90% despite above interventions, consider: Tension pneumothorax & needle thoracostomy."
+            }
+          ]
+        },
+        {
+          "id": "circulation",
+          "label": "Circulation",
+          "steps": [
+            {
+              "text": "SBP <90 or other signs of shock (If BP is dropping, do not wait until patient is hypotensive to begin IVFs)."
+            },
+            {
+              "text": "If YES: IVFs to maintain SBP > 90 mmHg."
+            },
+            {
+              "text": "If NO: Continue careful Monitoring BP/HR. Pay attention for early signs of shock: Tachycardia, Dropping SBP."
+            }
+          ]
+        },
+        {
+          "id": "disability",
+          "label": "Disability",
+          "steps": [
+            {
+              "text": "Evaluate Mental Status/GCS."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spinal_motion_restriction",
+      "title": "Spinal Motion Restriction (SMR)",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        124
+      ],
+      "chief_complaint_tags": [
+        "spinal injury",
+        "c-spine",
+        "neck pain",
+        "spinal motion restriction",
+        "back pain trauma"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "branches": [
+        {
+          "id": "mechanism_screening",
+          "label": "Step 1: Mechanism Screening",
+          "steps": [
+            {
+              "text": "NOTE: ALL Providers are authorized for this protocol."
+            },
+            {
+              "text": "Potential mechanism for unstable spine injury?"
+            },
+            {
+              "text": "High Risk Characteristics (any of the following): Age > 65; Trauma Triage Criteria; Axial Loads/Diving injury; Sudden Accel/Deceleration; Lateral bending forces to neck or torso; Numbness, tingling, Paresthesia."
+            },
+            {
+              "text": "If NO potential mechanism AND All Low Risk Characteristics present (Simple rear-end collision; Ambulatory on scene at anytime; No neck pain on scene; No midline cervical tenderness) -> OMIT SMR."
+            }
+          ]
+        },
+        {
+          "id": "further_assessment",
+          "label": "Step 2: Further Assessment if Mechanism Present",
+          "steps": [
+            {
+              "text": "Altered LOC (GCS <15)?"
+            },
+            {
+              "text": "Unreliable interaction? Unreliable Patient Interactions: Language barriers/inability to communicate; Lack of cooperation during exam; Evidence of drug/alcohol intoxication; Painful distracting injury such as long-bone fracture."
+            },
+            {
+              "text": "If Any YES (altered LOC or unreliable interaction) -> Possible spine injury. Apply SMR."
+            }
+          ]
+        },
+        {
+          "id": "exam_if_reliable",
+          "label": "Step 3: Exam if Patient Reliable",
+          "steps": [
+            {
+              "text": "Motor/Sensory Exam: Wrist/Hand extension bilaterally; Foot plantarflexion bilaterally; Foot dorsiflexion bilaterally; Gross sensation in all extremities; Check for paresthesias."
+            },
+            {
+              "text": "Spinal Tenderness? OR Anatomic deformity of spine? OR Neurologic deficit or complaint?"
+            },
+            {
+              "text": "If Any YES -> Possible spine injury. Apply SMR."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trauma_arrest",
+      "title": "Trauma Arrest",
+      "demographic": "adult",
+      "section": "Adult Trauma",
+      "source_pages": [
+        125,
+        126
+      ],
+      "chief_complaint_tags": [
+        "trauma arrest",
+        "traumatic cardiac arrest",
+        "pulseless trauma",
+        "penetrating trauma arrest",
+        "MARCHES"
+      ],
+      "precedes": [
+        "universal_patient_care"
+      ],
+      "reference": {
+        "history": [
+          "Patient who has suffered a traumatic injury and is now pulseless."
+        ],
+        "signs_symptoms": [
+          "Evidence of penetrating trauma.",
+          "Evidence of blunt trauma."
+        ],
+        "differential": [
+          "Medical condition preceding traumatic event as cause of arrest.",
+          "Tension pneumothorax.",
+          "Hypovolemic shock: External hemorrhage.",
+          "Unstable pelvic fracture.",
+          "Displaced long bone fracture.",
+          "Hemothorax.",
+          "Intra-abdominal hemorrhage.",
+          "Retroperitoneal hemorrhage."
+        ],
+        "pearls": [
+          "Injuries obviously incompatible with life include decapitation, massively deforming head or chest injuries or other features of a patient encounter that would make resuscitation futile. If in doubt, place patient on monitor.",
+          "Consider using medical cardiac arrest protocols if uncertainty exists regarding medical or traumatic cause of arrest."
+        ]
+      },
+      "branches": [
+        {
+          "id": "obvious_death_screening",
+          "label": "Obvious Death / Injuries Incompatible with Life Screening",
+          "steps": [
+            {
+              "text": "Universal Patient Care.",
+              "goto_protocol": "universal_patient_care"
+            },
+            {
+              "text": "Are there signs of obvious death? Are there injuries incompatible with life? Examples: Decapitation, Hemicorpectomy, Rigor mortis, Dependent lividity, 100% full thickness burns."
+            },
+            {
+              "text": "If YES -> STOP."
+            },
+            {
+              "text": "If NO -> continue trauma arrest management (Pulseless, Apneic, Asystole)."
+            }
+          ]
+        },
+        {
+          "id": "suspected_medical_arrest",
+          "label": "Suspected Medical Arrest (Low Mechanism)",
+          "steps": [
+            {
+              "text": "Suspected Medical Arrest (low mechanism)? Follow standard cardiac arrest protocol (i.e. ACLS)."
+            }
+          ]
+        },
+        {
+          "id": "maternal_arrest",
+          "label": "Special Considerations - Maternal Arrest",
+          "steps": [
+            {
+              "text": "Female in TA with obviously term or near term uterus? Do M.A.R.C.H.E.S and transport with manual CPR. No LUCAS."
+            }
+          ]
+        },
+        {
+          "id": "marches_primary_survey",
+          "label": "MARCHES Primary Survey (Pulseless, Apneic, Asystole)",
+          "steps": [
+            {
+              "text": "CPR Considerations: De-emphasize CPR. Do M.A.R or MARCHES before chest compressions. LUCAS should not be used in TA. Focus on correcting life threats."
+            },
+            {
+              "text": "M = Massive Hemorrhage control."
+            },
+            {
+              "text": "A = Airway (SGA, ETT, Cric)."
+            },
+            {
+              "text": "R = Respiration: Needle thoracostomy, chest seal, ventilate."
+            },
+            {
+              "text": "Apply Fast Patches."
+            },
+            {
+              "text": "Is there an organized rhythm or signs of life?"
+            }
+          ]
+        },
+        {
+          "id": "organized_rhythm_present",
+          "label": "Organized Rhythm or Signs of Life Present",
+          "steps": [
+            {
+              "text": "Begin transport and do the following:"
+            },
+            {
+              "text": "C = Circulation: Burns: LR preferred, NS okay, 500 mL bolus."
+            },
+            {
+              "text": "H = avoid hypothermia (keep warm)."
+            },
+            {
+              "text": "E = eye injuries, cover with shield."
+            },
+            {
+              "text": "S = SMR.",
+              "goto_protocol": "spinal_motion_restriction"
+            }
+          ]
+        },
+        {
+          "id": "no_organized_rhythm",
+          "label": "No Organized Rhythm or Signs of Life",
+          "steps": [
+            {
+              "text": "STOP. Contact OLMC for TOR if resuscitation is started but circumstances indicate that further efforts would be futile."
+            },
+            {
+              "text": "C = Circulation: Manual CPR may be started here."
+            },
+            {
+              "text": "Adult IV/IO.",
+              "goto_protocol": "adult_iv"
+            },
+            {
+              "text": "Tranexamic Acid (TXA) 2 gm IVP.",
+              "drug_id": "txa"
+            },
+            {
+              "text": "Pack wounds."
+            },
+            {
+              "text": "Reassess tourniquets."
+            },
+            {
+              "text": "Apply TPOD pelvic binder."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_bradycardia",
+      "title": "Pediatric Bradycardia",
+      "demographic": "pediatric",
+      "section": "Pediatric Cardiovascular",
+      "source_pages": [
+        132,
+        133
+      ],
+      "chief_complaint_tags": [
+        "bradycardia",
+        "slow heart rate",
+        "low heart rate",
+        "poor perfusion"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Past medical history.",
+          "Foreign body?",
+          "Respiratory distress or arrest.",
+          "Apnea.",
+          "Possible toxin exposure.",
+          "Congenital disease.",
+          "Medication (maternal or infant)."
+        ],
+        "signs_symptoms": [
+          "Decreased heart rate.",
+          "Delayed capillary refill or cyanosis.",
+          "Mottled, cool skin.",
+          "Hypotension or arrest.",
+          "Altered LOC."
+        ],
+        "differential": [
+          "Respiratory distress:",
+          "Foreign body.",
+          "Secretions.",
+          "Infection/sepsis.",
+          "Hypovolemia.",
+          "Congenital heart disease.",
+          "Trauma.",
+          "Hypothermia.",
+          "Toxin ingestion.",
+          "Hypoglycemia."
+        ],
+        "pearls": [
+          "Exam: mental status; HEENT; skin; heart; lungs; abdomen; back; extremities; neuro.",
+          "Infant = < 1 year of age.",
+          "Most maternal medications pass through breast milk to infant.",
+          "The majority of pediatric arrests are due to airway problems.",
+          "Hypoglycemia, severe dehydration and narcotic effects may produce bradycardia.",
+          "Minimum atropine dose is 0.1 mg IV/IO."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Pediatric Bradycardia - Assessment and Treatment",
+          "steps": [
+            {
+              "text": "Consider Causes of Bradycardia: Poor perfusion, Decreased blood pressure, Respiratory insufficiency."
+            },
+            {
+              "text": "Consider Pediatric Overdose/Toxic Exposure/Cyanide Exposure Protocol.",
+              "goto_protocol": "pediatric_overdose_toxic_exposure_cyanide_exposure"
+            },
+            {
+              "text": "Consider Pediatric Hypotension Protocol.",
+              "goto_protocol": "pediatric_hypotension_sepsis_shock_non_trauma"
+            },
+            {
+              "text": "Consider Pediatric Hypoglycemia/Hyperglycemia Protocol.",
+              "goto_protocol": "pediatric_hypoglycemia_hyperglycemia"
+            },
+            {
+              "text": "Consider Pediatric Airway Protocol.",
+              "goto_protocol": "pediatric_airway"
+            },
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Normal Saline 20 mL/kg Fluid Bolus. Repeat as needed. For patient's in extremis while giving fluid bolus, move to pressors simultaneously.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Epinephrine 1 mg/10 mL (0.1 mg/mL) 0.01 mg/kg IVP, IO. Repeat every 5 minutes. Maximum 1 mg/dose (10 mL).",
+              "drug_id": "epi_1_10"
+            },
+            {
+              "text": "Atropine (0.1 mg/mL) 0.02 - 0.05 mg/kg IVP, IO. May repeat x 1. Maximum Single dose 0.5 mg. Maximum Total dose 1 mg.",
+              "drug_id": "atropine"
+            },
+            {
+              "text": "Reassess. Monitor and reassess. If pulseless, proceed to Pediatric Pulseless Arrest protocol.",
+              "goto_protocol": "pediatric_pulseless_arrest"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_pulseless_arrest",
+      "title": "Pediatric Pulseless Arrest",
+      "demographic": "pediatric",
+      "section": "Pediatric Cardiovascular",
+      "source_pages": [
+        134,
+        135
+      ],
+      "chief_complaint_tags": [
+        "cardiac arrest",
+        "pulseless",
+        "no pulse",
+        "code",
+        "vfib",
+        "asystole"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Time of arrest.",
+          "Medical history.",
+          "Medications.",
+          "Foreign body?",
+          "Hypothermia?",
+          "Suspected abuse?",
+          "SIDS."
+        ],
+        "signs_symptoms": [
+          "Unresponsive.",
+          "Cardiac arrest."
+        ],
+        "differential": [
+          "Respiratory failure:",
+          "Foreign body.",
+          "Secretions.",
+          "Infection.",
+          "Hypovolemia.",
+          "Congenital heart disease.",
+          "Trauma.",
+          "Tension pneumothorax.",
+          "Hypothermia.",
+          "Toxin ingestion.",
+          "Hypoglycemia.",
+          "Acidosis."
+        ],
+        "pearls": [
+          "Max doses: Epi = 1 mg; Amiodarone = 300 mg; D25 = 25 mL; Narcan = 2 mg; Sodium Bicarbonate = 50 mEq.",
+          "For success to occur, a cause must be identified and corrected.",
+          "For ROSC, go to post resuscitation protocol."
+        ]
+      },
+      "branches": [
+        {
+          "id": "vfib_pulseless_vtach",
+          "label": "V-Fib/Pulseless V-Tach",
+          "steps": [
+            {
+              "text": "Immediate CPR with metronome."
+            },
+            {
+              "text": "Defibrillate 2 J/kg Shock."
+            },
+            {
+              "text": "Subsequent Defibrillations at: Defibrillate 4 J/kg Shock."
+            },
+            {
+              "text": "Pediatric Airway Protocol.",
+              "goto_protocol": "pediatric_airway"
+            },
+            {
+              "text": "Pediatric IV/IO."
+            },
+            {
+              "text": "Epinephrine 1 mg/10 mL (0.1 mg/mL) 0.01 mg/kg IVP, IO. Repeat every 5 minutes. Maximum 1 mg/dose (10 mL).",
+              "drug_id": "epi_1_10"
+            },
+            {
+              "text": "Consider Amiodarone (Cordarone) (50 mg/mL) 5 mg/kg IVP, IO. Maximum 300 mg.",
+              "drug_id": "amiodarone"
+            }
+          ]
+        },
+        {
+          "id": "asystole_pea",
+          "label": "Asystole/PEA",
+          "steps": [
+            {
+              "text": "Immediate CPR with metronome."
+            },
+            {
+              "text": "Pediatric Airway Protocol.",
+              "goto_protocol": "pediatric_airway"
+            },
+            {
+              "text": "Pediatric IV/IO."
+            },
+            {
+              "text": "Epinephrine 1 mg/10 mL (0.1 mg/mL) 0.01 mg/kg IVP, IO. Repeat every 5 minutes. Maximum 1 mg/dose (10 mL).",
+              "drug_id": "epi_1_10"
+            },
+            {
+              "text": "Consider and treat causes: Hypoxemia - Oxygen.",
+              "drug_id": "oxygen"
+            },
+            {
+              "text": "Acidosis - Oxygen, Sodium Bicarbonate (1 mEq/mL) 1 mEq/kg IVP, IO.",
+              "drug_id": "sodium_bicarbonate"
+            },
+            {
+              "text": "Volume depletion - Normal Saline 20 mL/kg Fluid Bolus. Repeat as needed.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Tension pneumothorax."
+            },
+            {
+              "text": "Hypothermic."
+            },
+            {
+              "text": "Hypoglycemia."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_tachycardia_w_pulse",
+      "title": "Pediatric Tachycardia w/Pulse",
+      "demographic": "pediatric",
+      "section": "Pediatric Cardiovascular",
+      "source_pages": [
+        136,
+        137
+      ],
+      "chief_complaint_tags": [
+        "tachycardia",
+        "fast heart rate",
+        "svt",
+        "palpitations",
+        "rapid pulse"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Past medical history.",
+          "Medications or toxin ingestion (Aminophylline, diet pills, thyroid pills, decongestants, digoxin).",
+          "Drugs \u2013 nicotine, cocaine.",
+          "Congenital heart disease.",
+          "Respiratory distress.",
+          "Syncope or near syncope."
+        ],
+        "signs_symptoms": [
+          "HR > 180 in child.",
+          "HR > 220 in infant.",
+          "Pale/cyanosis.",
+          "Diaphoresis.",
+          "Tachypnea.",
+          "Vomiting.",
+          "Hypotension.",
+          "Altered LOC.",
+          "Pulmonary congestion.",
+          "Syncope."
+        ],
+        "differential": [
+          "Heart disease (congenital).",
+          "Hypo/hyperthermia.",
+          "Hypovolemia/anemia.",
+          "Electrolyte abnormality.",
+          "Anxiety/pain/stress.",
+          "Fever/infection/sepsis.",
+          "Hypoxia.",
+          "Hypoglycemia.",
+          "Medication/toxin/drugs.",
+          "PE.",
+          "Trauma/tension pneumothorax."
+        ],
+        "pearls": [
+          "DO NOT DELAY CARDIOVERSION FOR SEDATION IN UNSTABLE PATIENT.",
+          "Exam: mental status; HEENT; skin; heart; lungs; abdomen; back; extremities; neuro.",
+          "Carefully evaluate the rhythm to distinguish Sinus Tach, SVT, and V-Tach.",
+          "Separating the child from caregiver may worsen clinical condition.",
+          "Monitor for respiratory depression and hypotension with Versed use.",
+          "Continuous pulse oximetry required.",
+          "Document all rhythm changes.",
+          "Maximum sinus tachycardia rate is 220 minus patient age in years."
+        ]
+      },
+      "branches": [
+        {
+          "id": "stable",
+          "label": "STABLE - Narrow/Wide Complex Evaluation",
+          "steps": [
+            {
+              "text": "Continuous cardiac monitor. Identify cause with 12 Lead ECG."
+            },
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Eval QRS Duration."
+            },
+            {
+              "text": "QRS <0.09 sec - Suspect SVT: Adenosine (Adenocard) (3 mg/mL) 0.1 mg/kg Rapid IVP, IO. Maximum 6 mg. Flush with 5 mL NS.",
+              "drug_id": "adenosine"
+            },
+            {
+              "text": "Repeat: Adenosine (Adenocard) (3 mg/mL) 0.2 mg/kg Rapid IVP, IO. Maximum 12 mg. Flush with 5 mL NS.",
+              "drug_id": "adenosine"
+            },
+            {
+              "text": "Repeat: Adenosine (Adenocard) (3 mg/mL) 0.3 mg/kg Rapid IVP, IO. Maximum 12 mg. Flush with 5 mL NS.",
+              "drug_id": "adenosine"
+            },
+            {
+              "text": "QRS >0.09 sec - Suspect VT: Continue to monitor. Seek expert consultation (OLMC)."
+            },
+            {
+              "text": "Consider Amiodarone (Cordarone) (50 mg/mL) 5 mg/kg IV Infusion over 10 minutes. Mix 150 mg amiodarone in 250 mL D5W and infuse over 10 minutes with 10 gtt set at 4 drops/second = 250 drops/min. Maximum 150 mg.",
+              "drug_id": "amiodarone"
+            },
+            {
+              "text": "If rhythm changes go to appropriate protocol."
+            }
+          ]
+        },
+        {
+          "id": "unstable",
+          "label": "UNSTABLE",
+          "steps": [
+            {
+              "text": "Pediatric IV/IO."
+            },
+            {
+              "text": "Eval QRS Duration - Narrow or Wide Complex."
+            },
+            {
+              "text": "Synchronized Cardioversion 0.5 J/kg Shock with sedation."
+            },
+            {
+              "text": "Sedation: Midazolam (Versed) (1 mg/mL) 0.1 mg/kg IVP, IN. Maximum 2 mg.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Repeat Synchronized Cardioversion 1 - 2 J/kg Shock. Maximum 360 Joules."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_vomiting_diarrhea",
+      "title": "Pediatric Vomiting/Diarrhea",
+      "demographic": "pediatric",
+      "section": "Pediatric Gastrointestinal",
+      "source_pages": [
+        139,
+        140,
+        141
+      ],
+      "chief_complaint_tags": [
+        "vomiting",
+        "diarrhea",
+        "nausea",
+        "dehydration",
+        "gi"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Age.",
+          "Last meal.",
+          "Last BM/emesis.",
+          "Duration.",
+          "Sick contacts.",
+          "Past medical history.",
+          "Past surgical history.",
+          "Medications.",
+          "Menstrual history.",
+          "Travel history.",
+          "Bloody emesis/diarrhea."
+        ],
+        "signs_symptoms": [
+          "Pain Constant, sharp, dull, etc.",
+          "Distention.",
+          "Constipation.",
+          "Diarrhea.",
+          "Anorexia.",
+          "Radiation.",
+          "Associated Symptoms: Fever.",
+          "Headache.",
+          "Blurred vision.",
+          "Weakness.",
+          "Myalgias.",
+          "Cough.",
+          "Dysuria.",
+          "Mental status changes.",
+          "Rash."
+        ],
+        "differential": [
+          "CNS.",
+          "MI.",
+          "Drugs.",
+          "GI/renal.",
+          "DKA.",
+          "Gynecologic.",
+          "Infections.",
+          "Electrolyte imbalance.",
+          "Food or toxin induced.",
+          "Medication/substance abuse.",
+          "Pregnancy.",
+          "Psychologic."
+        ],
+        "pearls": [
+          "Exam: mental status; skin; HEENT; neck; heart; lungs; abdomen; back; extremities; neuro.",
+          "Monitor frequently to reassess vascular status.",
+          "Zofran (ondansetron): ODT = oral dissolving tablet \u2013 may be given to infants and children. Tablet may be cut in half = 2 mg. Contact OLMC for medication order."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Vomiting/Diarrhea Assessment and Treatment",
+          "steps": [
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Check Blood Glucose. If < 60 mg/dL, go to Pediatric Hypoglycemia/Hyperglycemia Protocol.",
+              "goto_protocol": "pediatric_hypoglycemia_hyperglycemia"
+            },
+            {
+              "text": "Normal Saline 20 mL/kg Fluid Bolus. Repeat as needed.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "If Vomiting/Severe Nausea: Ondansetron (Zofran) (2 mg/mL) 0.2 mg/kg IVP. Maximum 4 mg (2 mL).",
+              "drug_id": "ondansetron"
+            },
+            {
+              "text": "ODT Dosing: 10 kg (1 year Old) - Ondansetron (Zofran) 2 mg ODT.",
+              "drug_id": "ondansetron"
+            },
+            {
+              "text": "ODT Dosing: > 20 kg - Ondansetron (Zofran) 4 mg ODT.",
+              "drug_id": "ondansetron"
+            },
+            {
+              "text": "AEMT is only permitted to administer Ondansetron (Zofran) for patients age 4 years and older."
+            },
+            {
+              "text": "Monitor and reassess."
+            }
+          ]
+        },
+        {
+          "id": "suspected_dka",
+          "label": "For Suspected DKA",
+          "steps": [
+            {
+              "text": "Normal Saline 0.9 (NS) 10 mL/kg Fluid Bolus.",
+              "drug_id": "normal_saline"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_airway",
+      "title": "Pediatric Airway",
+      "demographic": "pediatric",
+      "section": "Pediatric Respiratory",
+      "source_pages": [
+        157,
+        158
+      ],
+      "chief_complaint_tags": [
+        "airway",
+        "respiratory failure",
+        "intubation",
+        "not breathing",
+        "difficulty breathing"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [],
+        "pearls": [
+          "For this protocol, pediatric < 16 years old.",
+          "Capnometry is mandatory with all methods of advanced airway (SGA or ETT). Document results.",
+          "Preferred advanced airway in pediatrics after high quality BLS maneuvers is the SGA.",
+          "Monitor EtCO2 should be utilized to monitor BVM ventilations.",
+          "Limit intubation attempts to 1 per patient.",
+          "Maintain C-spine immobilization for patients with suspected spine injury.",
+          "Use ELM (External Laryngeal Manipulation).",
+          "Use continuous pulse oximetry.",
+          "Use a C-collar to maintain ETT for intubated patients."
+        ]
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Pediatric Airway Management",
+          "steps": [
+            {
+              "text": "Assess ABC's, Respiratory rate, Effort, adequacy."
+            },
+            {
+              "text": "Basic Maneuvers First: Positioning, Open airway (nasal/oral airway), Suctioning, Oxygenation, Assist w/BVM, Consider CPAP with RAMM cannula."
+            },
+            {
+              "text": "If Obstruction: treat Obstructed Airway Per AHA guidelines."
+            },
+            {
+              "text": "If Basic Maneuvers inadequate/unsuccessful, Attempt Airway - Orotracheal Intubation via Direct laryngoscopy, or SGA (Preferred). Modify technique."
+            },
+            {
+              "text": "AirQ SGA Sizing: < 2 kg (4.4 lbs) = Size 0; 2 - 4 kg (4.4 - 8.8 lbs) = Size 0.5; 4 - 7 kg (8.8 - 15.4 lbs) = Size 1; 7 - 17 kg (15.4 - 37.4 lbs) = Size 1.5; 17 - 30 kg (37.4 - 66 lbs) = Size 2; 30 - 60 kg (66 - 132 lbs) = Size 3; 60 - 80 kg (132 - 176 lbs) = Size 4; > 80 kg (> 176 lbs) = Size 5."
+            },
+            {
+              "text": "If Unsuccessful, go to Pediatric Airway-Failed protocol.",
+              "goto_protocol": "pediatric_airway_failed"
+            },
+            {
+              "text": "If Adequate/Successful, Continue: Oxygenate, Ventilate, Position, Reassess. Apply Pulse Oximetry and Capnography. Maintain EtCO2 35-45 if possible. Rapid transport."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_airway_failed",
+      "title": "Pediatric Airway-Failed",
+      "demographic": "pediatric",
+      "section": "Pediatric Respiratory",
+      "source_pages": [
+        159,
+        160
+      ],
+      "chief_complaint_tags": [
+        "failed airway",
+        "failed intubation",
+        "difficult airway",
+        "cannot intubate"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [],
+        "pearls": [
+          "If first intubation by most qualified medic fail, perform BLS airway maneuvers and/or insert SGA Airway.",
+          "Do not attempt multiple intubations on pediatric patients.",
+          "Continuous pulse oximetry should be used in all patients.",
+          "Notify OLMC as early as possible about difficult/failed airway."
+        ]
+      },
+      "branches": [
+        {
+          "id": "adequate_bvm",
+          "label": "Good Air Movement with BVM Ventilation - Yes",
+          "steps": [
+            {
+              "text": "One (1) failed intubation attempt by most proficient provider on scene. NO MORE THAN 1 ATTEMPT TOTAL."
+            },
+            {
+              "text": "Continue BVM. Ventilate to maintain EtCO2 35 - 45 mmHg."
+            },
+            {
+              "text": "EMT: Patient Apneic/Pulseless only - if SpO2 drops < 90% or difficult to ventilate with BVM, proceed to Airway-Supraglottic."
+            }
+          ]
+        },
+        {
+          "id": "inadequate_bvm",
+          "label": "Good Air Movement with BVM Ventilation - No",
+          "steps": [
+            {
+              "text": "Attempt OP or NP airway. Continue BVM."
+            },
+            {
+              "text": "Improved? If YES: Continue Ventilation, ventilate to maintain EtCO2 35 - 45 mmHg."
+            },
+            {
+              "text": "Improved? If NO: Airway-Supraglottic."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_infant_neonatal_cpap",
+      "title": "Pediatric/Infant and Neonatal CPAP (Neotech RAM Cannula)",
+      "demographic": "pediatric",
+      "section": "Pediatric Respiratory",
+      "source_pages": [
+        165
+      ],
+      "chief_complaint_tags": [
+        "cpap",
+        "respiratory distress",
+        "infant breathing",
+        "neonatal respiratory support",
+        "ram cannula"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [],
+        "pearls": []
+      },
+      "branches": [
+        {
+          "id": "default",
+          "label": "Neotech RAM Cannula CPAP Setup",
+          "steps": [
+            {
+              "text": "Indications: Respiratory distress, Hypoxia, Bronchiolitis/Pneumonia."
+            },
+            {
+              "text": "Signs and symptoms: Hypoxia, Hypercapnia, Increased work of breathing (Tachypnea, grunting, nasal flaring, retractions)."
+            },
+            {
+              "text": "Patient selection (Neotech RAM Cannula): Newborn = Blue RAM; Infant = Orange; Small child = Yellow. Use size chart for accurate sizing. Prongs should fit 80% of nostrils."
+            },
+            {
+              "text": "Attach to disposable CPAP tubing. Start at 5 cmH2O."
+            },
+            {
+              "text": "Monitor Patient for: Improved WOB, Improved SpO2, Decreased LOC, Apnea/respiratory failure."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_overdose_toxic_exposure_cyanide_exposure",
+      "title": "Pediatric Overdose/Toxic Exposure/Cyanide Exposure",
+      "demographic": "pediatric",
+      "section": "Pediatric Toxicology",
+      "source_pages": [
+        167,
+        168
+      ],
+      "chief_complaint_tags": [
+        "overdose",
+        "poisoning",
+        "toxic exposure",
+        "cyanide",
+        "ingestion",
+        "toxicology"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Ingestion or suspected ingestion of toxic substance.",
+          "Substance ingested, quantity, route.",
+          "Time of ingestion.",
+          "Reason (suicidal, accidental, criminal).",
+          "Available medications in home.",
+          "Past medical history, medications."
+        ],
+        "signs_symptoms": [
+          "Mental status changes.",
+          "Hypotension/hypertension.",
+          "Decreased respiratory rate.",
+          "Tachycardia, dysrhythmias.",
+          "Seizures."
+        ],
+        "differential": [
+          "TCAs.",
+          "Acetaminophen.",
+          "Depressants.",
+          "Stimulants.",
+          "Anticholinergic.",
+          "Cardiac meds.",
+          "Solvents, alcohols, cleaning agents.",
+          "Insecticides (organophosphates)."
+        ],
+        "pearls": [
+          "Exam: mental status; skin; HEENT; heart; lungs; abdomen; extremities; neuro.",
+          "Max dose: Narcan 2 mg; glucagon 1 mg; Calcium Chloride 1 g; Sodium Bicarbonate 50 meq; atropine 2 mg/dose (minimum = 0.1 mg).",
+          "Do not rely on patient history of ingestion in suicide attempt.",
+          "Bring bottles to ED.",
+          "TCA: seizure; dysrhythmias; hypotension; decreased mental status; coma.",
+          "Acetaminophen: normal or N/V \u2013 causes irreversible liver failure if not detected.",
+          "Depressants: decreased HR; decreased BP; decreased temperature; decreased respirations; non-specific pupils.",
+          "Stimulants: increased HR; increased BP; increased temperature; dilated pupils; seizures.",
+          "Anticholinergic: increased HR, increased temperature, dilated pupils, mental status change.",
+          "Cardiac meds: dysrhythmias; mental status changes.",
+          "Insecticides: increased/decreased HR, increased secretions, nausea, vomiting, diarrhea, pinpoint pupils.",
+          "Consider restraints per restraints procedures."
+        ]
+      },
+      "branches": [
+        {
+          "id": "respiratory_depression",
+          "label": "Respiratory Depression",
+          "steps": [
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Naloxone (Narcan) (1 mg/mL) 0.1 mg/kg IN. Maximum 2 mg (2 mL). PRN.",
+              "drug_id": "naloxone"
+            },
+            {
+              "text": "If respiratory depression: Naloxone (Narcan) (1 mg/mL) 0.1 mg/kg IVP, IN, IM. Maximum Single dose 2 mg (2 mL). PRN.",
+              "drug_id": "naloxone"
+            }
+          ]
+        },
+        {
+          "id": "tricyclic_ingestion_arrhythmia",
+          "label": "Tricyclic Ingestion with Cardiac Arrhythmia",
+          "steps": [
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Sodium Bicarbonate (1 mEq/mL) 1 mEq/kg IVP, IO.",
+              "drug_id": "sodium_bicarbonate"
+            }
+          ]
+        },
+        {
+          "id": "suspected_cyanide_exposure",
+          "label": "Suspected Cyanide Exposure",
+          "steps": [
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Cyanokit (Hydroxocobalamin) (25 mg/mL) 70 mg/kg IVP, IO over 15 minutes. Add 200 mL NS to upright vial using transfer spike up to fill line. Invert vial for 60 seconds. Use vented tubing and filter line and infuse over 15 minutes. Maximum 5,000 mg (5 gm).",
+              "drug_id": "cyanokit"
+            }
+          ]
+        },
+        {
+          "id": "other_ingestion_with_symptoms",
+          "label": "Other Ingestion/Toxin with Hypotension/Seizures/Arrhythmia/Mental Status Change",
+          "steps": [
+            {
+              "text": "Other ingestion/toxin with hypotension/seizures/arrhythmia/mental status change: go to appropriate protocol."
+            }
+          ]
+        },
+        {
+          "id": "organophosphates_carbamates",
+          "label": "Organophosphates/Carbamates",
+          "steps": [
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Atropine (0.1 mg/mL) 0.02 - 0.05 mg/kg IVP, IO every 10 - 20 minutes until secretions dry. Maximum 1 mg (10 mL).",
+              "drug_id": "atropine"
+            }
+          ]
+        },
+        {
+          "id": "beta_blocker",
+          "label": "Beta Blocker Overdose",
+          "steps": [
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Glucagon (1 mg/mL) 0.025 mg/kg IVP. Maximum 1 mg (1 mL).",
+              "drug_id": "glucagon"
+            }
+          ]
+        },
+        {
+          "id": "calcium_channel_blocker",
+          "label": "Calcium Channel Blocker Overdose",
+          "steps": [
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Calcium Chloride (100 mg/mL) 20 mg/kg Slow IVP. Maximum 1,000 mg (1 gram).",
+              "drug_id": "calcium_chloride"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_multiple_trauma",
+      "title": "Pediatric Multiple Trauma",
+      "demographic": "pediatric",
+      "section": "Pediatric Trauma",
+      "source_pages": [
+        170,
+        171
+      ],
+      "chief_complaint_tags": [
+        "trauma",
+        "multiple trauma",
+        "mvc",
+        "injury",
+        "multisystem trauma"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Time and MOI.",
+          "Damage to structure/vehicle.",
+          "Location in structure/vehicle.",
+          "Others injured/dead.",
+          "Speed and details of MVC.",
+          "Restraints/protective equipment: Car seat.",
+          "Helmet.",
+          "Pads.",
+          "Ejection.",
+          "Past medical history.",
+          "Medications."
+        ],
+        "signs_symptoms": [
+          "Pain.",
+          "Swelling.",
+          "Altered mental status.",
+          "Unconscious.",
+          "Deformity.",
+          "Bleeding.",
+          "Hypotension/shock.",
+          "Arrest."
+        ],
+        "differential": [
+          "Chest: Tension pneumothorax.",
+          "Flail chest.",
+          "Pericardial tamponade.",
+          "Open chest wound.",
+          "Hemothorax.",
+          "Intra-abdominal bleeding.",
+          "Pelvis/femur fracture.",
+          "Spine fracture/cord injury.",
+          "Head injury.",
+          "Extremity fracture/dislocation.",
+          "Airway obstruction.",
+          "Hypothermia."
+        ],
+        "pearls": [
+          "Exam: mental status; HEENT; heart; lungs; abdomen; extremities; back; neuro.",
+          "Mechanism is the most reliable indicator of serious injury. Examine all restraints/protective equipment for damage.",
+          "In prolonged extrications/serious trauma, consider air transport.",
+          "Severe bleeding from an extremity not rapidly controlled may necessitate the application of a tourniquet.",
+          "Do not overlook the possibility of child abuse."
+        ]
+      },
+      "branches": [
+        {
+          "id": "normal",
+          "label": "Vital Signs and Perfusion - NORMAL",
+          "steps": [
+            {
+              "text": "Rapid trauma assessment and GCS."
+            },
+            {
+              "text": "Do not delay transport. Minimize on-scene time."
+            },
+            {
+              "text": "Spinal Motion Restriction Protocol.",
+              "goto_protocol": "spinal_motion_restriction"
+            },
+            {
+              "text": "Pediatric IV/IO."
+            },
+            {
+              "text": "Ongoing assessment. Transport."
+            }
+          ]
+        },
+        {
+          "id": "abnormal",
+          "label": "Vital Signs and Perfusion - ABNORMAL (Hemorrhagic Shock)",
+          "steps": [
+            {
+              "text": "Control all external hemorrhage (hemostatic gauze, direct pressure, wound packing, tourniquets)."
+            },
+            {
+              "text": "Pull long bone fractures to length."
+            },
+            {
+              "text": "Apply pelvic binder (Age/weight cutoff: age 7-8; >50 lbs)."
+            },
+            {
+              "text": "For signs of Tension Pneumothorax: Needle Chest Decompression."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_burns",
+      "title": "Pediatric Burns",
+      "demographic": "pediatric",
+      "section": "Pediatric Trauma",
+      "source_pages": [
+        172,
+        173
+      ],
+      "chief_complaint_tags": [
+        "burn",
+        "thermal burn",
+        "chemical burn",
+        "burn injury"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Type of exposure (heat, gas, chemical).",
+          "Inhalation injury.",
+          "Time of injury.",
+          "Past medical history.",
+          "Medications.",
+          "Other trauma.",
+          "LOC."
+        ],
+        "signs_symptoms": [
+          "Burns, pain, swelling.",
+          "Dizziness.",
+          "LOC.",
+          "Hypotension/shock.",
+          "Airway compromise/distress.",
+          "Singed facial or nasal hair.",
+          "Hoarseness or wheezing."
+        ],
+        "differential": [
+          "Superficial (1st degree) \u2013 red and painful.",
+          "Partial thickness (2nd degree) \u2013 blistering.",
+          "Full thickness (3rd degree) \u2013 painless/charred leathery skin.",
+          "Chemical.",
+          "Thermal.",
+          "Electrical.",
+          "Radiation."
+        ],
+        "pearls": [
+          "Exam: mental status; HEENT; neck; heart; lungs; abdomen; extremities; back; neuro.",
+          "Critical Burns: > 20% BSA age > 10; > 10% BSA age < 10; 3rd degree burns > 10% BSA; 2nd or 3rd degree burns to face, eyes, hands or feet; electrical burns; respiratory burns; deep chemical burns, burns with extremes of age or chronic disease; burns associated with major traumatic injury. These burns require admission or transfer to a burn center.",
+          "Early intubation required in significant inhalation injuries.",
+          "Treat potential CO exposure with 100% Oxygen.",
+          "Circumferential burns to extremities are dangerous due to potential vascular compromise due to soft tissue swelling.",
+          "Burn patients are prone to hypothermia.",
+          "Do not overlook possibility of multi-system trauma.",
+          "Do not overlook possibility of child abuse."
+        ]
+      },
+      "branches": [
+        {
+          "id": "thermal",
+          "label": "THERMAL Burns",
+          "steps": [
+            {
+              "text": "Remove rings, bracelets, and other constricting items."
+            },
+            {
+              "text": "If burn < 10% BSA (rule of 9's): Cool down wound with normal saline. Cover with dry sterile sheet or dressings."
+            },
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Normal Saline 0.9 (NS) 20 mL/kg Fluid Bolus. Avoid overhydration.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Reference Lund Browder Burn Charts: Adolescent Burn, Pediatric Burn, Toddler Burn, Infant Burn."
+            }
+          ]
+        },
+        {
+          "id": "chemical",
+          "label": "CHEMICAL Burns",
+          "steps": [
+            {
+              "text": "Remove clothing or expose area. Brush off any visible dry chemical or powder."
+            },
+            {
+              "text": "Flush area with water or normal saline for 10 - 15 minutes."
+            },
+            {
+              "text": "Eye involvement: Saline flush in affected eye. See Eye Protocol.",
+              "goto_protocol": "eye_injury_complaint"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_traumatic_brain_injury",
+      "title": "Pediatric Traumatic Brain Injury",
+      "demographic": "pediatric",
+      "section": "Pediatric Trauma",
+      "source_pages": [
+        174
+      ],
+      "chief_complaint_tags": [
+        "traumatic brain injury",
+        "tbi",
+        "head injury",
+        "brain injury",
+        "gcs"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [],
+        "signs_symptoms": [],
+        "differential": [],
+        "pearls": []
+      },
+      "branches": [
+        {
+          "id": "initial_assessment",
+          "label": "Any Suspicion of TBI - Initial Actions",
+          "steps": [
+            {
+              "text": "Any Suspicion of TBI (Mechanism, GCS, Exam): Automatically administer 15 L/min Oxygen NRB, obtain IV Access.",
+              "drug_id": "oxygen"
+            },
+            {
+              "text": "Every 3 - 5 minutes: Monitor O2, BP, HR."
+            }
+          ]
+        },
+        {
+          "id": "disability",
+          "label": "Disability - Mental Status/GCS",
+          "steps": [
+            {
+              "text": "Evaluate Mental Status/GCS."
+            }
+          ]
+        },
+        {
+          "id": "airway_breathing",
+          "label": "Airway/Breathing",
+          "steps": [
+            {
+              "text": "Oxygen sat <90% despite BLS and/or hypoventilation (despite NRB)? If YES: BLS airway maneuvers, BVM 10 bpm."
+            },
+            {
+              "text": "Consider ALS airway if experienced provider available: Place advanced airway. Pre-oxygenate: BVM with 100% Oxygen @ 10 breaths/min. Check placement using EtCO2 monitor/detector."
+            },
+            {
+              "text": "AVOID even MILD hyperventilation with Ventilation Rate Timer and Pressure-controlled Bag (if available): Carefully keep rate @ 10 BPM. EtCO2 available: Target EtCO2 40 mmHg (range: 35 - 45). Control Ventilatory volume: Ventilator available - utilize as soon as possible, Tidal volume = 7 mL/kg. Ventilator not available - Continue Pressure-controlled BVM."
+            },
+            {
+              "text": "Monitor: Oxygen sat and airway every 3 - 5 minutes. If Oxygen sat <90% despite above interventions, consider Tension pneumothorax & needle thoracostomy."
+            },
+            {
+              "text": "If NO (Oxygen sat not <90% despite BLS): Continue careful monitoring of O2 sat and airway."
+            },
+            {
+              "text": "Ventilation Rates: Infants (0 - 24 mo.) = 25 breaths/min (bpm); Children (2 - 14 yrs) = 20 bpm; Adolescents (15 - 17 yrs) = 10 bpm (same as adults)."
+            }
+          ]
+        },
+        {
+          "id": "circulation",
+          "label": "Circulation - Hypotension",
+          "steps": [
+            {
+              "text": "Hypotension or other signs of shock: Continue careful Monitoring BP/HR. Pay attention for early signs of shock: Tachycardia, Dropping SBP."
+            },
+            {
+              "text": "Normal Saline 0.9 (NS) 20 mL/kg Fluid Bolus. Repeat until hypotension resolves.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Identifying Hypotension in children: 0 - 9 yrs: 70 + (age x 2); \u226510 yrs: <90 mmHg. Rules of thumb: Newborn: <70 mmHg; 5 year old: <80 mmHg; 10 and older: <90 mmHg (Same as adults)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_head_trauma",
+      "title": "Pediatric Head Trauma",
+      "demographic": "pediatric",
+      "section": "Pediatric Trauma",
+      "source_pages": [
+        175,
+        176
+      ],
+      "chief_complaint_tags": [
+        "head trauma",
+        "head injury",
+        "concussion",
+        "skull fracture",
+        "tbi"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Time of injury.",
+          "Mechanism: blunt/penetrating.",
+          "LOC.",
+          "Bleeding.",
+          "Medical history.",
+          "Medication.",
+          "Evidence of multi-trauma.",
+          "Helmet use/damage to helmet."
+        ],
+        "signs_symptoms": [
+          "Pain.",
+          "Swelling.",
+          "Bleeding.",
+          "Altered mental status.",
+          "Unconsciousness.",
+          "Respiratory distress/failure.",
+          "Vomiting.",
+          "Significant MOI."
+        ],
+        "differential": [
+          "Skull fracture.",
+          "Brain injury (concussion, contusion, hemorrhage, laceration).",
+          "Epidural hematoma.",
+          "Subdural hematoma.",
+          "Subarachnoid hemorrhage.",
+          "Spinal injury.",
+          "Abuse."
+        ],
+        "pearls": [
+          "Exam: Mental status; skin; HEENT; heart; lungs; abdomen; extremities; back; neuro.",
+          "Cushing's Response: Elevated ICP causing hypertension and bradycardia.",
+          "Hypotension usually indicates injury or shock unrelated to head injury and should be aggressively treated.",
+          "Monitor and document changes in LOC and GCS.",
+          "Consider restraints if necessary for safety of patient and/or personnel protection.",
+          "Concussions are periods of confusion or LOC associated with trauma and may be resolved upon arrival of EMS.",
+          "Any prolonged period of confusion or mental status abnormality that does not return to normal within 15 minutes should be evaluated by a physician."
+        ]
+      },
+      "branches": [
+        {
+          "id": "initial_assessment",
+          "label": "Initial Assessment (All Patients)",
+          "steps": [
+            {
+              "text": "Isolated head trauma? If yes, apply Spinal Motion Restriction.",
+              "goto_protocol": "spinal_motion_restriction"
+            },
+            {
+              "text": "Pediatric IV."
+            },
+            {
+              "text": "Normal Saline 0.9 (NS) 20 mL/kg Fluid Bolus to keep SBP >90.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Obtain Glasgow Coma Score."
+            },
+            {
+              "text": "Assist with basic airway maneuvers. Maintain Pulse Ox > 90%."
+            },
+            {
+              "text": "Seizure? Go to Pediatric Seizure Protocol.",
+              "goto_protocol": "pediatric_seizure"
+            },
+            {
+              "text": "Check Blood Glucose (EMT). See Pediatric Hypoglycemia/Hyperglycemia Protocol.",
+              "goto_protocol": "pediatric_hypoglycemia_hyperglycemia"
+            }
+          ]
+        },
+        {
+          "id": "gcs_greater_8",
+          "label": "GCS > 8",
+          "steps": [
+            {
+              "text": "GCS > 8: proceed to Pediatric Multiple Trauma Protocol.",
+              "goto_protocol": "pediatric_multiple_trauma"
+            }
+          ]
+        },
+        {
+          "id": "gcs_less_8_no_gag",
+          "label": "GCS < 8 - No Gag Reflex",
+          "steps": [
+            {
+              "text": "Remove helmet if indicated."
+            },
+            {
+              "text": "Assist ventilations with BVM."
+            },
+            {
+              "text": "Consider SGA or ETT. Maintain EtCO2 35 - 45 mmHg."
+            }
+          ]
+        },
+        {
+          "id": "gcs_less_8_gag_present",
+          "label": "GCS < 8 - Gag Reflex Present",
+          "steps": [
+            {
+              "text": "For patients with advanced airway needing sedation: Midazolam (Versed) (5 mg/mL) 0.1 mg/kg IVP. Maximum 5 mg.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Additional sedation needed? Ketamine (Ketalar) 25 mg IV Infusion. Mix 25 mg in 50 mL D5W and infuse over 10 minutes.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "OR Ketamine (Ketalar) (100 mg/mL) 1 mg/kg IN. Divided between nares. Maximum 1 mL/nostril.",
+              "drug_id": "ketamine"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_extremity_trauma",
+      "title": "Pediatric Extremity Trauma",
+      "demographic": "pediatric",
+      "section": "Pediatric Trauma",
+      "source_pages": [
+        177,
+        178
+      ],
+      "chief_complaint_tags": [
+        "extremity injury",
+        "fracture",
+        "dislocation",
+        "amputation",
+        "limb injury"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Type of injury.",
+          "Mechanism: crush/penetrating/amputation.",
+          "Time of injury.",
+          "Open vs. Closed wound/fracture.",
+          "Wound contamination.",
+          "Medical history.",
+          "Medications."
+        ],
+        "signs_symptoms": [
+          "Pain.",
+          "Swelling.",
+          "Deformity.",
+          "Altered sensation/motor function.",
+          "Diminished pulse/cap refill.",
+          "Decreased extremity temperature."
+        ],
+        "differential": [
+          "Abrasion.",
+          "Confusion.",
+          "Laceration.",
+          "Sprain.",
+          "Dislocation.",
+          "Fracture.",
+          "Amputations."
+        ],
+        "pearls": [
+          "Exam: mental status; extremities; neuro.",
+          "In amputations, time is critical. Consider transport to pediatric trauma center.",
+          "Hip dislocation and knee and elbow fracture/dislocations have a high incidence of vascular compromise.",
+          "Urgently transport any injury with vascular compromise.",
+          "Blood loss may be concealed or not apparent with extremity injuries.",
+          "Severe bleeding not rapidly controlled may necessitate application of a tourniquet.",
+          "Lacerations must be evaluated for repair within 6 hours from the time of injury."
+        ]
+      },
+      "branches": [
+        {
+          "id": "not_isolated_extremity_injury",
+          "label": "Isolated Extremity Injury? - NO",
+          "steps": [
+            {
+              "text": "If not an isolated extremity injury, go to Pediatric Multiple Trauma Protocol.",
+              "goto_protocol": "pediatric_multiple_trauma"
+            }
+          ]
+        },
+        {
+          "id": "isolated_extremity_injury",
+          "label": "Isolated Extremity Injury? - YES",
+          "steps": [
+            {
+              "text": "Immobilize extremity as indicated. Apply ice to reduce swelling."
+            },
+            {
+              "text": "Wound care/hemorrhage control."
+            },
+            {
+              "text": "Limb or life threatening event? Control life threatening hemorrhage with CAT Tourniquet. See: Wound Care/CAT Tourniquet."
+            },
+            {
+              "text": "Pain medication needed? Pediatric IV Protocol. Pediatric Pain Control Protocol.",
+              "goto_protocol": "pediatric_pain_control"
+            },
+            {
+              "text": "Amputation? Clean amputated part. Wrap part in sterile dressing soaked with normal saline. Place in air tight container. Place container on ice if available."
+            },
+            {
+              "text": "Suspected Open Fractures: Do not reduce suspected open fractures such as a femur fracture with a traction splint unless there are no detectable distal pulses. If distal pulses are absent, apply gentle inline traction until pulses return."
             }
           ]
         }

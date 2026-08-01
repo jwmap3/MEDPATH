@@ -1,13 +1,19 @@
 // MEDPATH — field protocol decision engine
-// Flow: Chief Complaint -> Demographic -> Vitals/Weight -> (Branch select) -> Protocol steps
+// Flow: Adult/Pediatric -> Chief Complaint -> Vitals/Weight -> (Branch select) -> Protocol steps
+
+const GCS_OPTIONS = {
+  e: [[4,'Spontaneous'],[3,'To voice'],[2,'To pain'],[1,'None']],
+  v: [[5,'Oriented'],[4,'Confused'],[3,'Inappropriate words'],[2,'Incomprehensible sounds'],[1,'None']],
+  m: [[6,'Obeys commands'],[5,'Localizes pain'],[4,'Withdraws from pain'],[3,'Abnormal flexion'],[2,'Abnormal extension'],[1,'None']]
+};
 
 const state = {
   protocols: null,
   drugs: null,
   drugById: {},
   topics: {},        // topicKey -> {adult: protocolId|null, pediatric: protocolId|null, label}
-  chosenTopicKey: null,
   chosenDemographic: null,
+  chosenTopicKey: null,
   chosenProtocolId: null,
   chosenBranchId: null,
   vitals: null,
@@ -26,7 +32,6 @@ async function loadData(){
   state.drugs = drugData.drugs;
   state.drugs.forEach(d => state.drugById[d.id] = d);
 
-  // Build topic map for demographic pairing (e.g. Seizure / Pediatric Seizure)
   state.protocols.forEach(p => {
     const key = p.title.replace(/^Pediatric\s+/i, '').trim().toLowerCase();
     if(!state.topics[key]) state.topics[key] = {adult:null, pediatric:null, label: p.title.replace(/^Pediatric\s+/i,'').trim()};
@@ -36,12 +41,29 @@ async function loadData(){
 
 function protocolById(id){ return state.protocols.find(p => p.id === id); }
 
+// Group protocol sections into friendly, related categories for the complaint grid
+const CATEGORY_MAP = {
+  'Cardiovascular': 'Heart',
+  'Respiratory': 'Breathing',
+  'Neurological': 'Neuro',
+  'General Medical': 'General',
+  'Gastrointestinal': 'Stomach & GI',
+  'Toxicology': 'Overdose & Poisoning',
+  'Trauma': 'Trauma',
+  'OB/GYN': 'OB / Childbirth',
+  'Environmental': 'Environmental',
+};
+function categoryFor(protocol){
+  const bare = (protocol.section || '').replace(/^(Adult|Pediatric)\s*/i, '').trim();
+  return CATEGORY_MAP[bare] || bare || 'General';
+}
+
 // ---------- Router ----------
 function render(){
   window.scrollTo(0,0);
   if(state.step === 'home') return renderHome();
-  if(state.step === 'cc') return renderChiefComplaint();
   if(state.step === 'demographic') return renderDemographic();
+  if(state.step === 'ccList') return renderCcList();
   if(state.step === 'vitals') return renderVitals();
   if(state.step === 'branch') return renderBranchSelect();
   if(state.step === 'protocol') return renderProtocolView();
@@ -51,7 +73,7 @@ function render(){
 
 function goHome(){
   Object.assign(state, {
-    step:'home', chosenTopicKey:null, chosenDemographic:null,
+    step:'home', chosenDemographic:null, chosenTopicKey:null,
     chosenProtocolId:null, chosenBranchId:null, vitals:null
   });
   render();
@@ -59,13 +81,22 @@ function goHome(){
 
 document.getElementById('brandHome').addEventListener('click', goHome);
 
+function addBackBtn(onClick){
+  const backBtn = document.createElement('button');
+  backBtn.className = 'back-btn';
+  backBtn.innerHTML = '←';
+  backBtn.setAttribute('aria-label', 'Back');
+  backBtn.addEventListener('click', onClick);
+  app.prepend(backBtn);
+}
+
 // ---------- Home ----------
 function renderHome(){
   const tpl = document.getElementById('tpl-home').content.cloneNode(true);
   app.innerHTML = '';
   app.appendChild(tpl);
   document.getElementById('newPatientBtn').addEventListener('click', () => {
-    state.step = 'cc'; render();
+    state.step = 'demographic'; render();
   });
   document.getElementById('browseAllBtn').addEventListener('click', () => {
     state.step = 'browseAll'; render();
@@ -77,106 +108,97 @@ function renderHome(){
     `${state.protocols.length} protocols · ${state.drugs.length} drug references loaded · works offline`;
 }
 
-// ---------- Step 1: Chief Complaint ----------
-function renderChiefComplaint(){
-  const tpl = document.getElementById('tpl-chief-complaint').content.cloneNode(true);
-  app.innerHTML = '';
-  app.appendChild(tpl);
-  const backBtn = document.createElement('button');
-  backBtn.className = 'back-btn'; backBtn.textContent = '← Home';
-  backBtn.addEventListener('click', goHome);
-  app.prepend(backBtn);
-
-  const input = document.getElementById('ccSearch');
-  const results = document.getElementById('ccResults');
-
-  function search(q){
-    q = q.trim().toLowerCase();
-    const seen = new Set();
-    const matches = [];
-    for(const key in state.topics){
-      const topic = state.topics[key];
-      const anyProto = protocolById(topic.adult) || protocolById(topic.pediatric);
-      const tagPool = [
-        topic.label.toLowerCase(),
-        ...(protocolById(topic.adult)?.chief_complaint_tags || []),
-        ...(protocolById(topic.pediatric)?.chief_complaint_tags || [])
-      ];
-      const isMatch = q === '' ? false : tagPool.some(t => t.includes(q));
-      if(isMatch && !seen.has(key)){
-        seen.add(key);
-        matches.push(topic);
-      }
-    }
-    return matches.sort((a,b) => a.label.localeCompare(b.label));
-  }
-
-  function renderResults(list){
-    results.innerHTML = '';
-    if(input.value.trim() === ''){
-      results.innerHTML = '<p class="cc-empty">Start typing a complaint (e.g. "chest pain", "seizure", "allergic reaction", "cardiac arrest")…</p>';
-      return;
-    }
-    if(list.length === 0){
-      results.innerHTML = '<p class="cc-empty">No converted protocol matches yet. This app currently covers a priority MVP set — the full protocol book is added in batches.</p>';
-      return;
-    }
-    list.forEach(topic => {
-      const btn = document.createElement('button');
-      btn.className = 'cc-item';
-      const avail = [];
-      if(topic.adult) avail.push('Adult');
-      if(topic.pediatric) avail.push('Pediatric');
-      btn.innerHTML = `<span>${topic.label}</span><span class="tag">${avail.join(' + ')}</span>`;
-      btn.addEventListener('click', () => {
-        state.chosenTopicKey = Object.keys(state.topics).find(k => state.topics[k] === topic);
-        goToDemographicOrSkip();
-      });
-      results.appendChild(btn);
-    });
-  }
-
-  input.addEventListener('input', () => renderResults(search(input.value)));
-  renderResults([]);
-  input.focus();
-}
-
-function goToDemographicOrSkip(){
-  const topic = state.topics[state.chosenTopicKey];
-  const hasAdult = !!topic.adult, hasPed = !!topic.pediatric;
-  if(hasAdult && hasPed){
-    state.step = 'demographic'; render();
-  } else {
-    state.chosenDemographic = hasAdult ? 'adult' : 'pediatric';
-    state.chosenProtocolId = hasAdult ? topic.adult : topic.pediatric;
-    state.step = 'vitals'; render();
-  }
-}
-
-// ---------- Step 2: Demographic ----------
+// ---------- Step 1: Demographic ----------
 function renderDemographic(){
   const tpl = document.getElementById('tpl-demographic').content.cloneNode(true);
   app.innerHTML = '';
   app.appendChild(tpl);
-  const backBtn = document.createElement('button');
-  backBtn.className = 'back-btn'; backBtn.textContent = '← Chief Complaint';
-  backBtn.addEventListener('click', () => { state.step='cc'; render(); });
-  app.prepend(backBtn);
-
-  const topic = state.topics[state.chosenTopicKey];
-  app.querySelector('.protocol-context').textContent = `Complaint: ${topic.label}`;
+  addBackBtn(goHome);
 
   app.querySelectorAll('.choice-btn').forEach(btn => {
-    const demo = btn.dataset.demo;
-    const available = demo === 'adult' ? !!topic.adult : !!topic.pediatric;
-    if(!available){ btn.disabled = true; btn.style.opacity = 0.35; }
     btn.addEventListener('click', () => {
-      if(!available) return;
-      state.chosenDemographic = demo;
-      state.chosenProtocolId = demo === 'adult' ? topic.adult : topic.pediatric;
-      state.step = 'vitals'; render();
+      state.chosenDemographic = btn.dataset.demo;
+      state.step = 'ccList'; render();
     });
   });
+}
+
+// ---------- Step 2: Chief Complaint grid ----------
+function renderCcList(){
+  const tpl = document.getElementById('tpl-cc-list').content.cloneNode(true);
+  app.innerHTML = '';
+  app.appendChild(tpl);
+  addBackBtn(() => { state.step = 'demographic'; render(); });
+
+  const input = document.getElementById('ccSearch');
+  const grid = document.getElementById('ccGrid');
+  const demo = state.chosenDemographic;
+
+  function topicsForDemo(){
+    return Object.keys(state.topics)
+      .map(k => ({key:k, ...state.topics[k]}))
+      .filter(t => t[demo])
+      .sort((a,b) => a.label.localeCompare(b.label));
+  }
+
+  function makeBox(t){
+    const box = document.createElement('button');
+    box.className = 'cc-box';
+    box.textContent = t.label;
+    box.addEventListener('click', () => {
+      state.chosenTopicKey = t.key;
+      state.chosenProtocolId = t[demo];
+      state.step = 'vitals'; render();
+    });
+    return box;
+  }
+
+  function draw(q){
+    q = q.trim().toLowerCase();
+    let list = topicsForDemo();
+    if(q){
+      list = list.filter(t => {
+        const p = protocolById(t[demo]);
+        const pool = [t.label.toLowerCase(), ...(p.chief_complaint_tags||[])];
+        return pool.some(x => x.includes(q));
+      });
+    }
+    grid.innerHTML = '';
+    if(list.length === 0){
+      grid.innerHTML = '<p class="cc-empty">No converted protocol matches yet for this demographic.</p>';
+      return;
+    }
+    if(q){
+      // flat results while actively searching
+      const flat = document.createElement('div');
+      flat.className = 'cc-grid';
+      list.forEach(t => flat.appendChild(makeBox(t)));
+      grid.appendChild(flat);
+      return;
+    }
+    // grouped by related category when browsing
+    const groups = {};
+    list.forEach(t => {
+      const cat = categoryFor(protocolById(t[demo]));
+      (groups[cat] = groups[cat] || []).push(t);
+    });
+    Object.keys(groups).sort().forEach(cat => {
+      const section = document.createElement('div');
+      section.className = 'cc-category';
+      const title = document.createElement('p');
+      title.className = 'cc-category-title';
+      title.textContent = cat;
+      const catGrid = document.createElement('div');
+      catGrid.className = 'cc-grid';
+      groups[cat].forEach(t => catGrid.appendChild(makeBox(t)));
+      section.appendChild(title);
+      section.appendChild(catGrid);
+      grid.appendChild(section);
+    });
+  }
+
+  input.addEventListener('input', () => draw(input.value));
+  draw('');
 }
 
 // ---------- Step 3: Vitals & Weight ----------
@@ -185,31 +207,72 @@ function renderVitals(){
   app.innerHTML = '';
   app.appendChild(tpl);
   const proto = protocolById(state.chosenProtocolId);
-  const backBtn = document.createElement('button');
-  backBtn.className = 'back-btn'; backBtn.textContent = '← Back';
-  backBtn.addEventListener('click', () => {
-    const topic = state.topics[state.chosenTopicKey];
-    state.step = (topic.adult && topic.pediatric) ? 'demographic' : 'cc';
-    render();
-  });
-  app.prepend(backBtn);
+  addBackBtn(() => { state.step = 'ccList'; render(); });
 
   const title = document.createElement('h2');
   title.className = 'step-title';
   title.innerHTML = `<span class="step-num">✓</span> ${proto.title}`;
   app.querySelector('.screen').prepend(title);
 
-  document.getElementById('lbHint').textContent = '';
-  const weightInput = document.querySelector('input[name="weight"]');
-  weightInput.addEventListener('input', () => {
-    const kg = parseFloat(weightInput.value);
-    document.getElementById('lbHint').textContent = kg ? `≈ ${(kg*2.20462).toFixed(1)} lb` : '';
+  // Weight: lb entry, live kg conversion, kg stored in hidden field for calculations
+  const lbInput = document.getElementById('weightLbInput');
+  const kgReadout = document.getElementById('kgReadout');
+  const kgHidden = document.getElementById('weightKgHidden');
+  lbInput.addEventListener('input', () => {
+    const lb = parseFloat(lbInput.value);
+    if(lb && !isNaN(lb)){
+      const kg = lb / 2.20462;
+      kgReadout.textContent = `${kg.toFixed(1)} kg`;
+      kgHidden.value = kg.toFixed(2);
+    } else {
+      kgReadout.textContent = '— kg';
+      kgHidden.value = '';
+    }
   });
+
+  // GCS interactive picker
+  const gcsBox = document.getElementById('gcsBox');
+  const gcsBoxText = document.getElementById('gcsBoxText');
+  const gcsPanel = document.getElementById('gcsPanel');
+  const gcsHidden = document.getElementById('gcsHidden');
+  const gcsSel = {e:null, v:null, m:null};
+
+  function buildGcsOptions(containerId, cat){
+    const container = document.getElementById(containerId);
+    GCS_OPTIONS[cat].forEach(([val, label]) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'gcs-opt-btn';
+      btn.textContent = `${val} – ${label}`;
+      btn.addEventListener('click', () => {
+        gcsSel[cat] = val;
+        container.querySelectorAll('.gcs-opt-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        checkGcsComplete();
+      });
+      container.appendChild(btn);
+    });
+  }
+  buildGcsOptions('gcsEyeOpts', 'e');
+  buildGcsOptions('gcsVerbalOpts', 'v');
+  buildGcsOptions('gcsMotorOpts', 'm');
+
+  function checkGcsComplete(){
+    if(gcsSel.e && gcsSel.v && gcsSel.m){
+      const total = gcsSel.e + gcsSel.v + gcsSel.m;
+      gcsHidden.value = `${total} (E${gcsSel.e} V${gcsSel.v} M${gcsSel.m})`;
+      gcsBoxText.textContent = `GCS ${total} (E${gcsSel.e} V${gcsSel.v} M${gcsSel.m})`;
+      gcsPanel.classList.add('hidden');
+    }
+  }
+  gcsBox.addEventListener('click', () => gcsPanel.classList.toggle('hidden'));
+  document.getElementById('gcsCloseBtn').addEventListener('click', () => gcsPanel.classList.add('hidden'));
 
   document.getElementById('vitalsForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const fd = new FormData(e.target);
     state.vitals = Object.fromEntries(fd.entries());
+    state.vitals.weightLb = lbInput.value;
     const branches = proto.branches;
     if(branches.length > 1){
       state.step = 'branch';
@@ -225,26 +288,27 @@ function vitalsSummaryHTML(){
   if(!state.vitals) return '';
   const v = state.vitals;
   const items = [];
-  if(v.weight) items.push(`${v.weight} kg`);
+  if(v.weightLb) items.push(`${v.weightLb} lb (${parseFloat(v.weight).toFixed(1)} kg)`);
   if(v.hr) items.push(`HR ${v.hr}`);
   if(v.sbp || v.dbp) items.push(`BP ${v.sbp||'?'}/${v.dbp||'?'}`);
   if(v.rr) items.push(`RR ${v.rr}`);
   if(v.spo2) items.push(`SpO2 ${v.spo2}%`);
   if(v.temp) items.push(`Temp ${v.temp}°F`);
   if(v.glucose) items.push(`Glu ${v.glucose}`);
-  if(v.gcs) items.push(`GCS/LOC ${v.gcs}`);
+  if(v.gcs) items.push(`GCS ${v.gcs}`);
   return items.map(i => `<span>${i}</span>`).join('');
 }
 
 // crude vital-based suggestion heuristics (advisory badge only — never auto-selects)
 function suggestBranch(proto){
   const v = state.vitals || {};
-  const sbp = parseFloat(v.sbp), spo2 = parseFloat(v.spo2), hr = parseFloat(v.hr);
+  const sbp = parseFloat(v.sbp), spo2 = parseFloat(v.spo2);
+  const gcsTotal = v.gcs ? parseInt(v.gcs, 10) : null;
   let best = null;
   for(const b of proto.branches){
     const label = b.id + ' ' + b.label.toLowerCase();
     let score = 0;
-    if(/arrest|crashing/.test(label) && (v.gcs && /unresp|0|apneic/i.test(v.gcs))) score += 3;
+    if(/arrest|crashing/.test(label) && gcsTotal && gcsTotal <= 8) score += 3;
     if(/shock|impending/.test(label) && sbp && sbp < 90) score += 2;
     if(/hypotension/.test(label) && sbp && sbp < 90) score += 2;
     if(/respiratory|stridor|wheeze/.test(label) && spo2 && spo2 < 92) score += 2;
@@ -260,10 +324,7 @@ function renderBranchSelect(){
   app.innerHTML = '';
   app.appendChild(tpl);
   const proto = protocolById(state.chosenProtocolId);
-  const backBtn = document.createElement('button');
-  backBtn.className = 'back-btn'; backBtn.textContent = '← Vitals';
-  backBtn.addEventListener('click', () => { state.step='vitals'; render(); });
-  app.prepend(backBtn);
+  addBackBtn(() => { state.step='vitals'; render(); });
 
   app.querySelector('.protocol-context').textContent = proto.title;
   document.getElementById('vitalsSummary').innerHTML = vitalsSummaryHTML();
@@ -291,7 +352,6 @@ function computeDose(text, weightKg){
   if(!weightKg || isNaN(weightKg)) return null;
   const w = parseFloat(weightKg);
 
-  // range per kg: "0.02 - 0.05 mg/kg" or "0.02-0.05 mg/kg"
   let m = text.match(/(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)\s*(mg|mcg|gm|mEq|mL)\/kg/i);
   let low, high, unit;
   if(m){
@@ -307,7 +367,6 @@ function computeDose(text, weightKg){
   }
   if(low === undefined) return null;
 
-  // max dose cap
   const maxMatch = text.match(/[Mm]aximum(?:\s+(?:single|total)?\s*dose)?\s*[:]?\s*(\d+(?:\.\d+)?)\s*(mg|mcg|gm|mEq|mL)/);
   let capped = false;
   if(maxMatch){
@@ -325,7 +384,7 @@ function computeDose(text, weightKg){
     return n.toFixed(2).replace(/0$/,'').replace(/\.$/,'');
   };
   const doseStr = (Math.abs(low-high) < 0.001) ? `${fmt(low)} ${unit}` : `${fmt(low)}–${fmt(high)} ${unit}`;
-  return `≈ ${doseStr} for ${w} kg${capped ? ' (capped at protocol maximum)' : ''}`;
+  return `≈ ${doseStr} for ${w.toFixed(1)} kg${capped ? ' (capped at protocol maximum)' : ''}`;
 }
 
 // ---------- Step 5: Protocol view ----------
@@ -336,21 +395,16 @@ function renderProtocolView(){
   const proto = protocolById(state.chosenProtocolId);
   const branch = proto.branches.find(b => b.id === state.chosenBranchId);
 
-  const backBtn = document.createElement('button');
-  backBtn.className = 'back-btn';
-  backBtn.textContent = proto.branches.length > 1 ? '← Change presentation' : '← Vitals';
-  backBtn.addEventListener('click', () => {
+  addBackBtn(() => {
     state.step = proto.branches.length > 1 ? 'branch' : 'vitals';
     render();
   });
-  app.prepend(backBtn);
 
   document.getElementById('protoTitle').textContent = proto.title;
   document.getElementById('protoBranchLabel').textContent =
     (proto.branches.length > 1 ? branch.label : '') ;
   document.getElementById('vitalsSummarySticky').innerHTML = vitalsSummaryHTML();
 
-  // Universal / Pediatric Universal Care precede reminder
   if(proto.precedes && proto.precedes.length){
     const pre = protocolById(proto.precedes[0]);
     if(pre){
@@ -373,13 +427,33 @@ function renderProtocolView(){
     }
   }
 
+  const progress = document.createElement('div');
+  progress.className = 'steps-progress';
+  document.querySelector('.screen-protocol').insertBefore(progress, document.getElementById('stepsList'));
+  let doneCount = 0;
+  function updateProgress(){
+    progress.textContent = `${doneCount} of ${branch.steps.length} steps done — tap a circle as you complete it`;
+  }
+  updateProgress();
+
   const list = document.getElementById('stepsList');
   branch.steps.forEach((step, i) => {
     const li = document.createElement('li');
     li.className = 'step-item' + (step.drug_id ? ' has-drug' : '') + (step.goto_protocol ? ' goto' : '');
-    const bullet = document.createElement('div');
-    bullet.className = 'step-bullet';
+    const bullet = document.createElement('button');
+    bullet.type = 'button';
+    bullet.className = 'step-check';
+    bullet.setAttribute('aria-pressed', 'false');
+    bullet.setAttribute('aria-label', `Mark step ${i+1} done`);
     bullet.textContent = i+1;
+    bullet.addEventListener('click', () => {
+      const isDone = bullet.getAttribute('aria-pressed') === 'true';
+      bullet.setAttribute('aria-pressed', String(!isDone));
+      bullet.textContent = isDone ? (i+1) : '✓';
+      li.classList.toggle('done', !isDone);
+      doneCount += isDone ? -1 : 1;
+      updateProgress();
+    });
     const body = document.createElement('div');
     body.style.flex = '1';
     const textDiv = document.createElement('div');
@@ -482,10 +556,7 @@ function showDrugModal(drugId){
 // ---------- Browse all ----------
 function renderBrowseAll(){
   app.innerHTML = '';
-  const backBtn = document.createElement('button');
-  backBtn.className = 'back-btn'; backBtn.textContent = '← Home';
-  backBtn.addEventListener('click', goHome);
-  app.appendChild(backBtn);
+  addBackBtn(goHome);
 
   const h = document.createElement('h2'); h.className='step-title'; h.textContent = 'All Converted Protocols';
   app.appendChild(h);
@@ -518,10 +589,7 @@ function renderBrowseAll(){
 // ---------- Drug reference browse ----------
 function renderDrugRef(){
   app.innerHTML = '';
-  const backBtn = document.createElement('button');
-  backBtn.className = 'back-btn'; backBtn.textContent = '← Home';
-  backBtn.addEventListener('click', goHome);
-  app.appendChild(backBtn);
+  addBackBtn(goHome);
 
   const h = document.createElement('h2'); h.className='step-title'; h.textContent = 'Drug Reference';
   app.appendChild(h);
