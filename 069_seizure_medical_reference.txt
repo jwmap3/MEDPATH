@@ -1,0 +1,48 @@
+History
+Reported/witnessed seizure.
+Previous seizure history.
+Medical alert tag.
+History of trauma.
+History of diabetes.
+History of pregnancy.
+Signs and Symptoms
+Decreased mental status.
+Sleepiness.
+Incontinence.
+Observed seizure activity.
+Evidence of trauma.
+Unconsciousness.
+Differential
+CNS trauma.
+Tumor.
+Metabolic, hepatic, renal failure.
+Hypoxia.
+Electrolyte abnormality.
+Drugs, meds, noncompliance.
+Infection/fever.
+Alcohol withdrawal.
+Eclampsia.
+Stroke.
+Hyperthermia.
+Hypoglycemia.
+Pearls
+Exam:
+ mental status; HEENT; heart; lungs; extremities; neuro.
+Status Epilepticus
+: > 2 successive seizures without a period of consciousness or recovery.
+Grand mal
+: generalized - LOC, incontinence, tongue trauma.
+Focal seizures
+ (petit mal): only a part of the body affected and not associated with LOC.
+Jacksonian seizures
+: focal seizures that become generalized.
+Be prepared for airway problems and continued seizures.
+Assess for occult trauma and substance abuse.
+Be prepared to assist ventilation if midazolam is used.
+Seizures in pregnant patient: follow 
+Obstetrical Emergency
+.
+Thiamine may be omitted in patients who do not appear malnourished.
+ 
+Seizure - Medical Reference
+79

@@ -1,0 +1,28 @@
+
+
+
+
+
+
+No
+Positive
+Injury or Traumatic Mechanism?
+Universal Patient Care
+Orthostatic vital signs
+Adult IV/IO
+  Protocol
+Normal Saline 0.9 (NS
+)
+Bolus
+Pain Control
+  Protocol
+Yes
+Negative
+Spinal Motion Restriction (SMR)
+Positive Orthostatic Vital Signs
+:
+Systolic drop of 20 points
+Diastolic drop of 10
+HR elevation of 30 points
+Back Pain
+57

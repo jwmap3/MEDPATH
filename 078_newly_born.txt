@@ -1,0 +1,95 @@
+
+
+
+
+
+
+
+
+
+
+
+
+YES
+YES
+YES
+HR below 100 bpm?
+HR below 60 bpm?
+Birth
+Term? Tone? Breathing or Crying?
+Warm and maintain normal temp
+Position airway
+Clear secretions, dry, stimulate
+Apnea, gasping or HR below 100 bpm?
+Positive Pressure Ventilation
+SpO
+ monitor
+ECG monitor
+2
+Check chest movement
+Ventilation corrective steps
+ETT or  
+SGA
+  if needed
+Begin 
+CPR
+IV epinephrine
+If HR persists below 60 bpm,
+consider hypovolemia
+consider pneumothorax
+Epinephrine 1 mg/10 mL
+ (0.1 mg/mL) 
+0.01 - 0.03 mg/kg IVP, IO
+NO
+NO
+YES
+Stay with mother for routine care
+Warm and maintain normal temp
+Position airway
+clear secretions
+Dry
+Ongoing evaluation
+AirQ SGA Sizing
+< 2 kg
+size 0
+2 - 4 kg
+size 0.5
+4 - 7 kg
+size 1.0
+7 - 17 kg
+size 1.5
+17 - 30 kg
+size 2
+30 - 60 kg
+size 3
+60 - 80 kg
+size 4
+> 80 kg
+size 5
+Go to  
+Apgar Score
+  in tools
+Target Pre-ductal SpO2 after birth
+1 minutes
+60 - 65%
+2 minutes
+65 - 70%
+3 minutes
+70 - 75%
+4 minutes
+75 - 80%
+5 minutes
+80 - 85%
+10 minutes
+85 - 95%
+ 
+Labored breathing or persistent cyanosis?
+Positive Pressure Ventilation
+SpO
+ monitor
+ECG monitor
+2
+Post Resuscitation
+  Care
+Newly Born
+88

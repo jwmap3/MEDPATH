@@ -1,0 +1,37 @@
+Recognize Sepsis
+Elderly and very young.
+Bed confined, immobile.
+Recent surgery; invasive procedure.
+Immunosuppressants/Chemotherapy.
+Immunocompromised (HIV, transplant, diabetes, cancer).
+Source of Infection
+Illness, recent surgery/procedure.
+Respiratory, GI, GU.
+Recent antibiotics, steroids, immunosuppressants.
+Vital Sign Warnings
+Temp: > 38; < 36.
+Pulse: > 90 bpm.
+Blood pressure: <90 systolic or MAP < 65.
+Resp. rate: > 20.
+EtCO
+ < 26.
+Differential
+Infection/sepsis.
+Cancer/tumors/lymphomas.
+Medication reaction.
+Connective tissue disease.
+Hyperthyroid.
+Heat stroke.
+Meningitis.
+Pearls
+Exam:
+ SIRS = Systemic Inflammatory Response Syndrome = Fever > 38 (100.4) or < 36 (96.8); HR > 90 bpm; RR > 20; arterial PCO2 < 32.
+Sepsis: one or more end organs begin to fail. Septic Shock: Sustained hypotension after aggressive fluid resuscitation.
+Avoid hypoxia-->adequately oxygenate. Consider CPAP for moderate respiratory distress; intubate for altered mental status/respiratory
+failure.
+Avoid overventilation to prevent acute lung injury.
+Avoid pressor therapy until adequate fluid resuscitation has been performed.
+ 
+2
+Fever/Suspected Sepsis - Medical Reference
+65

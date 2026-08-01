@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+
+
+
+
+
+YES
+If IV/IO present give
+Recurrent seizure?
+YES
+Still Seizing?
+Actively Seizing
+Universal Patient Care
+Spinal Motion Restriction (SMR)
+Check 
+Blood Glucose Analysis
+Age <65
+Midazolam (Versed) 
+10 mg IM
+Age >65
+Midazolam (Versed) 
+5 mg IM
+Midazolam (Versed) 
+2 - 5 mg IVP, IO
+Repeat
+Midazolam (Versed) 
+2 - 5 mg IVP, IO
+Ketamine (Ketalar)
+ (50 mg/mL) 
+1 mg/kg IVP, IO
+Maximum dose 100 mg
+Full monitoring mandatory including EtCO
+2
+Postictal
+Blood Glucose Analysis
+Adult IV/IO
+  Protocol
+ Consider 
+Intubation 
+with 
+Video Laryngoscopy
+.
+Glucose  < 60 mg/dL
+Hypoglycemia
+  Protocol
+Seizure
+78

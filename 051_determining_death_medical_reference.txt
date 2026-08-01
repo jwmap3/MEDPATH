@@ -1,0 +1,24 @@
+History
+Patient encountered by EMS who meets criteria for obvious death.
+Patient with duly executed DNR who is apneic.
+Patient for whom resuscitation efforts are ceased on-scene.
+Key Information
+Name of primary care physician.
+Known medical conditions.
+Last time known to be alive.
+Differential
+Attended death:
+ First, death is attended when a person passes way in the presence of family and friends. Second, a death is legally attended in
+situations that include:
+Patient in a hospital or medical center.
+A resident of long-term care or nursing facility.
+An individual in hospice care.
+An individual in regular contact with a primary care physician who has suffered from an extended illness.
+The individual saw a primary care physician with a 30-day period prior to death.
+Unattended death:
+ A death in which the body is not found for days, weeks, or in some cases, months.
+Suspicious death
+ (law enforcement).
+ 
+Determining Death - Medical Reference
+60

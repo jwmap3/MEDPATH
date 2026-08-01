@@ -1,0 +1,39 @@
+History
+Age.
+Past medical history.
+Past surgical history.
+Medications.
+Onset of pain/injury.
+Previous back injury.
+Traumatic mechanism.
+Location of pain.
+Fever.
+Better or worse with activity.
+Signs and Symptoms
+Pain.
+Swelling.
+Pain with ROM.
+Extremity weakness.
+Extremity numbness.
+Shooting pain into an extremity.
+Bowel or bladder dysfunction.
+Differential
+Muscle spasm/strain.
+Herniated disc with nerve compression.
+Sciatica.
+Spine fracture.
+Kidney stone.
+Pyelonephritis.
+Aortic aneurysm.
+Pneumonia.
+Cardiac.
+Pearls
+Exam:
+ mental status; HEENT; neck; chest; lungs; abdomen; back; extremities; neuro.
+Abdominal aneurysm: consider in patients > 50 years old with sudden onset back pain and syncope or hypotension.
+Kidney stones typically present with acute onset flank pain radiating to groin area.
+Patients with midline pain over the spinous process should be spinally immobilized.
+Any bowel or bladder incontinence is a significant finding which requires immediate medical evaluation.
+ 
+Back Pain - Medical Reference
+58

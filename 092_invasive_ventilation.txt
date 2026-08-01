@@ -1,0 +1,42 @@
+
+
+
+
+
+
+
+CPR
+  in progress?
+Select CPR Mode on ventilato
+r
+Prompts display for CPR @ 100/min
+Prompts display ventilation @ 10/min
+Pre-sets
+Tidal volume (Vt) preset to 500 mL
+Pressure (Pmax) is preset to 60 cmH
+O
+Ventilations preset 10/min
+2
+Patient selection
+Active CPR
+Post ROSC
+Failure of NIV now with advanced airway in place
+Patient's who have undergone MAI/RSI procedure
+Respiratory failure
+Invasive Ventilation Decision Process
+(Adult with advanced airway in place i.e. SGA, ETT, cric, trach)
+Does the patient have a pulse and an
+advanced airway in place?
+Select A/C V (assist/control volume
+ventilation)
+Presets: 
+Tidal Volume (Vt) is preset to 500 mL
+Pressure (Pmax) is preset to 30 cmH
+O
+Ventilations preset to 10/min
+Peep is preset to 5 cm H
+O
+2
+2
+Invasive Ventilation
+102

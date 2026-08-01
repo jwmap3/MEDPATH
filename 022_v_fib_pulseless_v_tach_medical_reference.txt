@@ -1,0 +1,33 @@
+History
+Past Medical History.
+Medications.
+Events.
+End stage renal failure.
+Estimated downtime.
+Hypothermia?
+Overdose?
+DNR?
+Signs and Symptoms
+Pulseless.
+Apneic.
+No auscultated heart tones.
+Differential: (H's and T's)
+Medical or Trauma.
+Hypoxia.
+Potassium (hypo/hyperkalemia).
+Overdose.
+Acidosis.
+Hypothermia.
+Device error – check leads.
+Death.
+Pearls
+Reassess airway frequently.
+For suspected HYPERKALEMIC ARREST, administer Calcium Chloride and Sodium Bicarbonate.
+For Torsades de Pointes, 2 grams Magnesium Sulfate.
+Uninterrupted high quality CPR and early defibrillation are keys to success.
+ALS crew discretion on advanced airway (SGA vs VL ETT).
+Persistent VF/Pulseless VT (i.e. >3 shocks?): consider adjusting pad placement to Anterior/Posterior if not previously used.  
+Consider applying new pads following multiple defibrillations with original set of pads.
+ 
+V-Fib/Pulseless V-Tach - Medical Reference
+29

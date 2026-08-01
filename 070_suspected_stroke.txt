@@ -1,0 +1,49 @@
+
+
+
+
+
+YES
+Universal Patient Care
+Blood Glucose Analysis
+BEFAST
+ Exam /  
+RACE Scoring Tool
+If positive and symptoms < 24 hours
+“Determine Last Known Well"
+Bring patient ID to hospital for quick registration
+Adult IV/IO
+  Protocol
+12 Lead ECG
+Pediatric Special Considerations
+Suspected stroke in pediatric patient?
+Transport to Pediatric Hospital 
+(SVMMC or ProMedica Toledo Hospital ED)
+Calculate  
+RACE Scoring Tool
+** 
+(Calculation tool in Reference Section)
+Race score greater than or equal to 5?
+ 
+Declare "RACE Alert"
+ and transport to closest
+Comprehensive Stroke or Thrombectomy capable Center"
+Race score less then 5? 
+Declare "Stroke Alert"
+ and transport to closest Primary
+Stroke Center
+STROKE CENTERS
+Primary Stroke Centers:
+Mercy St. Charles
+Mercy St. Vincent
+ProMedica Flower
+ProMedica Bay Park
+ProMedica Toledo Hospital
+University of Toledo Medical Center
+Comprehensive Stroke Centers:
+Mercy St. Vincent
+ProMedica Toledo Hospital
+Thrombectomy Capable Stroke Center
+University of Toledo Medical Center
+Suspected Stroke
+80

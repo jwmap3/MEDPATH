@@ -1,0 +1,65 @@
+Adult Patients Without Advanced Airway in Place (i.e. SGA or ETT)
+Patient Selection
+Patient must be:
+Awake, alert and cooperative
+Spontaneously breathing
+Able to protect 
+airway
+Hemodynamically
+ stable (i.e. not in shock)                         
+Absent facial trauma, vomiting, massive secretions
+Determine Oxygenation and Ventilation Needs
+Is Oxygenation the primary problem?  Yes
+Typical Signs and symptoms
+Low SpO
+EtCO
+ normal/low
+Cyanosis, crackles, pneumonia, near drowning, pulmonary edema may be present
+Use CPAP
+Select 5 - 15 cm H
+O
+Select FiO
+ 60 or 100 %
+Monitor for comfort, chest rise, work of breathing, oxygenation
+Is Oxygenation AND Ventilation the primary problem? 
+Yes
+Typical Signs and Symptoms:
+Low SpO
+Rising EtCO
+ >45
+Respiratory fatigue, COPD, Severe Asthma, Pulmonary Edema, Flail Chest
+Use BiPAP
+Set CPAP to 5 cm H
+O
+Typical starting point is CPAP 6 and PSV 6
+CPAP(aka, EPAP)+ PSV = IPAP
+BiPAP = IPAP/EPAP
+2
+2
+2
+2
+2
+2
+2
+Non-Invasive Ventilation Decision Process
+105
+You would report a BiPAP of 12/6
+Add PSV 5 - 15 cm H
+O
+(Titrate by 2 - 3 cm)
+FiO
+ 60% or 100%. Use lowest FiO
+ to maintain SpO
+ i.e 60 %
+Peak Airway Pressure <30 cmH2O
+Treatment failure:
+Worsening hypoxia/hypercapnia
+Decreasing LOC
+Mask intolerance
+Move to Advanced Airway Algorithm 
+ 
+2
+2
+2
+2
+106

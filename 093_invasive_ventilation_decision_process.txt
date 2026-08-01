@@ -1,0 +1,41 @@
+(i.e, Adult Patients WITH Advanced Airway in Place i.e. SGA or ETT)
+Patient Selection:
+Active CPR
+Post ROSC
+Failure of NIV now with advanced airway in place
+Patient’s who have undergone MAI/RSI procedure
+Respiratory failure
+Determine Mode of Invasive Ventilation based on patient presentation
+Is the patient receiving active CPR?  
+Yes
+Select CPR mode on ventilator
+Prompts will display on screen for CPR at 100/min
+Prompts will display on screen for ventilation at 10/min
+ 
+Tidal Volume (Vt) is pre-set to 500 mL
+Pressure (Pmax
+) is pre-set to 60 cmH
+O
+Ventilations are pre-set to 10/min
+Does the patient have a pulse AND and advanced airway in place? 
+Yes
+Select A/C V (Assist/Control Volume Ventilation)
+Key Features
+:  Ventilator delivers breaths at set Tidal Volume (Vt) and Rate (BPM In spontaneously breathing, the patient can initiate a breath above
+the preset parameters.
+Adjust PEEP to 5 cmH
+O
+Presets: 
+Tidal Volume (Vt) is preset to 500 mL
+Pressure (Pmax) is preset to 30 cmH
+O
+Ventilations preset to 10/min
+Peep is preset to 5 cm H
+O
+ 
+2
+2
+2
+2
+Invasive Ventilation Decision Process
+103

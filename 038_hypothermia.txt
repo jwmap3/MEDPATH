@@ -1,0 +1,47 @@
+
+
+
+
+
+
+
+
+Yes
+Universal Patient Care
+Document Patient Temperature
+Remove Wet Clothing
+Temperature < 95° F (35° C)
+Handle Very Gently
+Blankets / External Rewarming
+Adult IV/IO
+  Protocol
+Normal Saline 0.9 (NS)
+Appropriate Protocol based on Symptoms
+No
+Hypothermic Cardiac Arrest Considerations
+When not to start resuscitation: Frozen chest wall, snow or ice
+occluding airway, unsurvivable traumatic injuries
+Generally not declared dead until core temp >32 degrees C
+Do not start compression's unless there is no organized cardiac
+activity
+Use caution with excessive ACLS medication admin until
+warmed above 30 degrees C
+Consider transfer to a facility with ECMO
+Rule out reversible causes (e.g. hypoglycemia)
+De+brillation attempts
+ in Hypothermic Cardiac arrest
+Temp <30 attempt de9b at least once and up to 3 times
+Temp > 30 de9b as indicated based on presence of shockable rhythm
+Mild Hypothermia
+ (32° - 35° C / 90° - 95° F)
+Shivering and cold skin
+Moderate Hypothermia
+ (28° - 32° C  / 82° - 90° F)
+Altered mental status
+absent shivering and re?exes may be absent
+Severe Hypothermia
+ (Below 28° C or 82° F)
+Unconsciousness and potential cardiac arrest
+Muscle rigidity and dilated pupils may be present
+Hypothermia
+45

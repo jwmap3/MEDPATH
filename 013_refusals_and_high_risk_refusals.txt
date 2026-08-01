@@ -1,0 +1,121 @@
+Definition of a Patient
+A patient is an individual requesting or potentially needing medical evaluation or treatment. The patient-provider relationship is established via
+telephone, radio, or personal contact. It is the provider’s responsibility to ensure all potential patients, regardless of the size of the incident, are
+offered the opportunity for evaluation, treatment, and/or transport. The guidelines for documenting patient encounters are discussed elsewhere. 
+Rights of a Patient
+Patients with mental capacity retain the right to accept or refuse medical care, even if the consequences of the refusal of care may potentially be
+harmful for the patient. In the event a patient attempts to refuse medical care, it is important to recall that we 
+must
+: 
+1. Be Courteous
+2. Offer transport or treatment without some (or all) of the recommended treatment(s) if that is what the patient will allow (document discussion that
+led to the elected course of treatment and obtain refusal documentation including patient signature).
+3. Clearly advise the patient of the possible complications of their decision up to and including harm, disability, and death.
+4. Advise the patient to call back if they subsequently desire treatment and transport.
+5. Accurately document all components of the patient encounter in the electronic health record (EHR).
+High Risk Refusal Category
+Patients with potentially life-threatening conditions generally fall into one of the two following categories:
+1. The alert patient who has a concerning presentation and refuses treatment and/or transport (e.g., the patient with chest pain and EKG changes)
+ora. Examples of concerning patients: Chest pain, breathing difficulty, airway obstruction, alteration in consciousness, active seizure, vital signs out of
+range (*see normal vital sign ranges below), active hemorrhage, suicidal or homicidal, 
+infants < 3 months old
+, active labor, patients with external life-
+sustaining devices such as LVAD or Zoll Life Vest, STEMI, high degree AV block, ventricular or supraventricular tachycardias, dialysis patients,
+hypoglycemic diabetics on oral hypoglycemic agents (i.e. not insulin-dependent); Anaphylaxis; head injuries with depressed GCS, elderly fall patients
+on blood thinners.
+*Normal Vital Signs by Age Group:
+Age
+BP
+HR
+RR
+0 - 3 Months
+65 - 85 / 45 - 55
+110 - 160
+30 - 60
+3 - 6 Months
+70 - 90 / 50 - 65
+100 - 150
+30 - 45
+6 - 12 Months
+80 - 100 / 55 - 65
+90 - 130
+25 - 40
+1 - 3 Years
+90 - 105 / 55 - 70
+80 - 125
+20 - 30
+3 - 6 Years
+95 - 110 / 60 - 75
+70 - 115
+20 - 25
+6 - 12 Years
+110 - 120 / 60 - 75
+60 - 100
+14 - 22
+12 - 18 Years
+100 - 120 / 70 - 80
+60 - 100
+12 - 18
+Adult @ Rest
+90 -120 / 60 - 80
+60 - 100
+12 - 18
+Normal Temperature
+97.8 - 99.1 (F)
+Normal EtCO
+35 - 45 mmHg
+Normal Pulse Oximetry
+95 - 100 %
+Normal CO non-smoker
+0 - 5 %
+2. The patient who may be intoxicated but does not have what reasonably is a life-threatening injury (e.g., the patient who has consumed alcohol
+with a small laceration).
+In these situations, the following steps should be taken:
+Determine the patient's orientation to person, place, and time. Document results clearly and completely.
+Determine what factor(s) is/are influencing the patient to refuse medical care. Resolve the ones in your power (e.g., patient does not want an IV -
+2
+Refusals and High Risk Refusals
+19
+offer transport without an IV).
+Attempt communication with spouse/significant other/other family members if available.
+If patient continues to refuse, contact a Paramedic Supervisor (123) if available, or Online Medical Control (OLMC)
+OLMC may not order a patient who is capable to be transported but may be able to talk with the patient to convince them to seek appropriate
+treatment/transport.
+If patient continues to refuse, clearly explain the risks of refusal, and have the patient repeat these concerns back to you.
+Document your results in the PCR.
+In a courteous manner, assure the patient they can call back for treatment and transport at any time.
+Determining Mental Capacity to Refuse Care
+Patients can refuse care if they do not endorse suicidal or homicidal ideation, are oriented to person, place, time, and event (AAO x 4), and meet
+criteria for capacity as described
+Patients treated for hypoglycemia that meet criteria for non-transport require a signed treat and release.
+EMS personnel shall not discuss cost, system status/unit availability, or any other non-clinical subject regarding a patient's decision to accept or
+decline treatment and/or transport.
+All patients refusing service shall be informed of the following:
+Offered treatment and transport in a non-confrontational, polite manner.
+Advised to call 911 for emergency service if desired.
+Advise the patient that they accept full responsibility for their actions.
+CAPACITY / REFUSAL CHECKLIST:
+Is the patient age 18 or older or an emancipated minor*?
+Can the patient retain and comprehend relevant information?
+Can the patient believe information?
+Can the patient use information to make a choice?
+Is the patient NOT DANGEROUS to self or others (i.e., no suicidal or homicidal ideation)?
+Emancipated Minor Definition:
+In Ohio, a minor is considered emancipated when they are independent from their parents or guardian and no longer under their control. This can
+happen when a minor marries, joins the military, and becomes employed and self-supporting.
+Emancipated minors have the following rights and responsibilities:
+They are no longer under their parent's physical custody.
+They are responsible for their own support.
+They can make certain decisions without their parent's permission, such as getting married, signing contracts, and entering into rental
+agreements.
+To be declared emancipated, a minor must:
+File a petition with the court
+Be living on their own
+And be self-supporting
+The court must also find that emancipation is in the minor's best interests.
+If all are "YES" then the patient has capacity to decline further care/transport. If any are "NO" then the patient does not have capacity to make his
+or her own medical decisions. Document these concepts clearly in your narrative - simply stating "alert and oriented" is not sufficient. Do not
+hesitate to contact OLMC if there are questions about capacity.
+Finally, do no harm and treat all patients like you want yourself or your family to be treated.
+ 
+20

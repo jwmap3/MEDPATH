@@ -1,0 +1,58 @@
+History
+Age.
+Past medical history/surgical history.
+Medications.
+Onset.
+Palliation/Provocation.
+Quality.
+Region/Radiation/Referred.
+Severity.
+Time.
+Fever.
+Last meal.
+Last bowel movement/emesis.
+Menstrual history. (Pregnant?)
+Signs and Symptoms
+Pain.
+Tenderness.
+Nausea/vomiting/diarrhea.
+Dysuria.
+Constipation.
+Vaginal bleeding/discharge.
+Pregnancy.
+Associated Symptoms
+Fever.
+Headache.
+Weakness.
+Malaise.
+Myalgias.
+Cough.
+Mental status changes.
+Rash.
+Differential
+Pneumonia/PE.
+Liver.
+Peptic ulcer/gastritis.
+Gallbladder.
+MI.
+Pancreatitis.
+Kidney stone.
+AAA.
+Appendicitis.
+Bladder/prostrate.
+Pelvic (ectopic, PID, ovarian cyst).
+Spleen.
+Abdominal Pain - Medical Reference
+50
+Diverticulitis.
+Bowel Obstruction.
+Gastroenteritis.
+Pearls
+Exam:
+ mental status; skin; neck; heart; lungs; abdomen; back; extremities; neuro.
+Abdominal pain in women of childbearing age Ectopic pregnancy until proven otherwise.
+Consider AAA in pts. > 50 years old with abdominal pain.
+Repeat vital signs after therapeutic interventions.
+Zofran (Ondansetron) ODT (oral dissolving tablet) may be given on the tongue (4 mg ODT). 
+ 
+51

@@ -1,0 +1,31 @@
+History
+Past Medical History.
+Medications.
+Events.
+End stage renal failure.
+Estimated downtime.
+Hypothermia?
+Overdose?
+DNR?
+Signs and Symptoms
+Pulseless.
+Apneic.
+No auscultated heart tones.
+Differential
+Hypovolemia (trauma, AAA, other).
+Hypoxia.
+Potassium (hypo/hyperkalemia).
+Overdose (TCA's, digoxin, beta blockers, calcium channel blockers).
+Acidosis.
+Hypothermia.
+Cardiac tamponade.
+Massive MI.
+Hyperkalemia.
+Pearls
+ 
+Always address correctable causes.
+Routine use of sodium Bicarbonate, dextrose, naloxone and calcium in cardiac arrest care are not indicated unless a clinical scenario exists
+(e.g. blood sugar <60; patient with known IV Drug Abuse, patient who missed dialysis or in dialysis).
+ 
+Pulseless Electrical Activity (PEA) - Medical Reference
+27

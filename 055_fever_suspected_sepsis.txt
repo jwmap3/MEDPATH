@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+YES
+Universal Patient Care
+Consider droplet, airborne, contact precautions
+Suspected Sepsis?
+Pulse, RR, BP, EtCO
+, Temperature
+2
+Support  
+Airway
+Establish 2 large bore 
+IVs
+Normal Saline 0.9 (NS)
+30 mL/kg Fluid Bolus
+Reassess Vitals / Lung Sounds
+Notify receiving facility of suspected sepsis
+Persistent Hypotension?
+Refer to  
+Hypotension
+  Protocol
+NO
+OR
+Monitor/trend Vital Signs
+Limit on-scene time to 15 minutes
+Prevent Hypothermia
+Refractory 
+Hypotension
+Epinephrine Push Dose 
+10 - 20 mcg IVP, IO
+Dilution
+:  Discard 9 mL of Epi 1:10,000 (0.1 mg/mL) and draw up 9
+mL of normal saline to create push-dose pressor Epi 1:100,000.  
+This will yield 10 mcg/mL.
+Give 1-2 mL
+ of prepared Epinephrine 
+every 3 minutes
+ until BP or HR
+goals are achieved.  
+LABEL 
+syringe.
+Requires large bore IV (18 or 16 gauge preferred).  
+Epinephrine Drip 
+1 mg IV Drip
+Mix 1 mg Epinephrine (1 mg/mL or 1 mg/10 mL) into 1,000 mL NS
+(use 60 gtt drip set)
+Infuse until HR >60 and MAP >65 mmHg
+LABEL
+ the bag
+Fever/Suspected Sepsis
+64

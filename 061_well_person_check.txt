@@ -1,0 +1,26 @@
+
+
+
+
+
+
+NO
+NO
+Universal Patient Care
+Patient has medical complaint or obvious trauma
+Obtain BP, Pulse, SpO2, Temperature,
+EtCO2
+  if applicable; consider  
+12 Lead ECG
+Assess patient for abnormal vital signs.
+Vital signs abnormal?
+Con"rm patient has no medical complaint.
+Provide patient with vital sign results and have them
+contact their doctor to report results
+YES
+YES
+Go to appropriate protocol and recommend transport
+Recommend transport for evaluation.
+Have patient sign refusal if transport declined
+Well Person Check
+70

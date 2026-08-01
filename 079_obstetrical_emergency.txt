@@ -1,0 +1,69 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+YES
+YES
+YES
+Known Pregnancy / Missed Period?
+Left Lateral Position
+Hypertension During Transport?
+Seizure During Transport?
+Blood Glucose Analysis
+Initiate
+Magnesium Sulfate 
+4 gm IVP
+Over 20 minutes.
+Active Seizure Activity
+Midazolam (Versed) 
+2 - 5 mg Slow IVP
+OR
+Midazolam (Versed) 
+10 mg IM
+For active grand mal seizure
+Go to:  
+Seizure
+  Protocol
+NO
+NO
+YES
+YES
+Vaginal Bleeding / Abdominal Pain?
+Known Pregnancy / Missed Period?
+Orthostatic vital signs
+Normal Saline 0.9 (NS) 
+500 mL Fluid Bolus
+Complaint of Labor
+No
+Place Left Lateral Recumbent
+Transport
+Universal Patient Care
+Adult IV/IO
+  Protocol
+NO
+YES
+Severe Post Partum Hemorrhage?
+Tranexamic Acid (TXA) 
+2 gm IVP
+May repeat x 1 if bleeding persists.
+Abdominal Pain
+  Protocol
+Childbirth/Labor
+  Protocol
+Obstetrical Emergency
+89

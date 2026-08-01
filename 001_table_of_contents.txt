@@ -1,0 +1,267 @@
+Home ... 1
+Table of Contents ... 2
+Preface ... 7
+Signature Page ... 8
+Letter From Medical Director ... 9
+Global Changes and/or Individual Page Removals ... 11
+Adult Section ... 12
+Adult Assessment ... 13
+Universal Patient Care ... 14
+Universal Patient Care - Medical Reference ... 15
+Patient Safety ... 16
+Police Custody/Taser Use ... 17
+Police Custody/Taser Use - Medical Reference ... 18
+Refusals and High Risk Refusals ... 19
+Adult Cardiovascular ... 21
+Cardiac Arrest ... 22
+Cardiac Arrest - Medical Reference ... 23
+Asystole (Includes POCUS) ... 24
+Asystole (Includes POCUS) - Medical Reference ... 25
+Pulseless Electrical Activity (PEA) ... 26
+Pulseless Electrical Activity (PEA) - Medical Reference ... 27
+V-Fib/Pulseless V-Tach ... 28
+V-Fib/Pulseless V-Tach - Medical Reference ... 29
+Bradycardia-Unstable ... 30
+Bradycardia-Unstable - Medical Reference ... 31
+Chest Pain (Suspected ACS) ... 32
+Chest Pain (Suspected ACS) - Medical Reference ... 33
+Hypertensive Emergencies ... 34
+Hypertensive Emergencies - Medical Reference ... 35
+Hypotension/Shock Non-Trauma ... 36
+Hypotension/Shock Non-Trauma - Medical Reference ... 37
+Post ROSC Care ... 38
+Post ROSC Care - Medical Reference ... 39
+Tachycardia w/Pulse 
+(SVT, A-Fib/A-Flutter, VT) ... 40
+Tachycardia w/Pulse 
+(SVT, A-Fib/A-Flutter, VT) - Medical Reference ... 41
+Adult Environmental ... 42
+Drowning/Near Drowning ... 43
+Drowning/Near Drowning - Medical Reference ... 44
+Hypothermia ... 45
+Hypothermia - Medical Reference ... 46
+Hyperthermia ... 47
+Adult Gastrointestinal ... 48
+Abdominal Pain ... 49
+Abdominal Pain - Medical Reference ... 50
+Vomiting/Diarrhea ... 52
+Vomiting/Diarrhea - Medical Reference ... 53
+Adult General Medical ... 55
+Adult IV/IO ... 56
+Back Pain ... 57
+Back Pain - Medical Reference ... 58
+Determining Death ... 59
+Determining Death - Medical Reference ... 60
+Dystonic Reaction ... 61
+Epistaxis ... 62
+Epistaxis - Medical Reference ... 63
+Fever/Suspected Sepsis ... 64
+Fever/Suspected Sepsis - Medical Reference ... 65
+Hypoglycemia/Hyperglycemia ... 66
+Hypoglycemia/Hyperglycemia - Medical Reference ... 67
+Pain Control ... 68
+Pain Control - Medical Reference ... 69
+Table of Contents
+2
+Well Person Check ... 70
+Well Person Check - Medical Reference ... 71
+Adult Neurological ... 72
+Altered Mental Status ... 73
+Altered Mental Status - Medical Reference ... 74
+Behavioral Emergency / Sedation ... 75
+Behavioral Emergency / Sedation - Medical Reference ... 77
+Seizure ... 78
+Seizure - Medical Reference ... 79
+Suspected Stroke ... 80
+Suspected Stroke - Medical Reference ... 81
+Syncope ... 82
+Syncope - Medical Reference ... 83
+Adult OB/GYN ... 84
+Childbirth/Labor ... 85
+Childbirth/Labor - Medical Reference ... 86
+Maternal Arrest ... 87
+Newly Born ... 88
+Obstetrical Emergency ... 89
+Obstetrical Emergency - Medical Reference ... 90
+Adult Respiratory ... 91
+Adult Airway ... 92
+Adult Airway - Medical Reference ... 93
+Adult Failed Airway Algorithm ... 94
+Adult Failed Airway Algorithm - Medical Reference ... 95
+Allergic Reaction ... 96
+Allergic Reaction - Medical Reference ... 97
+Acute Pulmonary Edema ... 98
+Acute Pulmonary Edema - Medical Reference ... 99
+Respiratory Distress ... 100
+Respiratory Distress - Medical Reference ... 101
+Invasive Ventilation ... 102
+Invasive Ventilation Decision Process ... 103
+Non-Invasive Ventilation (CPAP and BiPAP) ... 104
+Non-Invasive Ventilation Decision Process ... 105
+Adult Toxicology ... 107
+Overdose/Toxic Exposure ... 108
+Overdose/Toxic Exposure - Medical Reference ... 109
+Adult Trauma ... 110
+Multiple Trauma ... 111
+Multiple Trauma - Medical Reference ... 112
+Burns ... 113
+Burns - Medical Reference ... 114
+Electrical Injuries ... 115
+Electrical Injuries - Medical Reference ... 116
+Extremity Trauma ... 117
+Extremity Trauma - Medical Reference ... 118
+Eye Injury/Complaint ... 119
+Eye Injury/Complaint - Medical Reference ... 120
+Head Trauma ... 121
+Head Trauma - Medical Reference ... 122
+Traumatic Brain Injury ... 123
+Spinal Motion Restriction (SMR) ... 124
+Trauma Arrest ... 125
+Trauma Arrest - Medical Reference ... 126
+Pediatric Section ... 127
+Pediatric Assessment ... 128
+Pediatric Universal Care ... 129
+Pediatric Universal Care - Medical Reference ... 130
+Pediatric Cardiovascular ... 131
+Pediatric Bradycardia ... 132
+Pediatric Bradycardia - Medical Reference ... 133
+Pediatric Pulseless Arrest ... 134
+Pediatric Pulseless Arrest - Medical Reference ... 135
+Pediatric Tachycardia w/Pulse ... 136 3
+Pediatric Tachycardia w/Pulse - Medical Reference ... 137
+Pediatric Gastrointestinal ... 138
+Pediatric Vomiting/Diarrhea ... 139
+Pediatric Vomiting/Diarrhea - Medical Reference ... 140
+Pediatric General Medical ... 142
+Pediatric Hypoglycemia/Hyperglycemia ... 143
+Pediatric Hypoglycemia/Hyperglycemia - Medical Reference ... 144
+Pediatric Hypotension/Sepsis/Shock Non-Trauma ... 145
+Pediatric Hypotension/Sepsis/Shock Non-Trauma - Medical Reference ... 146
+Pediatric Pain Control ... 147
+Pediatric Pain Control - Medical Reference ... 148
+Pediatric IV/IO ... 149
+Pediatric IV/IO - Medical Reference ... 150
+Pediatric Neurological ... 151
+Pediatric Altered Mental Status ... 152
+Pediatric Altered Mental Status - Medical Reference ... 153
+Pediatric Seizure ... 154
+Pediatric Seizure - Medical Reference ... 155
+Pediatric Respiratory ... 156
+Pediatric Airway ... 157
+Pediatric Airway - Medical Reference ... 158
+Pediatric Airway-Failed ... 159
+Pediatric Airway-Failed - Medical Reference ... 160
+Pediatric Allergic Reaction ... 161
+Pediatric Allergic Reaction - Medical Reference ... 162
+Pediatric Respiratory Distress ... 163
+Pediatric Respiratory Distress - Medical Reference ... 164
+Pediatric/Infant and Neonatal CPAP (Neotech RAM Cannula) ... 165
+Pediatric Toxicology ... 166
+Pediatric Overdose/Toxic Exposure/Cyanide Exposure ... 167
+Pediatric Overdose/Toxic Exposure/Cyanide Exposure - Medical Reference ... 168
+Pediatric Trauma ... 169
+Pediatric Multiple Trauma ... 170
+Pediatric Multiple Trauma - Medical Reference ... 171
+Pediatric Burns ... 172
+Pediatric Burns - Medical Reference ... 173
+Pediatric 
+Traumatic Brain Injury ... 174
+Pediatric Head Trauma ... 175
+Pediatric Head Trauma - Medical Reference ... 176
+Pediatric Extremity Trauma ... 177
+Pediatric Extremity Trauma - Medical Reference ... 178
+Pharmacology ... 179
+Adenosine (Adenocard) ... 180
+Albuterol (Proventil) ... 182
+Amiodarone (Cordarone) ... 183
+Aspirin ... 185
+Atropine ... 186
+Calcium Chloride ... 188
+Cyanokit (Hydroxocobalamin) ... 189
+Dextrose 10% (D10) ... 190
+Diltiazem (Cardizem) ... 192
+Diphenhydramine (Benadryl) ... 194
+Epinephrine 1 mg/1 mL ... 196
+Epinephrine 1 mg/10 mL ... 198
+Epinephrine Drip ... 200
+Epinephrine Push Dose ... 201
+Fentanyl (Sublimaze) ... 203
+Glucagon ... 205
+Ipratropium (Atrovent) ... 207
+Ketamine (Ketalar) ... 209
+Ketorolac (Toradol) ... 211
+Lidocaine (Xylocaine) ... 212
+Magnesium Sulfate ... 214
+Methylprednisolone (Solu-Medrol) ... 216
+Midazolam (Versed) ... 217 4
+Morphine ... 220
+Naloxone (Narcan) ... 222
+Nitroglycerin ... 224
+Normal Saline 0.9 (NS) ... 225
+Ondansetron (Zofran) ... 227
+Oral Glucose ... 228
+Oxygen ... 229
+Sodium Bicarbonate ... 230
+Tranexamic Acid (TXA) ... 231
+Vecuronium (Norcuron) ... 232
+Medication Concentration List ... 233
+Cyanokit (Hydroxocobalamin) Dosing Guide: ... 234
+Guidelines ... 235
+Air Transport ... 236
+EMS Provider Practitioner Disciplinary Procedure ... 237
+Death Criteria ... 238
+Do Not Resuscitate (DNR) Withholding Resuscitation ... 239
+Do Not Resuscitate (DNR) ... 240
+Termination of Resuscitation (TOR) ... 242
+Documentation-Patient Care Report (PCR) ... 243
+Documentation-Vital Signs ... 245
+Non-Paramedic Transport of Patients ... 246
+Non-Transport of Patients ... 247
+Patient Self Medication ... 248
+Patient Without a Protocol/Implementation of New Protocol ... 249
+Physician on Scene ... 250
+Safe Transport of Pediatric Patients ... 251
+Trauma Center Triage Criteria ... 252
+Procedures ... 253
+Certification Requirements ... 254
+12 Lead ECG ... 255
+Airway-Orotracheal Intubation ... 258
+Airway-Bougie ... 260
+Airway-Capnography ... 262
+Airway-Supraglottic ... 263
+Airway-Non-Invasive Ventilation ... 264
+Airway-Suctioning-Basic ... 265
+Airway-Suctioning - Advanced ... 266
+Blood Glucose Analysis ... 267
+Chest Trauma ... 268
+CPR ... 269
+Cricothyrotomy (FONA) ... 271
+Defibrillation-Automated ... 272
+Defibrillation-Automated Implantable Cardioverter ... 274
+Defibrillation-Manual ... 275
+External Jugular IV ... 276
+Intranasal Medication Administration ... 277
+Needle Chest Decompression ... 279
+Spinal Motion Restriction ... 281
+Spinal Motion Restriction-Special Instructions ... 283
+Splinting ... 284
+Synchronized Cardioversion ... 286
+TPOD Pelvic Binder ... 288
+Transcutaneous Pacing ... 292
+Vascular Access EZ-IO ... 293
+Venous Access-Alternative Routes ... 295
+Venous Access-Extremity ... 297
+Wound Care/CAT Tourniquet ... 298
+Reference ... 300
+Protocol Changes ... 301
+AirQ3 Size Chart ... 305
+Full Guide - O - Two e700 Ventilator Alarms ... 306
+Medic Unit Changeover ... 323
+Pediatric ETT Size Chart ... 324
+Pediatric Vital Signs ... 325 5
+RACE Scoring Tool ... 326
+Ventilator Card w/AirQ-Female 
+... 327
+Ventilator Card w/AirQ-Male 
+... 328
+6

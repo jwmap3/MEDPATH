@@ -1,0 +1,35 @@
+History
+Past medical history.
+Medications (beta-blocker, calcium channel blocker, clonidine, digoxin).
+Events.
+Pacemaker.
+Signs and Symptoms
+HR < 60 bpm.
+Chest pain.
+Hypotension or shock.
+Altered mental Status.
+Syncope.
+Differential: (H's and T's)
+MI.
+Hypoxia.
+Hypothermia.
+Sinus bradycardia.
+Athletes.
+Head injury.
+CVA.
+Spinal cord injury.
+Sick sinus syndrome.
+AV block.
+Overdose.
+Pearls
+Exam:
+ mental status; neck; heart; lungs; neuro.
+Use of lidocaine in heart block can worsen bradycardia and lead to asystole or death.
+Pharmacologic treatment of bradycardia is based on presence or absence of symptoms.
+If symptomatic, treat.
+If asymptomatic, monitor only.
+Consider treatable causes for bradycardia (i.e., beta or calcium channel blocker OD).
+Remember to oxygenate and support ventilatory effort.
+ 
+Bradycardia-Unstable - Medical Reference
+31
