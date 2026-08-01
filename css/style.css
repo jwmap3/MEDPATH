@@ -43,7 +43,8 @@ body{
   background: rgba(250,245,239,0.9);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--line);
-  position: sticky; top:0; z-index:10;
+  /* Not sticky on purpose — the logo scrolls away with the page instead of
+     permanently occupying screen space on every view. */
 }
 .brand{ display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; }
 .brand-logo{ width:108px; height:108px; object-fit:contain; }
@@ -238,6 +239,30 @@ body{
   margin-top:8px; padding:10px 12px; border-radius:10px; background: var(--coral-bg);
   color:#8a3f2c; font-weight:700; font-size:0.98rem;
 }
+
+/* Inline vitals/dosing widgets embedded directly in a step card */
+.inline-vital{
+  margin-top:10px; padding:10px 12px; border-radius:12px;
+  background: var(--washi-dim); border:1px solid var(--line);
+  display:flex; flex-direction:column; gap:6px;
+}
+.inline-vital-label{ font-size:0.75rem; font-weight:700; color:var(--sumi-soft); text-transform:uppercase; letter-spacing:0.04em; }
+.inline-vital-input{ font-size:0.98rem; padding:10px 12px; }
+.inline-weight .weight-toggle-row{ display:flex; align-items:center; gap:8px; }
+.inline-weight-input{ flex:1; font-size:0.98rem; padding:10px 12px; }
+.unit-toggle{ display:flex; border:1px solid var(--line); border-radius:10px; overflow:hidden; flex-shrink:0; }
+.unit-btn{
+  padding:9px 12px; border:none; background:var(--card); color:var(--sumi-soft);
+  font-size:0.82rem; font-weight:700; cursor:pointer;
+}
+.unit-btn.active{ background: var(--sakura); color:#fff; }
+.inline-gcs-box{
+  width:100%; text-align:left; padding:11px 14px; border-radius:10px;
+  border:1px solid var(--line); background:var(--card); cursor:pointer;
+  font-size:0.95rem; color:var(--sumi); font-weight:600;
+}
+.inline-gcs-panel{ margin-top:8px; }
+.inline-gcs-panel.hidden{ display:none; }
 .step-drug-link{
   margin-top:8px; display:inline-block; font-size:0.78rem; color:var(--indigo);
   text-decoration:underline; cursor:pointer; background:none; border:none; padding:0;
@@ -306,9 +331,19 @@ body{
 .arrest-pre .big-cta{ background: linear-gradient(160deg, var(--coral) 0%, #b85b45 100%); }
 .arrest-live{ display:flex; flex-direction:column; gap:16px; }
 
-.arrest-clock{ text-align:center; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
+.arrest-clock{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);
+}
+.arrest-clock-main{ text-align:left; }
 .arrest-started{ margin:0 0 4px; font-size:0.8rem; color:var(--sumi-soft); }
 .arrest-elapsed{ font-size:2.4rem; font-weight:800; letter-spacing:0.03em; color:var(--sumi); font-variant-numeric: tabular-nums; }
+.arrest-quickref{ text-align:right; flex-shrink:0; }
+.arrest-quickref-line{
+  margin:0 0 4px; font-size:0.74rem; font-weight:700; color:var(--sumi-soft);
+  font-variant-numeric: tabular-nums; white-space:nowrap;
+}
+.arrest-quickref-line:last-child{ margin-bottom:0; }
 
 .arrest-alert{
   background: var(--coral); color:#fff; font-weight:700; text-align:center;

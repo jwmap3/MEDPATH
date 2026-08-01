@@ -90,12 +90,27 @@ function dispatch(){
   if(state.step === 'home') return renderHome();
   if(state.step === 'demographic') return renderDemographic();
   if(state.step === 'ccList') return renderCcList();
-  if(state.step === 'vitals') return renderVitals();
   if(state.step === 'branch') return renderBranchSelect();
   if(state.step === 'protocol') return renderProtocolView();
   if(state.step === 'browseAll') return renderBrowseAll();
   if(state.step === 'drugRef') return renderDrugRef();
   if(state.step === 'arrest') return renderArrest();
+}
+
+// Start a fresh patient run: clears any vitals/weight collected during a
+// previous chief complaint so nothing bleeds over between patients, then
+// jumps straight to the branch picker (if the protocol has more than one
+// clinical presentation) or straight to the protocol steps.
+function beginProtocolRun(protocolId){
+  state.chosenProtocolId = protocolId;
+  state.vitals = {};
+  const proto = protocolById(protocolId);
+  if(proto.branches.length > 1){
+    state.step = 'branch';
+  } else {
+    state.chosenBranchId = proto.branches[0].id;
+    state.step = 'protocol';
+  }
 }
 
 function render(){
@@ -191,8 +206,8 @@ function renderCcList(){
     box.textContent = t.label;
     box.addEventListener('click', () => {
       state.chosenTopicKey = t.key;
-      state.chosenProtocolId = t[demo];
-      state.step = 'vitals'; render();
+      beginProtocolRun(t[demo]);
+      render();
     });
     return box;
   }
@@ -245,94 +260,11 @@ function renderCcList(){
   draw('');
 }
 
-// ---------- Step 3: Vitals & Weight ----------
-function renderVitals(){
-  const tpl = document.getElementById('tpl-vitals').content.cloneNode(true);
-  app.innerHTML = '';
-  app.appendChild(tpl);
-  const proto = protocolById(state.chosenProtocolId);
-  addBackBtn(() => { state.step = 'ccList'; render(); });
-
-  const title = document.createElement('h2');
-  title.className = 'step-title';
-  title.innerHTML = `<span class="step-num">✓</span> ${proto.title}`;
-  app.querySelector('.screen').prepend(title);
-
-  // Weight: lb entry, live kg conversion, kg stored in hidden field for calculations
-  const lbInput = document.getElementById('weightLbInput');
-  const kgReadout = document.getElementById('kgReadout');
-  const kgHidden = document.getElementById('weightKgHidden');
-  lbInput.addEventListener('input', () => {
-    const lb = parseFloat(lbInput.value);
-    if(lb && !isNaN(lb)){
-      const kg = lb / 2.20462;
-      kgReadout.textContent = `${kg.toFixed(1)} kg`;
-      kgHidden.value = kg.toFixed(2);
-    } else {
-      kgReadout.textContent = '— kg';
-      kgHidden.value = '';
-    }
-  });
-
-  // GCS interactive picker
-  const gcsBox = document.getElementById('gcsBox');
-  const gcsBoxText = document.getElementById('gcsBoxText');
-  const gcsPanel = document.getElementById('gcsPanel');
-  const gcsHidden = document.getElementById('gcsHidden');
-  const gcsSel = {e:null, v:null, m:null};
-
-  function buildGcsOptions(containerId, cat){
-    const container = document.getElementById(containerId);
-    GCS_OPTIONS[cat].forEach(([val, label]) => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'gcs-opt-btn';
-      btn.textContent = `${val} – ${label}`;
-      btn.addEventListener('click', () => {
-        gcsSel[cat] = val;
-        container.querySelectorAll('.gcs-opt-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        checkGcsComplete();
-      });
-      container.appendChild(btn);
-    });
-  }
-  buildGcsOptions('gcsEyeOpts', 'e');
-  buildGcsOptions('gcsVerbalOpts', 'v');
-  buildGcsOptions('gcsMotorOpts', 'm');
-
-  function checkGcsComplete(){
-    if(gcsSel.e && gcsSel.v && gcsSel.m){
-      const total = gcsSel.e + gcsSel.v + gcsSel.m;
-      gcsHidden.value = `${total} (E${gcsSel.e} V${gcsSel.v} M${gcsSel.m})`;
-      gcsBoxText.textContent = `GCS ${total} (E${gcsSel.e} V${gcsSel.v} M${gcsSel.m})`;
-      gcsPanel.classList.add('hidden');
-    }
-  }
-  gcsBox.addEventListener('click', () => gcsPanel.classList.toggle('hidden'));
-  document.getElementById('gcsCloseBtn').addEventListener('click', () => gcsPanel.classList.add('hidden'));
-
-  document.getElementById('vitalsForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const fd = new FormData(e.target);
-    state.vitals = Object.fromEntries(fd.entries());
-    state.vitals.weightLb = lbInput.value;
-    const branches = proto.branches;
-    if(branches.length > 1){
-      state.step = 'branch';
-    } else {
-      state.chosenBranchId = branches[0].id;
-      state.step = 'protocol';
-    }
-    render();
-  });
-}
-
 function vitalsSummaryHTML(){
   if(!state.vitals) return '';
   const v = state.vitals;
   const items = [];
-  if(v.weightLb) items.push(`${v.weightLb} lb (${parseFloat(v.weight).toFixed(1)} kg)`);
+  if(v.weightLb) items.push(`${Math.round(v.weightLb*10)/10} lb (${parseFloat(v.weight).toFixed(1)} kg)`);
   if(v.hr) items.push(`HR ${v.hr}`);
   if(v.sbp || v.dbp) items.push(`BP ${v.sbp||'?'}/${v.dbp||'?'}`);
   if(v.rr) items.push(`RR ${v.rr}`);
@@ -343,52 +275,216 @@ function vitalsSummaryHTML(){
   return items.map(i => `<span>${i}</span>`).join('');
 }
 
-// crude vital-based suggestion heuristics (advisory badge only — never auto-selects)
-function suggestBranch(proto){
-  const v = state.vitals || {};
-  const sbp = parseFloat(v.sbp), spo2 = parseFloat(v.spo2);
-  const gcsTotal = v.gcs ? parseInt(v.gcs, 10) : null;
-  let best = null;
-  for(const b of proto.branches){
-    const label = b.id + ' ' + b.label.toLowerCase();
-    let score = 0;
-    if(/arrest|crashing/.test(label) && gcsTotal && gcsTotal <= 8) score += 3;
-    if(/shock|impending/.test(label) && sbp && sbp < 90) score += 2;
-    if(/hypotension/.test(label) && sbp && sbp < 90) score += 2;
-    if(/respiratory|stridor|wheeze/.test(label) && spo2 && spo2 < 92) score += 2;
-    if(/hives|only/.test(label) && spo2 && spo2 >= 95) score += 1;
-    if(score > 0 && (!best || score > best.score)) best = {id: b.id, score};
-  }
-  return best ? best.id : null;
-}
-
-// ---------- Step 4: Branch select ----------
+// ---------- Step 3: Branch select ----------
 function renderBranchSelect(){
   const tpl = document.getElementById('tpl-branch-select').content.cloneNode(true);
   app.innerHTML = '';
   app.appendChild(tpl);
   const proto = protocolById(state.chosenProtocolId);
-  addBackBtn(() => { state.step='vitals'; render(); });
+  addBackBtn(() => { state.step = 'ccList'; render(); });
 
   app.querySelector('.protocol-context').textContent = proto.title;
-  document.getElementById('vitalsSummary').innerHTML = vitalsSummaryHTML();
 
-  const suggested = suggestBranch(proto);
   const list = document.getElementById('branchList');
   proto.branches.forEach(b => {
     const btn = document.createElement('button');
     btn.className = 'branch-item';
-    btn.innerHTML = `${b.label}` + (b.id === suggested ? ' <span class="tag" style="background:#fbe9e3;color:#8a3f2c;">Suggested by vitals</span>' : '');
+    btn.textContent = b.label;
     btn.addEventListener('click', () => {
       state.chosenBranchId = b.id;
       state.step = 'protocol'; render();
     });
     list.appendChild(btn);
   });
-  const note = document.createElement('p');
-  note.className = 'meta-note';
-  note.textContent = 'Vital-based suggestion is advisory only — use clinical judgment to pick the matching presentation.';
-  list.after(note);
+}
+
+// ---------- Inline vitals/dosing widgets (live inside protocol steps) ----------
+// No separate vitals screen — a step that needs the patient's weight for a
+// per-kg dose, or that explicitly calls for a specific vital, gets a small
+// inline control right in that step's card. Anything entered anywhere is
+// shared globally for the rest of the run (typing weight once fills in
+// every per-kg dose on the page) and shows up in the sticky summary.
+
+function stepNeedsWeight(text){
+  return /\d+(?:\.\d+)?\s*(?:-\s*\d+(?:\.\d+)?\s*)?(mg|mcg|gm|mEq|mL)\/kg/i.test(text);
+}
+
+// Best-effort keyword detection for an explicit vital-sign instruction in a
+// step, same spirit as the dose-calculator regex — works on any protocol
+// text without per-step tagging. "where appropriate" per the source text,
+// not exhaustive.
+function detectVitalNeeds(text){
+  const needs = [];
+  if(/\bGCS\b|Glasgow\s+Coma/i.test(text)) needs.push('gcs');
+  if(/blood\s+glucose|\bBGL\b|glucose\s+level/i.test(text)) needs.push('glucose');
+  if(/blood\s+pressure|\bSBP\b|\bDBP\b/i.test(text)) needs.push('bp');
+  if(/heart\s+rate/i.test(text)) needs.push('hr');
+  if(/respiratory\s+rate/i.test(text)) needs.push('rr');
+  if(/SpO2|oxygen\s+saturation|pulse\s+ox(imetry)?/i.test(text)) needs.push('spo2');
+  if(/\btemperature\b/i.test(text)) needs.push('temp');
+  if(needs.length === 0 && /\bvital\s*signs\b/i.test(text)) needs.push('all');
+  return needs;
+}
+
+let activeWeightWidgets = [];
+let activeDoseDisplays = [];
+let activeStickyEls = [];
+
+function kgToDisplayVal(kg, unit){
+  if(kg == null || isNaN(kg)) return '';
+  const v = unit === 'kg' ? kg : kg * 2.20462;
+  return String(Math.round(v * 10) / 10);
+}
+
+function refreshAfterVitalChange(){
+  activeWeightWidgets.forEach(w => w.refresh());
+  activeDoseDisplays.forEach(d => {
+    const dose = computeDose(d.text, state.vitals.weight);
+    d.el.textContent = dose || '';
+    d.el.classList.toggle('hidden', !dose);
+  });
+  const html = vitalsSummaryHTML();
+  activeStickyEls.forEach(el => {
+    el.innerHTML = html;
+    el.classList.toggle('hidden', !html);
+  });
+}
+
+function createWeightWidget(){
+  const wrap = document.createElement('div');
+  wrap.className = 'inline-vital inline-weight';
+  wrap.innerHTML = `
+    <span class="inline-vital-label">Weight</span>
+    <div class="weight-toggle-row">
+      <input type="number" step="0.1" min="0" class="text-input inline-weight-input" placeholder="e.g. 180">
+      <div class="unit-toggle">
+        <button type="button" class="unit-btn active" data-unit="lb">lb</button>
+        <button type="button" class="unit-btn" data-unit="kg">kg</button>
+      </div>
+    </div>`;
+  const input = wrap.querySelector('.inline-weight-input');
+  const unitBtns = [...wrap.querySelectorAll('.unit-btn')];
+  let unit = 'lb';
+
+  function refresh(){
+    if(document.activeElement === input) return; // don't clobber active typing
+    input.value = kgToDisplayVal(state.vitals.weight, unit);
+  }
+  unitBtns.forEach(b => b.addEventListener('click', () => {
+    unit = b.dataset.unit;
+    unitBtns.forEach(x => x.classList.toggle('active', x === b));
+    input.value = kgToDisplayVal(state.vitals.weight, unit);
+  }));
+  input.addEventListener('input', () => {
+    const val = parseFloat(input.value);
+    if(!isNaN(val) && val > 0){
+      const kg = unit === 'kg' ? val : val / 2.20462;
+      state.vitals.weight = kg;
+      state.vitals.weightLb = unit === 'lb' ? val : kg * 2.20462;
+    } else {
+      state.vitals.weight = null;
+      state.vitals.weightLb = null;
+    }
+    refreshAfterVitalChange();
+  });
+
+  wrap.refresh = refresh;
+  refresh();
+  activeWeightWidgets.push(wrap);
+  return wrap;
+}
+
+function createNumericVitalWidget(key, label, placeholder){
+  const wrap = document.createElement('div');
+  wrap.className = 'inline-vital';
+  wrap.innerHTML = `<span class="inline-vital-label">${label}</span>
+    <input type="number" class="text-input inline-vital-input" placeholder="${placeholder}">`;
+  const input = wrap.querySelector('.inline-vital-input');
+  if(state.vitals[key]) input.value = state.vitals[key];
+  input.addEventListener('input', () => {
+    state.vitals[key] = input.value ? input.value : null;
+    refreshAfterVitalChange();
+  });
+  return wrap;
+}
+
+function createBpWidget(){
+  const wrap = document.createElement('div');
+  wrap.className = 'inline-vital';
+  wrap.innerHTML = `<span class="inline-vital-label">Blood Pressure</span>
+    <div class="bp-box">
+      <input type="number" class="bp-input inline-sbp" placeholder="120" aria-label="Systolic">
+      <span class="bp-slash">/</span>
+      <input type="number" class="bp-input inline-dbp" placeholder="80" aria-label="Diastolic">
+    </div>`;
+  const sbp = wrap.querySelector('.inline-sbp');
+  const dbp = wrap.querySelector('.inline-dbp');
+  if(state.vitals.sbp) sbp.value = state.vitals.sbp;
+  if(state.vitals.dbp) dbp.value = state.vitals.dbp;
+  sbp.addEventListener('input', () => { state.vitals.sbp = sbp.value || null; refreshAfterVitalChange(); });
+  dbp.addEventListener('input', () => { state.vitals.dbp = dbp.value || null; refreshAfterVitalChange(); });
+  return wrap;
+}
+
+function createGcsWidget(){
+  const wrap = document.createElement('div');
+  wrap.className = 'inline-vital inline-gcs';
+  const boxText = state.vitals.gcs ? `GCS ${state.vitals.gcs}` : 'Tap to score GCS';
+  wrap.innerHTML = `
+    <button type="button" class="gcs-box inline-gcs-box"><span class="inline-gcs-box-text">${boxText}</span></button>
+    <div class="gcs-panel hidden inline-gcs-panel">
+      <div class="gcs-group"><p class="gcs-group-title">Eye Opening</p><div class="gcs-options inline-gcs-e"></div></div>
+      <div class="gcs-group"><p class="gcs-group-title">Verbal Response</p><div class="gcs-options inline-gcs-v"></div></div>
+      <div class="gcs-group"><p class="gcs-group-title">Motor Response</p><div class="gcs-options inline-gcs-m"></div></div>
+      <button type="button" class="ghost-btn inline-gcs-close">Close</button>
+    </div>`;
+  const box = wrap.querySelector('.inline-gcs-box');
+  const boxTextEl = wrap.querySelector('.inline-gcs-box-text');
+  const panel = wrap.querySelector('.inline-gcs-panel');
+  const sel = {e:null, v:null, m:null};
+
+  function buildOpts(container, cat){
+    GCS_OPTIONS[cat].forEach(([val, label]) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'gcs-opt-btn';
+      btn.textContent = `${val} – ${label}`;
+      btn.addEventListener('click', () => {
+        sel[cat] = val;
+        container.querySelectorAll('.gcs-opt-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        checkComplete();
+      });
+      container.appendChild(btn);
+    });
+  }
+  buildOpts(wrap.querySelector('.inline-gcs-e'), 'e');
+  buildOpts(wrap.querySelector('.inline-gcs-v'), 'v');
+  buildOpts(wrap.querySelector('.inline-gcs-m'), 'm');
+
+  function checkComplete(){
+    if(sel.e && sel.v && sel.m){
+      const total = sel.e + sel.v + sel.m;
+      state.vitals.gcs = `${total} (E${sel.e} V${sel.v} M${sel.m})`;
+      boxTextEl.textContent = `GCS ${state.vitals.gcs}`;
+      panel.classList.add('hidden');
+      refreshAfterVitalChange();
+    }
+  }
+  box.addEventListener('click', () => panel.classList.toggle('hidden'));
+  wrap.querySelector('.inline-gcs-close').addEventListener('click', () => panel.classList.add('hidden'));
+  return wrap;
+}
+
+function createVitalWidget(key){
+  if(key === 'gcs') return createGcsWidget();
+  if(key === 'bp') return createBpWidget();
+  if(key === 'hr') return createNumericVitalWidget('hr', 'Heart Rate (bpm)', 'e.g. 88');
+  if(key === 'rr') return createNumericVitalWidget('rr', 'Respiratory Rate', 'e.g. 16');
+  if(key === 'spo2') return createNumericVitalWidget('spo2', 'Oxygen Saturation (SpO2 %)', 'e.g. 97');
+  if(key === 'temp') return createNumericVitalWidget('temp', 'Temperature (°F)', 'e.g. 98.6');
+  if(key === 'glucose') return createNumericVitalWidget('glucose', 'Blood Glucose', 'e.g. 110');
+  return null;
 }
 
 // ---------- Dose calculation from step text ----------
@@ -431,23 +527,32 @@ function computeDose(text, weightKg){
   return `≈ ${doseStr} for ${w.toFixed(1)} kg${capped ? ' (capped at protocol maximum)' : ''}`;
 }
 
-// ---------- Step 5: Protocol view ----------
+// ---------- Step 4: Protocol view ----------
 function renderProtocolView(){
   const tpl = document.getElementById('tpl-protocol-view').content.cloneNode(true);
   app.innerHTML = '';
   app.appendChild(tpl);
   const proto = protocolById(state.chosenProtocolId);
   const branch = proto.branches.find(b => b.id === state.chosenBranchId);
+  if(!state.vitals) state.vitals = {};
+
+  activeWeightWidgets = [];
+  activeDoseDisplays = [];
+  activeStickyEls = [];
 
   addBackBtn(() => {
-    state.step = proto.branches.length > 1 ? 'branch' : 'vitals';
+    state.step = proto.branches.length > 1 ? 'branch' : 'ccList';
     render();
   });
 
   document.getElementById('protoTitle').textContent = proto.title;
   document.getElementById('protoBranchLabel').textContent =
     (proto.branches.length > 1 ? branch.label : '') ;
-  document.getElementById('vitalsSummarySticky').innerHTML = vitalsSummaryHTML();
+  const stickyEl = document.getElementById('vitalsSummarySticky');
+  const stickyHtml = vitalsSummaryHTML();
+  stickyEl.innerHTML = stickyHtml;
+  stickyEl.classList.toggle('hidden', !stickyHtml);
+  activeStickyEls.push(stickyEl);
 
   if(proto.precedes && proto.precedes.length){
     const pre = protocolById(proto.precedes[0]);
@@ -505,13 +610,27 @@ function renderProtocolView(){
     textDiv.textContent = step.text;
     body.appendChild(textDiv);
 
-    const dose = computeDose(step.text, state.vitals && state.vitals.weight);
-    if(dose){
+    if(stepNeedsWeight(step.text)){
+      body.appendChild(createWeightWidget());
       const doseDiv = document.createElement('div');
-      doseDiv.className = 'step-dose-calc';
-      doseDiv.textContent = dose;
+      doseDiv.className = 'step-dose-calc hidden';
       body.appendChild(doseDiv);
+      const dose = computeDose(step.text, state.vitals.weight);
+      if(dose){ doseDiv.textContent = dose; doseDiv.classList.remove('hidden'); }
+      activeDoseDisplays.push({el: doseDiv, text: step.text});
     }
+
+    detectVitalNeeds(step.text).forEach(key => {
+      if(key === 'all'){
+        ['hr','bp','rr','spo2','temp','glucose','gcs'].forEach(k => {
+          const w = createVitalWidget(k);
+          if(w) body.appendChild(w);
+        });
+      } else {
+        const w = createVitalWidget(key);
+        if(w) body.appendChild(w);
+      }
+    });
 
     if(step.drug_id && state.drugById[step.drug_id]){
       const drugBtn = document.createElement('button');
@@ -528,6 +647,8 @@ function renderProtocolView(){
       gotoBtn.disabled = !target;
       gotoBtn.addEventListener('click', () => {
         if(!target) return;
+        // Continuing the same patient run — keep whatever vitals/weight
+        // have already been entered rather than clearing them.
         state.chosenProtocolId = target.id;
         state.chosenTopicKey = Object.keys(state.topics).find(k =>
           state.topics[k].adult === target.id || state.topics[k].pediatric === target.id);
@@ -677,11 +798,11 @@ function renderBrowseAll(){
       btn.className = 'cc-item';
       btn.innerHTML = `<span>${p.title}</span><span class="tag">${p.demographic}</span>`;
       btn.addEventListener('click', () => {
-        state.chosenProtocolId = p.id;
         state.chosenDemographic = p.demographic;
         state.chosenTopicKey = Object.keys(state.topics).find(k =>
           state.topics[k].adult === p.id || state.topics[k].pediatric === p.id);
-        state.step = 'vitals'; render();
+        beginProtocolRun(p.id);
+        render();
       });
       secDiv.appendChild(btn);
     });
@@ -740,12 +861,18 @@ const arrestState = {
   lastEpiTime: null,
   epiCount: 0,
   lastRhythmTime: null,
+  rhythmCheckCount: 0,
   shockCount: 0,
   amiodaroneCount: 0,
   rhythmAlerted: false,
   chargedAlerted: false,
   epiAlerted: false,
 };
+
+function ordinal(n){
+  const s = ['th','st','nd','rd'], v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
 let arrestTickTimer = null;
 
 const ARREST_MEDS = [
@@ -834,7 +961,7 @@ function startArrestOperation(){
   Object.assign(arrestState, {
     active:true, ended:false, startTime:new Date(), endTime:null, log:[],
     cprRunning:false, cprSegStart:null, cprAccumMs:0, cprCycles:0,
-    lastEpiTime:null, epiCount:0, lastRhythmTime:new Date(), shockCount:0,
+    lastEpiTime:null, epiCount:0, lastRhythmTime:new Date(), rhythmCheckCount:0, shockCount:0,
     amiodaroneCount:0, rhythmAlerted:false, chargedAlerted:false, epiAlerted:false,
   });
   logArrestEvent('Operation started');
@@ -873,6 +1000,7 @@ function logEpiDose(){
 
 function resetRhythmCycle(){
   arrestState.lastRhythmTime = new Date();
+  arrestState.rhythmCheckCount += 1;
   arrestState.rhythmAlerted = false;
   arrestState.chargedAlerted = false;
 }
@@ -956,6 +1084,25 @@ function tickArrest(){
   if(epiTimeEl) epiTimeEl.textContent = fmtElapsedShort(epiMs);
   const epiCountEl = document.getElementById('epiCount');
   if(epiCountEl) epiCountEl.textContent = `Doses: ${arrestState.epiCount} / max 4`;
+
+  // Small quick-reference countdowns, always visible (not just when close to due)
+  const epiDueEl = document.getElementById('arrestEpiDue');
+  if(epiDueEl){
+    if(arrestState.epiCount >= 4){
+      epiDueEl.textContent = 'Epi: max total 4 mg given';
+    } else if(arrestState.lastEpiTime){
+      const remain = Math.max(0, 600000 - (now - arrestState.lastEpiTime.getTime()));
+      epiDueEl.textContent = `${ordinal(arrestState.epiCount + 1)} Dose Due: ${fmtElapsedShort(remain)}`;
+    } else {
+      const remain = Math.max(0, 60000 - (now - arrestState.startTime.getTime()));
+      epiDueEl.textContent = `${ordinal(1)} Dose Due: ${fmtElapsedShort(remain)}`;
+    }
+  }
+  const rhythmDueEl = document.getElementById('arrestRhythmDue');
+  if(rhythmDueEl){
+    const remain = Math.max(0, 120000 - (now - arrestState.lastRhythmTime.getTime()));
+    rhythmDueEl.textContent = `${ordinal(arrestState.rhythmCheckCount + 1)} Pulse Check Due: ${fmtElapsedShort(remain)}`;
+  }
 
   const rhythmMs = now - arrestState.lastRhythmTime.getTime();
   const banner = document.getElementById('arrestAlertBanner');

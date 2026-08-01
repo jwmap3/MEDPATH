@@ -64,89 +64,10 @@
   </section>
 </template>
 
-<template id="tpl-vitals">
-  <section class="screen">
-    <h2 class="step-title"><span class="step-num">3</span> Vitals &amp; Weight</h2>
-    <form id="vitalsForm" class="vitals-form">
-
-      <div class="vfield">
-        <label class="vfield-label">Weight (lb)</label>
-        <div class="weight-row">
-          <input type="number" step="0.1" min="0" id="weightLbInput" class="text-input" required placeholder="e.g. 180">
-          <span class="kg-readout" id="kgReadout">— kg</span>
-        </div>
-        <input type="hidden" name="weight" id="weightKgHidden">
-      </div>
-
-      <div class="vfield">
-        <label class="vfield-label">Heart Rate (bpm)</label>
-        <input type="number" name="hr" class="text-input" placeholder="e.g. 88">
-      </div>
-
-      <div class="vfield">
-        <label class="vfield-label">Blood Pressure</label>
-        <div class="bp-box">
-          <input type="number" name="sbp" class="bp-input" placeholder="120" aria-label="Systolic">
-          <span class="bp-slash">/</span>
-          <input type="number" name="dbp" class="bp-input" placeholder="80" aria-label="Diastolic">
-        </div>
-      </div>
-
-      <div class="vfield">
-        <label class="vfield-label">Respiratory Rate</label>
-        <input type="number" name="rr" class="text-input" placeholder="e.g. 16">
-      </div>
-
-      <div class="vfield">
-        <label class="vfield-label">Oxygen Saturation (SpO2 %)</label>
-        <input type="number" name="spo2" class="text-input" placeholder="e.g. 97">
-      </div>
-
-      <div class="vfield">
-        <label class="vfield-label">Temperature (°F)</label>
-        <input type="number" step="0.1" name="temp" class="text-input" placeholder="e.g. 98.6">
-      </div>
-
-      <div class="vfield">
-        <label class="vfield-label">Blood Glucose</label>
-        <input type="number" name="glucose" class="text-input" placeholder="e.g. 110">
-      </div>
-
-      <div class="vfield">
-        <label class="vfield-label">GCS</label>
-        <input type="hidden" name="gcs" id="gcsHidden">
-        <button type="button" class="gcs-box" id="gcsBox">
-          <span id="gcsBoxText">Tap to score</span>
-        </button>
-        <div class="gcs-panel hidden" id="gcsPanel">
-          <div class="gcs-group" data-cat="e">
-            <p class="gcs-group-title">Eye Opening</p>
-            <div class="gcs-options" id="gcsEyeOpts"></div>
-          </div>
-          <div class="gcs-group" data-cat="v">
-            <p class="gcs-group-title">Verbal Response</p>
-            <div class="gcs-options" id="gcsVerbalOpts"></div>
-          </div>
-          <div class="gcs-group" data-cat="m">
-            <p class="gcs-group-title">Motor Response</p>
-            <div class="gcs-options" id="gcsMotorOpts"></div>
-          </div>
-          <button type="button" class="ghost-btn" id="gcsCloseBtn">Close</button>
-        </div>
-      </div>
-
-      <button type="submit" class="big-cta small-cta">
-        <span class="cta-label">Show Protocol</span>
-      </button>
-    </form>
-  </section>
-</template>
-
 <template id="tpl-branch-select">
   <section class="screen">
-    <h2 class="step-title"><span class="step-num">4</span> Select Matching Presentation</h2>
+    <h2 class="step-title"><span class="step-num">3</span> Select Matching Presentation</h2>
     <p class="protocol-context"></p>
-    <div id="vitalsSummary" class="vitals-summary"></div>
     <div id="branchList" class="branch-list"></div>
   </section>
 </template>
@@ -178,8 +99,14 @@
 
     <div id="arrestLive" class="arrest-live hidden">
       <div class="arrest-clock">
-        <p class="arrest-started" id="arrestStartedLabel"></p>
-        <div class="arrest-elapsed" id="arrestElapsed">00:00:00</div>
+        <div class="arrest-clock-main">
+          <p class="arrest-started" id="arrestStartedLabel"></p>
+          <div class="arrest-elapsed" id="arrestElapsed">00:00:00</div>
+        </div>
+        <div class="arrest-quickref">
+          <p class="arrest-quickref-line" id="arrestEpiDue"></p>
+          <p class="arrest-quickref-line" id="arrestRhythmDue"></p>
+        </div>
       </div>
 
       <div id="arrestAlertBanner" class="arrest-alert hidden"></div>
