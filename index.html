@@ -23,9 +23,7 @@
 
 <main id="app" class="app-main"></main>
 
-<div id="disclaimerBar" class="disclaimer-bar">
-  Reference tool only — verify against the official protocol book. Not a substitute for training, judgment, or medical direction.
-</div>
+<button id="arrestFab" class="arrest-fab hidden" aria-label="Return to arrest in progress">⏱</button>
 
 <template id="tpl-home">
   <section class="screen screen-home">
@@ -93,7 +91,6 @@
   <section class="screen screen-arrest">
     <div id="arrestPre" class="arrest-pre">
       <h2 class="step-title">Run An Arrest</h2>
-      <p class="meta-note">Timestamped compression / rhythm / drug timer for a working arrest. Starts a live clock, prompts you (vibration + on-screen alert) when the next thing is due per protocol timing, and saves a timestamped log you can export when the call is over.</p>
       <button class="big-cta" id="startOpBtn"><span class="cta-label">Start Operation</span></button>
     </div>
 
@@ -145,6 +142,28 @@
       <div class="arrest-log">
         <p class="record-label">Event Log</p>
         <ol id="arrestLogList" class="arrest-log-list"></ol>
+      </div>
+
+      <div class="arrest-sizing">
+        <button type="button" class="ghost-btn" id="sizingToggleBtn">Equipment sizing (by weight)</button>
+        <div id="sizingPanel" class="sizing-panel hidden">
+          <div class="inline-vital inline-weight">
+            <span class="inline-vital-label">Weight</span>
+            <div class="weight-toggle-row">
+              <input type="number" step="0.1" min="0" id="sizingWeightInput" class="text-input" placeholder="e.g. 180">
+              <div class="unit-toggle" id="sizingUnitToggle">
+                <button type="button" class="unit-btn active" data-unit="lb">lb</button>
+                <button type="button" class="unit-btn" data-unit="kg">kg</button>
+              </div>
+            </div>
+          </div>
+          <div id="sizingResults" class="sizing-results"></div>
+        </div>
+      </div>
+
+      <div class="arrest-protocol-links">
+        <p class="record-label">Arrest Protocols — Quick Reference</p>
+        <div id="arrestProtocolLinksLive" class="arrest-protocol-link-list"></div>
       </div>
     </div>
 

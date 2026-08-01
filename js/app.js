@@ -117,6 +117,17 @@ function render(){
   window.scrollTo(0,0);
   dispatch();
   pushHistory();
+  refreshArrestFab();
+}
+
+// Small floating button that appears on any screen while an arrest
+// operation is running in the background, so it's one tap to get back to it.
+function refreshArrestFab(){
+  const fab = document.getElementById('arrestFab');
+  if(!fab) return;
+  const show = typeof arrestState !== 'undefined' && arrestState.active && state.step !== 'arrest';
+  fab.classList.toggle('hidden', !show);
+  fab.onclick = () => { state.step = 'arrest'; render(); };
 }
 
 window.addEventListener('popstate', (e) => {
@@ -918,6 +929,7 @@ function renderArrest(){
   const tpl = document.getElementById('tpl-arrest').content.cloneNode(true);
   app.innerHTML = '';
   app.appendChild(tpl);
+  if(!state.vitals) state.vitals = {};
   addBackBtn(() => {
     if(arrestState.active){
       if(!confirm('An operation is still running. Go back without ending it? The timer keeps running in the background and you can return to it from the home screen.')) return;
@@ -949,6 +961,8 @@ function renderArrest(){
   app.querySelectorAll('.event-btn').forEach(btn => {
     btn.addEventListener('click', () => openEventModal(btn.dataset.evt));
   });
+  wireSizingPanel();
+  renderArrestProtocolLinks('arrestProtocolLinksLive');
 
   refreshCprButton();
   redrawArrestLog();
@@ -1055,6 +1069,77 @@ function openEventModal(kind){
   });
 }
 
+// Weight-based equipment sizing quick reference. The IO needle color/site
+// guidance in TFD's Vascular Access - EZ-IO protocol is given by insertion
+// site + adult/pediatric, not a numeric weight table, so the weight
+// breakpoints below are the standard EZ-IO manufacturer sizing guide, shown
+// here for a fast visual/color cue — verify against your service's actual
+// device and Broselow reference, not verbatim TFD protocol text.
+function ioSizeInfo(kg){
+  if(kg == null || isNaN(kg)) return null;
+  if(kg < 3) return {label: 'Under 3 kg', swatch: '#9a9a9a', detail: 'EZ-IO not typically indicated at this weight — consider alternate access.'};
+  if(kg < 40) return {label: 'Pink — 15 mm', swatch: '#e85d9c', detail: 'Pediatric, roughly 3–39 kg.'};
+  return {label: 'Blue — 25 mm', swatch: '#2e6db4', detail: '≥40 kg, standard sites. Yellow (45 mm) if excessive tissue over the site.'};
+}
+function pedsEquipmentInfo(kg){
+  if(kg == null || isNaN(kg) || kg >= 40) return null;
+  const ett = (kg / 10 + 2.5).toFixed(1);
+  const bvm = kg < 10 ? 'Infant mask' : (kg < 30 ? 'Child mask' : 'Small adult / child mask');
+  return {ett, bvm};
+}
+
+function wireSizingPanel(){
+  const toggleBtn = document.getElementById('sizingToggleBtn');
+  const panel = document.getElementById('sizingPanel');
+  const input = document.getElementById('sizingWeightInput');
+  const unitBtns = [...document.querySelectorAll('#sizingUnitToggle .unit-btn')];
+  const results = document.getElementById('sizingResults');
+  let unit = 'lb';
+
+  toggleBtn.addEventListener('click', () => panel.classList.toggle('hidden'));
+
+  function renderResults(){
+    const kg = state.vitals.weight;
+    const io = ioSizeInfo(kg);
+    if(!io){
+      results.innerHTML = '<p class="meta-note">Enter a weight to see IO needle size and, if pediatric, tube/mask sizing.</p>';
+      return;
+    }
+    const peds = pedsEquipmentInfo(kg);
+    let html = `<div class="sizing-row"><span class="sizing-swatch" style="background:${io.swatch};"></span>
+      <div><strong>IO Needle: ${io.label}</strong><div class="sizing-detail">${io.detail}</div></div></div>`;
+    if(peds){
+      html += `<div class="sizing-row"><span class="sizing-swatch" style="background:var(--indigo);"></span>
+        <div><strong>Peds ET tube: ~${peds.ett} mm (uncuffed est.)</strong><div class="sizing-detail">BVM: ${peds.bvm} — general estimate, verify against your Broselow reference.</div></div></div>`;
+    }
+    results.innerHTML = html;
+  }
+  function refreshInput(){
+    if(document.activeElement === input) return;
+    input.value = kgToDisplayVal(state.vitals.weight, unit);
+  }
+  unitBtns.forEach(b => b.addEventListener('click', () => {
+    unit = b.dataset.unit;
+    unitBtns.forEach(x => x.classList.toggle('active', x === b));
+    refreshInput();
+  }));
+  input.addEventListener('input', () => {
+    const val = parseFloat(input.value);
+    if(!isNaN(val) && val > 0){
+      const kg = unit === 'kg' ? val : val / 2.20462;
+      state.vitals.weight = kg;
+      state.vitals.weightLb = unit === 'lb' ? val : kg * 2.20462;
+    } else {
+      state.vitals.weight = null;
+      state.vitals.weightLb = null;
+    }
+    renderResults();
+    refreshAfterVitalChange();
+  });
+  refreshInput();
+  renderResults();
+}
+
 function redrawArrestLog(){
   const list = document.getElementById('arrestLogList');
   if(!list) return;
@@ -1083,7 +1168,7 @@ function tickArrest(){
   const epiTimeEl = document.getElementById('epiTime');
   if(epiTimeEl) epiTimeEl.textContent = fmtElapsedShort(epiMs);
   const epiCountEl = document.getElementById('epiCount');
-  if(epiCountEl) epiCountEl.textContent = `Doses: ${arrestState.epiCount} / max 4`;
+  if(epiCountEl) epiCountEl.textContent = `Doses: ${arrestState.epiCount} / max 4 — 1 mg IVP/IO ea.`;
 
   // Small quick-reference countdowns, always visible (not just when close to due)
   const epiDueEl = document.getElementById('arrestEpiDue');
@@ -1184,6 +1269,35 @@ function renderArrestSummary(){
     arrestState.ended = false;
     arrestState.active = false;
     render();
+  });
+}
+
+// Quick-jump list to the actual arrest protocol steps (adult, then
+// pediatric) so it's fast to flip back and forth for reference between
+// calls without re-navigating the whole chief-complaint flow.
+const ARREST_PROTOCOL_IDS = [
+  'asystole', 'pea', 'vfib_pulseless_vtach', 'maternal_arrest', 'trauma_arrest',
+  'pediatric_pulseless_arrest',
+];
+function renderArrestProtocolLinks(containerId){
+  const wrap = document.getElementById(containerId);
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  ARREST_PROTOCOL_IDS.forEach(id => {
+    const proto = protocolById(id);
+    if(!proto) return;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cc-item';
+    btn.innerHTML = `<span>${proto.title}</span><span class="tag">${proto.demographic}</span>`;
+    btn.addEventListener('click', () => {
+      state.chosenDemographic = proto.demographic;
+      state.chosenTopicKey = Object.keys(state.topics).find(k =>
+        state.topics[k].adult === proto.id || state.topics[k].pediatric === proto.id);
+      beginProtocolRun(proto.id);
+      render();
+    });
+    wrap.appendChild(btn);
   });
 }
 
