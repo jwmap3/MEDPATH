@@ -1,0 +1,2074 @@
+[
+ {
+  "order": 0,
+  "title": "Home",
+  "start_page": 1,
+  "end_page": 1,
+  "file": "000_home.txt",
+  "chars": 125
+ },
+ {
+  "order": 1,
+  "title": "Table of Contents",
+  "start_page": 2,
+  "end_page": 6,
+  "file": "001_table_of_contents.txt",
+  "chars": 9167
+ },
+ {
+  "order": 2,
+  "title": "Preface",
+  "start_page": 7,
+  "end_page": 7,
+  "file": "002_preface.txt",
+  "chars": 16
+ },
+ {
+  "order": 3,
+  "title": "Signature Page",
+  "start_page": 8,
+  "end_page": 8,
+  "file": "003_signature_page.txt",
+  "chars": 19
+ },
+ {
+  "order": 4,
+  "title": "Letter From Medical Director",
+  "start_page": 9,
+  "end_page": 10,
+  "file": "004_letter_from_medical_director.txt",
+  "chars": 5611
+ },
+ {
+  "order": 5,
+  "title": "Global Changes and/or Individual Page Removals",
+  "start_page": 11,
+  "end_page": 11,
+  "file": "005_global_changes_and_or_individual_page_removals.txt",
+  "chars": 52
+ },
+ {
+  "order": 6,
+  "title": "Adult Section",
+  "start_page": 12,
+  "end_page": 12,
+  "file": "006_adult_section.txt",
+  "chars": 57
+ },
+ {
+  "order": 7,
+  "title": "Adult Assessment",
+  "start_page": 13,
+  "end_page": 13,
+  "file": "007_adult_assessment.txt",
+  "chars": 43
+ },
+ {
+  "order": 8,
+  "title": "Universal Patient Care",
+  "start_page": 14,
+  "end_page": 14,
+  "file": "008_universal_patient_care.txt",
+  "chars": 1101
+ },
+ {
+  "order": 9,
+  "title": "Universal Patient Care - Medical Reference",
+  "start_page": 15,
+  "end_page": 15,
+  "file": "009_universal_patient_care_medical_reference.txt",
+  "chars": 402
+ },
+ {
+  "order": 10,
+  "title": "Patient Safety",
+  "start_page": 16,
+  "end_page": 16,
+  "file": "010_patient_safety.txt",
+  "chars": 369
+ },
+ {
+  "order": 11,
+  "title": "Police Custody/Taser Use",
+  "start_page": 17,
+  "end_page": 17,
+  "file": "011_police_custody_taser_use.txt",
+  "chars": 814
+ },
+ {
+  "order": 12,
+  "title": "Police Custody/Taser Use - Medical Reference",
+  "start_page": 18,
+  "end_page": 18,
+  "file": "012_police_custody_taser_use_medical_reference.txt",
+  "chars": 1018
+ },
+ {
+  "order": 13,
+  "title": "Refusals and High Risk Refusals",
+  "start_page": 19,
+  "end_page": 20,
+  "file": "013_refusals_and_high_risk_refusals.txt",
+  "chars": 6342
+ },
+ {
+  "order": 14,
+  "title": "Adult Cardiovascular",
+  "start_page": 21,
+  "end_page": 21,
+  "file": "014_adult_cardiovascular.txt",
+  "chars": 39
+ },
+ {
+  "order": 15,
+  "title": "Cardiac Arrest",
+  "start_page": 22,
+  "end_page": 22,
+  "file": "015_cardiac_arrest.txt",
+  "chars": 1971
+ },
+ {
+  "order": 16,
+  "title": "Cardiac Arrest - Medical Reference",
+  "start_page": 23,
+  "end_page": 23,
+  "file": "016_cardiac_arrest_medical_reference.txt",
+  "chars": 661
+ },
+ {
+  "order": 17,
+  "title": "Asystole (Includes POCUS)",
+  "start_page": 24,
+  "end_page": 24,
+  "file": "017_asystole_includes_pocus.txt",
+  "chars": 1235
+ },
+ {
+  "order": 18,
+  "title": "Asystole (Includes POCUS) - Medical Reference",
+  "start_page": 25,
+  "end_page": 25,
+  "file": "018_asystole_includes_pocus_medical_reference.txt",
+  "chars": 773
+ },
+ {
+  "order": 19,
+  "title": "Pulseless Electrical Activity (PEA)",
+  "start_page": 26,
+  "end_page": 26,
+  "file": "019_pulseless_electrical_activity_pea.txt",
+  "chars": 1632
+ },
+ {
+  "order": 20,
+  "title": "Pulseless Electrical Activity (PEA) - Medical Reference",
+  "start_page": 27,
+  "end_page": 27,
+  "file": "020_pulseless_electrical_activity_pea_medical_reference.txt",
+  "chars": 761
+ },
+ {
+  "order": 21,
+  "title": "V-Fib/Pulseless V-Tach",
+  "start_page": 28,
+  "end_page": 28,
+  "file": "021_v_fib_pulseless_v_tach.txt",
+  "chars": 1901
+ },
+ {
+  "order": 22,
+  "title": "V-Fib/Pulseless V-Tach - Medical Reference",
+  "start_page": 29,
+  "end_page": 29,
+  "file": "022_v_fib_pulseless_v_tach_medical_reference.txt",
+  "chars": 916
+ },
+ {
+  "order": 23,
+  "title": "Bradycardia-Unstable",
+  "start_page": 30,
+  "end_page": 30,
+  "file": "023_bradycardia_unstable.txt",
+  "chars": 976
+ },
+ {
+  "order": 24,
+  "title": "Bradycardia-Unstable - Medical Reference",
+  "start_page": 31,
+  "end_page": 31,
+  "file": "024_bradycardia_unstable_medical_reference.txt",
+  "chars": 848
+ },
+ {
+  "order": 25,
+  "title": "Chest Pain (Suspected ACS)",
+  "start_page": 32,
+  "end_page": 32,
+  "file": "025_chest_pain_suspected_acs.txt",
+  "chars": 1087
+ },
+ {
+  "order": 26,
+  "title": "Chest Pain (Suspected ACS) - Medical Reference",
+  "start_page": 33,
+  "end_page": 33,
+  "file": "026_chest_pain_suspected_acs_medical_reference.txt",
+  "chars": 1021
+ },
+ {
+  "order": 27,
+  "title": "Hypertensive Emergencies",
+  "start_page": 34,
+  "end_page": 34,
+  "file": "027_hypertensive_emergencies.txt",
+  "chars": 424
+ },
+ {
+  "order": 28,
+  "title": "Hypertensive Emergencies - Medical Reference",
+  "start_page": 35,
+  "end_page": 35,
+  "file": "028_hypertensive_emergencies_medical_reference.txt",
+  "chars": 870
+ },
+ {
+  "order": 29,
+  "title": "Hypotension/Shock Non-Trauma",
+  "start_page": 36,
+  "end_page": 36,
+  "file": "029_hypotension_shock_non_trauma.txt",
+  "chars": 1051
+ },
+ {
+  "order": 30,
+  "title": "Hypotension/Shock Non-Trauma - Medical Reference",
+  "start_page": 37,
+  "end_page": 37,
+  "file": "030_hypotension_shock_non_trauma_medical_reference.txt",
+  "chars": 1140
+ },
+ {
+  "order": 31,
+  "title": "Post ROSC Care",
+  "start_page": 38,
+  "end_page": 38,
+  "file": "031_post_rosc_care.txt",
+  "chars": 1297
+ },
+ {
+  "order": 32,
+  "title": "Post ROSC Care - Medical Reference",
+  "start_page": 39,
+  "end_page": 39,
+  "file": "032_post_rosc_care_medical_reference.txt",
+  "chars": 494
+ },
+ {
+  "order": 33,
+  "title": "Tachycardia w/Pulse (SVT, A-Fib/A-Flutter, VT)",
+  "start_page": 40,
+  "end_page": 40,
+  "file": "033_tachycardia_w_pulse_svt_a_fib_a_flutter_vt.txt",
+  "chars": 1395
+ },
+ {
+  "order": 34,
+  "title": "Tachycardia w/Pulse (SVT, A-Fib/A-Flutter, VT) - Medical Reference",
+  "start_page": 41,
+  "end_page": 41,
+  "file": "034_tachycardia_w_pulse_svt_a_fib_a_flutter_vt_medical_reference.txt",
+  "chars": 1039
+ },
+ {
+  "order": 35,
+  "title": "Adult Environmental",
+  "start_page": 42,
+  "end_page": 42,
+  "file": "035_adult_environmental.txt",
+  "chars": 46
+ },
+ {
+  "order": 36,
+  "title": "Drowning/Near Drowning",
+  "start_page": 43,
+  "end_page": 43,
+  "file": "036_drowning_near_drowning.txt",
+  "chars": 369
+ },
+ {
+  "order": 37,
+  "title": "Drowning/Near Drowning - Medical Reference",
+  "start_page": 44,
+  "end_page": 44,
+  "file": "037_drowning_near_drowning_medical_reference.txt",
+  "chars": 820
+ },
+ {
+  "order": 38,
+  "title": "Hypothermia",
+  "start_page": 45,
+  "end_page": 45,
+  "file": "038_hypothermia.txt",
+  "chars": 1227
+ },
+ {
+  "order": 39,
+  "title": "Hypothermia - Medical Reference",
+  "start_page": 46,
+  "end_page": 46,
+  "file": "039_hypothermia_medical_reference.txt",
+  "chars": 917
+ },
+ {
+  "order": 40,
+  "title": "Hyperthermia",
+  "start_page": 47,
+  "end_page": 47,
+  "file": "040_hyperthermia.txt",
+  "chars": 1457
+ },
+ {
+  "order": 41,
+  "title": "Adult Gastrointestinal",
+  "start_page": 48,
+  "end_page": 48,
+  "file": "041_adult_gastrointestinal.txt",
+  "chars": 41
+ },
+ {
+  "order": 42,
+  "title": "Abdominal Pain",
+  "start_page": 49,
+  "end_page": 49,
+  "file": "042_abdominal_pain.txt",
+  "chars": 208
+ },
+ {
+  "order": 43,
+  "title": "Abdominal Pain - Medical Reference",
+  "start_page": 50,
+  "end_page": 51,
+  "file": "043_abdominal_pain_medical_reference.txt",
+  "chars": 1108
+ },
+ {
+  "order": 44,
+  "title": "Vomiting/Diarrhea",
+  "start_page": 52,
+  "end_page": 52,
+  "file": "044_vomiting_diarrhea.txt",
+  "chars": 263
+ },
+ {
+  "order": 45,
+  "title": "Vomiting/Diarrhea - Medical Reference",
+  "start_page": 53,
+  "end_page": 54,
+  "file": "045_vomiting_diarrhea_medical_reference.txt",
+  "chars": 992
+ },
+ {
+  "order": 46,
+  "title": "Adult General Medical",
+  "start_page": 55,
+  "end_page": 55,
+  "file": "046_adult_general_medical.txt",
+  "chars": 37
+ },
+ {
+  "order": 47,
+  "title": "Adult IV/IO",
+  "start_page": 56,
+  "end_page": 56,
+  "file": "047_adult_iv_io.txt",
+  "chars": 901
+ },
+ {
+  "order": 48,
+  "title": "Back Pain",
+  "start_page": 57,
+  "end_page": 57,
+  "file": "048_back_pain.txt",
+  "chars": 346
+ },
+ {
+  "order": 49,
+  "title": "Back Pain - Medical Reference",
+  "start_page": 58,
+  "end_page": 58,
+  "file": "049_back_pain_medical_reference.txt",
+  "chars": 1022
+ },
+ {
+  "order": 50,
+  "title": "Determining Death",
+  "start_page": 59,
+  "end_page": 59,
+  "file": "050_determining_death.txt",
+  "chars": 404
+ },
+ {
+  "order": 51,
+  "title": "Determining Death - Medical Reference",
+  "start_page": 60,
+  "end_page": 60,
+  "file": "051_determining_death_medical_reference.txt",
+  "chars": 955
+ },
+ {
+  "order": 52,
+  "title": "Dystonic Reaction",
+  "start_page": 61,
+  "end_page": 61,
+  "file": "052_dystonic_reaction.txt",
+  "chars": 454
+ },
+ {
+  "order": 53,
+  "title": "Epistaxis",
+  "start_page": 62,
+  "end_page": 62,
+  "file": "053_epistaxis.txt",
+  "chars": 462
+ },
+ {
+  "order": 54,
+  "title": "Epistaxis - Medical Reference",
+  "start_page": 63,
+  "end_page": 63,
+  "file": "054_epistaxis_medical_reference.txt",
+  "chars": 605
+ },
+ {
+  "order": 55,
+  "title": "Fever/Suspected Sepsis",
+  "start_page": 64,
+  "end_page": 64,
+  "file": "055_fever_suspected_sepsis.txt",
+  "chars": 1032
+ },
+ {
+  "order": 56,
+  "title": "Fever/Suspected Sepsis - Medical Reference",
+  "start_page": 65,
+  "end_page": 65,
+  "file": "056_fever_suspected_sepsis_medical_reference.txt",
+  "chars": 1167
+ },
+ {
+  "order": 57,
+  "title": "Hypoglycemia/Hyperglycemia",
+  "start_page": 66,
+  "end_page": 66,
+  "file": "057_hypoglycemia_hyperglycemia.txt",
+  "chars": 1527
+ },
+ {
+  "order": 58,
+  "title": "Hypoglycemia/Hyperglycemia - Medical Reference",
+  "start_page": 67,
+  "end_page": 67,
+  "file": "058_hypoglycemia_hyperglycemia_medical_reference.txt",
+  "chars": 1288
+ },
+ {
+  "order": 59,
+  "title": "Pain Control",
+  "start_page": 68,
+  "end_page": 68,
+  "file": "059_pain_control.txt",
+  "chars": 991
+ },
+ {
+  "order": 60,
+  "title": "Pain Control - Medical Reference",
+  "start_page": 69,
+  "end_page": 69,
+  "file": "060_pain_control_medical_reference.txt",
+  "chars": 882
+ },
+ {
+  "order": 61,
+  "title": "Well Person Check",
+  "start_page": 70,
+  "end_page": 70,
+  "file": "061_well_person_check.txt",
+  "chars": 533
+ },
+ {
+  "order": 62,
+  "title": "Well Person Check - Medical Reference",
+  "start_page": 71,
+  "end_page": 71,
+  "file": "062_well_person_check_medical_reference.txt",
+  "chars": 1084
+ },
+ {
+  "order": 63,
+  "title": "Adult Neurological",
+  "start_page": 72,
+  "end_page": 72,
+  "file": "063_adult_neurological.txt",
+  "chars": 44
+ },
+ {
+  "order": 64,
+  "title": "Altered Mental Status",
+  "start_page": 73,
+  "end_page": 73,
+  "file": "064_altered_mental_status.txt",
+  "chars": 496
+ },
+ {
+  "order": 65,
+  "title": "Altered Mental Status - Medical Reference",
+  "start_page": 74,
+  "end_page": 74,
+  "file": "065_altered_mental_status_medical_reference.txt",
+  "chars": 1163
+ },
+ {
+  "order": 66,
+  "title": "Behavioral Emergency / Sedation",
+  "start_page": 75,
+  "end_page": 76,
+  "file": "066_behavioral_emergency_sedation.txt",
+  "chars": 1622
+ },
+ {
+  "order": 67,
+  "title": "Behavioral Emergency / Sedation - Medical Reference",
+  "start_page": 77,
+  "end_page": 77,
+  "file": "067_behavioral_emergency_sedation_medical_reference.txt",
+  "chars": 1046
+ },
+ {
+  "order": 68,
+  "title": "Seizure",
+  "start_page": 78,
+  "end_page": 78,
+  "file": "068_seizure.txt",
+  "chars": 616
+ },
+ {
+  "order": 69,
+  "title": "Seizure - Medical Reference",
+  "start_page": 79,
+  "end_page": 79,
+  "file": "069_seizure_medical_reference.txt",
+  "chars": 1186
+ },
+ {
+  "order": 70,
+  "title": "Suspected Stroke",
+  "start_page": 80,
+  "end_page": 80,
+  "file": "070_suspected_stroke.txt",
+  "chars": 1040
+ },
+ {
+  "order": 71,
+  "title": "Suspected Stroke - Medical Reference",
+  "start_page": 81,
+  "end_page": 81,
+  "file": "071_suspected_stroke_medical_reference.txt",
+  "chars": 962
+ },
+ {
+  "order": 72,
+  "title": "Syncope",
+  "start_page": 82,
+  "end_page": 82,
+  "file": "072_syncope.txt",
+  "chars": 326
+ },
+ {
+  "order": 73,
+  "title": "Syncope - Medical Reference",
+  "start_page": 83,
+  "end_page": 83,
+  "file": "073_syncope_medical_reference.txt",
+  "chars": 776
+ },
+ {
+  "order": 74,
+  "title": "Adult OB/GYN",
+  "start_page": 84,
+  "end_page": 84,
+  "file": "074_adult_ob_gyn.txt",
+  "chars": 33
+ },
+ {
+  "order": 75,
+  "title": "Childbirth/Labor",
+  "start_page": 85,
+  "end_page": 85,
+  "file": "075_childbirth_labor.txt",
+  "chars": 1273
+ },
+ {
+  "order": 76,
+  "title": "Childbirth/Labor - Medical Reference",
+  "start_page": 86,
+  "end_page": 86,
+  "file": "076_childbirth_labor_medical_reference.txt",
+  "chars": 1011
+ },
+ {
+  "order": 77,
+  "title": "Maternal Arrest",
+  "start_page": 87,
+  "end_page": 87,
+  "file": "077_maternal_arrest.txt",
+  "chars": 1165
+ },
+ {
+  "order": 78,
+  "title": "Newly Born",
+  "start_page": 88,
+  "end_page": 88,
+  "file": "078_newly_born.txt",
+  "chars": 1124
+ },
+ {
+  "order": 79,
+  "title": "Obstetrical Emergency",
+  "start_page": 89,
+  "end_page": 89,
+  "file": "079_obstetrical_emergency.txt",
+  "chars": 832
+ },
+ {
+  "order": 80,
+  "title": "Obstetrical Emergency - Medical Reference",
+  "start_page": 90,
+  "end_page": 90,
+  "file": "080_obstetrical_emergency_medical_reference.txt",
+  "chars": 1089
+ },
+ {
+  "order": 81,
+  "title": "Adult Respiratory",
+  "start_page": 91,
+  "end_page": 91,
+  "file": "081_adult_respiratory.txt",
+  "chars": 34
+ },
+ {
+  "order": 82,
+  "title": "Adult Airway",
+  "start_page": 92,
+  "end_page": 92,
+  "file": "082_adult_airway.txt",
+  "chars": 646
+ },
+ {
+  "order": 83,
+  "title": "Adult Airway - Medical Reference",
+  "start_page": 93,
+  "end_page": 93,
+  "file": "083_adult_airway_medical_reference.txt",
+  "chars": 838
+ },
+ {
+  "order": 84,
+  "title": "Adult Failed Airway Algorithm",
+  "start_page": 94,
+  "end_page": 94,
+  "file": "084_adult_failed_airway_algorithm.txt",
+  "chars": 484
+ },
+ {
+  "order": 85,
+  "title": "Adult Failed Airway Algorithm - Medical Reference",
+  "start_page": 95,
+  "end_page": 95,
+  "file": "085_adult_failed_airway_algorithm_medical_reference.txt",
+  "chars": 401
+ },
+ {
+  "order": 86,
+  "title": "Allergic Reaction",
+  "start_page": 96,
+  "end_page": 96,
+  "file": "086_allergic_reaction.txt",
+  "chars": 1793
+ },
+ {
+  "order": 87,
+  "title": "Allergic Reaction - Medical Reference",
+  "start_page": 97,
+  "end_page": 97,
+  "file": "087_allergic_reaction_medical_reference.txt",
+  "chars": 704
+ },
+ {
+  "order": 88,
+  "title": "Acute Pulmonary Edema",
+  "start_page": 98,
+  "end_page": 98,
+  "file": "088_acute_pulmonary_edema.txt",
+  "chars": 816
+ },
+ {
+  "order": 89,
+  "title": "Acute Pulmonary Edema - Medical Reference",
+  "start_page": 99,
+  "end_page": 99,
+  "file": "089_acute_pulmonary_edema_medical_reference.txt",
+  "chars": 966
+ },
+ {
+  "order": 90,
+  "title": "Respiratory Distress",
+  "start_page": 100,
+  "end_page": 100,
+  "file": "090_respiratory_distress.txt",
+  "chars": 1538
+ },
+ {
+  "order": 91,
+  "title": "Respiratory Distress - Medical Reference",
+  "start_page": 101,
+  "end_page": 101,
+  "file": "091_respiratory_distress_medical_reference.txt",
+  "chars": 1008
+ },
+ {
+  "order": 92,
+  "title": "Invasive Ventilation",
+  "start_page": 102,
+  "end_page": 102,
+  "file": "092_invasive_ventilation.txt",
+  "chars": 788
+ },
+ {
+  "order": 93,
+  "title": "Invasive Ventilation Decision Process",
+  "start_page": 103,
+  "end_page": 103,
+  "file": "093_invasive_ventilation_decision_process.txt",
+  "chars": 1099
+ },
+ {
+  "order": 94,
+  "title": "Non-Invasive Ventilation (CPAP and BiPAP)",
+  "start_page": 104,
+  "end_page": 104,
+  "file": "094_non_invasive_ventilation_cpap_and_bipap.txt",
+  "chars": 1278
+ },
+ {
+  "order": 95,
+  "title": "Non-Invasive Ventilation Decision Process",
+  "start_page": 105,
+  "end_page": 106,
+  "file": "095_non_invasive_ventilation_decision_process.txt",
+  "chars": 1289
+ },
+ {
+  "order": 96,
+  "title": "Adult Toxicology",
+  "start_page": 107,
+  "end_page": 107,
+  "file": "096_adult_toxicology.txt",
+  "chars": 45
+ },
+ {
+  "order": 97,
+  "title": "Overdose/Toxic Exposure",
+  "start_page": 108,
+  "end_page": 108,
+  "file": "097_overdose_toxic_exposure.txt",
+  "chars": 1224
+ },
+ {
+  "order": 98,
+  "title": "Overdose/Toxic Exposure - Medical Reference",
+  "start_page": 109,
+  "end_page": 109,
+  "file": "098_overdose_toxic_exposure_medical_reference.txt",
+  "chars": 1497
+ },
+ {
+  "order": 99,
+  "title": "Adult Trauma",
+  "start_page": 110,
+  "end_page": 110,
+  "file": "099_adult_trauma.txt",
+  "chars": 33
+ },
+ {
+  "order": 100,
+  "title": "Multiple Trauma",
+  "start_page": 111,
+  "end_page": 111,
+  "file": "100_multiple_trauma.txt",
+  "chars": 1203
+ },
+ {
+  "order": 101,
+  "title": "Multiple Trauma - Medical Reference",
+  "start_page": 112,
+  "end_page": 112,
+  "file": "101_multiple_trauma_medical_reference.txt",
+  "chars": 1107
+ },
+ {
+  "order": 102,
+  "title": "Burns",
+  "start_page": 113,
+  "end_page": 113,
+  "file": "102_burns.txt",
+  "chars": 941
+ },
+ {
+  "order": 103,
+  "title": "Burns - Medical Reference",
+  "start_page": 114,
+  "end_page": 114,
+  "file": "103_burns_medical_reference.txt",
+  "chars": 1421
+ },
+ {
+  "order": 104,
+  "title": "Electrical Injuries",
+  "start_page": 115,
+  "end_page": 115,
+  "file": "104_electrical_injuries.txt",
+  "chars": 264
+ },
+ {
+  "order": 105,
+  "title": "Electrical Injuries - Medical Reference",
+  "start_page": 116,
+  "end_page": 116,
+  "file": "105_electrical_injuries_medical_reference.txt",
+  "chars": 1094
+ },
+ {
+  "order": 106,
+  "title": "Extremity Trauma",
+  "start_page": 117,
+  "end_page": 117,
+  "file": "106_extremity_trauma.txt",
+  "chars": 891
+ },
+ {
+  "order": 107,
+  "title": "Extremity Trauma - Medical Reference",
+  "start_page": 118,
+  "end_page": 118,
+  "file": "107_extremity_trauma_medical_reference.txt",
+  "chars": 989
+ },
+ {
+  "order": 108,
+  "title": "Eye Injury/Complaint",
+  "start_page": 119,
+  "end_page": 119,
+  "file": "108_eye_injury_complaint.txt",
+  "chars": 608
+ },
+ {
+  "order": 109,
+  "title": "Eye Injury/Complaint - Medical Reference",
+  "start_page": 120,
+  "end_page": 120,
+  "file": "109_eye_injury_complaint_medical_reference.txt",
+  "chars": 1096
+ },
+ {
+  "order": 110,
+  "title": "Head Trauma",
+  "start_page": 121,
+  "end_page": 121,
+  "file": "110_head_trauma.txt",
+  "chars": 574
+ },
+ {
+  "order": 111,
+  "title": "Head Trauma - Medical Reference",
+  "start_page": 122,
+  "end_page": 122,
+  "file": "111_head_trauma_medical_reference.txt",
+  "chars": 1164
+ },
+ {
+  "order": 112,
+  "title": "Traumatic Brain Injury",
+  "start_page": 123,
+  "end_page": 123,
+  "file": "112_traumatic_brain_injury.txt",
+  "chars": 1335
+ },
+ {
+  "order": 113,
+  "title": "Spinal Motion Restriction (SMR)",
+  "start_page": 124,
+  "end_page": 124,
+  "file": "113_spinal_motion_restriction_smr.txt",
+  "chars": 1071
+ },
+ {
+  "order": 114,
+  "title": "Trauma Arrest",
+  "start_page": 125,
+  "end_page": 125,
+  "file": "114_trauma_arrest.txt",
+  "chars": 1374
+ },
+ {
+  "order": 115,
+  "title": "Trauma Arrest - Medical Reference",
+  "start_page": 126,
+  "end_page": 126,
+  "file": "115_trauma_arrest_medical_reference.txt",
+  "chars": 804
+ },
+ {
+  "order": 116,
+  "title": "Pediatric Section",
+  "start_page": 127,
+  "end_page": 127,
+  "file": "116_pediatric_section.txt",
+  "chars": 68
+ },
+ {
+  "order": 117,
+  "title": "Pediatric Assessment",
+  "start_page": 128,
+  "end_page": 128,
+  "file": "117_pediatric_assessment.txt",
+  "chars": 50
+ },
+ {
+  "order": 118,
+  "title": "Pediatric Universal Care",
+  "start_page": 129,
+  "end_page": 129,
+  "file": "118_pediatric_universal_care.txt",
+  "chars": 625
+ },
+ {
+  "order": 119,
+  "title": "Pediatric Universal Care - Medical Reference",
+  "start_page": 130,
+  "end_page": 130,
+  "file": "119_pediatric_universal_care_medical_reference.txt",
+  "chars": 452
+ },
+ {
+  "order": 120,
+  "title": "Pediatric Cardiovascular",
+  "start_page": 131,
+  "end_page": 131,
+  "file": "120_pediatric_cardiovascular.txt",
+  "chars": 51
+ },
+ {
+  "order": 121,
+  "title": "Pediatric Bradycardia",
+  "start_page": 132,
+  "end_page": 132,
+  "file": "121_pediatric_bradycardia.txt",
+  "chars": 756
+ },
+ {
+  "order": 122,
+  "title": "Pediatric Bradycardia - Medical Reference",
+  "start_page": 133,
+  "end_page": 133,
+  "file": "122_pediatric_bradycardia_medical_reference.txt",
+  "chars": 873
+ },
+ {
+  "order": 123,
+  "title": "Pediatric Pulseless Arrest",
+  "start_page": 134,
+  "end_page": 134,
+  "file": "123_pediatric_pulseless_arrest.txt",
+  "chars": 836
+ },
+ {
+  "order": 124,
+  "title": "Pediatric Pulseless Arrest - Medical Reference",
+  "start_page": 135,
+  "end_page": 135,
+  "file": "124_pediatric_pulseless_arrest_medical_reference.txt",
+  "chars": 617
+ },
+ {
+  "order": 125,
+  "title": "Pediatric Tachycardia w/Pulse",
+  "start_page": 136,
+  "end_page": 136,
+  "file": "125_pediatric_tachycardia_w_pulse.txt",
+  "chars": 1027
+ },
+ {
+  "order": 126,
+  "title": "Pediatric Tachycardia w/Pulse - Medical Reference",
+  "start_page": 137,
+  "end_page": 137,
+  "file": "126_pediatric_tachycardia_w_pulse_medical_reference.txt",
+  "chars": 1171
+ },
+ {
+  "order": 127,
+  "title": "Pediatric Gastrointestinal",
+  "start_page": 138,
+  "end_page": 138,
+  "file": "127_pediatric_gastrointestinal.txt",
+  "chars": 59
+ },
+ {
+  "order": 128,
+  "title": "Pediatric Vomiting/Diarrhea",
+  "start_page": 139,
+  "end_page": 139,
+  "file": "128_pediatric_vomiting_diarrhea.txt",
+  "chars": 594
+ },
+ {
+  "order": 129,
+  "title": "Pediatric Vomiting/Diarrhea - Medical Reference",
+  "start_page": 140,
+  "end_page": 141,
+  "file": "129_pediatric_vomiting_diarrhea_medical_reference.txt",
+  "chars": 939
+ },
+ {
+  "order": 130,
+  "title": "Pediatric General Medical",
+  "start_page": 142,
+  "end_page": 142,
+  "file": "130_pediatric_general_medical.txt",
+  "chars": 76
+ },
+ {
+  "order": 131,
+  "title": "Pediatric Hypoglycemia/Hyperglycemia",
+  "start_page": 143,
+  "end_page": 143,
+  "file": "131_pediatric_hypoglycemia_hyperglycemia.txt",
+  "chars": 1148
+ },
+ {
+  "order": 132,
+  "title": "Pediatric Hypoglycemia/Hyperglycemia - Medical Reference",
+  "start_page": 144,
+  "end_page": 144,
+  "file": "132_pediatric_hypoglycemia_hyperglycemia_medical_reference.txt",
+  "chars": 1301
+ },
+ {
+  "order": 133,
+  "title": "Pediatric Hypotension/Sepsis/Shock Non-Trauma",
+  "start_page": 145,
+  "end_page": 145,
+  "file": "133_pediatric_hypotension_sepsis_shock_non_trauma.txt",
+  "chars": 766
+ },
+ {
+  "order": 134,
+  "title": "Pediatric Hypotension/Sepsis/Shock Non-Trauma - Medical Reference",
+  "start_page": 146,
+  "end_page": 146,
+  "file": "134_pediatric_hypotension_sepsis_shock_non_trauma_medical_refere.txt",
+  "chars": 692
+ },
+ {
+  "order": 135,
+  "title": "Pediatric Pain Control",
+  "start_page": 147,
+  "end_page": 147,
+  "file": "135_pediatric_pain_control.txt",
+  "chars": 722
+ },
+ {
+  "order": 136,
+  "title": "Pediatric Pain Control - Medical Reference",
+  "start_page": 148,
+  "end_page": 148,
+  "file": "136_pediatric_pain_control_medical_reference.txt",
+  "chars": 763
+ },
+ {
+  "order": 137,
+  "title": "Pediatric IV/IO",
+  "start_page": 149,
+  "end_page": 149,
+  "file": "137_pediatric_iv_io.txt",
+  "chars": 399
+ },
+ {
+  "order": 138,
+  "title": "Pediatric IV/IO - Medical Reference",
+  "start_page": 150,
+  "end_page": 150,
+  "file": "138_pediatric_iv_io_medical_reference.txt",
+  "chars": 767
+ },
+ {
+  "order": 139,
+  "title": "Pediatric Neurological",
+  "start_page": 151,
+  "end_page": 151,
+  "file": "139_pediatric_neurological.txt",
+  "chars": 59
+ },
+ {
+  "order": 140,
+  "title": "Pediatric Altered Mental Status",
+  "start_page": 152,
+  "end_page": 152,
+  "file": "140_pediatric_altered_mental_status.txt",
+  "chars": 534
+ },
+ {
+  "order": 141,
+  "title": "Pediatric Altered Mental Status - Medical Reference",
+  "start_page": 153,
+  "end_page": 153,
+  "file": "141_pediatric_altered_mental_status_medical_reference.txt",
+  "chars": 982
+ },
+ {
+  "order": 142,
+  "title": "Pediatric Seizure",
+  "start_page": 154,
+  "end_page": 154,
+  "file": "142_pediatric_seizure.txt",
+  "chars": 494
+ },
+ {
+  "order": 143,
+  "title": "Pediatric Seizure - Medical Reference",
+  "start_page": 155,
+  "end_page": 155,
+  "file": "143_pediatric_seizure_medical_reference.txt",
+  "chars": 1001
+ },
+ {
+  "order": 144,
+  "title": "Pediatric Respiratory",
+  "start_page": 156,
+  "end_page": 156,
+  "file": "144_pediatric_respiratory.txt",
+  "chars": 43
+ },
+ {
+  "order": 145,
+  "title": "Pediatric Airway",
+  "start_page": 157,
+  "end_page": 157,
+  "file": "145_pediatric_airway.txt",
+  "chars": 875
+ },
+ {
+  "order": 146,
+  "title": "Pediatric Airway - Medical Reference",
+  "start_page": 158,
+  "end_page": 158,
+  "file": "146_pediatric_airway_medical_reference.txt",
+  "chars": 581
+ },
+ {
+  "order": 147,
+  "title": "Pediatric Airway-Failed",
+  "start_page": 159,
+  "end_page": 159,
+  "file": "147_pediatric_airway_failed.txt",
+  "chars": 461
+ },
+ {
+  "order": 148,
+  "title": "Pediatric Airway-Failed - Medical Reference",
+  "start_page": 160,
+  "end_page": 160,
+  "file": "148_pediatric_airway_failed_medical_reference.txt",
+  "chars": 343
+ },
+ {
+  "order": 149,
+  "title": "Pediatric Allergic Reaction",
+  "start_page": 161,
+  "end_page": 161,
+  "file": "149_pediatric_allergic_reaction.txt",
+  "chars": 991
+ },
+ {
+  "order": 150,
+  "title": "Pediatric Allergic Reaction - Medical Reference",
+  "start_page": 162,
+  "end_page": 162,
+  "file": "150_pediatric_allergic_reaction_medical_reference.txt",
+  "chars": 697
+ },
+ {
+  "order": 151,
+  "title": "Pediatric Respiratory Distress",
+  "start_page": 163,
+  "end_page": 163,
+  "file": "151_pediatric_respiratory_distress.txt",
+  "chars": 1011
+ },
+ {
+  "order": 152,
+  "title": "Pediatric Respiratory Distress - Medical Reference",
+  "start_page": 164,
+  "end_page": 164,
+  "file": "152_pediatric_respiratory_distress_medical_reference.txt",
+  "chars": 1002
+ },
+ {
+  "order": 153,
+  "title": "Pediatric/Infant and Neonatal CPAP (Neotech RAM Cannula)",
+  "start_page": 165,
+  "end_page": 165,
+  "file": "153_pediatric_infant_and_neonatal_cpap_neotech_ram_cannula.txt",
+  "chars": 563
+ },
+ {
+  "order": 154,
+  "title": "Pediatric Toxicology",
+  "start_page": 166,
+  "end_page": 166,
+  "file": "154_pediatric_toxicology.txt",
+  "chars": 59
+ },
+ {
+  "order": 155,
+  "title": "Pediatric Overdose/Toxic Exposure/Cyanide Exposure",
+  "start_page": 167,
+  "end_page": 167,
+  "file": "155_pediatric_overdose_toxic_exposure_cyanide_exposure.txt",
+  "chars": 1150
+ },
+ {
+  "order": 156,
+  "title": "Pediatric Overdose/Toxic Exposure/Cyanide Exposure - Medical Reference",
+  "start_page": 168,
+  "end_page": 168,
+  "file": "156_pediatric_overdose_toxic_exposure_cyanide_exposure_medical_r.txt",
+  "chars": 1538
+ },
+ {
+  "order": 157,
+  "title": "Pediatric Trauma",
+  "start_page": 169,
+  "end_page": 169,
+  "file": "157_pediatric_trauma.txt",
+  "chars": 47
+ },
+ {
+  "order": 158,
+  "title": "Pediatric Multiple Trauma",
+  "start_page": 170,
+  "end_page": 170,
+  "file": "158_pediatric_multiple_trauma.txt",
+  "chars": 547
+ },
+ {
+  "order": 159,
+  "title": "Pediatric Multiple Trauma - Medical Reference",
+  "start_page": 171,
+  "end_page": 171,
+  "file": "159_pediatric_multiple_trauma_medical_reference.txt",
+  "chars": 1086
+ },
+ {
+  "order": 160,
+  "title": "Pediatric Burns",
+  "start_page": 172,
+  "end_page": 172,
+  "file": "160_pediatric_burns.txt",
+  "chars": 624
+ },
+ {
+  "order": 161,
+  "title": "Pediatric Burns - Medical Reference",
+  "start_page": 173,
+  "end_page": 173,
+  "file": "161_pediatric_burns_medical_reference.txt",
+  "chars": 1344
+ },
+ {
+  "order": 162,
+  "title": "Pediatric Traumatic Brain Injury",
+  "start_page": 174,
+  "end_page": 174,
+  "file": "162_pediatric_traumatic_brain_injury.txt",
+  "chars": 1711
+ },
+ {
+  "order": 163,
+  "title": "Pediatric Head Trauma",
+  "start_page": 175,
+  "end_page": 175,
+  "file": "163_pediatric_head_trauma.txt",
+  "chars": 926
+ },
+ {
+  "order": 164,
+  "title": "Pediatric Head Trauma - Medical Reference",
+  "start_page": 176,
+  "end_page": 176,
+  "file": "164_pediatric_head_trauma_medical_reference.txt",
+  "chars": 1175
+ },
+ {
+  "order": 165,
+  "title": "Pediatric Extremity Trauma",
+  "start_page": 177,
+  "end_page": 177,
+  "file": "165_pediatric_extremity_trauma.txt",
+  "chars": 836
+ },
+ {
+  "order": 166,
+  "title": "Pediatric Extremity Trauma - Medical Reference",
+  "start_page": 178,
+  "end_page": 178,
+  "file": "166_pediatric_extremity_trauma_medical_reference.txt",
+  "chars": 972
+ },
+ {
+  "order": 167,
+  "title": "Pharmacology",
+  "start_page": 179,
+  "end_page": 179,
+  "file": "167_pharmacology.txt",
+  "chars": 39
+ },
+ {
+  "order": 168,
+  "title": "Adenosine (Adenocard)",
+  "start_page": 180,
+  "end_page": 181,
+  "file": "168_adenosine_adenocard.txt",
+  "chars": 1687
+ },
+ {
+  "order": 169,
+  "title": "Albuterol (Proventil)",
+  "start_page": 182,
+  "end_page": 182,
+  "file": "169_albuterol_proventil.txt",
+  "chars": 1022
+ },
+ {
+  "order": 170,
+  "title": "Amiodarone (Cordarone)",
+  "start_page": 183,
+  "end_page": 184,
+  "file": "170_amiodarone_cordarone.txt",
+  "chars": 1366
+ },
+ {
+  "order": 171,
+  "title": "Aspirin",
+  "start_page": 185,
+  "end_page": 185,
+  "file": "171_aspirin.txt",
+  "chars": 597
+ },
+ {
+  "order": 172,
+  "title": "Atropine",
+  "start_page": 186,
+  "end_page": 187,
+  "file": "172_atropine.txt",
+  "chars": 1420
+ },
+ {
+  "order": 173,
+  "title": "Calcium Chloride",
+  "start_page": 188,
+  "end_page": 188,
+  "file": "173_calcium_chloride.txt",
+  "chars": 1001
+ },
+ {
+  "order": 174,
+  "title": "Cyanokit (Hydroxocobalamin)",
+  "start_page": 189,
+  "end_page": 189,
+  "file": "174_cyanokit_hydroxocobalamin.txt",
+  "chars": 1173
+ },
+ {
+  "order": 175,
+  "title": "Dextrose 10% (D10)",
+  "start_page": 190,
+  "end_page": 191,
+  "file": "175_dextrose_10_d10.txt",
+  "chars": 1434
+ },
+ {
+  "order": 176,
+  "title": "Diltiazem (Cardizem)",
+  "start_page": 192,
+  "end_page": 193,
+  "file": "176_diltiazem_cardizem.txt",
+  "chars": 1445
+ },
+ {
+  "order": 177,
+  "title": "Diphenhydramine (Benadryl)",
+  "start_page": 194,
+  "end_page": 195,
+  "file": "177_diphenhydramine_benadryl.txt",
+  "chars": 1365
+ },
+ {
+  "order": 178,
+  "title": "Epinephrine 1 mg/1 mL",
+  "start_page": 196,
+  "end_page": 197,
+  "file": "178_epinephrine_1_mg_1_ml.txt",
+  "chars": 1331
+ },
+ {
+  "order": 179,
+  "title": "Epinephrine 1 mg/10 mL",
+  "start_page": 198,
+  "end_page": 199,
+  "file": "179_epinephrine_1_mg_10_ml.txt",
+  "chars": 1561
+ },
+ {
+  "order": 180,
+  "title": "Epinephrine Drip",
+  "start_page": 200,
+  "end_page": 200,
+  "file": "180_epinephrine_drip.txt",
+  "chars": 1303
+ },
+ {
+  "order": 181,
+  "title": "Epinephrine Push Dose",
+  "start_page": 201,
+  "end_page": 202,
+  "file": "181_epinephrine_push_dose.txt",
+  "chars": 1604
+ },
+ {
+  "order": 182,
+  "title": "Fentanyl (Sublimaze)",
+  "start_page": 203,
+  "end_page": 204,
+  "file": "182_fentanyl_sublimaze.txt",
+  "chars": 1453
+ },
+ {
+  "order": 183,
+  "title": "Glucagon",
+  "start_page": 205,
+  "end_page": 206,
+  "file": "183_glucagon.txt",
+  "chars": 901
+ },
+ {
+  "order": 184,
+  "title": "Ipratropium (Atrovent)",
+  "start_page": 207,
+  "end_page": 208,
+  "file": "184_ipratropium_atrovent.txt",
+  "chars": 1038
+ },
+ {
+  "order": 185,
+  "title": "Ketamine (Ketalar)",
+  "start_page": 209,
+  "end_page": 210,
+  "file": "185_ketamine_ketalar.txt",
+  "chars": 2901
+ },
+ {
+  "order": 186,
+  "title": "Ketorolac (Toradol)",
+  "start_page": 211,
+  "end_page": 211,
+  "file": "186_ketorolac_toradol.txt",
+  "chars": 901
+ },
+ {
+  "order": 187,
+  "title": "Lidocaine (Xylocaine)",
+  "start_page": 212,
+  "end_page": 213,
+  "file": "187_lidocaine_xylocaine.txt",
+  "chars": 1002
+ },
+ {
+  "order": 188,
+  "title": "Magnesium Sulfate",
+  "start_page": 214,
+  "end_page": 215,
+  "file": "188_magnesium_sulfate.txt",
+  "chars": 1519
+ },
+ {
+  "order": 189,
+  "title": "Methylprednisolone (Solu-Medrol)",
+  "start_page": 216,
+  "end_page": 216,
+  "file": "189_methylprednisolone_solu_medrol.txt",
+  "chars": 946
+ },
+ {
+  "order": 190,
+  "title": "Midazolam (Versed)",
+  "start_page": 217,
+  "end_page": 219,
+  "file": "190_midazolam_versed.txt",
+  "chars": 2491
+ },
+ {
+  "order": 191,
+  "title": "Morphine",
+  "start_page": 220,
+  "end_page": 221,
+  "file": "191_morphine.txt",
+  "chars": 1436
+ },
+ {
+  "order": 192,
+  "title": "Naloxone (Narcan)",
+  "start_page": 222,
+  "end_page": 223,
+  "file": "192_naloxone_narcan.txt",
+  "chars": 1102
+ },
+ {
+  "order": 193,
+  "title": "Nitroglycerin",
+  "start_page": 224,
+  "end_page": 224,
+  "file": "193_nitroglycerin.txt",
+  "chars": 982
+ },
+ {
+  "order": 194,
+  "title": "Normal Saline 0.9 (NS)",
+  "start_page": 225,
+  "end_page": 226,
+  "file": "194_normal_saline_0_9_ns.txt",
+  "chars": 1648
+ },
+ {
+  "order": 195,
+  "title": "Ondansetron (Zofran)",
+  "start_page": 227,
+  "end_page": 227,
+  "file": "195_ondansetron_zofran.txt",
+  "chars": 955
+ },
+ {
+  "order": 196,
+  "title": "Oral Glucose",
+  "start_page": 228,
+  "end_page": 228,
+  "file": "196_oral_glucose.txt",
+  "chars": 402
+ },
+ {
+  "order": 197,
+  "title": "Oxygen",
+  "start_page": 229,
+  "end_page": 229,
+  "file": "197_oxygen.txt",
+  "chars": 792
+ },
+ {
+  "order": 198,
+  "title": "Sodium Bicarbonate",
+  "start_page": 230,
+  "end_page": 230,
+  "file": "198_sodium_bicarbonate.txt",
+  "chars": 1099
+ },
+ {
+  "order": 199,
+  "title": "Tranexamic Acid (TXA)",
+  "start_page": 231,
+  "end_page": 231,
+  "file": "199_tranexamic_acid_txa.txt",
+  "chars": 623
+ },
+ {
+  "order": 200,
+  "title": "Vecuronium (Norcuron)",
+  "start_page": 232,
+  "end_page": 232,
+  "file": "200_vecuronium_norcuron.txt",
+  "chars": 1375
+ },
+ {
+  "order": 201,
+  "title": "Medication Concentration List",
+  "start_page": 233,
+  "end_page": 233,
+  "file": "201_medication_concentration_list.txt",
+  "chars": 1161
+ },
+ {
+  "order": 202,
+  "title": "Cyanokit (Hydroxocobalamin) Dosing Guide:",
+  "start_page": 234,
+  "end_page": 234,
+  "file": "202_cyanokit_hydroxocobalamin_dosing_guide.txt",
+  "chars": 354
+ },
+ {
+  "order": 203,
+  "title": "Guidelines",
+  "start_page": 235,
+  "end_page": 235,
+  "file": "203_guidelines.txt",
+  "chars": 29
+ },
+ {
+  "order": 204,
+  "title": "Air Transport",
+  "start_page": 236,
+  "end_page": 236,
+  "file": "204_air_transport.txt",
+  "chars": 1361
+ },
+ {
+  "order": 205,
+  "title": "EMS Provider Practitioner Disciplinary Procedure",
+  "start_page": 237,
+  "end_page": 237,
+  "file": "205_ems_provider_practitioner_disciplinary_procedure.txt",
+  "chars": 3158
+ },
+ {
+  "order": 206,
+  "title": "Death Criteria",
+  "start_page": 238,
+  "end_page": 238,
+  "file": "206_death_criteria.txt",
+  "chars": 1359
+ },
+ {
+  "order": 207,
+  "title": "Do Not Resuscitate (DNR) Withholding Resuscitation",
+  "start_page": 239,
+  "end_page": 239,
+  "file": "207_do_not_resuscitate_dnr_withholding_resuscitation.txt",
+  "chars": 1759
+ },
+ {
+  "order": 208,
+  "title": "Do Not Resuscitate (DNR)",
+  "start_page": 240,
+  "end_page": 241,
+  "file": "208_do_not_resuscitate_dnr.txt",
+  "chars": 2377
+ },
+ {
+  "order": 209,
+  "title": "Termination of Resuscitation (TOR)",
+  "start_page": 242,
+  "end_page": 242,
+  "file": "209_termination_of_resuscitation_tor.txt",
+  "chars": 1610
+ },
+ {
+  "order": 210,
+  "title": "Documentation-Patient Care Report (PCR)",
+  "start_page": 243,
+  "end_page": 244,
+  "file": "210_documentation_patient_care_report_pcr.txt",
+  "chars": 3096
+ },
+ {
+  "order": 211,
+  "title": "Documentation-Vital Signs",
+  "start_page": 245,
+  "end_page": 245,
+  "file": "211_documentation_vital_signs.txt",
+  "chars": 1231
+ },
+ {
+  "order": 212,
+  "title": "Non-Paramedic Transport of Patients",
+  "start_page": 246,
+  "end_page": 246,
+  "file": "212_non_paramedic_transport_of_patients.txt",
+  "chars": 2631
+ },
+ {
+  "order": 213,
+  "title": "Non-Transport of Patients",
+  "start_page": 247,
+  "end_page": 247,
+  "file": "213_non_transport_of_patients.txt",
+  "chars": 2136
+ },
+ {
+  "order": 214,
+  "title": "Patient Self Medication",
+  "start_page": 248,
+  "end_page": 248,
+  "file": "214_patient_self_medication.txt",
+  "chars": 465
+ },
+ {
+  "order": 215,
+  "title": "Patient Without a Protocol/Implementation of New Protocol",
+  "start_page": 249,
+  "end_page": 249,
+  "file": "215_patient_without_a_protocol_implementation_of_new_protocol.txt",
+  "chars": 1102
+ },
+ {
+  "order": 216,
+  "title": "Physician on Scene",
+  "start_page": 250,
+  "end_page": 250,
+  "file": "216_physician_on_scene.txt",
+  "chars": 1516
+ },
+ {
+  "order": 217,
+  "title": "Safe Transport of Pediatric Patients",
+  "start_page": 251,
+  "end_page": 251,
+  "file": "217_safe_transport_of_pediatric_patients.txt",
+  "chars": 1400
+ },
+ {
+  "order": 218,
+  "title": "Trauma Center Triage Criteria",
+  "start_page": 252,
+  "end_page": 252,
+  "file": "218_trauma_center_triage_criteria.txt",
+  "chars": 36
+ },
+ {
+  "order": 219,
+  "title": "Procedures",
+  "start_page": 253,
+  "end_page": 253,
+  "file": "219_procedures.txt",
+  "chars": 42
+ },
+ {
+  "order": 220,
+  "title": "Certification Requirements",
+  "start_page": 254,
+  "end_page": 254,
+  "file": "220_certification_requirements.txt",
+  "chars": 419
+ },
+ {
+  "order": 221,
+  "title": "12 Lead ECG",
+  "start_page": 255,
+  "end_page": 257,
+  "file": "221_12_lead_ecg.txt",
+  "chars": 2035
+ },
+ {
+  "order": 222,
+  "title": "Airway-Orotracheal Intubation",
+  "start_page": 258,
+  "end_page": 259,
+  "file": "222_airway_orotracheal_intubation.txt",
+  "chars": 1748
+ },
+ {
+  "order": 223,
+  "title": "Airway-Bougie",
+  "start_page": 260,
+  "end_page": 261,
+  "file": "223_airway_bougie.txt",
+  "chars": 2562
+ },
+ {
+  "order": 224,
+  "title": "Airway-Capnography",
+  "start_page": 262,
+  "end_page": 262,
+  "file": "224_airway_capnography.txt",
+  "chars": 1400
+ },
+ {
+  "order": 225,
+  "title": "Airway-Supraglottic",
+  "start_page": 263,
+  "end_page": 263,
+  "file": "225_airway_supraglottic.txt",
+  "chars": 1386
+ },
+ {
+  "order": 226,
+  "title": "Airway-Non-Invasive Ventilation",
+  "start_page": 264,
+  "end_page": 264,
+  "file": "226_airway_non_invasive_ventilation.txt",
+  "chars": 1666
+ },
+ {
+  "order": 227,
+  "title": "Airway-Suctioning-Basic",
+  "start_page": 265,
+  "end_page": 265,
+  "file": "227_airway_suctioning_basic.txt",
+  "chars": 944
+ },
+ {
+  "order": 228,
+  "title": "Airway-Suctioning - Advanced",
+  "start_page": 266,
+  "end_page": 266,
+  "file": "228_airway_suctioning_advanced.txt",
+  "chars": 1388
+ },
+ {
+  "order": 229,
+  "title": "Blood Glucose Analysis",
+  "start_page": 267,
+  "end_page": 267,
+  "file": "229_blood_glucose_analysis.txt",
+  "chars": 898
+ },
+ {
+  "order": 230,
+  "title": "Chest Trauma",
+  "start_page": 268,
+  "end_page": 268,
+  "file": "230_chest_trauma.txt",
+  "chars": 687
+ },
+ {
+  "order": 231,
+  "title": "CPR",
+  "start_page": 269,
+  "end_page": 270,
+  "file": "231_cpr.txt",
+  "chars": 1760
+ },
+ {
+  "order": 232,
+  "title": "Cricothyrotomy (FONA)",
+  "start_page": 271,
+  "end_page": 271,
+  "file": "232_cricothyrotomy_fona.txt",
+  "chars": 1109
+ },
+ {
+  "order": 233,
+  "title": "Defibrillation-Automated",
+  "start_page": 272,
+  "end_page": 273,
+  "file": "233_defibrillation_automated.txt",
+  "chars": 1907
+ },
+ {
+  "order": 234,
+  "title": "Defibrillation-Automated Implantable Cardioverter",
+  "start_page": 274,
+  "end_page": 274,
+  "file": "234_defibrillation_automated_implantable_cardioverter.txt",
+  "chars": 948
+ },
+ {
+  "order": 235,
+  "title": "Defibrillation-Manual",
+  "start_page": 275,
+  "end_page": 275,
+  "file": "235_defibrillation_manual.txt",
+  "chars": 1207
+ },
+ {
+  "order": 236,
+  "title": "External Jugular IV",
+  "start_page": 276,
+  "end_page": 276,
+  "file": "236_external_jugular_iv.txt",
+  "chars": 759
+ },
+ {
+  "order": 237,
+  "title": "Intranasal Medication Administration",
+  "start_page": 277,
+  "end_page": 278,
+  "file": "237_intranasal_medication_administration.txt",
+  "chars": 1040
+ },
+ {
+  "order": 238,
+  "title": "Needle Chest Decompression",
+  "start_page": 279,
+  "end_page": 280,
+  "file": "238_needle_chest_decompression.txt",
+  "chars": 1952
+ },
+ {
+  "order": 239,
+  "title": "Spinal Motion Restriction",
+  "start_page": 281,
+  "end_page": 282,
+  "file": "239_spinal_motion_restriction.txt",
+  "chars": 1879
+ },
+ {
+  "order": 240,
+  "title": "Spinal Motion Restriction-Special Instructions",
+  "start_page": 283,
+  "end_page": 283,
+  "file": "240_spinal_motion_restriction_special_instructions.txt",
+  "chars": 1301
+ },
+ {
+  "order": 241,
+  "title": "Splinting",
+  "start_page": 284,
+  "end_page": 285,
+  "file": "241_splinting.txt",
+  "chars": 2789
+ },
+ {
+  "order": 242,
+  "title": "Synchronized Cardioversion",
+  "start_page": 286,
+  "end_page": 287,
+  "file": "242_synchronized_cardioversion.txt",
+  "chars": 1614
+ },
+ {
+  "order": 243,
+  "title": "TPOD Pelvic Binder",
+  "start_page": 288,
+  "end_page": 291,
+  "file": "243_tpod_pelvic_binder.txt",
+  "chars": 1220
+ },
+ {
+  "order": 244,
+  "title": "Transcutaneous Pacing",
+  "start_page": 292,
+  "end_page": 292,
+  "file": "244_transcutaneous_pacing.txt",
+  "chars": 1138
+ },
+ {
+  "order": 245,
+  "title": "Vascular Access EZ-IO",
+  "start_page": 293,
+  "end_page": 294,
+  "file": "245_vascular_access_ez_io.txt",
+  "chars": 2617
+ },
+ {
+  "order": 246,
+  "title": "Venous Access-Alternative Routes",
+  "start_page": 295,
+  "end_page": 296,
+  "file": "246_venous_access_alternative_routes.txt",
+  "chars": 3336
+ },
+ {
+  "order": 247,
+  "title": "Venous Access-Extremity",
+  "start_page": 297,
+  "end_page": 297,
+  "file": "247_venous_access_extremity.txt",
+  "chars": 1154
+ },
+ {
+  "order": 248,
+  "title": "Wound Care/CAT Tourniquet",
+  "start_page": 298,
+  "end_page": 299,
+  "file": "248_wound_care_cat_tourniquet.txt",
+  "chars": 2472
+ },
+ {
+  "order": 249,
+  "title": "Reference",
+  "start_page": 300,
+  "end_page": 300,
+  "file": "249_reference.txt",
+  "chars": 31
+ },
+ {
+  "order": 250,
+  "title": "Protocol Changes",
+  "start_page": 301,
+  "end_page": 304,
+  "file": "250_protocol_changes.txt",
+  "chars": 5070
+ },
+ {
+  "order": 251,
+  "title": "AirQ3 Size Chart",
+  "start_page": 305,
+  "end_page": 305,
+  "file": "251_airq3_size_chart.txt",
+  "chars": 357
+ },
+ {
+  "order": 252,
+  "title": "Full Guide - O - Two e700 Ventilator Alarms",
+  "start_page": 306,
+  "end_page": 322,
+  "file": "252_full_guide_o_two_e700_ventilator_alarms.txt",
+  "chars": 114
+ },
+ {
+  "order": 253,
+  "title": "Medic Unit Changeover",
+  "start_page": 323,
+  "end_page": 323,
+  "file": "253_medic_unit_changeover.txt",
+  "chars": 28
+ },
+ {
+  "order": 254,
+  "title": "Pediatric ETT Size Chart",
+  "start_page": 324,
+  "end_page": 324,
+  "file": "254_pediatric_ett_size_chart.txt",
+  "chars": 100
+ },
+ {
+  "order": 255,
+  "title": "Pediatric Vital Signs",
+  "start_page": 325,
+  "end_page": 325,
+  "file": "255_pediatric_vital_signs.txt",
+  "chars": 28
+ },
+ {
+  "order": 256,
+  "title": "RACE Scoring Tool",
+  "start_page": 326,
+  "end_page": 326,
+  "file": "256_race_scoring_tool.txt",
+  "chars": 24
+ },
+ {
+  "order": 257,
+  "title": "Ventilator Card w/AirQ-Female",
+  "start_page": 327,
+  "end_page": 327,
+  "file": "257_ventilator_card_w_airq_female.txt",
+  "chars": 370
+ },
+ {
+  "order": 258,
+  "title": "Ventilator Card w/AirQ-Male",
+  "start_page": 328,
+  "end_page": 328,
+  "file": "258_ventilator_card_w_airq_male.txt",
+  "chars": 360
+ }
+]
