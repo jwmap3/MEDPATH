@@ -1,0 +1,37 @@
+AEMT
+PARAMEDIC
+Clinical Indications:
+Any patient where intravenous access is indicated (significant trauma or mechanism, emergent or potentially emergent medical condition).
+Procedure
+ 
+1. 
+ Saline locks may be used as an alternative to an IV tubing and IV fluid in every protocol at the discretion of the ALS professional (0.9%
+NaCl and 3 mL volume).
+ 
+2.
+ Paramedics can use intraosseous access where threat to life exists as provided for in the Venous Access - Intraosseous procedure.
+ 
+3.
+ Use the largest catheter bore necessary based upon the patient's condition and size of veins.
+ 
+4.
+ Fluid and setup choice is preferably:
+NS with a macro drip (10 drop/cc) for trauma, hypovolemia, or medical conditions.
+NS with a micro drip (60 drop/cc) for medical infusions.
+ 
+5.
+ Rates are preferably:
+Adult:
+ KVO: 60 mL/hr (1 drop/6 sec for a macro drip set).
+Pediatric:
+ KVO: 30 mL/hr (1 drop/12 sec for a macro drip set).
+ 
+6.
+ If shock is present:
+Adult:
+ 500 mL fluid boluses repeated as long as lungs are dry and BP < 90. Place a second IV line if available.
+Pediatric:
+ 20 mL/kg boluses repeated PRN for poor perfusion.
+ 
+Venous Access-Extremity
+297

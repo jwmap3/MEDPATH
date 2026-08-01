@@ -1,0 +1,61 @@
+EMT
+AEMT
+PARAMEDIC
+ 
+Clinical Indications:
+Patients in cardiac arrest (pulseless, non-breathing).
+Age < 8 years, use Pediatric Pads if available.
+Contraindications:
+Pediatric patients who body habitus is such that the pads cannot be placed without touching one another.
+Procedure
+ 
+1.
+ 
+If multiple rescuers are available, one rescuer should provide uninterrupted chest compressions while the AED is being prepared for
+use. Alternatively, utilize Automatic CPR device if available.
+ 
+2.
+ Apply defibrillator pads per manufacturer recommendations. Use alternate placement when implanted devices (pacemakers, AICDs)
+occupy preferred pad positions.
+ 
+3.
+ Remove any medication patches on the chest and wipe off any residue.
+ 
+4.
+ If necessary, connect defibrillator leads: white to the anterior chest pad and the red to the posterior pad.
+ 
+5.
+ Activate AED for analysis of rhythm.
+ 
+6.
+ Stop CPR and clear the patient for rhythm analysis. Keep interruption in CPR as brief as possible.
+ 
+7.
+ Defibrillate if appropriate by depressing the "shock" button. Assertively state "CLEAR" and visualize that no one, including yourself, is in
+contact with the patient prior to defibrillation. The sequence of defibrillation charges is pre-programmed for monophasic defibrillators.
+Biphasic defibrillators will determine the correct joules accordingly.
+ 
+8.
+ Begin CPR (chest compressions and ventilations) immediately after the delivery of the defibrillation.
+ 
+9.
+ After 2 minutes of CPR, analyze rhythm and defibrillate if indicated. Repeat this step every 2 minutes.
+ 
+10.
+ If "no shock advised" appears, perform CPR for two minutes and then reanalyze.
+Defibrillation-Automated
+272
+ 
+11.
+ Transport and continue treatment as indicated.
+ 
+12.
+ 
+Keep interruption of CPR compressions as brief as possible. Adequate CPR is a key to 
+successful resuscitation.
+If pulse returns
+, see 
+Post Resuscitation
+ protocol.
+ 
+273

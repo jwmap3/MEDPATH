@@ -1,0 +1,44 @@
+EMT
+AEMT
+PARAMEDIC
+Clinical Indications:
+NIV should be applied to patients in whom inadequate ventilation is suspected. CPAP may be utilized in patients with suspected acute
+pulmonary edema, asthma, or COPD. CHF and/or acute pulmonary edema should be treated with 10 - 15 cmH20 CPAP whereas COPD or
+asthma patients should have 5 cm H2O CPAP.
+CPAP may be utilized for patients with respiratory distress.  
+COPD and Asthma should start with 5 cm H20 CPAP; 
+Acute pulmonary edema should have 5, 7.5, 10 cm H20 CPAP
+If transport ventilator available (not Autovent)
+May utilize ventilator to deliver CPAP with same CPAP settings as disposable CPAP
+Contraindications:
+Patients requiring a secure airway (i.e., endotracheal intubation). 
+Patient's who are actively vomiting, suspected bowel obstruction, patients who cannot maintain their airway
+Procedure
+ 
+1. 
+Ensure adequate oxygen supply to ventilation device.
+ 
+2.
+ Explain the procedure to the patient.
+ 
+3.
+ Consider placement of a nasopharyngeal airway. Apply Capnography.
+ 
+4.
+ Place the delivery mask over the mouth and nose. Oxygen should be flowing at this point.
+ 
+5.
+ Secure the mask with provided straps starting with the lower straps until minimal air leak occurs.
+ 
+6.
+ Evaluate the response by the patient. Assess breath sounds, oxygen saturation, and general appearance of the patient.
+ 
+7.
+ Encourage the patient to allow forced ventilation occur. Observe closely for signs of complication. The patient must be breathing
+spontaneously and must not have an alteration in mental status for CPAP to work.
+ 
+8.
+ Document time and response on Patient Care Report (PCR).
+ 
+Airway-Non-Invasive Ventilation
+264

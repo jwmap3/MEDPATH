@@ -1,0 +1,123 @@
+4/22/2026
+Page: Universal Patient Care
+Pearls: 2nd bullet point revised with, "Minimum required vital signs on every patient include BP, Pulse, Respiratory rate, Pulse oximetry and Pain
+severity".
+Page: Patient Safety
+3rd box, replaced "field supervisor" with Unit 123.
+Page: Refusals and High Risk Refusals
+High Risk Refusal Category box. Last sentence added, "elderly fall patients on blood thinners".
+Page: Cardiac Arrest
+Advanced Airway box, First bullet point replaced with, "First airway Supraglottic Airway (SGA) with ETCO2.  If this fails, intubate thru SGA or move
+to intubation with Video Laryngoscopy."
+Page: Asystole (Includes POCUS)
+Page Title updated.
+3rd box, 2nd bullet point, sentence revised.
+Added Purple box referencing Point of Care Ultrasound (POCUS) and criteria for use.
+Bottom box replaced , "Persistent asystole after 30 minutes of high quality CPR with BLS and ALS interventions?" move to Termination of
+Resuscitation (TOR) guideline to cease efforts.
+Medical Reference:
+Differential (H's and T's), full box revised.
+Page: Pulseless Electrical Activity (PEA)
+Added Purple box referencing Point of Care Ultrasound (POCUS) and criteria for use.
+Page: V-Fib/Pulseless V-Tach
+Right side of page, added green box titted "
+Dual Sequential Defibrillation (DSD)"
+ with Indications & Procedure to follow.
+Page: Bradycardia-Unstable
+Transcutaneous Pacing box, removed, "when IV access not available.".
+Page: Post ROSC Care
+Title changed to "Post ROSC Care".
+Added new box top left side tittled "Goals of Care".
+4th box (middle) tittled "Post ROSC 10 minute monitoring goals".
+Left side, Normal Saline box, added "to achieve MAP >65 mmHg"
+Bottom middle box, listing medications, Tittle changed to "Post ROSC Sedation".
+All medications have dosing change except Vecuronium (Norcuron).
+Page: Vomiting/Diarrhea
+Normal Saline Fluid Bolus changed from "20 mL/kg" to "1 Liter".
+Page: Determining Death
+Page tittle changed from "Deceased Persons" to "Determining Death".
+Page: Dystonic Reaction
+New page added.
+Protocol Changes
+301
+Page: Pain Control
+Box listing all medications.
+New header added, "AEMT/Paramedic discretion. 
+The AEMT/Paramedic may choose from the following for initial and ongoing pain control.
+"OR" was listed before above Morphine and above last Ketamine (Ketalar), 
+Removed
+.
+First Ketamine (Ketalar) list had statement, "For pain not controlled with above, move to Ketamine", 
+Removed
+.
+Page: Seizure
+Near full page revision with medication dosing changes.
+Page: Allergic Reaction
+Middle column, Blue box (EMT-Anaphylaxis Only) Removed "IM" Route & moved above Yellow box 
+Epinephrine 1 mg/mL
+0.5 mg IM May repeat x1......
+Page: Acute Pulmonary Edema
+Added (left side, green box) additional choice of Ketamine (Ketalar) IV over 10 minutes.
+Removed bottom two "OR"'s in green box.
+Page: Respiratory Distress
+Added (left side, green box) additional choice of Ketamine (Ketalar) IV over 10 minutes.
+Page: Respiratory Distress
+Added Medications for Anxiety / Intolerance to CPAP.
+Page: Invasive Ventilation
+New page added.
+Page: Invasive Ventilation Decision Process
+New page added.
+Page: Non-Invasive Ventilation (CPAP and BiPAP)
+Right side, bottom box. Changed CPAP setting from "5 cmH2O" to "6 cmH2O".
+Page: Non-Invasive Ventilation (CPAP and BiPAP)
+New page added.
+Page: Non-Invasive Ventilation Decision Process
+New page added.
+Page: Overdose/Toxic Exposure
+Added an additional column, Carbon Monoxide Exposure.
+Additional information followed.
+Page: Head Trauma
+Left side, Yellow box, Midazolam (Versed) dose changed from "2 - 4 mg" to "2.5 - 5 mg"
+Page: Pediatric Vomiting/Diarrhea
+Bottom box, for patients "12 years and older" changed to "for patients 4 years and older"
+Page: Pediatric Hypotension/Sepsis/Shock Non-Trauma 302
+Epinephrine Push Dose: Dilution & Dosing revised.
+Page: Pediatric Pain Control
+Both Ketamine (Ketalar) dosing on page changed.
+Page: Pediatric Airway
+Added under 
+Basic Maneuvers First
+ (2nd middle blue box), "Consider CPAP with RAMM cannula".
+Page: Pediatric Allergic Reaction
+Epinephrine Push Dose: Dilution & Dosing revised.
+Page: Pediatric Respiratory Distress
+2nd & 3rd box has new content.
+2nd box
+: 
+Assessment
+Evaluate alertness, skin color and tone, work of breathing , accessory muscle use, nasal flaring, grunting, fever, cough.
+3rd box
+: 
+administer supplemental oxygen/respiratory support by nasal cannula, NRB or CPAP with RAMM cannula (see procedure below)
+Page: Pediatric/Infant and Neonatal CPAP (Neotech RAM Cannula)
+New page added.
+Page: Pediatric Head Trauma
+Left side, bottom left yellow box, Ketamine (Ketalar) listed at bottom, dose changed to 1 mg/kg IN.
+Page: Cyanokit (Hydroxocobalamin) Dosing Guide:
+New page added.
+Page: Death Criteria
+Full page updated into flow chart.
+Page: AirQ3 Size Chart
+New page added.
+Page: Full Guide - O - Two e700 Ventilator Alarms
+New pages added.
+Page: Medic Unit Changeover
+New page added.
+Page: Pediatric ETT Size Chart
+New page added.
+Page: Ventilator Card w/AirQ-Female
+New page added.
+Page: Ventilator Card w/AirQ-Male
+New page added.
+ 303
+304

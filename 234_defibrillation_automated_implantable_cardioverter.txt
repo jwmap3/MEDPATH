@@ -1,0 +1,27 @@
+PARAMEDIC
+Clinical Indications:
+Patients reporting a "discharge" of their AICD.
+Patients with an AICD in cardiac arrest (pulseless, non-breathing).
+Procedure: ACID Discharge Reported
+ 
+1.
+ Transport and continue treatment as indicated.
+ 
+2.
+ In the event of recurrent arrhythmia, follow the appropriate protocol. The patient's AICD may charge and subsequently discharge in an
+attempt to terminate the abnormal rhythm.
+Procedure: Patients Presenting in Cardiac Arrest
+ 
+1.
+ Begin CPR. Most ICDs have the ability to "fire" 3 - 4 times in response to refractory V-Fib/Pulseless V-Tach if no intervening organized
+cardiac activity is monitored
+ 
+2.
+ Activate Emergency Response/Get Defibrillator.
+ 
+3.
+ For recurrent VF/VT, all defibrillations should be performed at the maximum joule setting (360J). Avoid combo-patch placement (i.e.,
+anterior/posterior; reverse polarity-antero/lateral chest).
+ 
+Defibrillation-Automated Implantable Cardioverter
+274

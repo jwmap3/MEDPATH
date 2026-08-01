@@ -1,0 +1,83 @@
+AEMT
+PARAMEDIC
+Clinical Indications:
+Patients where rapid, regular IV access is unavailable with any of the following:
+Cardiac arrest.
+Multisystem trauma with severe hypovolemia.
+Severe dehydration with vascular collapse and/or loss of consciousness.
+Respiratory failure/respiratory arrest.
+Contraindications:
+Fracture proximal to proposed intraosseous site.
+History of Osteogenesis Imperfecta.
+Current or prior infection at proposed intraosseous site.
+Previous intraosseous insertion or joint replacement at the selected site.
+Procedure
+ 
+1.
+ Don personal protective equipment (gloves, eye protection, etc.).
+ 
+2.
+ Identify insertion site (order of preference):
+Adult:
+ Distal femur (
+►
+yellow); Humeral Head (
+►
+yellow); Proximal tibia (
+►
+yellow/
+►
+blue).
+Pediatric:
+ Distal femur (
+►
+blue); proximal Tibia (
+►
+blue).
+ 
+3.
+ Prep the site with povidone-iodine or alcohol swab.
+ 
+4.
+ Humeral Head EZIO; Hold pt arm across chest. Identify humeral head; prep in standard fashion. Insert yellow EZIO needle at 90 degree
+angle until "pop" is felt. Distal Femur IO; 2 - 3 cm above patella in midline.
+ 
+5.
+ For the EZ-IO intraosseous device, hold the intraosseous needle at a 60 to 90 degree angle aimed away from the nearby joint and
+epiphyseal plate and power the driver until a "pop" or "give" is felt indicating loss of resistance. Do not advance the needle any further.
+ 
+6.
+ Remove the stylette and place in an approved sharps container.
+ 
+7.
+ Attach a syringe filled with at least 5 mL NS and aspirate bone marrow to verify placement. Then, flush with at least 5 mL NS to clear
+the lumen of the needle.
+ 
+8.
+ Attach the IV line and adjust flow rate. A pressure bag may assist with achieving desired high flows.
+Vascular Access EZ-IO
+293
+ 
+9.
+ Stabilize and secure the needle with dressings and tape.
+ 
+10.
+ 
+Lidocaine
+ dosing:
+Adults:
+ Slowly infuse 20 mg 2% lidocaine (cardiac pink box lidocaine) over 120 seconds. Wait 60 seconds before flushing with 5
+- 10 mL NS. May slowly administer additional 20 mg lidocaine over 60 seconds. Consider systemic pain control for those not
+responding to lidocaine.
+Pediatrics:
+ Slowly infuse 0.5 mg/kg 2% lidocaine (cardiac pink box lido) not to exceed 40 mg over 120 seconds. Wait 60
+seconds before flushing with 2 - 5 ml NS. May slowly administer additional dose (half of initial dose = 0.25 mg/kg). Consider
+systemic pain control for those not responding to lidocaine.
+ 
+11.
+ Following the administration of any IO medications, flush the IO line with 10 mL of IV fluid.
+ 
+12.
+ Document the procedure, time, and result (success) on/with the Patient Care Report (PCR).
+ 
+294

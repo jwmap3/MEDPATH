@@ -1,0 +1,62 @@
+AEMT
+PARAMEDIC
+Clinical Indications:
+Patients meet clinical indications for oral intubation.
+Initial intubation attempt(s) unsuccessful.
+Predicted difficult intubation.
+Relative Contraindications:
+Age less than eight (8).
+ETT size less than 6.5mm.
+Procedure
+ 
+1. 
+Prepare, position and oxygenate the patient with 100% oxygen.
+ 
+2.
+ Select proper ET tube without stylet, test cuff and prepare suction.
+ 
+3.
+ Lubricate the distal end and cuff of the endotracheal tube (ETT) and the distal 1/2 of the Endotracheal Tube Introducer (Bougie) (note:
+Failure to lubricate the Bougie and the ETT may result in being unable to pass the ETT).
+ 
+4.
+ Using laryngoscopic techniques, visualize the vocal cords if possible using External Laryngeal Manipulation (ELM) as needed.
+ 
+5.
+ Introduce the Bougie with curved tip anteriorly and visualize the tip passing the vocal cords or above the arytenoids if the cords cannot
+be visualized.
+ 
+6.
+ Once inserted, gently advance the Bougie until you meet resistance or "hold-up" (if you do not meet resistance, you have a probable
+esophageal intubation and insertion should be re-attempted or the failed airway protocol implemented as indicated).
+ 
+7.
+ Withdraw the Bougie ONLY to a depth sufficient to allow loading of the ETT while maintaining proximal control of the Bougie.
+ 
+8.
+ Gently advance the Bougie and loaded ET tube until you have hold-up again, thereby assuring tracheal placement and minimizing the
+risk of accidental displacement of the Bougie.
+ 
+9.
+ While maintaining a firm grasp on the proximal Bougie, introduce the ET tube over the Bougie passing the tube to its appropriate depth.
+Airway-Bougie
+260
+ 
+10.
+ If you are unable to advance the ETT into the trachea and the Bougie and ETT are adequately lubricated, withdraw the ETT slightly and
+rotate the ETT 90 degrees COUNTER clockwise to turn the bevel of the ETT posteriorly. If this technique fails to facilitate passing of the ETT
+you may attempt direct laryngoscopy while advancing the ETT (this will require an assistant to maintain the position of the Bougie and, if so
+desired, advance the ETT).
+ 
+11.
+ Once the ETT is correctly placed, hold the ET tube securely and remove the Bougie.
+ 
+12.
+ Confirm tracheal placement according to the intubation protocol, inflate the cuff with 3 to 10 cc of air, auscultate for equal breath
+sounds and reposition accordingly.
+ 
+13.
+ When final position is determined secure the ET tube, reassess breath sounds, apply end tidal CO2 monitor, and record and monitor
+readings to assure continued tracheal intubation.
+ 
+261

@@ -1,0 +1,32 @@
+MALE: Ventilator Tidal Volume based on ideal weight
+Colors correspond with Air-Q3 size
+IDEAL BODY WEIGHT
+HEIGHT
+MALE TIDAL VOLUME
+113 lbs – 50 kg
+5'
+350
+128 lbs – 57 kg
+5'3"
+400
+144 lbs – 64 kg
+5'6"
+450
+160 lbs – 71 kg
+5'9"
+500
+176 lbs – 78 kg
+6'
+550
+190 lbs – 85 kg
+6'3"
+600
+211 lbs – 94 kg
+6'7"
+650
+216 lbs – 96 kg
+6'8"
+700
+ 
+Ventilator Card w/AirQ-Male
+328

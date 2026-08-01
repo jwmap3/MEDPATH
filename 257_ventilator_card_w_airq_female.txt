@@ -1,0 +1,32 @@
+FEMALE: Ventilator Tidal Volume based on ideal weight
+Colors correspond with Air-Q3 size
+IDEAL BODY WEIGHT
+HEIGHT
+FEMALE TIDAL VOLUME
+82 lbs – 36 kg
+4'8"
+250
+97 lbs – 43 kg
+4'11"
+300
+113 lbs – 50 kg
+5'2"
+350
+128 lbs – 57 kg
+5'5"
+400
+144 lbs – 78 kg
+5'8"
+450
+159 lbs – 71 kg
+5'11"
+500
+176 lbs – 78 kg
+6'2"
+550
+185 lbs – 83 kg
+6'4"
+600
+ 
+Ventilator Card w/AirQ-Female
+327

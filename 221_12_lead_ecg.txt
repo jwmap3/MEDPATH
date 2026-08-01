@@ -1,0 +1,71 @@
+EMT - Permitted to set-up and transmit
+AEMT - Permitted to set-up and transmit
+PARAMEDIC
+Clinical Indications:
+Suspected cardiac patient (patients over 40 with medical complaint, epigastric pain, nausea, weakness, fatigue)
+Suspected overdose
+Electrical injuries
+Syncope
+CHF
+Right sided MI
+Procedure
+ 
+1.
+ Assess patient and monitor cardiac status.
+ 
+2.
+ If patient is unstable, definitive treatment is the priority. If patient is stable or stabilized after treatment, perform a 12 Lead ECG.
+ 
+3.
+ Prepare ECG monitor and connect patient cable with electrodes.
+ 
+4.
+ Expose chest and prep as necessary. Modesty of the patient should be respected.
+ 
+5.
+ Apply chest leads and extremity leads using the following landmarks:
+RA -Right arm or as directed by manufacturer.
+LA -Left arm or as directed by manufacturer.
+RL -Right leg.
+LL -Left leg.
+V1 -4th intercostal space at right sternal border.
+V2 -4th intercostal space at left sternal border.
+V3 -Directly between V2 and V4.
+V4 -5th intercostal space at mid-clavicular line.
+V5 -Level with V4 at left anterior axillary line.
+V6 -Level with V5 at left mid-axillary line.
+Right side ECG necessary, go #9 below.
+12 Lead ECG
+255
+ 
+6.
+ Instruct patient to remain still.
+ 
+7.
+ Press the appropriate button to acquire the 12 Lead ECG.
+ 
+8.
+ Print data as per guidelines and attach a copy of the 12 lead to the PCR. Place the name and age of the patient on the paper copy of the
+ECG.
+ 
+9.
+ If 
+STEMI 
+suspected, if able, transmit 12-Lead ECG and notify hospital of STEMI alert.
+In cases of inferior injury pattern on 12 lead ECG (i.e. 
+inferior STEMI
+, perform Right side ECG (V4R), if this will not delay transport to
+STEMI receiving facility.
+ 
+10.
+ Document the procedure, time, and results on/with the Patient Care Report (PCR).
+ 
+11.
+ An EMT may obtain and transmit a 12 Lead ECG; a Paramedic, however, should interpret it before implementing any treatment
+modalities.
+256
+ 
+12.
+ EMTs may assist the paramedic with attaching the 12-lead ECG electrodes but may not interpret the ECG.
+ 
+257

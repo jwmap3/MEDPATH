@@ -1,0 +1,31 @@
+AirQ3 Size Chart – Based on ideal, not actual body weight of patient
+Size of AirQ3 - Color
+Ideal Body Weight in pounds
+ 
+0.0 - Lavender
+< 4.5
+ 
+0.5 - Red
+4.5 - 9
+ 
+1.0 - Blue
+9 - 15
+ 
+1.5 - Green
+15 - 37.5
+ 
+2.0 - Orange
+37.5 - 66
+ 
+3.0 - Yellow
+66 - 133
+Under 5'7"
+4.0 - Dark Red/Maroon
+133 - 176
+5'7" - 6'1"
+5.0 Purple
+> 177
+> 6'2"
+ 
+AirQ3 Size Chart
+305

@@ -1,0 +1,79 @@
+Medication
+Concentration
+Adenosine (Adenocard)
+3 mg/mL
+Albuterol (Proventil)
+2.5 mg/3 mL
+Amiodarone (Cordarone)
+50 mg/mL
+Aspirin
+81 mg 
+Atropine
+0.1 mg/mL
+Calcium Chloride
+0.1 gm/mL
+Cyanokit (Hydroxocobalamin)
+5 gm/200 mL
+Dextrose
+D10% 250mL bag,  25 gm Dextrose/250mL 
+D5% 250mL bag,  12.5 gm Dextrose/250mL
+D5% 50mL bag,  2.5 gm Dextrose/50mL
+Diltiazem (Cardizem)
+5 mg/mL
+Diphenhydramine (Benadryl)
+50 mg/mL
+Dopamine (Intropin)
+400 mg/10 mL
+Epinephrine 1 mg/mL
+1 mg/mL
+Epinephrine 1 mg/10 mL
+0.1 mg/mL
+Epinephrine Drip
+ 
+Epinephrine Push Dose
+ 
+Fentanyl (Sublimaze)
+50 mcg/mL
+Glucagon
+1 mg/mL
+Ipratropium (Atrovent)
+0.5 mg/2.5 mL
+Ketamine (Ketalar)
+50 mg/mL
+Ketamine (Ketalar)
+100 mg/mL
+Ketorolac (Toradol)
+30 mg/mL
+Lidocaine (Xylocaine)
+20 mg/mL
+Magnesium Sulfate
+0.5 gm/mL
+Methylprednisolone (Solu-Medrol)
+62.5 mg/mL
+Midazolam (Versed)
+1 mg/mL
+Midazolam (Versed)
+5 mg/mL
+Morphine
+10 mg/mL
+Naloxone (Narcan)
+1 mg/mL
+Nitroglycerin
+0.4 mg Tablet/Spray
+Normal Saline 0.9 (NS)
+ 
+Ondansetron (Zofran)
+2 mg/mL
+Oral Glucose
+15 gm
+Oxygen
+ 
+Sodium Bicarbonate
+1 mEq/mL
+Tranexamic Acid (TXA)
+100 mg/mL
+Vecuronium (Norcuron)
+1 mg/mL
+ 
+Medication Concentration List
+233

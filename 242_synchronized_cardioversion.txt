@@ -1,0 +1,47 @@
+PARAMEDIC
+Clinical Indications:
+Unstable patient with a tachydysrhythmia (rapid atrial fibrillation, supraventricular tachycardia, ventricular tachycardia).
+Patient is not pulseless (the pulseless patient requires unsynchronized cardioversion, i.e., defibrillation).
+Procedure
+ 
+1.
+ Ensure the patient is attached properly to a monitor/defibrillator capable of synchronized cardioversion.
+ 
+2.
+ Do not use unsynchronized cardioversion for patients WITH a pulse.
+ 
+3.
+ Consider the use of pain and/or sedating medications (i.e. midazolam/fentanyl) dosing listed under appropriate protocol).
+ 
+4.
+ Set energy selection to the appropriate setting.
+ 
+5.
+ Set monitor/defibrillator to synchronized cardioversion mode.
+ 
+6.
+ Make certain all personnel are clear of patient.
+ 
+7.
+ Press and hold the shock button to cardiovert. Stay clear of the patient until you are certain the energy has been delivered. NOTE: It
+may take the monitor/defibrillator several cardiac cycles to "synchronize" so there my be a delay between activating the cardioversion and the
+actual delivery of energy.
+ 
+8.
+ Note patient response and perform immediate unsynchronized cardioversion/defibrillation if the patient's rhythm has deteriorated into
+pulseless ventricular tachycardia/ventricular fibrillation, following the procedure for 
+Defibrillation-Manual
+.
+ 
+9.
+ If the patient's condition is unchanged, repeat steps 2 to 8 above using escalating energy settings.
+ 
+10.
+ Repeat until maximum setting or until efforts succeed.
+ 
+11.
+ Note procedure, response, and time in the Patient Care Report (PCR).
+Synchronized Cardioversion
+286
+ 
+287

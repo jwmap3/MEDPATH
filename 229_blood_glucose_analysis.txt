@@ -1,0 +1,31 @@
+EMT
+AEMT
+PARAMEDIC
+Clinical Indications:
+Patients with suspected hypoglycemia (diabetic emergencies, change in mental status, bizarre behavior etc.).
+Procedure
+ 
+1. 
+Gather and prepare equipment.
+ 
+2.
+ Blood samples for performing glucose analysis should be obtained simultaneously with intravenous access when possible.
+ 
+3.
+ Place correct amount of blood on reagent strip or site on glucometer per the manufacturer's instructions.
+ 
+4.
+ Time the analysis as instructed by the manufacturer.
+ 
+5.
+ Document the glucometer reading and treat the patient as indicated by the analysis and protocol.
+ 
+6.
+ Repeat glucose analysis as indicated for reassessment after treatment and as per protocol.
+ 
+7.
+ Perform Quality Assurance on glucometers at least once every 7 days, if any clinically suspicious readings, and/or as recommended by
+the manufacturer and document in log.
+ 
+Blood Glucose Analysis
+267

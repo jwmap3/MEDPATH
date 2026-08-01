@@ -1,0 +1,40 @@
+PARAMEDIC
+Special Notes: 
+Onset:
+  1 - 3 minutes  
+Half Life:
+ 60 - 120 minutes   
+Peak Effect:
+  4 - 6 minutes
+Adult Indications & Dosing
+Post ROSC Care
+Vecuronium (Norcuron) 
+10 mg IVP, IO
+Pediatric Indications & Dosing
+No pediatric doses for this medication.
+Contraindications
+Hypersensitivity to vecuronium or its components
+Allergy to other neuromuscular blocking agents or aminosteroid compounds
+Known or suspected myasthenia gravis or other neuromuscular disorders
+Severe electrolyte imbalances
+Severe hepatic disease
+Severe renal impairment
+Severe acid-base disturbances
+Severe hypoxemia
+Severe hypotension or shock
+Severe burns or trauma Neuromuscular diseases associated with elevated serum potassium levels
+Adverse Reactions
+Cardiovascular System: Hypotension (low blood pressure), tachycardia (rapid heart rate)
+Respiratory System: Respiratory depression, bronchospasm (constriction of airways)
+Neuromuscular System: Muscle weakness, paralysis
+Gastrointestinal System: Nausea, vomiting
+General/Other: Allergic reactions, including rash or itching.
+Precautions
+Use with caution in patients with hepatic or renal disease or electrolyte abnormalities
+Medical Considerations
+Monitor for respiratory depression
+Mechanism of Actions
+Binds competitively to cholinergic receptors at the motor endplate, preventing the binding of acetylcholine
+ 
+Vecuronium (Norcuron)
+232

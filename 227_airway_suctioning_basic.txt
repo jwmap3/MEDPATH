@@ -1,0 +1,37 @@
+EMT
+AEMT
+PARAMEDIC
+Clinical Indications:
+Obstruction of the airway (secondary to secretions, blood, or any other substance) in a patient who cannot maintain or keep the airway clear.
+Procedure
+ 
+1.
+ Ensure suction device is in proper working order with suction tip in place.
+ 
+2.
+ Preoxygenate the patient as is possible.
+ 
+3.
+ Explain the procedure to the patient if they are coherent.
+ 
+4.
+ Examine the oropharynx and remove any potential foreign bodies or material that may occlude the airway if dislodged by the suction
+device.
+ 
+5.
+ If applicable, remove ventilation devices from the airway.
+ 
+6.
+ Use the suction device to remove any secretions, blood, or other substance.
+ 
+7.
+ The alert patient may assist with this procedure.
+ 
+8.
+ Reattach ventilation device (e.g., bag-valve mask) and ventilate or assist the patient.
+ 
+9.
+ Record the time and result of the suctioning in the Patient Care Report (PCR).
+ 
+Airway-Suctioning-Basic
+265

@@ -1,0 +1,36 @@
+EMT
+AEMT
+PARAMEDIC
+Clinical Indications:
+Capnography shall be used when available with all endotracheal, tracheostomies, or supraglottic airways.
+Capnography shall also be used on all patients treated with non-invasive ventilation (CPAP/BiPAP), with adult or pediatric patients in
+respiratory distress, with administration of sedatives (midazolam, lorazepam, diazepam), with administration of induction agents (etomidate,
+propofol, ketamine), with administration of neuromuscular blockades (succinylcholine, vecuronium, rocuronium).
+ 
+Procedure
+ 
+1. 
+Attach capnography sensor to supraglottic airway (SGA), endotracheal tube, tracheostomy tube, or oxygen delivery device.
+ 
+2.
+ Note CO2 level and waveform changes. These will be documented on each respiratory failure, cardiac arrest, or respiratory distress
+patient.
+ 
+3.
+ The capnometer shall remain in place with the airway and be monitored throughout the prehospital care and transport.
+ 
+4.
+ Any loss of CO2 detection or waveform indicates an airway problem and should be documented.
+ 
+5.
+ The capnogram should be monitored as procedures are performed to verify or correct the airway problem.
+ 
+6.
+ Document the procedure and results on/with the Patient Care Report (PCR).
+ 
+7.
+ In patients being treated with CPAP, the ETCO2 cannula may be placed on the patient and the CPAP mask placed over face in the usual
+fashion.
+ 
+Airway-Capnography
+262
