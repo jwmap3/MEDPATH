@@ -294,6 +294,82 @@ body{
 .browse-section{ margin-bottom:6px; }
 .browse-section h3{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--sumi-soft); margin: 14px 0 6px; }
 
+.hidden{ display:none; }
+
+/* Home: Run An Arrest link */
+.ghost-btn.arrest-link{ border-color: var(--coral); color:#b23b23; font-weight:700; }
+.ghost-btn.arrest-link:active{ background: var(--coral-bg); }
+
+/* Run An Arrest screen */
+.screen-arrest{ gap:18px; }
+.arrest-pre{ display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; padding-top:4vh; }
+.arrest-pre .big-cta{ background: linear-gradient(160deg, var(--coral) 0%, #b85b45 100%); }
+.arrest-live{ display:flex; flex-direction:column; gap:16px; }
+
+.arrest-clock{ text-align:center; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
+.arrest-started{ margin:0 0 4px; font-size:0.8rem; color:var(--sumi-soft); }
+.arrest-elapsed{ font-size:2.4rem; font-weight:800; letter-spacing:0.03em; color:var(--sumi); font-variant-numeric: tabular-nums; }
+
+.arrest-alert{
+  background: var(--coral); color:#fff; font-weight:700; text-align:center;
+  padding:12px 14px; border-radius:14px; animation: pulseAlert 1s ease-in-out infinite;
+}
+@keyframes pulseAlert{ 0%,100%{ opacity:1; } 50%{ opacity:0.6; } }
+
+.arrest-subtimers{ display:flex; flex-direction:column; gap:10px; }
+.subtimer-row{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 14px; box-shadow:var(--shadow);
+}
+.subtimer-label{ margin:0; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--sumi-soft); font-weight:700; }
+.subtimer-time{ margin:2px 0; font-size:1.4rem; font-weight:800; color:var(--sumi); font-variant-numeric: tabular-nums; }
+.subtimer-count{ margin:0; font-size:0.78rem; color:var(--sumi-soft); }
+.subtimer-btn{
+  flex-shrink:0; width:46px; height:46px; border-radius:50%; border:none;
+  background: var(--moss); color:#fff; font-size:1.2rem; font-weight:700; cursor:pointer;
+}
+.subtimer-btn.active{ background: var(--coral); }
+
+.record-label{ margin:0; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--sakura-deep); font-weight:700; }
+.arrest-event-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; }
+.event-btn{
+  padding:16px 8px; border-radius:14px; border:1px solid var(--line); background:var(--card);
+  box-shadow:var(--shadow); font-size:0.9rem; font-weight:700; color:var(--sumi); cursor:pointer;
+}
+.event-btn:active{ background: var(--sakura-pale); }
+
+.end-op-btn{
+  padding:14px; border-radius:var(--radius); border:1.5px solid #b23b23; background:#fff; color:#b23b23;
+  font-weight:800; font-size:1rem; cursor:pointer;
+}
+.end-op-btn:active{ background:var(--coral-bg); }
+
+.arrest-log-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; }
+.arrest-log-list li{
+  display:flex; justify-content:space-between; gap:10px; background:var(--card); border:1px solid var(--line);
+  border-radius:10px; padding:8px 12px; font-size:0.82rem; color:var(--sumi);
+}
+.arrest-log-list .log-time{ color:var(--sumi-soft); font-variant-numeric: tabular-nums; white-space:nowrap; }
+
+.arrest-summary{ display:flex; flex-direction:column; gap:14px; }
+.arrest-summary-table{ width:100%; border-collapse:collapse; font-size:0.82rem; }
+.arrest-summary-table td{ padding:6px 4px; border-bottom:1px solid var(--line); vertical-align:top; }
+
+/* Quick-pick modal (rhythm/meds/airway/IV-IO/other) */
+.quick-modal-list{ display:flex; flex-direction:column; gap:8px; margin-top:10px; }
+.quick-pick-btn{
+  text-align:left; padding:12px 14px; border-radius:12px; border:1px solid var(--line);
+  background:var(--washi); color:var(--sumi); font-size:0.92rem; cursor:pointer; line-height:1.35;
+}
+.quick-pick-btn:active{ background:var(--sakura-pale); }
+
+/* Run / arrest report text preview */
+.run-report-box{
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px;
+  box-shadow:var(--shadow); font-size:0.78rem; color:var(--sumi-soft); white-space:pre-wrap;
+  max-height:260px; overflow-y:auto; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
 @media (min-width: 640px){
   .app-main{ padding-top: 30px; }
 }

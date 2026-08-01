@@ -59,8 +59,34 @@ function categoryFor(protocol){
 }
 
 // ---------- Router ----------
-function render(){
-  window.scrollTo(0,0);
+// The app keeps a real browser history entry per screen so the phone's
+// hardware/gesture back button steps back through MEDPATH's own screens
+// instead of leaving the app.
+let isRestoringHistory = false;
+let historyBooted = false;
+
+function snapshotState(){
+  return {
+    step: state.step,
+    chosenDemographic: state.chosenDemographic,
+    chosenTopicKey: state.chosenTopicKey,
+    chosenProtocolId: state.chosenProtocolId,
+    chosenBranchId: state.chosenBranchId,
+    vitals: state.vitals,
+  };
+}
+
+function pushHistory(){
+  if(isRestoringHistory) return;
+  if(!historyBooted){
+    historyBooted = true;
+    history.replaceState(snapshotState(), '');
+    return;
+  }
+  history.pushState(snapshotState(), '');
+}
+
+function dispatch(){
   if(state.step === 'home') return renderHome();
   if(state.step === 'demographic') return renderDemographic();
   if(state.step === 'ccList') return renderCcList();
@@ -69,7 +95,22 @@ function render(){
   if(state.step === 'protocol') return renderProtocolView();
   if(state.step === 'browseAll') return renderBrowseAll();
   if(state.step === 'drugRef') return renderDrugRef();
+  if(state.step === 'arrest') return renderArrest();
 }
+
+function render(){
+  window.scrollTo(0,0);
+  dispatch();
+  pushHistory();
+}
+
+window.addEventListener('popstate', (e) => {
+  if(!e.state) return;
+  isRestoringHistory = true;
+  Object.assign(state, e.state);
+  render();
+  isRestoringHistory = false;
+});
 
 function goHome(){
   Object.assign(state, {
@@ -103,6 +144,9 @@ function renderHome(){
   });
   document.getElementById('drugRefBtn').addEventListener('click', () => {
     state.step = 'drugRef'; render();
+  });
+  document.getElementById('runArrestBtn').addEventListener('click', () => {
+    state.step = 'arrest'; render();
   });
   document.getElementById('metaNote').textContent =
     `${state.protocols.length} protocols · ${state.drugs.length} drug references loaded · works offline`;
@@ -514,6 +558,65 @@ function renderProtocolView(){
         section('Pearls', r.pearls);
     }
   });
+
+  const reportBtn = document.createElement('button');
+  reportBtn.type = 'button';
+  reportBtn.className = 'ghost-btn';
+  reportBtn.textContent = 'Download run report (.txt) for documentation';
+  reportBtn.style.alignSelf = 'flex-start';
+  reportBtn.addEventListener('click', () => {
+    downloadTextFile(buildProtocolReportText(proto, branch), `medpath-run-report-${dateStamp(new Date())}.txt`);
+  });
+  document.querySelector('.screen-protocol').appendChild(reportBtn);
+}
+
+// Plain-text run summary for a completed/in-progress protocol run. MEDPATH
+// has no direct API integration with any ePCR software (including ESO) —
+// no personal/independent app can push data straight into ESO's fields.
+// This produces a clean, timestamped report meant to be copy/pasted into
+// your ePCR's narrative or relevant fields instead.
+function buildProtocolReportText(proto, branch){
+  const now = new Date();
+  const lines = [];
+  lines.push('MEDPATH — Run Report');
+  lines.push(`Generated: ${now.toLocaleString()}`);
+  lines.push(`Demographic: ${state.chosenDemographic || '—'}`);
+  lines.push(`Chief complaint / protocol: ${proto.title}${branch.label ? ' — ' + branch.label : ''}`);
+  lines.push('');
+  lines.push('Vitals:');
+  const v = state.vitals || {};
+  if(v.weightLb) lines.push(`  Weight: ${v.weightLb} lb (${parseFloat(v.weight).toFixed(1)} kg)`);
+  if(v.hr) lines.push(`  HR: ${v.hr}`);
+  if(v.sbp || v.dbp) lines.push(`  BP: ${v.sbp || '?'}/${v.dbp || '?'}`);
+  if(v.rr) lines.push(`  RR: ${v.rr}`);
+  if(v.spo2) lines.push(`  SpO2: ${v.spo2}%`);
+  if(v.temp) lines.push(`  Temp: ${v.temp}°F`);
+  if(v.glucose) lines.push(`  Glucose: ${v.glucose}`);
+  if(v.gcs) lines.push(`  GCS: ${v.gcs}`);
+  lines.push('');
+  lines.push('Steps:');
+  document.querySelectorAll('#stepsList .step-item').forEach((li, i) => {
+    const done = li.classList.contains('done');
+    const text = li.querySelector('.step-text').textContent;
+    lines.push(`  [${done ? 'x' : ' '}] ${i + 1}. ${text}`);
+  });
+  lines.push('');
+  lines.push('Copy/paste the relevant lines into your ePCR (e.g. ESO) narrative or times fields — MEDPATH has no direct integration with ePCR software. Verify every entry before submitting documentation.');
+  return lines.join('\n');
+}
+
+function dateStamp(d){
+  const p = n => String(n).padStart(2, '0');
+  return `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}-${p(d.getHours())}${p(d.getMinutes())}`;
+}
+
+function downloadTextFile(text, filename){
+  const blob = new Blob([text], {type: 'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 // ---------- Drug modal ----------
@@ -614,6 +717,327 @@ function renderDrugRef(){
   }
   input.addEventListener('input', () => renderList(input.value));
   renderList('');
+}
+
+// ---------- Run An Arrest ----------
+// Timestamped timer/documentation tool, modeled on apps like CPR Recorder.
+// Timing is drawn straight from TFD's own Asystole / PEA / V-Fib-Pulseless
+// V-Tach protocols: Epinephrine 1 mg repeated every 10 minutes (max 4 mg
+// total), rhythm reassessment + med admin + defib every 2 minutes, charge
+// the defibrillator at the 1:45 mark of that 2-minute cycle, Amiodarone
+// 300 mg first dose then 150 mg after 3-5 minutes if still in refractory
+// VF/pulseless VT.
+const arrestState = {
+  active: false,
+  ended: false,
+  startTime: null,
+  endTime: null,
+  log: [],            // {time: Date, label: string}
+  cprRunning: false,
+  cprSegStart: null,
+  cprAccumMs: 0,
+  cprCycles: 0,
+  lastEpiTime: null,
+  epiCount: 0,
+  lastRhythmTime: null,
+  shockCount: 0,
+  amiodaroneCount: 0,
+  rhythmAlerted: false,
+  chargedAlerted: false,
+  epiAlerted: false,
+};
+let arrestTickTimer = null;
+
+const ARREST_MEDS = [
+  {label:'Epinephrine 1 mg IVP/IO', note:'repeat q10min, max 4 mg total'},
+  {label:'Amiodarone 300 mg IVP/IO', note:'1st dose, refractory VF/pVT'},
+  {label:'Amiodarone 150 mg IVP/IO', note:'2nd dose, after 3–5 min'},
+  {label:'Calcium Chloride 1 g IVP/IO', note:'suspected hyperkalemia'},
+  {label:'Sodium Bicarbonate', note:'50 mEq (PEA: 1 mEq/kg) IVP/IO'},
+  {label:'Magnesium Sulfate 2 g IVP', note:'torsades de pointes'},
+  {label:'Naloxone 2–4 mg IVP/IO', note:'PEA, suspected opioid'},
+  {label:'Dextrose 10% (D10) 5 g IV', note:'PEA, suspected hypoglycemia'},
+  {label:'Glucagon 1 mg IVP', note:'suspected beta blocker OD'},
+];
+const ARREST_RHYTHMS = ['V-Fib','Pulseless V-Tach','PEA','Asystole','Organized rhythm / possible ROSC','Torsades de Pointes'];
+const ARREST_AIRWAY = ['BVM ventilation','Supraglottic Airway (SGA) placed','Intubated (ETT via VL)','EtCO2 attached','ResQPOD attached','POCUS performed'];
+const ARREST_IVIO = ['IV — Right AC','IV — Left AC','IO — Tibial','IO — Humeral','Right EJ','Left EJ'];
+const ARREST_SHOCK_J = ['200 J','300 J','360 J'];
+
+function fmtClock(d){
+  return d.toLocaleTimeString([], {hour:'numeric', minute:'2-digit', second:'2-digit'});
+}
+function fmtElapsedShort(ms){
+  const s = Math.max(0, Math.floor(ms/1000));
+  const m = Math.floor(s/60), r = s%60;
+  return `${String(m).padStart(2,'0')}:${String(r).padStart(2,'0')}`;
+}
+function fmtElapsedLong(ms){
+  const s = Math.max(0, Math.floor(ms/1000));
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), r = s%60;
+  return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(r).padStart(2,'0')}`;
+}
+function vibrate(pattern){
+  if('vibrate' in navigator){ try{ navigator.vibrate(pattern); }catch(e){} }
+  // Note: iOS Safari/PWAs do not support the Vibration API — the on-screen
+  // alert banner is the reliable cross-platform cue; vibration is a bonus
+  // on Android.
+}
+function logArrestEvent(label){
+  arrestState.log.push({time: new Date(), label});
+}
+
+function renderArrest(){
+  const tpl = document.getElementById('tpl-arrest').content.cloneNode(true);
+  app.innerHTML = '';
+  app.appendChild(tpl);
+  addBackBtn(() => {
+    if(arrestState.active){
+      if(!confirm('An operation is still running. Go back without ending it? The timer keeps running in the background and you can return to it from the home screen.')) return;
+    }
+    goHome();
+  });
+
+  const pre = document.getElementById('arrestPre');
+  const live = document.getElementById('arrestLive');
+  const summary = document.getElementById('arrestSummary');
+
+  if(arrestState.ended){
+    pre.classList.add('hidden'); live.classList.add('hidden'); summary.classList.remove('hidden');
+    renderArrestSummary();
+    return;
+  }
+  if(!arrestState.active){
+    pre.classList.remove('hidden'); live.classList.add('hidden'); summary.classList.add('hidden');
+    document.getElementById('startOpBtn').addEventListener('click', startArrestOperation);
+    return;
+  }
+
+  pre.classList.add('hidden'); live.classList.remove('hidden'); summary.classList.add('hidden');
+  document.getElementById('arrestStartedLabel').textContent = `Started ${fmtClock(arrestState.startTime)}`;
+
+  document.getElementById('cprToggleBtn').addEventListener('click', toggleCpr);
+  document.getElementById('epiLogBtn').addEventListener('click', () => { logEpiDose(); redrawArrestLog(); });
+  document.getElementById('endOpBtn').addEventListener('click', endArrestOperation);
+  app.querySelectorAll('.event-btn').forEach(btn => {
+    btn.addEventListener('click', () => openEventModal(btn.dataset.evt));
+  });
+
+  refreshCprButton();
+  redrawArrestLog();
+  tickArrest();
+  if(arrestTickTimer) clearInterval(arrestTickTimer);
+  arrestTickTimer = setInterval(tickArrest, 1000);
+}
+
+function startArrestOperation(){
+  Object.assign(arrestState, {
+    active:true, ended:false, startTime:new Date(), endTime:null, log:[],
+    cprRunning:false, cprSegStart:null, cprAccumMs:0, cprCycles:0,
+    lastEpiTime:null, epiCount:0, lastRhythmTime:new Date(), shockCount:0,
+    amiodaroneCount:0, rhythmAlerted:false, chargedAlerted:false, epiAlerted:false,
+  });
+  logArrestEvent('Operation started');
+  vibrate(200);
+  render();
+}
+
+function toggleCpr(){
+  if(arrestState.cprRunning){
+    arrestState.cprAccumMs += Date.now() - arrestState.cprSegStart;
+    arrestState.cprRunning = false;
+    logArrestEvent('CPR paused');
+  } else {
+    arrestState.cprSegStart = Date.now();
+    arrestState.cprRunning = true;
+    arrestState.cprCycles += 1;
+    logArrestEvent('CPR started' + (arrestState.cprCycles > 1 ? ` (cycle ${arrestState.cprCycles})` : ''));
+  }
+  refreshCprButton();
+  redrawArrestLog();
+}
+function refreshCprButton(){
+  const btn = document.getElementById('cprToggleBtn');
+  if(!btn) return;
+  btn.textContent = arrestState.cprRunning ? '⏸' : '▶';
+  btn.classList.toggle('active', arrestState.cprRunning);
+}
+
+function logEpiDose(){
+  arrestState.epiCount += 1;
+  arrestState.lastEpiTime = new Date();
+  arrestState.epiAlerted = false;
+  logArrestEvent(`Epinephrine 1 mg IVP/IO — dose #${arrestState.epiCount}${arrestState.epiCount >= 4 ? ' (max total 4 mg reached)' : ''}`);
+  vibrate(100);
+}
+
+function resetRhythmCycle(){
+  arrestState.lastRhythmTime = new Date();
+  arrestState.rhythmAlerted = false;
+  arrestState.chargedAlerted = false;
+}
+
+function openEventModal(kind){
+  const cfg = {
+    rhythm: {title:'Log Rhythm', options: ARREST_RHYTHMS.map(r => ({label:r})), onPick:(label) => { logArrestEvent(`Rhythm — ${label}`); resetRhythmCycle(); }},
+    shock: {title:'Log Shock', options: ARREST_SHOCK_J.map(j => ({label:j})), onPick:(label) => { arrestState.shockCount += 1; logArrestEvent(`Shock #${arrestState.shockCount} delivered (${label})`); resetRhythmCycle(); }},
+    meds: {title:'Log Medication', options: ARREST_MEDS.map(m => ({label:m.label, sub:m.note})), onPick:(label) => {
+        if(label.startsWith('Epinephrine')){ logEpiDose(); return; }
+        if(label.startsWith('Amiodarone')) arrestState.amiodaroneCount += 1;
+        logArrestEvent(label);
+      }},
+    airway: {title:'Log Airway', options: ARREST_AIRWAY.map(a => ({label:a})), onPick:(label) => logArrestEvent(label)},
+    ivio: {title:'Log IV/IO Access', options: ARREST_IVIO.map(a => ({label:a})), onPick:(label) => logArrestEvent(`Access — ${label}`)},
+    other: {title:'Log Other Event', options: [], onPick:() => {}},
+  }[kind];
+  if(!cfg) return;
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'modal-backdrop';
+  const card = document.createElement('div');
+  card.className = 'drug-card';
+  card.innerHTML = `<button class="close-btn">✕</button><h3>${cfg.title}</h3><div class="quick-modal-list"></div>
+    <div style="margin-top:14px; display:flex; gap:8px;">
+      <input type="text" class="text-input" id="quickDetailInput" placeholder="Custom / additional detail…">
+      <button type="button" class="ghost-btn" id="quickLogBtn" style="white-space:nowrap;">Log</button>
+    </div>`;
+  const list = card.querySelector('.quick-modal-list');
+  cfg.options.forEach(opt => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'quick-pick-btn';
+    b.innerHTML = opt.sub ? `${opt.label}<br><span style="font-size:0.74rem;color:var(--sumi-soft);">${opt.sub}</span>` : opt.label;
+    b.addEventListener('click', () => {
+      cfg.onPick(opt.label);
+      document.body.removeChild(backdrop);
+      redrawArrestLog();
+    });
+    list.appendChild(b);
+  });
+  backdrop.appendChild(card);
+  document.body.appendChild(backdrop);
+  const close = () => { if(document.body.contains(backdrop)) document.body.removeChild(backdrop); };
+  card.querySelector('.close-btn').addEventListener('click', close);
+  backdrop.addEventListener('click', (e) => { if(e.target === backdrop) close(); });
+  card.querySelector('#quickLogBtn').addEventListener('click', () => {
+    const v = card.querySelector('#quickDetailInput').value.trim();
+    if(!v) return;
+    logArrestEvent(kind === 'other' ? v : `${cfg.title.replace('Log ', '')} — ${v}`);
+    close();
+    redrawArrestLog();
+  });
+}
+
+function redrawArrestLog(){
+  const list = document.getElementById('arrestLogList');
+  if(!list) return;
+  list.innerHTML = '';
+  [...arrestState.log].reverse().forEach(entry => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span>${entry.label}</span><span class="log-time">${fmtClock(entry.time)}</span>`;
+    list.appendChild(li);
+  });
+}
+
+function tickArrest(){
+  if(!arrestState.active) return;
+  const now = Date.now();
+
+  const elapsedEl = document.getElementById('arrestElapsed');
+  if(elapsedEl) elapsedEl.textContent = fmtElapsedLong(now - arrestState.startTime.getTime());
+
+  const cprMs = arrestState.cprAccumMs + (arrestState.cprRunning ? now - arrestState.cprSegStart : 0);
+  const cprTimeEl = document.getElementById('cprTime');
+  if(cprTimeEl) cprTimeEl.textContent = fmtElapsedShort(cprMs);
+  const cprCountEl = document.getElementById('cprCount');
+  if(cprCountEl) cprCountEl.textContent = `Cycles: ${arrestState.cprCycles}`;
+
+  const epiMs = arrestState.lastEpiTime ? now - arrestState.lastEpiTime.getTime() : now - arrestState.startTime.getTime();
+  const epiTimeEl = document.getElementById('epiTime');
+  if(epiTimeEl) epiTimeEl.textContent = fmtElapsedShort(epiMs);
+  const epiCountEl = document.getElementById('epiCount');
+  if(epiCountEl) epiCountEl.textContent = `Doses: ${arrestState.epiCount} / max 4`;
+
+  const rhythmMs = now - arrestState.lastRhythmTime.getTime();
+  const banner = document.getElementById('arrestAlertBanner');
+  if(banner){
+    if(rhythmMs >= 120000){
+      banner.textContent = 'Rhythm / pulse check + med admin / defib due now';
+      banner.classList.remove('hidden');
+      if(!arrestState.rhythmAlerted){ arrestState.rhythmAlerted = true; vibrate([250,100,250,100,250]); }
+    } else if(rhythmMs >= 105000){
+      banner.textContent = `Charge defibrillator — rhythm check in ${Math.ceil((120000-rhythmMs)/1000)}s`;
+      banner.classList.remove('hidden');
+      if(!arrestState.chargedAlerted){ arrestState.chargedAlerted = true; vibrate(150); }
+    } else if(arrestState.lastEpiTime && (now - arrestState.lastEpiTime.getTime()) >= 600000){
+      banner.textContent = 'Epinephrine due (repeat q10min)' + (arrestState.epiCount >= 4 ? ' — max total 4 mg already given' : '');
+      banner.classList.remove('hidden');
+      if(!arrestState.epiAlerted){ arrestState.epiAlerted = true; vibrate([200,100,200]); }
+    } else if(!arrestState.lastEpiTime && (now - arrestState.startTime.getTime()) >= 60000){
+      banner.textContent = 'First Epinephrine 1 mg dose due';
+      banner.classList.remove('hidden');
+      if(!arrestState.epiAlerted){ arrestState.epiAlerted = true; vibrate([200,100,200]); }
+    } else {
+      banner.classList.add('hidden');
+    }
+  }
+}
+
+function endArrestOperation(){
+  if(!confirm('End this operation? This stops all timers and closes out the log.')) return;
+  if(arrestState.cprRunning){
+    arrestState.cprAccumMs += Date.now() - arrestState.cprSegStart;
+    arrestState.cprRunning = false;
+  }
+  arrestState.active = false;
+  arrestState.ended = true;
+  arrestState.endTime = new Date();
+  logArrestEvent('Operation ended');
+  if(arrestTickTimer){ clearInterval(arrestTickTimer); arrestTickTimer = null; }
+  render();
+}
+
+function buildArrestReportText(){
+  const s = arrestState;
+  const lines = [];
+  lines.push('MEDPATH — Arrest Run Log');
+  lines.push(`Started: ${s.startTime.toLocaleString()}`);
+  if(s.endTime) lines.push(`Ended:   ${s.endTime.toLocaleString()}`);
+  if(s.endTime) lines.push(`Total duration: ${fmtElapsedLong(s.endTime - s.startTime)}`);
+  lines.push(`CPR active time: ${fmtElapsedShort(s.cprAccumMs)}  |  CPR cycles: ${s.cprCycles}`);
+  lines.push(`Epinephrine doses: ${s.epiCount}  |  Shocks delivered: ${s.shockCount}  |  Amiodarone doses: ${s.amiodaroneCount}`);
+  lines.push('');
+  lines.push('Time         Elapsed   Event');
+  s.log.forEach(e => {
+    const elapsed = fmtElapsedLong(e.time - s.startTime);
+    lines.push(`${fmtClock(e.time).padEnd(12)} ${elapsed}   ${e.label}`);
+  });
+  lines.push('');
+  lines.push('Generated by MEDPATH — verify every entry against the monitor/defibrillator record before finalizing documentation. MEDPATH has no direct integration with ePCR software (e.g. ESO); copy/paste this log into the appropriate narrative or times fields. Reference tool only, not a substitute for official documentation.');
+  return lines.join('\n');
+}
+
+function renderArrestSummary(){
+  const body = document.getElementById('arrestSummaryBody');
+  const s = arrestState;
+  body.innerHTML = `
+    <table class="arrest-summary-table">
+      <tr><td>Started</td><td>${s.startTime.toLocaleString()}</td></tr>
+      <tr><td>Ended</td><td>${s.endTime.toLocaleString()}</td></tr>
+      <tr><td>Duration</td><td>${fmtElapsedLong(s.endTime - s.startTime)}</td></tr>
+      <tr><td>CPR active time</td><td>${fmtElapsedShort(s.cprAccumMs)} (${s.cprCycles} cycles)</td></tr>
+      <tr><td>Epinephrine</td><td>${s.epiCount} dose(s)</td></tr>
+      <tr><td>Shocks</td><td>${s.shockCount}</td></tr>
+      <tr><td>Amiodarone</td><td>${s.amiodaroneCount} dose(s)</td></tr>
+      <tr><td>Total events logged</td><td>${s.log.length}</td></tr>
+    </table>
+    <div class="run-report-box">${buildArrestReportText().replace(/</g,'&lt;')}</div>
+  `;
+  document.getElementById('downloadLogBtn').addEventListener('click', () => downloadTextFile(buildArrestReportText(), `medpath-arrest-log-${dateStamp(s.startTime)}.txt`));
+  document.getElementById('newOpBtn').addEventListener('click', () => {
+    arrestState.ended = false;
+    arrestState.active = false;
+    render();
+  });
 }
 
 // ---------- Boot ----------
