@@ -3318,7 +3318,7 @@
               "text": "Maintain systolic B/P greater than 100 mmHg."
             },
             {
-              "text": "For control of shivering during cooling: Midazolam (Versed) 2.5 mg IVP, IM. May repeat x 1.",
+              "text": "For control of shivering during cooling: Midazolam (Versed) 2.5 mg IVP, IM, IN. May repeat x 1.",
               "drug_id": "midazolam"
             },
             {
@@ -3688,48 +3688,32 @@
       },
       "branches": [
         {
-          "id": "scene_safety",
-          "label": "Scene Safety / Initial Approach",
+          "id": "anxious_not_violent",
+          "label": "Anxious, disruptive, not violent \u2014 able to calm and redirect",
           "steps": [
             {
-              "text": "Scene safety. Universal Patient Care (treat suspected medical or trauma problems per protocol)."
+              "text": "Scene safety. Universal Patient Care (treat suspected medical or trauma problems per protocol). Remove patient from stressful environment."
             },
             {
-              "text": "Remove patient from stressful environment."
-            },
-            {
-              "text": "Patient represents a violent threat to self or EMS: AEMT / Paramedic scope applies as below."
-            }
-          ]
-        },
-        {
-          "id": "anxious_disruptive_not_violent",
-          "label": "Anxious, Disruptive, Not Violent - able to calm and redirect",
-          "steps": [
-            {
-              "text": "Adult: Midazolam (Versed) 2.5 mg IVP, IO, IM, IN. May repeat x 1. Maximum total dose 5 mg.",
-              "drug_id": "midazolam"
-            },
-            {
-              "text": "Pediatric: Midazolam (Versed) (1 mg/mL) 0.1 mg/kg IVP, IO, IM, IN. May repeat up to maximum. Maximum single dose 2.5 mg. Maximum total dose 5 mg.",
+              "text": "Midazolam (Versed) 2.5 mg IVP, IO, IM, IN. May repeat x1. Maximum total dose 5 mg.",
               "drug_id": "midazolam"
             }
           ]
         },
         {
           "id": "anxious_and_violent",
-          "label": "Anxious and Violent",
+          "label": "Anxious and violent",
           "steps": [
             {
-              "text": "Adult (age > 12): Midazolam (Versed) 10 mg IM.",
+              "text": "Age > 12: Midazolam (Versed) 10 mg IM.",
               "drug_id": "midazolam"
             },
             {
-              "text": "Adult (age > 65): Midazolam (Versed) 5 mg IM.",
+              "text": "Age > 65: Midazolam (Versed) 5 mg IM.",
               "drug_id": "midazolam"
             },
             {
-              "text": "If IVP, IO, initial dose: Midazolam (Versed) 5 mg IVP, IO. Maximum 10 mg.",
+              "text": "If IVP/IO, initial dose: Midazolam (Versed) 5 mg IVP, IO. Maximum 10 mg.",
               "drug_id": "midazolam"
             },
             {
@@ -3737,50 +3721,21 @@
               "drug_id": "midazolam"
             },
             {
-              "text": "Pediatric: Midazolam (Versed) (5 mg/mL) 0.1 mg/kg IM, IVP, IN. May repeat every 5 minutes. Maximum single dose 2.5 mg. Maximum total dose 10 mg.",
-              "drug_id": "midazolam"
-            }
-          ]
-        },
-        {
-          "id": "mandatory_monitoring",
-          "label": "Mandatory Monitoring & Treatment",
-          "steps": [
-            {
-              "text": "Cardiac monitor, EtCO2, pulse oximetry, NIBP mandatory."
+              "text": "Mandatory monitoring: cardiac monitor, EtCO2, pulse oximetry, NIBP mandatory. Head elevated 30 degrees."
             },
             {
-              "text": "Head elevated 30 degrees."
-            },
-            {
-              "text": "If tachycardia or hypotension present - Adult: Normal Saline 0.9% (NS) 1 L fluid bolus.",
+              "text": "If tachycardia or hypotension present: Normal Saline 0.9% 1 L Fluid Bolus.",
               "drug_id": "normal_saline"
             },
             {
-              "text": "If tachycardia or hypotension present - Pediatric: Normal Saline 0.9% (NS) 20 mL/kg fluid bolus.",
-              "drug_id": "normal_saline"
-            }
-          ]
-        },
-        {
-          "id": "violent_refractory",
-          "label": "Violent Behavior Refractory to Above Therapy",
-          "steps": [
-            {
-              "text": "Ketamine (Ketalar) (100 mg/mL) 4 mg/kg IM. Maximum 400 mg.",
+              "text": "Violent behavior refractory to above therapy: Ketamine (Ketalar) (100 mg/mL) 4 mg/kg IM. Maximum 400 mg.",
               "drug_id": "ketamine"
             },
             {
-              "text": "Contact On-Line Medical Control (OLMC)."
-            }
-          ]
-        },
-        {
-          "id": "chemically_restrained",
-          "label": "Patient Chemically Restrained - positioning",
-          "steps": [
+              "text": "Contact OLMC (On-Line Medical Control)."
+            },
             {
-              "text": "At no time should a violent patient being chemically restrained have pressure applied to the back. All patients must be supine with head elevated, oxygen applied, full monitoring equipment, with IV/IO established when able."
+              "text": "Patient chemically restrained: at no time should a chemically restrained violent patient have pressure applied to the back. All patients must be supine with head elevated, oxygen applied, full monitoring equipment, with IV/IO established when able."
             }
           ]
         }
@@ -4081,8 +4036,7 @@
               "text": "If no ROSC, be off scene in 5 minutes to an ED with an OB unit. Pre-alert ED to prepare for Resuscitative Hysterotomy."
             },
             {
-              "text": "< 20 weeks gestation: follow standard ALS treatment.",
-              "goto_protocol": "cardiac_arrest"
+              "text": "< 20 weeks gestation: follow standard ALS treatment."
             },
             {
               "text": "Destination: trauma related maternal arrest - closest Trauma Center. Medical related maternal arrest - closest OB Center."
@@ -4381,7 +4335,7 @@
             },
             {
               "text": "Failure: place Supraglottic Airway (SGA).",
-              "goto_protocol": "airway_supraglottic"
+              "goto_protocol": "adult_airway"
             },
             {
               "text": "SGA failure, or can't oxygenate/can't ventilate: progress to FONA (Front of Neck Airway) - Surgical Airway - Cricothyrotomy (FONA)."
@@ -4488,7 +4442,9 @@
         "history": [],
         "signs_symptoms": [],
         "differential": [],
-        "pearls": []
+        "pearls": [
+          "Source note: page 104 (main protocol) and the typical-starting-point text on page 105 both give CPAP 6 cmH2O as the BiPAP starting point; page 105 has one isolated instance reading \"Set CPAP to 5 cm H2O\" that is immediately contradicted by its own next line (\"Typical starting point is CPAP 6\"). This entry uses 6 cmH2O as the internally-consistent value across both source pages \u2014 verify against your current protocol book if in doubt."
+        ]
       },
       "branches": [
         {
@@ -6636,6 +6592,10 @@
               "drug_id": "normal_saline"
             },
             {
+              "text": "Pediatric Pain Control Protocol.",
+              "goto_protocol": "pediatric_pain_control"
+            },
+            {
               "text": "Reference Lund Browder Burn Charts: Adolescent Burn, Pediatric Burn, Toddler Burn, Infant Burn."
             }
           ]
@@ -6972,6 +6932,109 @@
             },
             {
               "text": "Suspected Open Fractures: Do not reduce suspected open fractures such as a femur fracture with a traction splint unless there are no detectable distal pulses. If distal pulses are absent, apply gentle inline traction until pulses return."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pediatric_behavioral_emergency_sedation",
+      "title": "Pediatric Behavioral Emergency / Sedation",
+      "demographic": "pediatric",
+      "section": "Pediatric Neurological",
+      "source_pages": [
+        75,
+        76,
+        77
+      ],
+      "chief_complaint_tags": [
+        "behavioral emergency",
+        "agitation",
+        "violent",
+        "combative",
+        "sedation",
+        "psychiatric"
+      ],
+      "precedes": [
+        "pediatric_universal_care"
+      ],
+      "reference": {
+        "history": [
+          "Situational crisis.",
+          "Psychiatric illness/medications.",
+          "Injury to self or threats to others.",
+          "Medical alert tag.",
+          "Substance abuse/OD.",
+          "Diabetes."
+        ],
+        "signs_symptoms": [
+          "Anxiety.",
+          "Agitation.",
+          "Confusion.",
+          "Affect change.",
+          "Hallucinations.",
+          "Delusional thoughts.",
+          "Bizarre behavior.",
+          "Competitive/violent.",
+          "Expression of suicidal/homicidal thoughts."
+        ],
+        "differential": [
+          "See Altered Mental Status.",
+          "Hypoxia.",
+          "Alcohol intoxication.",
+          "Medication effect/OD.",
+          "Withdrawal syndromes.",
+          "Depression.",
+          "Bipolar.",
+          "Schizophrenia."
+        ],
+        "pearls": [
+          "Exam: mental status; skin; heart; lungs; neuro.",
+          "All patients given sedation must have IV, ETCO2, SpO2, cardiac monitoring, supplemental oxygen.",
+          "Consider ALL causes for behavior - trauma vs. medical (hypoglycemia, OD, hypoxia, head injury, substance abuse).",
+          "Do not overlook possibility of domestic violence or child abuse.",
+          "Patients with Behavioral Emergency are often dehydrated and acidotic.",
+          "All patients with physical or chemical restraints must be continuously observed by ALS personnel on scene."
+        ]
+      },
+      "branches": [
+        {
+          "id": "anxious_not_violent",
+          "label": "Anxious, disruptive, not violent \u2014 able to calm and redirect",
+          "steps": [
+            {
+              "text": "Scene safety. Pediatric Universal Care (treat suspected medical or trauma problems per protocol). Remove patient from stressful environment."
+            },
+            {
+              "text": "Midazolam (Versed) (1 mg/mL) 0.1 mg/kg IVP, IO, IM, IN. May repeat up to maximum. Maximum single dose 2.5 mg. Maximum total dose 5 mg.",
+              "drug_id": "midazolam"
+            }
+          ]
+        },
+        {
+          "id": "anxious_and_violent",
+          "label": "Anxious and violent",
+          "steps": [
+            {
+              "text": "Midazolam (Versed) (5 mg/mL) 0.1 mg/kg IM, IVP, IN. May repeat every 5 minutes. Maximum single dose 2.5 mg. Maximum total dose 10 mg.",
+              "drug_id": "midazolam"
+            },
+            {
+              "text": "Mandatory monitoring: cardiac monitor, EtCO2, pulse oximetry, NIBP mandatory. Head elevated 30 degrees."
+            },
+            {
+              "text": "If tachycardia or hypotension present: Normal Saline 0.9% 20 mL/kg Fluid Bolus.",
+              "drug_id": "normal_saline"
+            },
+            {
+              "text": "Violent behavior refractory to above therapy: Ketamine (Ketalar) (100 mg/mL) 4 mg/kg IM. Maximum 400 mg.",
+              "drug_id": "ketamine"
+            },
+            {
+              "text": "Contact OLMC (On-Line Medical Control)."
+            },
+            {
+              "text": "Patient chemically restrained: at no time should a chemically restrained violent patient have pressure applied to the back. All patients must be supine with head elevated, oxygen applied, full monitoring equipment, with IV/IO established when able."
             }
           ]
         }
