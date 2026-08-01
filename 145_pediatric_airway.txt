@@ -1,0 +1,67 @@
+
+
+
+
+
+
+
+
+
+
+Continue
+:
+Oxygenate
+Ventilate
+Position
+Reassess
+Pulse Oximetry
+Capnography
+Rapid transport
+Apply  EtCO
+Maintain EtCO2 35-45  if possible
+2
+Adequate?
+Successful?
+AirQ SGA Sizing
+< 2 kg (4.4 lbs)
+Size 0
+2 - 4 kg (4.4 - 8.8 lbs)
+Size 0.5
+4 - 7 kg (8.8 - 15.4 lbs)
+Size 1
+7 - 17 kg 15.4 - 37.4 lbs)
+Size 1.5
+17 - 30 kg (37.4 - 66 lbs)
+Size 2
+30 - 60 kg (66 - 132 lbs)
+Size 3
+60 - 80 kg (132 - 176 lbs)
+Size 4
+> 80 kg (> 176 lbs)
+Size 5
+Inadequate
+Unsuccessful?
+Unsuccessful?
+Unsuccessful?
+Assess ABC's,
+Respiratory rate
+Effort, adequacy
+Basic Maneuvers First
+Positioning
+Open airway (nasal/oral airway)
+Suctioning
+Oxygenation
+Assist w/BVM
+Consider CPAP with RAMM cannula
+Attempt
+Airway-Orotracheal Intubation
+SGA
+ (Preferred)
+Modify technique
+Pediatric Airway-Failed
+Obstruction
+Obstructed Airway 
+Per AHA guidelines
+Direct laryngoscopy
+Pediatric Airway
+157

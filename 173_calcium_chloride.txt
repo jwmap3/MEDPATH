@@ -1,0 +1,34 @@
+PARAMEDIC
+Special Notes: 
+Onset:
+ Immediate
+Adult Indications & Dosing
+Pulseless Electrical Activity (PEA)
+   
+V-Fib/Pulseless V-Tach
+1 gm IVP, IO
+Overdose/Toxic Exposure
+1 gm Slow IVP
+Pediatric Indications & Dosing
+Pediatric Overdose/Toxic Exposure/Cyanide Exposure
+20 mg/kg 
+(100 mg/mL) 
+Slow IVP
+ 
+Maximum 1,000 mg (1 gram)
+Contraindications
+Patients with the risk of existing digitalis toxicity
+Adverse Reactions
+Rapid injection may cause tingling sensations, a calcium taste, or heat wave.
+Peripheral vasodilatation, local burning, or moderate fall in BP.  
+If infiltration occurs, IV administration at the site should be discontinued at once.
+Precautions
+Injections should be made slowly through a small needle into a large vein to minimize venous irritation and avoid undesirable reactions.
+Medical Considerations
+Irritating to veins and must not be injected into tissue, severe necrosis and sloughing may occur.
+Mechanism of Actions
+Hyperkalemia
+Calcium channel blocker
+ 
+Calcium Chloride
+188

@@ -1,0 +1,145 @@
+AEMT
+PARAMEDIC
+Special Notes: 
+Onset:
+  
+2 - 5 minutes
+Adult Indications & Dosing
+Cardiac Arrest
+2 - 5 mg IVP, IO
+Bradycardia-Unstable
+2 mg IVP, IO, IN
+ 
+Maximum dose 4 mg
+Post ROSC Care
+2.5 - 5 mg IVP, IO
+May repeat x 1.
+Tachycardia w/Pulse 
+(SVT, A-Fib/A-Flutter, VT)
+2.5 mg IVP, IO, IN, IM
+May repeat x 1
+Hyperthermia
+2.5 mg IVP, IM, IN
+May repeat x 1
+Dystonic Reaction
+2.5 mg IVP, IO, IM
+Behavioral Emergency / Sedation
+ADULT
+2.5 mg IVP, IO, IM, IN
+May repeat x 1. 
+Maximum Total dose 5 mg
+ADULT (age > 12)
+10 mg IM
+ADULT (age > 65)
+5 mg IM
+If IVP, IO, Initial dose:
+5 mg IVP, IO
+ 
+Maximum 10 mg
+Repeat dosing
+2.5 mg IM, IVP, IO, IN
+Repeat every 5 minutes 
+Maximum 20 mg
+Seizure
+Age <65
+10 mg IM
+Age >65
+5 mg IM
+2 - 5 mg IVP, IO
+Obstetrical Emergency
+2 - 5 mg Slow IVP
+Midazolam (Versed)
+217
+10 mg IM
+Acute Pulmonary Edema
+   
+Respiratory Distress
+2 - 5 mg IVP
+ 
+Maximum 5 mg
+2 mg IN
+Head Trauma
+2.5 - 5 mg IVP
+For sedation if intubated.
+The following doses are not indicated in Protocol pages:
+Older than 65 year old
+1 - 2.5 mg IVP, IO, IM, IN
+May repeat every 5 min to effect. 
+Maximum Total dose 5 mg
+Pediatric Indications & Dosing
+Behavioral Emergency / Sedation
+PEDIATRIC
+0.1 mg/kg 
+(1 mg/mL) 
+IVP, IO, IM, IN
+May repeat up to Maximum. 
+Maximum Single dose 2.5 mg
+Maximum Total dose 5 mg
+PEDIATRIC
+0.1 mg/kg 
+(5 mg/mL) 
+IM, IVP, IN
+May repeat every 5 minutes. 
+Maximum Single dose 2.5 mg
+Maximu Total dose 10 mg
+Pediatric Tachycardia w/Pulse
+0.1 mg/kg 
+(1 mg/mL) 
+IVP, IN
+ 
+Maximum 2 mg
+Pediatric Seizure
+0.2 mg/kg 
+(5 mg/mL) 
+IN, IM, IVP, IO
+May repeat x 1 
+Maximum dosing 5 mg
+Pediatric Head Trauma
+0.1 mg/kg 
+(5 mg/mL) 
+IVP
+ 
+Maximum 5 mg
+The following doses are not indicated in Protocol pages:
+PEDIATRIC
+0.1 mg/kg 
+(5 mg/mL) 
+IM, IN
+ 
+Maximum Single dose 2.5 mg
+Maximum Total dose 5 mg
+Contraindications
+Hypersensitivity
+Pregnant
+Nursing mothers
+Renal failure
+Shock
+Glaucoma
+Acute alcoholic intoxication with depressed vital signs
+Adverse Reactions
+Apnea
+Respiratory depression 218
+Hypoxia
+Decreased tidal volume
+Fluctuations in vital signs
+Dysrhythmias
+Hypotension if pushed to fast
+Euphoria
+Confusion
+Nausea
+Vomiting
+Headache
+Hiccups
+Precautions
+Not recommended in pregnancy; refer to  
+Magnesium Sulfate
+  for Eclampsia.
+Medical Considerations
+Consider reducing the dose on elderly & debilitated patients. These patients may take longer to recover from drug.
+Monitor Respiratory status.
+Mechanism of Actions
+Sedative
+Amnesic
+Short acting benzodiazepine CNS depressant
+ 
+219

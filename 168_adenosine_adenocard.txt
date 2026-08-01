@@ -1,0 +1,59 @@
+PARAMEDIC
+Special Notes: Adenosine will not convert atrial fib., atrial flutter, or VT to NSR
+ O
+nset:    Half Life: < 10 seconds
+Adult Indications & Dosing
+Tachycardia w/Pulse 
+(SVT, A-Fib/A-Flutter, VT)
+6 mg Rapid IVP
+12 mg Rapid IVP
+Pediatric Indications & Dosing
+Pediatric Tachycardia w/Pulse
+0.1 mg/kg 
+(3 mg/mL) 
+Rapid IVP, IO
+ 
+Maximum 6 mg
+0.2 mg/kg 
+(3 mg/mL) 
+Rapid IVP, IO
+ 
+Maximum 12 mg
+0.3 mg/kg 
+(3 mg/mL) 
+Rapid IVP, IO
+ 
+Maximum 12 mg
+Contraindications
+2nd & 3rd degree AV Block
+Sick Sinus Syndrome
+Symptomatic bradycardia, unless patient has functioning artificial pacemaker
+Adverse Reactions
+Cardiovascular
+: Facial flushing, Headache, Sweating, Palpitations, Chest Pain, Hypotension 
+Respiratory
+: Shortness of Breath, Chest Pressure, Hyperventilation, Head Pressure 
+Central Nervous System
+: Lightheadedness, Dizziness, Tingling in Arms, Numbness, Apprehension, Blurred Vision, Burning Sensation, Heaviness in
+Arms, Neck, and Back 
+Gastrointestinal
+: Nausea, Metallic Taste, Tightness in Throat, Pressure in Groin.
+Precautions
+May be rarely associated with ventricular fibrillation.
+The effects of adenosine are antagonized by methylxanthines such as caffeine and theophylline. In their presence, larger doses may be required
+or adenosine may not be effective.
+At the time of conversion to a sinus rhythm, a variety of new rhythms may occur. Generally these last a short period and are normally corrected
+on their own with no intervention.
+Medical Considerations
+Adult dose
+: Flush with 20 ml NS after each dose
+Adenosine (Adenocard)
+180
+Pediatric dose
+: Flush with 5 ml NS after each dose
+IV
+ at antecubital site preferred
+Mechanism of Actions
+Antiarrhythmic
+ 
+181

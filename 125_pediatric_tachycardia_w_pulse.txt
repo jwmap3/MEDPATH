@@ -1,0 +1,58 @@
+
+
+
+
+
+
+STABLE?
+Pediatric IV
+Eval QRS Duration 
+<0.09 sec?
+Suspect SVT
+Adenosine (Adenocard)
+ (3 mg/mL) 
+0.1 mg/kg Rapid IVP, IO
+Maximum 6 mg
+Adenosine (Adenocard)
+ (3 mg/mL) 
+0.2 mg/kg Rapid IVP, IO
+Maximum 12 mg
+Adenosine (Adenocard)
+ (3 mg/mL) 
+0.3 mg/kg Rapid IVP, IO
+Maximum 12 mg
+Flush each with 5 mL NS
+>0.09 sec?
+Suspect VT
+Continue to monitor
+Seek expert consultation (OLMC)
+Consider 
+Amiodarone (Cordarone)
+ (50 mg/mL) 
+5 mg/kg IV Infusion
+over 10 minutes.
+Mix 150 mg amiodarone in 250 mL D5W and infuse
+over 10 minutes with 10 gtt set at 4 drops/second =
+250 drops/min.
+Maximum 150 mg
+If rhythm changes go to appropriate protocol
+Pediatric Universal Care
+Continuous cardiac monitor Identify cause with 12 Lead ECG
+UNSTABLE?
+Pediatric IV/IO
+Eval QRS Duration
+Narrow or Wide Complex
+Synchronized Cardioversion
+0.5 J/kg Shock
+with sedation
+Sedation
+Midazolam (Versed)
+ (1 mg/mL) 
+0.1 mg/kg IVP, IN
+Maximum 2 mg
+Repeat
+Synchronized Cardioversion
+1 - 2 J/kg Shock
+Maximum 360 Joules
+Pediatric Tachycardia w/Pulse
+136

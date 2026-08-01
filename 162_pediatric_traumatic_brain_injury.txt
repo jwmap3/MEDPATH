@@ -1,0 +1,89 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO
+Continue careful
+monitoring of O
+ sat and
+airway
+2
+YES
+Airway/Breathing
+O
+ sat <90
+ &/or hypoventilation 
+(despite NRB)
+2
+BLS airway maneuvers
+BVM 10 bpm
+YES
+NO
+Consider ALS airway if experienced provider available:
+Place advanced airway:
+Pre-oxygenate: BVM with 100% Oxygen @ 10 breaths/min
+Check placement using EtCO
+ monitor/detector
+AVOID even MILD hyperventilation with Ventilation Rate Timer and Pressure-
+controlled Bag (if available): 
+Carefully keep rate @ 10 BPM
+EtCO
+ available:  Target EtCO
+ 40 mmHg (range: 35 - 45)
+Control Ventilatory volume:
+Ventilator available: utilize as soon as possible
+Tidal volume =  7 mL/kg
+Ventilator not available: Continue Pressure-controlled BVM
+Monitor: Oxygen sat and airway every 3 - 5 minutes: 
+If Oxygen sat <90% despite above interventions, consider:
+Tension pneumothorax & needle thoracostomy
+2
+2
+2
+Circulation
+Hypotension
+**or other signs of shock
+Continue careful Monitoring BP/HR
+Pay attention for early signs of shock:
+Tachycardia
+Dropping SBP
+Any Suspicion of TBI (Mechanism, GCS, Exam)
+Automatically: 15 L/min Oxygen NRB, IV Access 
+Every 3 - 5 minutes: Monitor O2, BP, HR
+YES
+Disability
+Evaluate Mental Status/
+GCS
+Oxygen sat <90%
+despite BLS?
+*Ventilation Rates:
+Infants: (0 - 24 mo.):  
+   25 breaths/min (bpm) 
+Children: (2 - 14 yrs):
+  20 bpm
+Adolescents: (15 - 17 yrs):
+  10 bpm(same as adults)
+**Identifying Hypotension in children
+0 - 9 yrs:        70 + (age x 2) 
+≥
+10 yrs:       <90 mmHg
+Rules of thumb:
+Newborn:        <70 mmHg
+5 year old:       <80 mmHg
+10 and older:  <90 mmHg 
+(Same as adults)
+Normal Saline 0.9 (NS)
+20 mL/kg Fluid Bolus
+ 
+Repeat until hypotension resolves
+Pediatric Traumatic Brain Injury
+174

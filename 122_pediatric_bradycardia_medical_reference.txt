@@ -1,0 +1,36 @@
+History
+Past medical history.
+Foreign body?
+Respiratory distress or arrest.
+Apnea.
+Possible toxin exposure.
+Congenital disease.
+Medication (maternal or infant).
+Signs and Symptoms
+Decreased heart rate.
+Delayed capillary refill or cyanosis.
+Mottled, cool skin.
+Hypotension or arrest.
+Altered LOC.
+Differential
+Respiratory distress:
+Foreign body.
+Secretions.
+Infection/sepsis.
+Hypovolemia.
+Congenital heart disease.
+Trauma.
+Hypothermia.
+Toxin ingestion.
+Hypoglycemia.
+Pearls
+Exam:
+ mental status; HEENT; skin; heart; lungs; abdomen; back; extremities; neuro.
+Infant = < 1 year of age.
+Most maternal medications pass through breast milk to infant.
+The majority of pediatric arrests are due to airway problems.
+Hypoglycemia, severe dehydration and narcotic effects may produce bradycardia.
+Minimum atropine dose is 0.1 mg IV/IO.
+ 
+Pediatric Bradycardia - Medical Reference
+133

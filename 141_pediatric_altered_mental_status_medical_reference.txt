@@ -1,0 +1,36 @@
+History
+Known diabetic, medic alert tag.
+Drugs, drug paraphernalia.
+Report of illicit drug use or ingestion.
+Past medical history.
+Medications.
+History of trauma.
+Signs and Symptoms
+Decreased mental status.
+Change in baseline mental status.
+Bizarre behavior.
+Hypoglycemia (cool, diaphoretic skin).
+Hyperglycemia (warm, dry skin, fruity breath).
+Kussmaul respiration, dehydration.
+Differential
+Head trauma.
+CNS (CVA, tumor, seizure, infection).
+Infection.
+Thyroid.
+Shock (septic, metabolic, traumatic).
+Diabetes (hyper/hypoglycemia).
+Toxicologic.
+Acidosis/Alkalosis.
+Environmental exposure.
+Pulmonary.
+Electrolyte abnormality.
+Psychiatric.
+Pearls
+Exam:
+ mental status; HEENT; skin; heart; lungs; abdomen; back; extremities; neuro.
+Be aware of AMS as sign of environmental toxin or Haz-Mat exposure.
+Safer to assume hypoglycemia than hyperglycemia if doubt exists.
+Low glucose < 60, Normal glucose 60-120, High glucose > 250.
+ 
+Pediatric Altered Mental Status - Medical Reference
+153

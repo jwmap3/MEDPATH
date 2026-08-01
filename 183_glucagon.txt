@@ -1,0 +1,47 @@
+EMT - IM & IN
+Only
+AEMT
+PARAMEDIC
+Special Notes: 
+Onset:
+ Patient should respond within 15 minutes
+Adult Indications & Dosing
+Pulseless Electrical Activity (PEA)
+1 mg IVP
+Hypoglycemia/Hyperglycemia
+1 mg IM, IN
+Overdose/Toxic Exposure
+1 mg IVP, IN, IM
+Pediatric Indications & Dosing
+Pediatric Hypoglycemia/Hyperglycemia
+0.025 mg/kg 
+(1 mg/mL) 
+IM, IN
+ 
+Maximum 1 mg (1 mL)
+Pediatric Overdose/Toxic Exposure/Cyanide Exposure
+0.025 mg/kg 
+(1 mg/mL) 
+IVP
+ 
+Maximum 1 mg (1 mL)
+Contraindications
+Hypersensitivity
+Hyperglycemia
+Allergies to beef or porcine proteins
+Insulinoma
+Patients with adrenal gland tumor
+Adverse Reactions
+Nausea
+Vomiting
+Precautions
+Glucagon is of little help in patients with adrenal insufficiency.  
+Administration of Glucagon should be followed by supplemental carbohydrates.
+Medical Considerations
+Do not mix with saline
+Glucagon
+205
+Mechanism of Actions
+Anti-hypoglycemic
+ 
+206

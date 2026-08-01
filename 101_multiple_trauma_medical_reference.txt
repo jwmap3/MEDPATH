@@ -1,0 +1,43 @@
+History
+Time and MOI.
+Damage to structure/vehicle.
+Location in structure/vehicle.
+Others injured/dead.
+Speed and details of MVC.
+Restraints/protective equipment.
+Past medical history.
+Medications.
+Signs and Symptoms
+Pain.
+Swelling.
+Altered mental status.
+Unconscious.
+Deformity.
+Bleeding.
+Hypotension/shock.
+Arrest.
+Differential
+Chest:
+Tension pneumothorax.
+Flail chest.
+Pericardial tamponade.
+Open chest wound.
+Hemothorax.
+Intra-abdominal bleeding.
+Pelvis/femur fracture.
+Spine fracture/cord injury.
+Head injury.
+Extremity fracture/dislocation.
+Airway obstruction.
+Hypothermia.
+Pearls
+Examples of anticoagulants include warfarin, Plavix, Lovenox, Pradaxa, Eliquis, Xarelto.
+Exam:
+ mental status; HEENT; heart; lungs; abdomen; extremities; back; neuro.
+In prolonged extrications/serious trauma, consider air transport.
+Immediately control hemorrhage from extremity trauma with tourniquet if direct pressure is ineffective.
+Apply tourniquet until bleeding stops. Note time of application on pts. forehead.
+TXA = antifibrinolytic for use in major ongoing hemorrhage.
+ 
+Multiple Trauma - Medical Reference
+112

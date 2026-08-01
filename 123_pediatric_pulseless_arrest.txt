@@ -1,0 +1,61 @@
+
+
+
+
+
+
+
+
+
+
+
+Debrillate
+2 J/kg Shock
+Subsequent Debrillations at:
+Debrillate
+4 J/kg Shock
+Pediatric Airway
+  Protocol
+Pediatric IV/IO
+Epinephrine 1 mg/10 mL
+ (0.1 mg/mL) 
+0.01 mg/kg IVP, IO
+Repeat every 5 minutes.
+Maximum 1 mg/dose (10 mL)
+Consider
+Amiodarone (Cordarone)
+ (50 mg/mL) 
+5 mg/kg IVP, IO
+Maximum 300 mg
+V-Fib/Pulseless V-Tach
+Pediatric Universal Care
+Immediate 
+CPR 
+with metronome
+Asystole/PEA
+Pediatric Airway
+  Protocol
+Pediatric IV/IO
+Epinephrine 1 mg/10 mL
+ (0.1 mg/mL) 
+0.01 mg/kg IVP, IO
+Repeat every 5 minutes.
+Maximum 1 mg/dose (10 mL)
+Consider and treat causes
+Hypoxemia - 
+Oxygen
+Acidosis - 
+Oxygen
+, 
+Sodium Bicarbonate
+ (1 mEq/mL) 
+1 mEq/kg IVP, IO
+Volume depletion 
+Normal Saline 
+20 mL/kg Fluid Bolus
+Repeat as needed.
+Tension pneumothorax
+Hypothermic
+Hypoglycemia
+Pediatric Pulseless Arrest
+134

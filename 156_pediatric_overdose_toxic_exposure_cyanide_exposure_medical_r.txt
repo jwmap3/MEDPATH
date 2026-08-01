@@ -1,0 +1,41 @@
+History
+Ingestion or suspected ingestion of toxic substance.
+Substance ingested, quantity, route.
+Time of ingestion.
+Reason (suicidal, accidental, criminal).
+Available medications in home.
+Past medical history, medications.
+Signs and Symptoms
+Mental status changes.
+Hypotension/hypertension.
+Decreased respiratory rate.
+Tachycardia, dysrhythmias.
+Seizures.
+Differential
+TCAs.
+Acetaminophen.
+Depressants.
+Stimulants.
+Anticholinergic.
+Cardiac meds.
+Solvents, alcohols, cleaning agents.
+Insecticides (organophosphates).
+Pearls
+Exam:
+ mental status; skin; HEENT; heart; lungs; abdomen; extremities; neuro.
+Max dose:
+ Narcan 2 mg; glucagon 1 mg; Calcium Chloride 1 g; Sodium Bicarbonate 50 meq; atropine 2 mg/dose
+(minimum = 0.1 mg).
+Do not rely on patient history of ingestion in suicide attempt.
+Bring bottles to ED.
+TCA: seizure; dysrhythmias; hypotension; decreased mental status; coma.
+Acetaminophen: normal or N/V – causes irreversible liver failure if not detected.
+Depressants: decreased HR; decreased BP; decreased temperature; decreased respirations; non-specific pupils.
+Stimulants: increased HR; increased BP; increased temperature; dilated pupils; seizures.
+Anticholinergic: increased HR, increased temperature, dilated pupils, mental status change.
+Cardiac meds: dysrhythmias; mental status changes.
+Insecticides: increased/decreased HR, increased secretions, nausea, vomiting, diarrhea, pinpoint pupils.
+Consider restraints per restraints procedures.
+ 
+Pediatric Overdose/Toxic Exposure/Cyanide Exposure - Medical Reference
+168

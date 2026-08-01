@@ -1,0 +1,35 @@
+History
+Type of injury.
+Mechanism: crush/penetrating/amputation.
+Time of injury.
+Open vs. Closed wound/fracture.
+Wound contamination.
+Medical history.
+Medications.
+Signs and Symptoms
+Pain.
+Swelling.
+Deformity.
+Altered sensation/motor function.
+Diminished pulse/cap refill.
+Decreased extremity temperature.
+Differential
+Abrasion.
+Confusion.
+Laceration.
+Sprain.
+Dislocation.
+Fracture.
+Amputations.
+Pearls
+Exam:
+ mental status; extremities; neuro.
+In amputations, time is critical. Consider transport to pediatric trauma center.
+Hip dislocation and knee and elbow fracture/dislocations have a high incidence of vascular compromise.
+Urgently transport any injury with vascular compromise.
+Blood loss may be concealed or not apparent with extremity injuries.
+Severe bleeding not rapidly controlled may necessitate application of a tourniquet.
+Lacerations must be evaluated for repair within 6 hours from the time of injury.
+ 
+Pediatric Extremity Trauma - Medical Reference
+178

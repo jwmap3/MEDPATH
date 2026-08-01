@@ -1,0 +1,39 @@
+History
+Time of injury.
+Mechanism: blunt/penetrating.
+LOC.
+Bleeding.
+Medical history.
+Medication.
+Evidence of multi-trauma.
+Helmet use/damage to helmet.
+Signs and Symptoms
+Pain.
+Swelling.
+Bleeding.
+Altered mental status.
+Unconsciousness.
+Respiratory distress/failure.
+Vomiting.
+Significant MOI.
+Differential
+Skull fracture.
+Brain injury (concussion, contusion, hemorrhage, laceration).
+Epidural hematoma.
+Subdural hematoma.
+Subarachnoid hemorrhage.
+Spinal injury.
+Abuse.
+Pearls
+Exam:
+ mental status; skin; HEENT; heart; lungs; abdomen; extremities; back; neuro.
+Cushing's Response: Elevated ICP causing hypertension and bradycardia.
+Hypotension usually indicates injury or shock unrelated to head injury and should be aggressively treated.
+Monitor and document changes in LOC and GCS.
+Consider restraints if necessary for safety of patient and/or personnel protection. 
+Concussions are periods of confusion or LOC associated with trauma and may be resolved upon arrival of EMS.
+Any prolonged period of confusion or mental status abnormality that does not return to normal within 15 minutes should be evaluated by a
+physician.
+ 
+Head Trauma - Medical Reference
+122

@@ -1,0 +1,49 @@
+AEMT - ODT Only
+PARAMEDIC
+Special Notes: 
+Onset:
+ Rapid    
+Peak Effect:
+  15 - 30 minutes
+Adult Indications & Dosing
+Chest Pain (Suspected ACS)
+4 mg IVP, IM
+Abdominal Pain
+   
+Vomiting/Diarrhea
+4 mg IVP, ODT, IM
+May repeat x 1
+Pediatric Indications & Dosing
+Pediatric Vomiting/Diarrhea
+0.2 mg/kg 
+(2 mg/mL) 
+IVP
+ 
+Maximum 4 mg (2 mL)
+10 kg (1 year Old)
+2 mg ODT
+> 20 kg
+4 mg ODT
+Contraindications
+Hypersensitivity
+Adverse Reactions
+Cardiovascular
+: Angina, Electrocardiographic Alterations, Hypotension, Tachycardia, Syncope, Palpitations
+Neurological
+: Extrapyramidal reactions, Grand Mal Seizure, Dizziness, Lightheadness,
+General
+: Flushing
+Local Reactions
+: Pain, Redness, Burning at site of injection
+Other
+: Hypokalemia, Hiccups
+Precautions
+Not a drug that stimulates gastric or intestinal peristalsis.
+Transient ECG changes including, QT interval prolongation.
+Medical Considerations
+N/A
+Mechanism of Actions
+Antiemetic
+ 
+Ondansetron (Zofran)
+227

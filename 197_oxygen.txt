@@ -1,0 +1,31 @@
+EMT
+AEMT
+PARAMEDIC
+Special Notes: 
+Onset:
+  Immediate
+Adult Indications & Dosing
+2 - 6 LPM via nasal cannula
+10 - 15 LPM via non-rebreather mask
+10 - 15 LPM or greater via BVM  / ET
+Pediatric Indications & Dosing
+2 - 6 LPM via nasal cannula
+10 - 15 LPM via non-rebreather mask
+10 - 15 LPM or greater via BVM  / ET
+Blow by Oxygen
+Contraindications
+None
+May depress respirations in rare patients with chronic obstructive pulmonary disease.  
+This is not a contraindication to its use, but simply means that such patients must be watched closely and assisted to breathe if the respiratory
+rate declines.
+Adverse Reactions
+Toxicity, depressed hypercarbonic drive (Respiratory depression with COPD patients)
+Precautions
+N/A
+Medical Considerations
+N/A
+Mechanism of Actions
+Medical gas
+ 
+Oxygen
+229

@@ -1,0 +1,46 @@
+History
+Time and MOI.
+Damage to structure/vehicle.
+Location in structure/vehicle.
+Others injured/dead.
+Speed and details of MVC.
+Restraints/protective equipment:
+Car seat.
+Helmet.
+Pads.
+Ejection.
+Past medical history.
+Medications.
+Signs and Symptoms
+Pain.
+Swelling.
+Altered mental status.
+Unconscious.
+Deformity.
+Bleeding.
+Hypotension/shock.
+Arrest.
+Differential
+Chest:
+Tension pneumothorax.
+Flail chest.
+Pericardial tamponade.
+Open chest wound.
+Hemothorax.
+Intra-abdominal bleeding.
+Pelvis/femur fracture.
+Spine fracture/cord injury.
+Head injury.
+Extremity fracture/dislocation.
+Airway obstruction.
+Hypothermia.
+Pearls
+Exam:
+ mental status; HEENT; heart; lungs; abdomen; extremities; back; neuro.
+Mechanism is the most reliable indicator of serious injury. Examine all restraints/protective equipment for damage.
+In prolonged extrications/serious trauma, consider air transport.
+Severe bleeding from an extremity not rapidly controlled may necessitate the application of a tourniquet.
+Do not overlook the possibility of child abuse.
+ 
+Pediatric Multiple Trauma - Medical Reference
+171

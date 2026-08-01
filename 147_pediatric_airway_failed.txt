@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+
+
+
+
+Airway-Supraglottic
+EMT: 
+ 
+Patient Apneic/Pulseless only
+Continue BVM
+If SpO
+ drops < 90% or
+dicult to ventilate with BVM
+2
+YES
+NO
+Airway-Supraglottic
+Continue Ventilation
+NO
+YES
+Improved?
+One (1) failed intubation attempt by
+most pro)cient provider on scene
+NO MORE THAN 1 ATTEMPT TOTAL
+Good Air Movement with BVM Ventilation?
+Attempt OP or NP airway
+Continue BVM
+Ventilate to maintain 
+EtCO
+ 35 - 45 mmHg
+2
+Pediatric Airway-Failed
+159

@@ -1,0 +1,37 @@
+
+
+
+
+
+
+
+
+
+
+NO
+Pediatric Universal Care
+Pediatric Airway
+  Protocol 
+FEVER?
+Pediatric IV/IO
+Blood Glucose
+  < 60 mg/dL
+Active Seizure?
+Midazolam (Versed)
+ (5 mg/mL) 
+0.2 mg/kg IN, IM, IVP, IO
+May repeat x 1
+Maximum dosing 5 mg
+Continued seizure activity after 2 doses midazolam?
+Ketamine (Ketalar)
+ (50 mg/mL) 
+1 mg/kg IVP, IO
+Maximum 100 mg
+Be prepared to assist ventilations/place SGA
+YES
+Cooling measures
+Go to: 
+Pediatric Hypoglycemia/Hyperglycemia
+  Protocol
+Pediatric Seizure
+154

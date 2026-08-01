@@ -1,0 +1,38 @@
+PARAMEDIC
+Special Notes: 
+Onset:
+  Immediate  
+Half Life:
+ 26 - 31 hours  
+Adult Indications & Dosing
+Overdose/Toxic Exposure
+   
+Burns
+Adult >70 kg (154 lbs) with Suspected Cyanide Poisoning:
+5 gm IV Infusion
+Add 200 mL NS to upright vile using transfer spike up to fill line Invert vile for 60 seconds
+Use vented tubing and fiter line and infuse over 15 minutes
+Pediatric Indications & Dosing
+Pediatric Overdose/Toxic Exposure/Cyanide Exposure
+70 mg/kg 
+(25 mg/mL) 
+IVP, IO
+Over 15 minutes
+Add 200 mL NS to upright vile using transfer spike up to fill line Invert vile for 60 seconds.
+Use vented tubing and fiter line and infuse over 15 minutes. 
+Maximum 5,000 mg (5 gm)
+Contraindications
+Pregnancy-consult medical control
+Allergies to hydroxocobalamin or cyanocobalamin B-12
+Adverse Reactions
+Most common adverse reactions ( > 5% ) include transient chromaturia (abnormal coloration of urine), erythema, rash, increased blood pressure,
+nausea, headache, and injection site reactions.
+Precautions
+Known anaphylactic reactions to hydroxocobalamin or cyanocobalamin
+Medical Considerations
+None
+Mechanism of Actions
+Binds with cyanide ions
+ 
+Cyanokit (Hydroxocobalamin)
+189

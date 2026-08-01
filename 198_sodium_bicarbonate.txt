@@ -1,0 +1,46 @@
+PARAMEDIC
+Special Notes: 
+Onset:
+  
+Immediate
+Adult Indications & Dosing
+Pulseless Electrical Activity (PEA)
+1 mEq/kg 
+(1 mEq/mL) 
+IVP, IO
+V-Fib/Pulseless V-Tach
+50 mEq IVP, IO
+Overdose/Toxic Exposure
+1 - 2 mEq/kg 
+(1 mEq/mL) 
+IVP
+Pediatric Indications & Dosing
+Pediatric Pulseless Arrest
+   
+Pediatric Overdose/Toxic Exposure/Cyanide Exposure
+1 mEq/kg 
+(1 mEq/mL) 
+IVP, IO
+Contraindications
+Hypertension
+Convulsions
+CHF
+Other situations where administration of sodium can be dangerous
+Adverse Reactions
+Hypernatremia
+Alkalosis
+Hypokalemia
+Precautions
+Over dosage and alkalosis should be avoided, may cause vascular irritation or sloughing if given extravascularly,
+Avoid scalp vein use. Risks of over dosage and alkalosis should be avoided.
+Use caution in patient with CHF or other edematous or sodium-retaining states 
+Medical Considerations
+Flush IV tubing before and after administration.
+If potassium falls too low, the heart may become irritable, especially if the patient is taking a digitalis preparation.
+Mechanism of Actions
+Alkalinizing agent
+Antacid
+Electrolyte
+ 
+Sodium Bicarbonate
+230

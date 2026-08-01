@@ -1,0 +1,40 @@
+History
+Type of exposure (heat, gas, chemical).
+Inhalation injury.
+Time of injury.
+Past medical history.
+Medications.
+Other trauma.
+LOC.
+Signs and Symptoms
+Burns, pain, swelling.
+Dizziness.
+LOC.
+Hypotension/shock.
+Airway compromise/distress.
+Singed facial or nasal hair.
+Hoarseness or wheezing.
+Differential
+Superficial (1st degree) – red and painful.
+Partial thickness (2nd degree) – blistering.
+Full thickness (3rd degree) – painless/charred leathery skin.
+Chemical.
+Thermal.
+Electrical.
+Radiation.
+Pearls
+Exam:
+ mental status; HEENT; neck; heart; lungs; abdomen; extremities; back; neuro.
+Critical Burns: > 25% BSA; 3rd degree burns > 10% BSA; 2nd or 3rd degree burns to face, eyes, hands, feet, or genitals; electrical burns;
+respiratory burns; deep chemical burns; burns with extremes of age or chronic disease; burns associated with major traumatic injury. These
+burns require admission or transfer to a burn center.
+Early intubation required in significant inhalation injuries.
+Consider transport to closest verified burn center.
+Treat potential CO exposure with 100% Oxygen.
+Circumferential burns to extremities are dangerous due to potential vascular compromise due to soft tissue swelling.
+Burn patients are prone to hypothermia.
+Do not overlook possibility of multi-system trauma.
+Do not overlook possibility of child abuse. NOTE: the palm of the patient = 1% total BSA burned.
+ 
+Burns - Medical Reference
+114

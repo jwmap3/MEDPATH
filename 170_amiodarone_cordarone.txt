@@ -1,0 +1,53 @@
+PARAMEDIC
+Special Notes: 
+Onset:
+ Immediate
+ 
+Adult Indications & Dosing
+V-Fib/Pulseless V-Tach
+300 mg IVP, IO
+After 3 - 5 minutes
+150 mg IVP, IO
+Tachycardia w/Pulse 
+(SVT, A-Fib/A-Flutter, VT)
+150 mg IV Infusion
+Over 10 minutes.
+Mix 150 mg amiodarone in 250 mL D5W and infuse over 10 minutes with 10 gtt set at 4 drops/second = 250
+drops/min.
+Pediatric Indications & Dosing
+Pediatric Pulseless Arrest
+5 mg/kg 
+(50 mg/mL) 
+IVP, IO
+ 
+Maximum 300 mg
+Pediatric Tachycardia w/Pulse
+5 mg/kg 
+(50 mg/mL) 
+IV Infusion
+over 10 minutes.
+Mix 150 mg amiodarone in 250 mL D5W and infuse over 10 minutes with 10 gtt set at 4 drops/second = 250
+drops/min. 
+Maximum 150 mg
+Contraindications
+N/A
+Adverse Reactions
+Body as a Whole
+: Fever
+Cardiovascular
+: Hypotension, Asystole/Cardiac Arrest/EMD, Cardiogenic Shock, CHF, Bradycardia, Ventricular Tachycardia, A-V Block
+Digestive System
+: Nausea 
+Precautions
+Like all antiarrhythmic agents, may cause a worsening of existing arrhythmias or precipitate a new arrhythmia.
+2% of patients were reported to have respiratory distress syndrome (ARDS).
+May produce vasodilation and hypotension.
+Do not use with irregular Tachyarrhythmias or Torsades.
+Medical Considerations
+Amiodarone (Cordarone)
+183
+Use large needle when drawing drug into syringe, and draw slowly. This will help prevent foaming.
+Mechanism of Actions
+Antiarrhythmic
+ 
+184

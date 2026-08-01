@@ -1,0 +1,72 @@
+PARAMEDIC
+Special Notes: 
+Onset:
+ < 5 minutes
+Adult Indications & Dosing
+Asystole (Includes POCUS)
+   
+Pulseless Electrical Activity (PEA)
+   
+V-Fib/Pulseless V-Tach
+1 mg IVP, IO
+Repeat Every 10 minutes. 
+Maximum Total 4 mg
+Allergic Reaction
+Epinephrine 1:10,000
+0.1 mg IVP
+(100 mcg)
+Give every minute until symptoms improve
+Note
+: This is 
+NOT 
+the same as Push Dose Epinephrine
+Respiratory Distress
+1 mcg/kg 
+(0.1 mcg/mL) 
+IVP
+1 mg/10 mL (1:10,000)
+Each 1 mL = 100 mcg
+give 1 mcg/kg (typical adult dose would be 100 mcg)
+Pediatric Indications & Dosing
+Newly Born
+0.01 - 0.03 mg/kg 
+(0.1 mg/mL) 
+IVP, IO
+Pediatric Bradycardia
+0.01 mg/kg 
+(0.1 mg/mL) 
+IVP, IO
+Repeat every 5 minutes. 
+Maximum 1 mg/dose (10 mL)
+Pediatric Pulseless Arrest
+0.01 mg/kg 
+(0.1 mg/mL) 
+IVP, IO
+Repeat every 5 minutes. 
+Maximum 1 mg/dose (10 mL)
+Contraindications
+None in Cardiac Arrest
+Known Hypersensitivity
+Do not give to any patient who has repeatedly used an aerosol bronchodilator within the past 4 hours.
+Adverse Reactions
+Palpitations
+Arrhythmias
+Hypertension
+Pulmonary Edema
+Dyspnea
+Nervousness 
+Epinephrine 1 mg/10 mL
+198
+Precautions
+When given to a patient that is stabilized on antidepressants, a hypertensive crisis may occur
+Do not mix with any other drugs
+Very light sensitive, do not use solutions that are discolored or those that have a precipitate
+Massage site after injection to counteract possible vasoconstriction
+Use with caution on patients with Epi-Pen usage (previous).
+Medical Considerations
+None
+Mechanism of Actions
+Sympathomimetic
+Cardiac stimulant
+ 
+199

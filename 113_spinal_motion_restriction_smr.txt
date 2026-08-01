@@ -1,0 +1,59 @@
+
+
+
+
+
+
+
+NO
+OMIT SMR
+NOTE
+: ALL Providers
+Are authorized for this protocol
+All 
+NO
+Low Risk Characteristics
+Simple rear-end collision
+Ambulatory on scene at anytime
+No neck pain on scene
+No midline cervical tenderness
+Spinal Tenderness?
+OR
+Anatomic deformity of spine?
+Or
+Neurologic de%cit or complaint
+Unreliable Patient Interactions
+Language barriers, inability to communicate
+Lack of cooperation during exam
+Evidence of drug/alcohol intoxication
+Painful distracting injury such as long-bone
+fracture
+YES
+Any 
+YES
+Potential mechanism for
+unstable spine Injury?
+Altered LOC
+(GCS <15)
+Unreliable interaction?
+Any
+YES
+Possible spine injury
+Apply SMR
+Motor/Sensory Exam
+Wrist/Hand extension bilaterally
+Foot plantar6exion bilaterally
+Foot dorsi6exion bilaterally
+Gross sensation in all extremities
+Check for paresthesias
+Possible spine injury
+Apply SMR
+High Risk Characteristics
+Age>65
+Trauma Triage Criteria
+Axial Loads/Diving injury
+Sudden Accel/Deceleration
+Lateral bending forces to neck or torso
+Numbness, tingling, Paresthesi
+Spinal Motion Restriction (SMR)
+124

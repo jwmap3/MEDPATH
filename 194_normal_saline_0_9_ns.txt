@@ -1,0 +1,72 @@
+AEMT
+PARAMEDIC
+Special Notes: 
+Onset:
+ 
+Adult Indications & Dosing
+Chest Pain (Suspected ACS)
+   
+Vomiting/Diarrhea
+   
+Behavioral Emergency / Sedation
+1 L Fluid Bolus
+Hypotension/Shock Non-Trauma
+500 mL Fluid Bolus
+20 mL/kg 
+Fluid Bolus
+30 mL/kg 
+Fluid Bolus
+Post ROSC Care
+   
+Altered Mental Status
+   
+Pediatric Altered Mental Status
+20 mL/kg 
+Fluid Bolus
+Epistaxis
+   
+Obstetrical Emergency
+   
+Multiple Trauma
+500 mL Fluid Bolus
+Fever/Suspected Sepsis
+30 mL/kg 
+Fluid Bolus
+Burns
+500 mL/hr Fluid Bolus
+Pediatric Indications & Dosing
+Behavioral Emergency / Sedation
+   
+Pediatric Burns
+   
+Pediatric 
+Traumatic Brain Injury
+   
+Pediatric Head Trauma
+20 mL/kg 
+Fluid Bolus
+Pediatric Vomiting/Diarrhea
+10 mL/kg 
+Fluid Bolus
+Pediatric Hypotension/Sepsis/Shock Non-Trauma
+Maximum Total 60 mL/kg
+60 mL/kg 
+Fluid Bolus
+Contraindications
+None known
+Adverse Reactions
+Reactions which may occur because of the solution or the technique of administration include febrile response, infection at the site of injection,
+venous thrombosis or phlebitis extending from the site of injection, extravasation, and hypervolemia. If adverse reaction does occur, discontinue
+infusion.
+Precautions
+Geriatric use: In general, dose selection for an elderly patient should be cautious, usually starting at the low end of the dosing range, reflecting the
+Normal Saline 0.9 (NS)
+225
+greater frequency of decreased hepatic, renal, or cardiac function, and of concomitant disease or drug therapy.
+Do not administer unless solution is clear and seal is intact.
+Medical Considerations
+N/A
+Mechanism of Actions
+Nonpyrogenic solution for fluid and electrolyte replacement
+ 
+226

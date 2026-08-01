@@ -1,0 +1,32 @@
+History
+Age.
+Location.
+Duration.
+Severity (1-10).
+Past medical history.
+Medications.
+Drug allergies.
+Signs and Symptoms
+Severity.
+Quality.
+Radiation.
+Relation to movement.
+Increased with palpation.
+Differential
+Per the specific protocol.
+Musculoskeletal.
+Visceral (abdominal).
+Cardiac.
+Pleural/respiratory.
+Neurogenic.
+Renal.
+Pearls
+Pain severity is a vital sign and must be recorded pre and post IV/IM/IN pain medications.
+Vitals should be obtained pre, post, and at disposition with all pain medications.
+Document drug allergies.
+Observe for drug reaction.
+Monitor pulse oximetry and ETCO2 when giving pain medications.
+Use lower doses of narcotic pain medication initially in pediatrics and monitor for effect.
+ 
+Pediatric Pain Control - Medical Reference
+148
