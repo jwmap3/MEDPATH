@@ -1,5 +1,5 @@
 // MEDPATH service worker — cache-first for offline field use
-const CACHE_NAME = 'medpath-v14';
+const CACHE_NAME = 'medpath-v16';
 const CORE_ASSETS = [
   './',
   './index.html',
