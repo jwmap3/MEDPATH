@@ -14,17 +14,33 @@
   --coral:      #d97a63;   /* caution/critical accent, muted not alarming */
   --coral-bg:   #fbe9e3;
   --gold:       #cf9b3d;   /* highlight accent */
-  --line:       #e7dcd1;
-  --shadow:     0 2px 10px rgba(58,50,44,0.08);
-  --shadow-lg:  0 6px 24px rgba(58,50,44,0.12);
-  --radius:     16px;
+  --line:       rgba(58,50,44,0.09);
+
+  /* Elevation — layered, soft "clay" shadows rather than one flat drop
+     shadow: a broad ambient layer plus a tighter contact layer, the same
+     trick behind most soft-UI / neumorphic-glass component systems. */
+  --shadow:      0 1px 2px rgba(58,50,44,0.06), 0 8px 20px -6px rgba(58,50,44,0.12);
+  --shadow-lg:   0 2px 6px rgba(58,50,44,0.08), 0 20px 40px -12px rgba(58,50,44,0.20);
+  --shadow-press: 0 1px 2px rgba(58,50,44,0.10);
+  --inset-hi:    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  --radius-sm:  14px;
+  --radius:     20px;
+  --radius-lg:  28px;
+
+  /* Spring-ish easing for tactile, iOS-style press/settle motion. */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+
+  --glass: rgba(255,255,255,0.6);
 }
 
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 body{
   margin:0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
   background:
     radial-gradient(circle at 15% 0%, var(--sakura-pale) 0%, transparent 45%),
     radial-gradient(circle at 100% 100%, #e9eee2 0%, transparent 40%),
@@ -35,19 +51,35 @@ body{
   flex-direction:column;
 }
 
+/* Consistent tactile press feedback everywhere a control can be tapped —
+   the small settle-back spring is what reads as "native app" quality. */
+button{ font-family:inherit; -webkit-tap-highlight-color:transparent; }
+.cc-item, .cc-box, .branch-item, .step-item, .quiz-option-btn, .event-btn,
+.choice-btn, .big-cta, .ghost-btn, .tile, .subtimer-btn, .back-btn,
+.gcs-box, .inline-gcs-box, .quick-pick-btn, .sizing-row{
+  transition: transform .16s var(--ease-spring), box-shadow .16s var(--ease-out), background-color .12s ease;
+}
+.cc-item:active, .cc-box:active, .branch-item:active, .step-item:active,
+.quiz-option-btn:not(.disabled):active, .event-btn:active, .tile:active,
+.gcs-box:active, .inline-gcs-box:active, .quick-pick-btn:active{
+  transform: scale(0.965);
+  box-shadow: var(--shadow-press);
+}
+
 /* Header */
 .app-header{
   position: relative;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   padding: 18px 18px 16px;
-  background: rgba(250,245,239,0.9);
-  backdrop-filter: blur(6px);
+  background: rgba(250,245,239,0.72);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
   border-bottom: 1px solid var(--line);
   /* Not sticky on purpose — the logo scrolls away with the page instead of
      permanently occupying screen space on every view. */
 }
 .brand{ display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer; }
-.brand-logo{ width:108px; height:108px; object-fit:contain; }
+.brand-logo{ width:108px; height:108px; object-fit:contain; filter: drop-shadow(0 6px 14px rgba(58,50,44,0.14)); }
 .brand-name{ font-size:1.3rem; font-weight:700; letter-spacing:0.06em; color:var(--sumi); }
 .header-status{
   position:absolute; top:14px; right:16px;
@@ -57,10 +89,10 @@ body{
 
 /* Main */
 .app-main{ flex:1; width:100%; max-width:640px; margin:0 auto; padding: 20px 16px 40px; }
-.screen{ display:flex; flex-direction:column; gap:16px; animation: fadeIn .25s ease; }
-@keyframes fadeIn{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+.screen{ display:flex; flex-direction:column; gap:16px; animation: fadeIn .35s var(--ease-out); }
+@keyframes fadeIn{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;} }
 
-.step-title{ display:flex; align-items:center; gap:10px; font-size:1.15rem; margin: 4px 0 0; color:var(--sumi); }
+.step-title{ display:flex; align-items:center; gap:10px; font-size:1.18rem; font-weight:700; margin: 4px 0 0; color:var(--sumi); letter-spacing:-0.01em; }
 .step-num{
   display:inline-flex; align-items:center; justify-content:center;
   width:26px; height:26px; border-radius:50%;
@@ -69,21 +101,19 @@ body{
 .protocol-context{ color: var(--sumi-soft); font-size:0.92rem; margin:0; }
 
 /* Home */
-.screen-home{ align-items:center; text-align:center; padding-top: 8vh; gap:22px; }
+.screen-home{ align-items:center; text-align:center; padding-top: 5vh; gap:26px; }
 .big-cta{
   display:flex; flex-direction:column; align-items:center; gap:6px;
-  width:100%; max-width:280px;
-  padding: 30px 20px;
-  border:none; border-radius: 22px;
+  width:100%; max-width:300px;
+  padding: 32px 20px;
+  border:none; border-radius: var(--radius-lg);
   background: linear-gradient(160deg, var(--sakura) 0%, var(--sakura-deep) 100%);
   color:#fff;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg), var(--inset-hi);
   cursor:pointer;
-  transition: transform .12s ease;
 }
-.big-cta:active{ transform: scale(0.97); }
-.big-cta.small-cta{ padding:16px 20px; max-width:none; }
-.cta-label{ font-size:1.1rem; font-weight:700; letter-spacing:0.02em; }
+.big-cta.small-cta{ padding:16px 20px; max-width:none; border-radius: var(--radius); }
+.cta-label{ font-size:1.1rem; font-weight:700; letter-spacing:0.01em; }
 .home-links{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
 .ghost-btn{
   padding:10px 16px; border-radius:999px; border:1px solid var(--line);
@@ -93,16 +123,49 @@ body{
 .ghost-btn:active{ background: var(--washi-dim); }
 .meta-note{ font-size:0.75rem; color: var(--sumi-soft); opacity:0.8; max-width:340px; }
 
+/* Icon tile grid — used on Home and Tool Sizing for category navigation.
+   Soft rounded "clay" squares with a tinted icon well, modeled on native
+   app-launcher / file-manager tile grids. */
+.tile-grid{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;
+  width:100%;
+}
+.tile-grid.tile-grid-2{ grid-template-columns: repeat(2, 1fr); }
+.tile{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  padding:16px 8px 14px; border:none; border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow), var(--inset-hi);
+  cursor:pointer; color:var(--sumi);
+}
+.tile-icon{
+  width:46px; height:46px; border-radius:15px;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff;
+}
+.tile-icon svg{ width:24px; height:24px; }
+.tile-label{ font-size:0.78rem; font-weight:700; line-height:1.25; letter-spacing:0.01em; }
+.tint-sakura{ background: linear-gradient(155deg, var(--sakura) 0%, var(--sakura-deep) 100%); }
+.tint-coral{ background: linear-gradient(155deg, #e79381 0%, var(--coral) 100%); }
+.tint-moss{ background: linear-gradient(155deg, #a7b89a 0%, var(--moss-deep) 100%); }
+.tint-indigo{ background: linear-gradient(155deg, #7fa0b6 0%, var(--indigo) 100%); }
+.tint-gold{ background: linear-gradient(155deg, #e3bf72 0%, var(--gold) 100%); }
+.tile-section{ width:100%; display:flex; flex-direction:column; gap:10px; }
+.tile-section-label{
+  margin:0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+  color:var(--sumi-soft); font-weight:700; text-align:left; padding-left:2px;
+}
+
 /* Search / chief complaint */
 .text-input{
   width:100%; padding:14px 16px; font-size:1rem;
-  border-radius: var(--radius); border:1px solid var(--line);
+  border-radius: var(--radius-sm); border:1px solid var(--line);
   background: var(--card); color:var(--sumi);
 }
 .text-input:focus{ outline:2px solid var(--sakura-deep); }
 .cc-results{ display:flex; flex-direction:column; gap:8px; }
 .cc-item{
-  text-align:left; padding:14px 16px; border-radius:14px;
+  text-align:left; padding:14px 16px; border-radius: var(--radius-sm);
   background: var(--card); border:1px solid var(--line); box-shadow: var(--shadow);
   cursor:pointer; font-size:1rem; color:var(--sumi);
   display:flex; justify-content:space-between; align-items:center; gap:10px;
@@ -404,6 +467,9 @@ body{
 .arrest-protocol-links{ display:flex; flex-direction:column; gap:8px; }
 .arrest-protocol-link-list{ display:flex; flex-direction:column; gap:8px; }
 
+/* Med-Control radio report */
+.arrest-medcontrol{ display:flex; flex-direction:column; gap:8px; }
+
 /* Quick-pick modal (rhythm/meds/airway/IV-IO/other) */
 .quick-modal-list{ display:flex; flex-direction:column; gap:8px; margin-top:10px; }
 .quick-pick-btn{
@@ -418,6 +484,69 @@ body{
   box-shadow:var(--shadow); font-size:0.78rem; color:var(--sumi-soft); white-space:pre-wrap;
   max-height:260px; overflow-y:auto; font-family: ui-monospace, "SF Mono", Menlo, monospace;
 }
+
+/* Home — grouped Pharmacology section */
+.home-section{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+.home-section-label{
+  margin:0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
+  color:var(--sumi-soft); font-weight:700;
+}
+
+/* Drug Identity Test */
+.quiz-pre{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; padding-top:2vh; }
+.quiz-intro{ color:var(--sumi-soft); font-size:0.9rem; max-width:420px; line-height:1.5; }
+.quiz-live{ display:flex; flex-direction:column; gap:12px; }
+.quiz-progress{ display:flex; justify-content:space-between; align-items:baseline; }
+.quiz-progress-label{ margin:0; font-size:0.8rem; color:var(--sumi-soft); font-weight:600; }
+.quiz-score-label{ margin:0; font-size:0.8rem; color:var(--moss-deep); font-weight:700; }
+.quiz-progress-bar{ width:100%; height:6px; border-radius:999px; background:var(--washi-dim); overflow:hidden; }
+.quiz-progress-fill{ height:100%; background:var(--sakura-deep); border-radius:999px; transition:width .2s ease; }
+.quiz-category-tag{
+  align-self:flex-start; margin:0; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em;
+  color:var(--moss-deep); background:#eef1e9; padding:3px 10px; border-radius:999px; font-weight:700;
+}
+.quiz-prompt{ margin:0; font-size:1.05rem; font-weight:600; color:var(--sumi); line-height:1.4; }
+.quiz-options{ display:flex; flex-direction:column; gap:10px; }
+.quiz-option-btn{
+  text-align:left; padding:14px 16px; border-radius:14px;
+  background:var(--card); border:1px solid var(--line); box-shadow:var(--shadow);
+  cursor:pointer; font-size:0.92rem; color:var(--sumi); line-height:1.35;
+}
+.quiz-option-btn:active{ background:var(--sakura-pale); }
+.quiz-option-btn.correct{ background:#eaf1e4; border-color:var(--moss); color:var(--moss-deep); font-weight:700; }
+.quiz-option-btn.incorrect{ background:var(--coral-bg); border-color:var(--coral); color:#b23b23; font-weight:700; }
+.quiz-option-btn.disabled{ pointer-events:none; opacity:0.85; }
+.quiz-feedback{ font-size:0.85rem; color:var(--sumi-soft); background:var(--washi-dim); border-radius:12px; padding:10px 14px; line-height:1.4; }
+.quiz-summary{ display:flex; flex-direction:column; gap:14px; }
+.quiz-summary-stat{ font-size:1rem; color:var(--sumi); margin:0 0 4px; }
+.quiz-summary-score{ font-size:2.2rem; font-weight:800; color:var(--sumi); margin:0; }
+.quiz-summary-pct{ font-size:0.95rem; color:var(--sumi-soft); margin:0 0 10px; }
+.quiz-missed-title{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--sumi-soft); margin:10px 0 6px; }
+.quiz-missed-item{
+  background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px;
+  font-size:0.82rem; color:var(--sumi-soft); margin-bottom:8px; line-height:1.4;
+}
+.quiz-missed-item strong{ color:var(--sumi); }
+
+/* Tool Sizing */
+.sizing-weight-card{
+  display:flex; flex-direction:column; gap:8px; padding:14px 16px;
+  border-radius: var(--radius); background:var(--card); box-shadow: var(--shadow), var(--inset-hi);
+}
+.ts-categories{ display:flex; flex-direction:column; gap:16px; }
+.ts-category{
+  padding:14px 16px 16px; border-radius: var(--radius); background:var(--card);
+  box-shadow: var(--shadow), var(--inset-hi); display:flex; flex-direction:column; gap:10px;
+}
+.ts-category-head{ display:flex; align-items:center; gap:10px; }
+.ts-category-icon{
+  width:34px; height:34px; border-radius:11px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; color:#fff;
+}
+.ts-category-icon svg{ width:18px; height:18px; }
+.ts-category-title{ margin:0; font-size:0.95rem; font-weight:700; color:var(--sumi); }
+.ts-category-sub{ margin:0; font-size:0.72rem; color:var(--sumi-soft); }
+.ts-empty{ font-size:0.85rem; color:var(--sumi-soft); padding:2px 2px 0; }
 
 @media (min-width: 640px){
   .app-main{ padding-top: 30px; }
