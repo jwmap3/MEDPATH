@@ -32,7 +32,7 @@
     </button>
 
     <div class="tile-section">
-      <div class="tile-grid">
+      <div class="tile-grid tile-grid-2">
         <button class="tile" id="browseAllBtn">
           <span class="tile-icon tint-indigo">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
@@ -51,23 +51,11 @@
           </span>
           <span class="tile-label">Tool Sizing</span>
         </button>
-      </div>
-    </div>
-
-    <div class="tile-section">
-      <p class="tile-section-label">Pharmacology</p>
-      <div class="tile-grid tile-grid-2">
         <button class="tile" id="drugRefBtn">
           <span class="tile-icon tint-moss">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="20" height="6" rx="3" transform="rotate(45 12 12)"/><line x1="12" y1="6" x2="12" y2="18" transform="rotate(45 12 12)"/></svg>
           </span>
           <span class="tile-label">Drug Reference</span>
-        </button>
-        <button class="tile" id="drugQuizBtn">
-          <span class="tile-icon tint-sakura">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><polyline points="8,13 11,16 16,10"/></svg>
-          </span>
-          <span class="tile-label">Drug Identity Test</span>
         </button>
       </div>
     </div>
@@ -141,37 +129,6 @@
     </div>
 
     <div id="tsCategories" class="ts-categories"></div>
-  </section>
-</template>
-
-<template id="tpl-drug-quiz">
-  <section class="screen screen-quiz">
-    <div id="quizPre" class="quiz-pre">
-      <h2 class="step-title">Drug Identity Test</h2>
-      <p class="quiz-intro">150 questions generated directly from MEDPATH's drug reference — drug-to-classification, classification-to-drug, clinical scenario, and straightforward recall (routes, dosing, certification level, onset). Every answer is pulled live from the same data as the drug reference, so it's always faithful to the source.</p>
-      <button class="big-cta" id="startQuizBtn"><span class="cta-label">Start Test</span></button>
-    </div>
-
-    <div id="quizLive" class="quiz-live hidden">
-      <div class="quiz-progress">
-        <p id="quizProgressLabel" class="quiz-progress-label"></p>
-        <p id="quizScoreLabel" class="quiz-score-label"></p>
-      </div>
-      <div class="quiz-progress-bar"><div id="quizProgressFill" class="quiz-progress-fill"></div></div>
-      <p id="quizCategoryTag" class="quiz-category-tag"></p>
-      <p id="quizPrompt" class="quiz-prompt"></p>
-      <div id="quizOptions" class="quiz-options"></div>
-      <div id="quizFeedback" class="quiz-feedback hidden"></div>
-      <button type="button" class="big-cta small-cta hidden" id="quizNextBtn"><span class="cta-label">Next Question</span></button>
-      <button type="button" class="ghost-btn" id="quizQuitBtn">End Test Early</button>
-    </div>
-
-    <div id="quizSummary" class="quiz-summary hidden">
-      <h2 class="step-title">Test Complete</h2>
-      <div id="quizSummaryBody"></div>
-      <button type="button" class="big-cta small-cta" id="quizRetakeBtn"><span class="cta-label">Retake Test</span></button>
-      <button type="button" class="ghost-btn" id="quizHomeBtn">Back to Home</button>
-    </div>
   </section>
 </template>
 
