@@ -384,7 +384,12 @@ button{ font-family:inherit; -webkit-tap-highlight-color:transparent; }
 .browse-section{ margin-bottom:6px; }
 .browse-section h3{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--sumi-soft); margin: 14px 0 6px; }
 
-.hidden{ display:none; }
+/* !important is intentional: this utility must always win over a
+   component's own `display` rule regardless of source order (several
+   screens — arrest, quiz, sizing — set their own display and are declared
+   later in this file, so without !important they silently out-cascade a
+   same-specificity .hidden and stay visible). */
+.hidden{ display:none !important; }
 
 /* Home: Run An Arrest link */
 .ghost-btn.arrest-link{ border-color: var(--coral); color:#b23b23; font-weight:700; }
@@ -484,49 +489,6 @@ button{ font-family:inherit; -webkit-tap-highlight-color:transparent; }
   box-shadow:var(--shadow); font-size:0.78rem; color:var(--sumi-soft); white-space:pre-wrap;
   max-height:260px; overflow-y:auto; font-family: ui-monospace, "SF Mono", Menlo, monospace;
 }
-
-/* Home — grouped Pharmacology section */
-.home-section{ display:flex; flex-direction:column; align-items:center; gap:10px; }
-.home-section-label{
-  margin:0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em;
-  color:var(--sumi-soft); font-weight:700;
-}
-
-/* Drug Identity Test */
-.quiz-pre{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; padding-top:2vh; }
-.quiz-intro{ color:var(--sumi-soft); font-size:0.9rem; max-width:420px; line-height:1.5; }
-.quiz-live{ display:flex; flex-direction:column; gap:12px; }
-.quiz-progress{ display:flex; justify-content:space-between; align-items:baseline; }
-.quiz-progress-label{ margin:0; font-size:0.8rem; color:var(--sumi-soft); font-weight:600; }
-.quiz-score-label{ margin:0; font-size:0.8rem; color:var(--moss-deep); font-weight:700; }
-.quiz-progress-bar{ width:100%; height:6px; border-radius:999px; background:var(--washi-dim); overflow:hidden; }
-.quiz-progress-fill{ height:100%; background:var(--sakura-deep); border-radius:999px; transition:width .2s ease; }
-.quiz-category-tag{
-  align-self:flex-start; margin:0; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em;
-  color:var(--moss-deep); background:#eef1e9; padding:3px 10px; border-radius:999px; font-weight:700;
-}
-.quiz-prompt{ margin:0; font-size:1.05rem; font-weight:600; color:var(--sumi); line-height:1.4; }
-.quiz-options{ display:flex; flex-direction:column; gap:10px; }
-.quiz-option-btn{
-  text-align:left; padding:14px 16px; border-radius:14px;
-  background:var(--card); border:1px solid var(--line); box-shadow:var(--shadow);
-  cursor:pointer; font-size:0.92rem; color:var(--sumi); line-height:1.35;
-}
-.quiz-option-btn:active{ background:var(--sakura-pale); }
-.quiz-option-btn.correct{ background:#eaf1e4; border-color:var(--moss); color:var(--moss-deep); font-weight:700; }
-.quiz-option-btn.incorrect{ background:var(--coral-bg); border-color:var(--coral); color:#b23b23; font-weight:700; }
-.quiz-option-btn.disabled{ pointer-events:none; opacity:0.85; }
-.quiz-feedback{ font-size:0.85rem; color:var(--sumi-soft); background:var(--washi-dim); border-radius:12px; padding:10px 14px; line-height:1.4; }
-.quiz-summary{ display:flex; flex-direction:column; gap:14px; }
-.quiz-summary-stat{ font-size:1rem; color:var(--sumi); margin:0 0 4px; }
-.quiz-summary-score{ font-size:2.2rem; font-weight:800; color:var(--sumi); margin:0; }
-.quiz-summary-pct{ font-size:0.95rem; color:var(--sumi-soft); margin:0 0 10px; }
-.quiz-missed-title{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--sumi-soft); margin:10px 0 6px; }
-.quiz-missed-item{
-  background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px;
-  font-size:0.82rem; color:var(--sumi-soft); margin-bottom:8px; line-height:1.4;
-}
-.quiz-missed-item strong{ color:var(--sumi); }
 
 /* Tool Sizing */
 .sizing-weight-card{
