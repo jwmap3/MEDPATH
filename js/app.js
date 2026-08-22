@@ -94,6 +94,7 @@ function dispatch(){
   if(state.step === 'protocol') return renderProtocolView();
   if(state.step === 'browseAll') return renderBrowseAll();
   if(state.step === 'drugRef') return renderDrugRef();
+  if(state.step === 'toolSizing') return renderToolSizing();
   if(state.step === 'arrest') return renderArrest();
 }
 
@@ -170,6 +171,9 @@ function renderHome(){
   });
   document.getElementById('drugRefBtn').addEventListener('click', () => {
     state.step = 'drugRef'; render();
+  });
+  document.getElementById('toolSizingBtn').addEventListener('click', () => {
+    state.step = 'toolSizing'; render();
   });
   document.getElementById('runArrestBtn').addEventListener('click', () => {
     state.step = 'arrest'; render();
@@ -851,6 +855,143 @@ function renderDrugRef(){
   renderList('');
 }
 
+// ---------- Tool Sizing ----------
+// Weight-based equipment quick reference, grouped by category. IO sizing
+// reuses the exact same logic as the Run An Arrest equipment panel below.
+// Pediatric defibrillation and synchronized cardioversion energies are
+// pulled straight from TFD's Pediatric Pulseless Arrest and Pediatric
+// Tachycardia w/Pulse protocols (2 J/kg then 4 J/kg; 0.5 J/kg then
+// 1-2 J/kg, max 360 J). Adult energies are the fixed device joules from
+// the adult V-Fib/Pulseless V-Tach and Tachycardia w/Pulse protocols and
+// do not scale with weight. Airway sizing (ETT/blade/OPA) isn't given as
+// a numeric weight table in TFD's protocol text, so standard pediatric
+// reference formulas are used as a fast estimate here — verify against
+// your service's Broselow tape or device packaging before use.
+function airwaySizeInfo(kg){
+  if(kg == null || isNaN(kg)) return [];
+  if(kg >= 40){
+    return [
+      {label: 'ET Tube', detail: '7.0–8.0 mm cuffed (adult) — confirm per crew/patient factors.'},
+      {label: 'Laryngoscope Blade', detail: 'Mac 3–4 or Miller 2–3.'},
+      {label: 'OPA', detail: 'Size 80–100 mm — measure angle of jaw to corner of mouth.'},
+      {label: 'BVM Mask', detail: 'Adult mask.'},
+    ];
+  }
+  const ett = (kg / 4 + 4).toFixed(1);
+  const ettCuffed = (kg / 4 + 3.5).toFixed(1);
+  let blade = 'Miller 0';
+  if(kg >= 10) blade = 'Miller 1 / Mac 1';
+  if(kg >= 20) blade = 'Miller 2 / Mac 2';
+  const bvm = kg < 10 ? 'Infant mask' : (kg < 30 ? 'Child mask' : 'Small adult / child mask');
+  const opa = kg < 3 ? 'Size 000–00' : (kg < 10 ? 'Size 0–1' : (kg < 20 ? 'Size 1–2' : 'Size 2–3'));
+  return [
+    {label: 'ET Tube (uncuffed)', detail: `~${ett} mm internal diameter (estimate).`},
+    {label: 'ET Tube (cuffed)', detail: `~${ettCuffed} mm internal diameter (estimate).`},
+    {label: 'Laryngoscope Blade', detail: blade},
+    {label: 'OPA', detail: opa},
+    {label: 'BVM Mask', detail: bvm},
+  ];
+}
+
+function defibEnergyInfo(kg){
+  if(kg == null || isNaN(kg)) return [];
+  if(kg >= 40){
+    return [
+      {label: 'Defibrillation (V-Fib/Pulseless V-Tach)', detail: '200 J → 300 J → 360 J — fixed adult energies, not weight-based.'},
+      {label: 'Synchronized Cardioversion (Unstable Tachycardia)', detail: '100 J → 200 J → 300 J → 360 J — fixed adult energies.'},
+    ];
+  }
+  const initDefib = Math.round(kg * 2);
+  const subDefib = Math.round(kg * 4);
+  const initCv = (kg * 0.5).toFixed(1);
+  const repeatCvLow = Math.round(kg * 1);
+  const repeatCvHigh = Math.min(360, Math.round(kg * 2));
+  return [
+    {label: 'Defibrillation (V-Fib/Pulseless V-Tach)', detail: `Initial ${initDefib} J (2 J/kg) → subsequent ${subDefib} J (4 J/kg).`},
+    {label: 'Synchronized Cardioversion (Unstable Tachycardia)', detail: `Initial ${initCv} J (0.5 J/kg) → repeat ${repeatCvLow}–${repeatCvHigh} J (1–2 J/kg), max 360 J.`},
+  ];
+}
+
+const TOOL_SIZING_CATEGORIES = [
+  {
+    key: 'airway', title: 'Airway', tint: 'tint-indigo',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11a3 3 0 1 0-3-3"/><path d="M4 14h15a3 3 0 1 1-3 3"/><path d="M4 19h7a2 2 0 1 0-2-2"/></svg>',
+    compute: airwaySizeInfo,
+  },
+  {
+    key: 'io', title: 'IO Access', tint: 'tint-coral',
+    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="3" x2="15" y2="9"/><rect x="8.5" y="8.5" width="7" height="4" rx="1" transform="rotate(45 12 10.5)"/><line x1="3" y1="21" x2="9" y2="15"/></svg>',
+    compute: (kg) => {
+      const io = ioSizeInfo(kg);
+      return io ? [{label: `IO Needle — ${io.label}`, detail: io.detail, swatch: io.swatch}] : [];
+    },
+  },
+  {
+    key: 'defib', title: 'Defib / Cardioversion', tint: 'tint-gold',
+    icon: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="13,2 4,14 11,14 9,22 20,10 13,10"/></svg>',
+    compute: defibEnergyInfo,
+  },
+];
+
+let toolSizingKg = null;
+let toolSizingUnit = 'lb';
+
+function renderToolSizing(){
+  const tpl = document.getElementById('tpl-tool-sizing').content.cloneNode(true);
+  app.innerHTML = '';
+  app.appendChild(tpl);
+  addBackBtn(goHome);
+
+  const input = document.getElementById('tsWeightInput');
+  const unitBtns = [...document.querySelectorAll('#tsUnitToggle .unit-btn')];
+  const catsWrap = document.getElementById('tsCategories');
+
+  function renderCategories(){
+    catsWrap.innerHTML = '';
+    TOOL_SIZING_CATEGORIES.forEach(cat => {
+      const items = cat.compute(toolSizingKg);
+      const section = document.createElement('div');
+      section.className = 'ts-category';
+      const head = document.createElement('div');
+      head.className = 'ts-category-head';
+      const subLabel = items.length ? ((toolSizingKg >= 40 ? 'Adult' : 'Pediatric') + ' reference') : 'Enter a weight above';
+      head.innerHTML = `<span class="ts-category-icon ${cat.tint}">${cat.icon}</span>
+        <div><p class="ts-category-title">${cat.title}</p><p class="ts-category-sub">${subLabel}</p></div>`;
+      section.appendChild(head);
+      if(items.length){
+        items.forEach(it => {
+          const row = document.createElement('div');
+          row.className = 'sizing-row';
+          const swatch = it.swatch ? `<span class="sizing-swatch" style="background:${it.swatch};"></span>` : '';
+          row.innerHTML = `${swatch}<div><strong>${it.label}</strong><div class="sizing-detail">${it.detail}</div></div>`;
+          section.appendChild(row);
+        });
+      } else {
+        const empty = document.createElement('p');
+        empty.className = 'ts-empty';
+        empty.textContent = 'Enter a weight above to see sizing for this category.';
+        section.appendChild(empty);
+      }
+      catsWrap.appendChild(section);
+    });
+  }
+
+  unitBtns.forEach(b => b.addEventListener('click', () => {
+    toolSizingUnit = b.dataset.unit;
+    unitBtns.forEach(x => x.classList.toggle('active', x === b));
+    input.value = toolSizingKg == null ? '' : kgToDisplayVal(toolSizingKg, toolSizingUnit);
+  }));
+
+  input.addEventListener('input', () => {
+    const val = parseFloat(input.value);
+    toolSizingKg = (!isNaN(val) && val > 0) ? (toolSizingUnit === 'kg' ? val : val / 2.20462) : null;
+    renderCategories();
+  });
+
+  if(toolSizingKg != null) input.value = kgToDisplayVal(toolSizingKg, toolSizingUnit);
+  renderCategories();
+}
+
 // ---------- Run An Arrest ----------
 // Timestamped timer/documentation tool, modeled on apps like CPR Recorder.
 // Timing is drawn straight from TFD's own Asystole / PEA / V-Fib-Pulseless
@@ -878,6 +1019,9 @@ const arrestState = {
   rhythmAlerted: false,
   chargedAlerted: false,
   epiAlerted: false,
+  glucoseAcquired: false,
+  lastGlucoseTime: null,
+  glucoseAlerted: false,
 };
 
 function ordinal(n){
@@ -885,6 +1029,66 @@ function ordinal(n){
   return n + (s[(v - 20) % 10] || s[v] || s[0]);
 }
 let arrestTickTimer = null;
+
+// ---------- Persist Run An Arrest across a page refresh ----------
+// A refresh (or the phone reclaiming memory) must not lose an in-progress
+// code. Everything needed to resume is saved to localStorage after every
+// meaningful change and restored on boot.
+const ARREST_STORAGE_KEY = 'medpath_arrest_state_v1';
+
+function saveArrestState(){
+  try{
+    const s = arrestState;
+    const payload = {
+      active: s.active, ended: s.ended,
+      startTime: s.startTime ? s.startTime.toISOString() : null,
+      endTime: s.endTime ? s.endTime.toISOString() : null,
+      log: s.log.map(e => ({time: e.time.toISOString(), label: e.label})),
+      cprRunning: s.cprRunning,
+      cprSegStart: s.cprSegStart,
+      cprAccumMs: s.cprAccumMs, cprCycles: s.cprCycles,
+      lastEpiTime: s.lastEpiTime ? s.lastEpiTime.toISOString() : null,
+      epiCount: s.epiCount,
+      lastRhythmTime: s.lastRhythmTime ? s.lastRhythmTime.toISOString() : null,
+      rhythmCheckCount: s.rhythmCheckCount,
+      shockCount: s.shockCount, amiodaroneCount: s.amiodaroneCount,
+      rhythmAlerted: s.rhythmAlerted, chargedAlerted: s.chargedAlerted, epiAlerted: s.epiAlerted,
+      glucoseAcquired: s.glucoseAcquired,
+      lastGlucoseTime: s.lastGlucoseTime ? s.lastGlucoseTime.toISOString() : null,
+      glucoseAlerted: s.glucoseAlerted,
+      vitals: state.vitals || {},
+    };
+    localStorage.setItem(ARREST_STORAGE_KEY, JSON.stringify(payload));
+  }catch(e){ /* storage unavailable — operation still works, just won't survive a refresh */ }
+}
+
+function loadArrestState(){
+  try{
+    const raw = localStorage.getItem(ARREST_STORAGE_KEY);
+    if(!raw) return;
+    const d = JSON.parse(raw);
+    if(!d.startTime) return;
+    Object.assign(arrestState, {
+      active: !!d.active, ended: !!d.ended,
+      startTime: new Date(d.startTime),
+      endTime: d.endTime ? new Date(d.endTime) : null,
+      log: (d.log || []).map(e => ({time: new Date(e.time), label: e.label})),
+      cprRunning: !!d.cprRunning,
+      cprSegStart: d.cprSegStart != null ? d.cprSegStart : null,
+      cprAccumMs: d.cprAccumMs || 0, cprCycles: d.cprCycles || 0,
+      lastEpiTime: d.lastEpiTime ? new Date(d.lastEpiTime) : null,
+      epiCount: d.epiCount || 0,
+      lastRhythmTime: d.lastRhythmTime ? new Date(d.lastRhythmTime) : null,
+      rhythmCheckCount: d.rhythmCheckCount || 0,
+      shockCount: d.shockCount || 0, amiodaroneCount: d.amiodaroneCount || 0,
+      rhythmAlerted: !!d.rhythmAlerted, chargedAlerted: !!d.chargedAlerted, epiAlerted: !!d.epiAlerted,
+      glucoseAcquired: !!d.glucoseAcquired,
+      lastGlucoseTime: d.lastGlucoseTime ? new Date(d.lastGlucoseTime) : null,
+      glucoseAlerted: !!d.glucoseAlerted,
+    });
+    if(d.vitals) state.vitals = d.vitals;
+  }catch(e){ /* corrupt/unavailable storage — start clean */ }
+}
 
 const ARREST_MEDS = [
   {label:'Epinephrine 1 mg IVP/IO', note:'repeat q10min, max 4 mg total'},
@@ -963,6 +1167,18 @@ function renderArrest(){
   });
   wireSizingPanel();
   renderArrestProtocolLinks('arrestProtocolLinksLive');
+  const copyBtn = document.getElementById('copyMedControlBtn');
+  if(copyBtn){
+    copyBtn.addEventListener('click', () => {
+      const text = buildMedControlReport();
+      const done = () => { copyBtn.textContent = 'Copied!'; setTimeout(() => { copyBtn.textContent = 'Copy Report'; }, 1500); };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(done);
+      } else {
+        done();
+      }
+    });
+  }
 
   refreshCprButton();
   redrawArrestLog();
@@ -977,9 +1193,11 @@ function startArrestOperation(){
     cprRunning:false, cprSegStart:null, cprAccumMs:0, cprCycles:0,
     lastEpiTime:null, epiCount:0, lastRhythmTime:new Date(), rhythmCheckCount:0, shockCount:0,
     amiodaroneCount:0, rhythmAlerted:false, chargedAlerted:false, epiAlerted:false,
+    glucoseAcquired:false, lastGlucoseTime:null, glucoseAlerted:false,
   });
   logArrestEvent('Operation started');
   vibrate(200);
+  saveArrestState();
   render();
 }
 
@@ -1030,6 +1248,7 @@ function openEventModal(kind){
       }},
     airway: {title:'Log Airway', options: ARREST_AIRWAY.map(a => ({label:a})), onPick:(label) => logArrestEvent(label)},
     ivio: {title:'Log IV/IO Access', options: ARREST_IVIO.map(a => ({label:a})), onPick:(label) => logArrestEvent(`Access — ${label}`)},
+    glucose: {title:'Log Blood Glucose', options: [{label:'Acquired (no reading entered)'}], onPick:() => { logArrestEvent('Blood glucose acquired'); markGlucoseAcquired(); }},
     other: {title:'Log Other Event', options: [], onPick:() => {}},
   }[kind];
   if(!cfg) return;
@@ -1064,9 +1283,16 @@ function openEventModal(kind){
     const v = card.querySelector('#quickDetailInput').value.trim();
     if(!v) return;
     logArrestEvent(kind === 'other' ? v : `${cfg.title.replace('Log ', '')} — ${v}`);
+    if(kind === 'glucose') markGlucoseAcquired();
     close();
     redrawArrestLog();
   });
+}
+
+function markGlucoseAcquired(){
+  arrestState.glucoseAcquired = true;
+  arrestState.lastGlucoseTime = new Date();
+  arrestState.glucoseAlerted = false;
 }
 
 // Weight-based equipment sizing quick reference. The IO needle color/site
@@ -1142,13 +1368,16 @@ function wireSizingPanel(){
 
 function redrawArrestLog(){
   const list = document.getElementById('arrestLogList');
-  if(!list) return;
-  list.innerHTML = '';
-  [...arrestState.log].reverse().forEach(entry => {
-    const li = document.createElement('li');
-    li.innerHTML = `<span>${entry.label}</span><span class="log-time">${fmtClock(entry.time)}</span>`;
-    list.appendChild(li);
-  });
+  if(list){
+    list.innerHTML = '';
+    [...arrestState.log].reverse().forEach(entry => {
+      const li = document.createElement('li');
+      li.innerHTML = `<span>${entry.label}</span><span class="log-time">${fmtClock(entry.time)}</span>`;
+      list.appendChild(li);
+    });
+  }
+  updateMedControlReport();
+  saveArrestState();
 }
 
 function tickArrest(){
@@ -1189,6 +1418,25 @@ function tickArrest(){
     rhythmDueEl.textContent = `${ordinal(arrestState.rhythmCheckCount + 1)} Pulse Check Due: ${fmtElapsedShort(remain)}`;
   }
 
+  // Blood glucose is a one-time check (part of the reversible-causes /
+  // H's-and-T's workup in Asystole and PEA), not a repeating interval like
+  // epi or rhythm checks — a single reminder, no fixed protocol timestamp
+  // given in the source so this uses a reasonable 3-minute checkpoint.
+  const glucoseDueEl = document.getElementById('arrestGlucoseDue');
+  if(glucoseDueEl){
+    if(arrestState.glucoseAcquired){
+      glucoseDueEl.textContent = `Glucose: ✓ checked${arrestState.lastGlucoseTime ? ' ' + fmtClock(arrestState.lastGlucoseTime) : ''}`;
+    } else {
+      const remain = Math.max(0, 180000 - (now - arrestState.startTime.getTime()));
+      if(remain <= 0){
+        glucoseDueEl.textContent = 'Acquire blood glucose';
+        if(!arrestState.glucoseAlerted){ arrestState.glucoseAlerted = true; vibrate(120); }
+      } else {
+        glucoseDueEl.textContent = `Glucose check due: ${fmtElapsedShort(remain)}`;
+      }
+    }
+  }
+
   const rhythmMs = now - arrestState.lastRhythmTime.getTime();
   const banner = document.getElementById('arrestAlertBanner');
   if(banner){
@@ -1212,6 +1460,9 @@ function tickArrest(){
       banner.classList.add('hidden');
     }
   }
+
+  updateMedControlReport();
+  saveArrestState();
 }
 
 function endArrestOperation(){
@@ -1225,7 +1476,50 @@ function endArrestOperation(){
   arrestState.endTime = new Date();
   logArrestEvent('Operation ended');
   if(arrestTickTimer){ clearInterval(arrestTickTimer); arrestTickTimer = null; }
+  saveArrestState();
   render();
+}
+
+// Live, natural-language radio report for a Medical Control consult —
+// modeled on standard EMS radio-report structure (unit/complaint, downtime,
+// interventions, meds, current status, request for orders) adapted for a
+// cardiac arrest OLMC call. Written as short spoken lines rather than one
+// dense paragraph so it reads naturally over the air.
+function buildMedControlReport(){
+  const s = arrestState;
+  if(!s.startTime) return '';
+  const now = new Date();
+  const elapsedMin = Math.max(0, Math.round((now - s.startTime) / 60000));
+
+  const rhythmEntries = s.log.filter(e => e.label.startsWith('Rhythm — '));
+  const lastRhythm = rhythmEntries.length ? rhythmEntries[rhythmEntries.length - 1].label.replace('Rhythm — ', '') : null;
+  const roscNoted = lastRhythm && /ROSC/i.test(lastRhythm);
+
+  const airwayEntries = s.log.filter(e => ARREST_AIRWAY.includes(e.label));
+  const lastAirway = airwayEntries.length ? airwayEntries[airwayEntries.length - 1].label : null;
+
+  const accessEntries = s.log.filter(e => e.label.startsWith('Access — '));
+  const lastAccess = accessEntries.length ? accessEntries[accessEntries.length - 1].label.replace('Access — ', '') : null;
+
+  const lines = [];
+  lines.push('Medic to Medical Control, requesting orders on a working cardiac arrest.');
+  lines.push(`Patient down approximately ${elapsedMin} minute${elapsedMin === 1 ? '' : 's'}, ${lastRhythm ? `found in ${lastRhythm}.` : 'rhythm currently being assessed.'}`);
+  lines.push(s.cprCycles > 0 ? `CPR in progress, ${s.cprCycles} cycle${s.cprCycles === 1 ? '' : 's'} completed.` : 'CPR just initiated.');
+  if(lastAirway) lines.push(`Airway secured — ${lastAirway}.`);
+  if(lastAccess) lines.push(`IV/IO access obtained.`);
+  if(s.epiCount > 0) lines.push(`Epinephrine given, ${s.epiCount} dose${s.epiCount === 1 ? '' : 's'}, one milligram IV push or IO each.`);
+  if(s.amiodaroneCount > 0) lines.push(`Amiodarone given, ${s.amiodaroneCount} dose${s.amiodaroneCount === 1 ? '' : 's'}.`);
+  if(s.shockCount > 0) lines.push(`${s.shockCount} defibrillation${s.shockCount === 1 ? '' : 's'} delivered.`);
+  if(s.glucoseAcquired) lines.push('Blood glucose checked.');
+  lines.push(roscNoted ? 'Currently with a perfusing rhythm, monitoring closely.' : 'Currently no return of spontaneous circulation.');
+  lines.push('Requesting orders to continue resuscitation, or to terminate efforts.');
+  return lines.join('\n');
+}
+
+function updateMedControlReport(){
+  const box = document.getElementById('medControlReport');
+  if(!box) return;
+  box.textContent = buildMedControlReport();
 }
 
 function buildArrestReportText(){
@@ -1305,7 +1599,8 @@ function renderArrestProtocolLinks(containerId){
 (async function boot(){
   try{
     await loadData();
-    state.step = 'home';
+    loadArrestState();
+    state.step = (arrestState.active || arrestState.ended) ? 'arrest' : 'home';
     render();
     document.getElementById('connStatus').classList.toggle('offline', !navigator.onLine);
     window.addEventListener('online', () => document.getElementById('connStatus').classList.remove('offline'));
