@@ -2,580 +2,233 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#F6ECEF">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Home Care">
-<link rel="apple-touch-icon" href="data:image/png;base64,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">
-<title>Home Care</title>
-<style>
-  :root{
-    --bg:#FBF6F6;
-    --card:#FFFFFF;
-    --ink:#3A3238;
-    --ink-soft:#9C8F97;
-    --ink-faint:#C7BAC0;
-    --line:#F1E4E8;
-    --rose:#E28FA0;
-    --rose-deep:#C97B8C;
-    --rose-tint:#FCEEF1;
-    --lavender:#B9A7D9;
-    --lavender-tint:#F3EFFA;
-    --shadow-sm:0 1px 3px rgba(60,40,50,.06);
-    --shadow-md:0 12px 30px -12px rgba(60,40,50,.18);
-    --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--font);
-    -webkit-font-smoothing:antialiased;
-    padding-bottom:60px;
-  }
-  .app{max-width:440px;margin:0 auto;padding:22px 18px 40px;}
-
-  .header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;}
-  .header .titles{display:flex;flex-direction:column;gap:2px;}
-  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--rose-deep);}
-  h1{font-size:28px;font-weight:700;margin:2px 0 0;letter-spacing:-.01em;}
-  .settings-btn{
-    width:38px;height:38px;border-radius:50%;background:var(--card);border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink-soft);
-    cursor:pointer;box-shadow:var(--shadow-sm);flex-shrink:0;transition:background .15s;
-  }
-  .settings-btn:hover{background:var(--rose-tint);color:var(--rose-deep);}
-
-  .hero-card{
-    background:var(--card);border-radius:24px;padding:24px 20px 20px;
-    box-shadow:var(--shadow-md);margin-bottom:16px;
-  }
-  .ring-wrap{position:relative;width:150px;height:150px;margin:0 auto 4px;}
-  .ring-wrap svg{width:100%;height:100%;transform:rotate(-90deg);}
-  .ring-track{fill:none;stroke:var(--line);stroke-width:11;}
-  .ring-fill{fill:none;stroke:url(#ringGrad);stroke-width:11;stroke-linecap:round;transition:stroke-dashoffset .4s ease;}
-  .ring-center{
-    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  }
-  .ring-num{font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
-  .ring-label{font-size:11px;color:var(--ink-soft);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:2px;}
-
-  .hero-week-label{text-align:center;font-size:13px;color:var(--ink-soft);font-weight:600;margin:6px 0 16px;}
-
-  .chore-list{display:flex;flex-direction:column;gap:2px;}
-  .chore-item{
-    display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid var(--line);
-  }
-  .chore-item:last-child{border-bottom:none;}
-  .chore-check{
-    width:24px;height:24px;min-width:24px;border-radius:50%;border:2px solid var(--ink-faint);
-    display:inline-flex;align-items:center;justify-content:center;font-size:13px;line-height:1;
-    cursor:pointer;color:transparent;transition:all .15s;background:var(--card);
-  }
-  .chore-check.done{background:var(--rose-deep);border-color:var(--rose-deep);color:#fff;}
-  .chore-label{flex:1;font-size:15.5px;color:var(--ink);}
-  .chore-item.done .chore-label{color:var(--ink-faint);text-decoration:line-through;}
-  .chore-item.custom .chore-label::before{content:"✦ ";color:var(--lavender);font-size:11px;}
-  .recur-tag{
-    font-size:10px;font-weight:600;color:var(--lavender);background:var(--lavender-tint);
-    padding:2px 7px;border-radius:10px;margin-right:2px;text-transform:uppercase;letter-spacing:.03em;
-  }
-  .chore-del{cursor:pointer;color:var(--ink-faint);font-size:14px;padding:2px 4px;transition:color .12s;}
-  .chore-del:hover{color:var(--rose-deep);}
-
-  .add-task-link{
-    display:inline-flex;align-items:center;gap:4px;margin-top:14px;
-    font-size:13.5px;font-weight:600;color:var(--rose-deep);cursor:pointer;
-    background:var(--rose-tint);padding:8px 14px;border-radius:20px;
-  }
-
-  .month-pill{
-    background:var(--card);border-radius:18px;padding:14px 18px;box-shadow:var(--shadow-sm);
-    margin-bottom:16px;
-  }
-  .mp-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
-  .mp-label{font-size:12.5px;font-weight:600;color:var(--ink-soft);}
-  .mp-value{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink);}
-  .mp-bar{height:7px;border-radius:4px;background:var(--line);overflow:hidden;}
-  .mp-fill{height:100%;background:linear-gradient(90deg, var(--rose), var(--lavender));border-radius:4px;transition:width .4s ease;}
-
-  .section-label{font-size:12.5px;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin:6px 4px 8px;}
-
-  .week{
-    background:var(--card);border-radius:16px;box-shadow:var(--shadow-sm);margin-bottom:10px;overflow:hidden;
-  }
-  .week-head{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;cursor:pointer;}
-  .week-head .wl{font-size:14.5px;font-weight:600;color:var(--ink);}
-  .week-head .wr{display:flex;align-items:center;gap:10px;}
-  .week-head .wp{font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums;}
-  .week-head .chev{font-size:11px;color:var(--ink-faint);transition:transform .15s;}
-  .week.open .chev{transform:rotate(180deg);}
-  .week-body{display:none;padding:0 16px 12px;border-top:1px solid var(--line);}
-  .week.open .week-body{display:block;padding-top:6px;}
-
-  .overlay{
-    position:fixed;inset:0;background:rgba(58,50,56,.45);display:none;
-    align-items:flex-end;justify-content:center;z-index:50;
-    backdrop-filter:blur(3px);
-  }
-  .overlay.show{display:flex;}
-  .modal{
-    background:var(--card);border-radius:24px 24px 0 0;padding:24px 22px calc(28px + env(safe-area-inset-bottom, 0px));
-    width:100%;max-width:440px;box-shadow:0 -12px 40px rgba(0,0,0,.15);
-    max-height:88vh;overflow-y:auto;
-  }
-  @media (min-width:520px){
-    .overlay{align-items:center;}
-    .modal{border-radius:24px;}
-  }
-  .modal h3{margin:0 0 4px;font-size:19px;font-weight:700;}
-  .modal p.hint{margin:0 0 16px;font-size:13px;color:var(--ink-soft);}
-  .modal label{display:block;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:5px;margin-top:14px;}
-  .modal input, .modal textarea{
-    width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;
-    font-family:var(--font);font-size:15px;background:var(--bg);color:var(--ink);
-  }
-  .modal textarea{font-size:12px;resize:vertical;}
-  .modal input:focus, .modal textarea:focus{outline:none;border-color:var(--rose);}
-  .modal .row{display:flex;gap:10px;margin-top:20px;}
-  .modal button{
-    flex:1;padding:12px 10px;border-radius:12px;border:none;font-family:var(--font);
-    font-size:14.5px;font-weight:600;cursor:pointer;transition:opacity .12s;
-  }
-  .modal button:hover{opacity:.85;}
-  .modal .cancel{background:var(--bg);color:var(--ink-soft);border:1px solid var(--line);}
-  .modal .save{background:var(--rose-deep);color:#fff;}
-
-  .recur-options{display:flex;flex-wrap:wrap;gap:7px;}
-  .recur-pill{
-    padding:8px 13px;border-radius:16px;border:1px solid var(--line);background:var(--bg);
-    font-family:var(--font);font-size:12.5px;font-weight:600;color:var(--ink-soft);cursor:pointer;flex:none;
-  }
-  .recur-pill.active{background:var(--rose-deep);border-color:var(--rose-deep);color:#fff;}
-  .recur-note{font-size:11.5px;color:var(--ink-soft);margin-top:8px;line-height:1.5;}
-
-  .footnote{margin-top:26px;font-size:12px;color:var(--ink-soft);line-height:1.6;padding:0 4px;}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MEDPATH</title>
+<meta name="description" content="MEDPATH — field protocol and dosing reference">
+<meta name="theme-color" content="#f4e9e6">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icons/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="app">
 
-  <div class="header">
-    <div class="titles">
-      <span class="eyebrow">Home Care</span>
-      <h1 id="monthTitle">Month</h1>
-    </div>
-    <div class="settings-btn" onclick="openBackupModal()">⚙︎</div>
+<header class="app-header">
+  <div class="header-status" id="connStatus" title="Works offline once loaded">●</div>
+  <div class="brand" id="brandHome">
+    <img src="assets/logo.png" alt="MEDPATH" class="brand-logo">
+    <span class="brand-name">MEDPATH</span>
   </div>
+</header>
 
-  <div class="hero-card">
-    <div class="ring-wrap">
-      <svg viewBox="0 0 150 150">
-        <defs>
-          <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#E28FA0"/>
-            <stop offset="100%" stop-color="#B9A7D9"/>
-          </linearGradient>
-        </defs>
-        <circle class="ring-track" cx="75" cy="75" r="60"/>
-        <circle class="ring-fill" id="ringFill" cx="75" cy="75" r="60"/>
-      </svg>
-      <div class="ring-center">
-        <div class="ring-num" id="weekFraction">0/8</div>
-        <div class="ring-label">done this week</div>
+<main id="app" class="app-main"></main>
+
+<button id="arrestFab" class="arrest-fab hidden" aria-label="Return to arrest in progress">⏱</button>
+
+<template id="tpl-home">
+  <section class="screen screen-home">
+    <button class="big-cta" id="newPatientBtn">
+      <span class="cta-label">New Patient</span>
+    </button>
+
+    <div class="tile-section">
+      <div class="tile-grid tile-grid-2">
+        <button class="tile" id="browseAllBtn">
+          <span class="tile-icon tint-indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
+          </span>
+          <span class="tile-label">Browse Protocols</span>
+        </button>
+        <button class="tile" id="runArrestBtn">
+          <span class="tile-icon tint-coral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,12 7,12 9,6 13,18 16,12 22,12"/></svg>
+          </span>
+          <span class="tile-label">Run An Arrest</span>
+        </button>
+        <button class="tile" id="toolSizingBtn">
+          <span class="tile-icon tint-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="1.5"/><line x1="7" y1="8" x2="7" y2="11"/><line x1="11" y1="8" x2="11" y2="11"/><line x1="15" y1="8" x2="15" y2="11"/><line x1="19" y1="8" x2="19" y2="11"/></svg>
+          </span>
+          <span class="tile-label">Tool Sizing</span>
+        </button>
+        <button class="tile" id="drugRefBtn">
+          <span class="tile-icon tint-moss">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="9" width="20" height="6" rx="3" transform="rotate(45 12 12)"/><line x1="12" y1="6" x2="12" y2="18" transform="rotate(45 12 12)"/></svg>
+          </span>
+          <span class="tile-label">Drug Reference</span>
+        </button>
       </div>
     </div>
-    <div class="hero-week-label" id="heroWeekLabel"></div>
-    <div class="chore-list" id="heroChoreList"></div>
-    <a class="add-task-link" id="heroAddTask">+ add task</a>
-  </div>
 
-  <div class="month-pill">
-    <div class="mp-top">
-      <span class="mp-label">This month</span>
-      <span class="mp-value" id="monthFraction">0/0</span>
+    <p class="meta-note" id="metaNote"></p>
+  </section>
+</template>
+
+<template id="tpl-demographic">
+  <section class="screen">
+    <h2 class="step-title"><span class="step-num">1</span> Adult or Pediatric?</h2>
+    <div class="choice-row">
+      <button class="choice-btn" data-demo="adult">
+        <span>Adult</span>
+      </button>
+      <button class="choice-btn" data-demo="pediatric">
+        <span>Pediatric</span>
+        <span class="choice-hint">&lt; 16 yrs</span>
+      </button>
     </div>
-    <div class="mp-bar"><div class="mp-fill" id="monthFill" style="width:0%"></div></div>
-  </div>
+  </section>
+</template>
 
-  <div id="otherWeeksWrap"></div>
+<template id="tpl-cc-list">
+  <section class="screen">
+    <h2 class="step-title"><span class="step-num">2</span> Chief Complaint</h2>
+    <input type="text" id="ccSearch" class="text-input" placeholder="Search complaints…" autocomplete="off">
+    <div id="ccGrid" class="cc-groups"></div>
+  </section>
+</template>
 
-  <div class="footnote">
-    Every week carries the same checklist — Bathrooms, Sweeping, Mopping, Dusting, Vacuuming, Kitchen Wipe-Down, Laundry, and Trash &amp; Recycling. Tap a circle to mark a chore done. Tap <b>+ add task</b> for an extra — just this week, or on a repeating schedule. Only this month is shown — it moves forward on its own each time the calendar turns. Everything is saved on this device automatically; tap the ⚙ up top to back up your data before switching to an updated copy of this file.
-  </div>
-</div>
+<template id="tpl-branch-select">
+  <section class="screen">
+    <h2 class="step-title"><span class="step-num">3</span> Select Matching Presentation</h2>
+    <p class="protocol-context"></p>
+    <div id="branchList" class="branch-list"></div>
+  </section>
+</template>
 
-<div class="overlay" id="taskOverlay">
-  <div class="modal">
-    <h3>Add a task</h3>
-    <p class="hint" id="taskHint">Added for this week.</p>
-    <label>Description</label>
-    <input type="text" id="taskLabel" placeholder="e.g. Wipe baseboards" maxlength="40">
-    <label>Repeats</label>
-    <div class="recur-options" id="recurOptions">
-      <button type="button" class="recur-pill active" data-val="once">Just this week</button>
-      <button type="button" class="recur-pill" data-val="weekly">Weekly</button>
-      <button type="button" class="recur-pill" data-val="biweekly">Biweekly</button>
-      <button type="button" class="recur-pill" data-val="monthly">Monthly</button>
+<template id="tpl-protocol-view">
+  <section class="screen screen-protocol">
+    <div class="protocol-head">
+      <h2 id="protoTitle"></h2>
+      <p id="protoBranchLabel" class="branch-label"></p>
     </div>
-    <div class="recur-note" id="recurNote">Shows up only for this one week.</div>
-    <div class="row">
-      <button class="cancel" onclick="closeTaskModal()">Cancel</button>
-      <button class="save" onclick="saveTask()">Add</button>
+    <div id="vitalsSummarySticky" class="vitals-summary compact"></div>
+    <ol id="stepsList" class="steps-list"></ol>
+    <button class="ghost-btn" id="showRefBtn">Show history / signs / differential / pearls</button>
+    <div id="refPanel" class="ref-panel hidden"></div>
+  </section>
+</template>
+
+<template id="tpl-drug-detail">
+  <div class="drug-card"></div>
+</template>
+
+<template id="tpl-tool-sizing">
+  <section class="screen screen-toolsizing">
+    <h2 class="step-title">Tool Sizing</h2>
+    <p class="protocol-context">Enter a patient weight to see sizing across airway, IO access, and defibrillation/cardioversion energy — grouped by category, updated live.</p>
+
+    <div class="sizing-weight-card">
+      <span class="inline-vital-label">Patient Weight</span>
+      <div class="weight-toggle-row">
+        <input type="number" step="0.1" min="0" id="tsWeightInput" class="text-input" placeholder="e.g. 180">
+        <div class="unit-toggle" id="tsUnitToggle">
+          <button type="button" class="unit-btn active" data-unit="lb">lb</button>
+          <button type="button" class="unit-btn" data-unit="kg">kg</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="overlay" id="backupOverlay">
-  <div class="modal">
-    <h3>Backup &amp; Restore</h3>
-    <p class="hint">Copy this code before getting an updated file. Paste it back in afterward to bring everything forward.</p>
-    <label>Current backup code</label>
-    <textarea id="backupOut" readonly rows="3"></textarea>
-    <div class="row">
-      <button class="cancel" onclick="copyBackup()" id="copyBackupBtn">Copy</button>
-      <button class="save" onclick="closeBackupModal()">Close</button>
+    <div id="tsCategories" class="ts-categories"></div>
+  </section>
+</template>
+
+<template id="tpl-arrest">
+  <section class="screen screen-arrest">
+    <div id="arrestPre" class="arrest-pre">
+      <h2 class="step-title">Run An Arrest</h2>
+      <button class="big-cta" id="startOpBtn"><span class="cta-label">Start Operation</span></button>
     </div>
-    <label style="margin-top:18px;">Restore from a code</label>
-    <textarea id="restoreIn" rows="3" placeholder="Paste code here"></textarea>
-    <div class="row">
-      <button class="cancel" onclick="document.getElementById('restoreIn').value=''">Clear</button>
-      <button class="save" onclick="restoreBackup()">Restore</button>
+
+    <div id="arrestLive" class="arrest-live hidden">
+      <div class="arrest-clock">
+        <div class="arrest-clock-main">
+          <p class="arrest-started" id="arrestStartedLabel"></p>
+          <div class="arrest-elapsed" id="arrestElapsed">00:00:00</div>
+        </div>
+        <div class="arrest-quickref">
+          <p class="arrest-quickref-line" id="arrestEpiDue"></p>
+          <p class="arrest-quickref-line" id="arrestRhythmDue"></p>
+          <p class="arrest-quickref-line" id="arrestGlucoseDue"></p>
+        </div>
+      </div>
+
+      <div id="arrestAlertBanner" class="arrest-alert hidden"></div>
+
+      <div class="arrest-subtimers">
+        <div class="subtimer-row">
+          <div class="subtimer-info">
+            <p class="subtimer-label">CPR</p>
+            <p class="subtimer-time" id="cprTime">00:00</p>
+            <p class="subtimer-count" id="cprCount">Cycles: 0</p>
+          </div>
+          <button type="button" class="subtimer-btn" id="cprToggleBtn" aria-label="Start/stop CPR timer">▶</button>
+        </div>
+        <div class="subtimer-row">
+          <div class="subtimer-info">
+            <p class="subtimer-label">Epinephrine</p>
+            <p class="subtimer-time" id="epiTime">00:00</p>
+            <p class="subtimer-count" id="epiCount">Doses: 0 / max 4</p>
+          </div>
+          <button type="button" class="subtimer-btn" id="epiLogBtn" aria-label="Log epinephrine dose">+</button>
+        </div>
+      </div>
+
+      <p class="record-label">Record Event</p>
+      <div class="arrest-event-grid">
+        <button type="button" class="event-btn" data-evt="rhythm">Rhythm</button>
+        <button type="button" class="event-btn" data-evt="shock">Shock</button>
+        <button type="button" class="event-btn" data-evt="meds">Meds</button>
+        <button type="button" class="event-btn" data-evt="airway">Airway</button>
+        <button type="button" class="event-btn" data-evt="ivio">IV/IO</button>
+        <button type="button" class="event-btn" data-evt="glucose">Glucose</button>
+        <button type="button" class="event-btn" data-evt="other">Other</button>
+      </div>
+
+      <div class="arrest-log">
+        <p class="record-label">Event Log</p>
+        <ol id="arrestLogList" class="arrest-log-list"></ol>
+      </div>
+
+      <div class="arrest-sizing">
+        <button type="button" class="ghost-btn" id="sizingToggleBtn">Equipment sizing (by weight)</button>
+        <div id="sizingPanel" class="sizing-panel hidden">
+          <div class="inline-vital inline-weight">
+            <span class="inline-vital-label">Weight</span>
+            <div class="weight-toggle-row">
+              <input type="number" step="0.1" min="0" id="sizingWeightInput" class="text-input" placeholder="e.g. 180">
+              <div class="unit-toggle" id="sizingUnitToggle">
+                <button type="button" class="unit-btn active" data-unit="lb">lb</button>
+                <button type="button" class="unit-btn" data-unit="kg">kg</button>
+              </div>
+            </div>
+          </div>
+          <div id="sizingResults" class="sizing-results"></div>
+        </div>
+      </div>
+
+      <div class="arrest-protocol-links">
+        <p class="record-label">Arrest Protocols — Quick Reference</p>
+        <div id="arrestProtocolLinksLive" class="arrest-protocol-link-list"></div>
+      </div>
+
+      <div class="arrest-medcontrol">
+        <p class="record-label">Med-Control Report</p>
+        <div id="medControlReport" class="run-report-box"></div>
+        <button type="button" class="ghost-btn" id="copyMedControlBtn">Copy Report</button>
+      </div>
+
+      <button type="button" class="end-op-btn" id="endOpBtn">End Operation</button>
     </div>
-  </div>
-</div>
 
-<script>
-/* ---------------- date / week helpers ---------------- */
-const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-const monthAbbr = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    <div id="arrestSummary" class="arrest-summary hidden">
+      <h2 class="step-title">Operation Summary</h2>
+      <div id="arrestSummaryBody"></div>
+      <button type="button" class="big-cta small-cta" id="downloadLogBtn"><span class="cta-label">Download Run Log (.txt)</span></button>
+      <button type="button" class="ghost-btn" id="newOpBtn">Start New Operation</button>
+    </div>
+  </section>
+</template>
 
-function daysInMonth(year, m){ return new Date(year, m+1, 0).getDate(); }
-function weeksInMonth(year, m){ return Math.ceil(daysInMonth(year, m) / 7); }
-function weekDateLabel(year, m, w){
-  const dim = daysInMonth(year, m);
-  const startDay = (w-1)*7 + 1;
-  const endDay = Math.min(startDay + 6, dim);
-  return `${monthAbbr[m]} ${startDay}–${endDay}`;
-}
-function weekKey(year, m, w){ return `${year}-${m}-w${w}`; }
-// stable, monotonic week-slot number, independent of "today" -- used for weekly/biweekly recurrence
-function cumulativeWeeks(year, m){
-  let total = 0;
-  for(let y=2000; y<year; y++){ for(let mm=0; mm<12; mm++) total += weeksInMonth(y,mm); }
-  for(let mm=0; mm<m; mm++) total += weeksInMonth(year,mm);
-  return total;
-}
-function seq(year, m, w){ return cumulativeWeeks(year, m) + w; }
-
-const today = new Date();
-const curYear = today.getFullYear();
-const curMonth = today.getMonth();
-const todayDay = today.getDate();
-const currentWeekIndex = Math.floor((todayDay-1)/7) + 1;
-const currentWeekKey = weekKey(curYear, curMonth, currentWeekIndex);
-const totalWeeksThisMonth = weeksInMonth(curYear, curMonth);
-
-/* ---------------- data / storage ---------------- */
-const STORAGE_KEY = 'cleaningLedgerData_home_v1';
-function migrate(parsed){
-  const out = { status: parsed.status || {}, tasks: [] };
-  if(Array.isArray(parsed.tasks)){
-    out.tasks = parsed.tasks;
-  } else if(parsed.customTasks && typeof parsed.customTasks === 'object'){
-    // upgrade from the earlier per-week one-off task format
-    Object.keys(parsed.customTasks).forEach(wk=>{
-      const mm = wk.match(/^(\d+)-(\d+)-w(\d+)$/);
-      if(!mm) return;
-      const y = parseInt(mm[1],10), mo = parseInt(mm[2],10), w = parseInt(mm[3],10);
-      (parsed.customTasks[wk]||[]).forEach(t=>{
-        out.tasks.push({
-          id: t.id, label: t.label, recurrence: 'once',
-          startYear: y, startMonth: mo, startW: w, startSeq: seq(y, mo, w)
-        });
-      });
-    });
-  }
-  return out;
-}
-function loadData(){
-  try{
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if(raw) return migrate(JSON.parse(raw));
-  }catch(e){}
-  return { status:{}, tasks:[] };
-}
-function saveData(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(DATA)); }
-let DATA = loadData();
-if(!DATA.status) DATA.status = {};
-if(!Array.isArray(DATA.tasks)) DATA.tasks = [];
-
-/* ---------------- chores ---------------- */
-function slug(label){ return label.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
-const CHORES = [
-  {label:"Bathrooms"},
-  {label:"Sweeping"},
-  {label:"Mopping"},
-  {label:"Dusting"},
-  {label:"Vacuuming"},
-  {label:"Kitchen Wipe-Down"},
-  {label:"Laundry"},
-  {label:"Trash & Recycling"},
-].map(c => ({...c, id: slug(c.label)}));
-const FIXED_IDS = new Set(CHORES.map(c=>c.id));
-
-function taskAppliesToWeek(t, year, m, w){
-  const s = seq(year, m, w);
-  if(s < t.startSeq) return false;
-  if(t.recurrence === 'once'){
-    return t.startYear===year && t.startMonth===m && t.startW===w;
-  }
-  if(t.recurrence === 'weekly'){
-    return true;
-  }
-  if(t.recurrence === 'biweekly'){
-    return (s - t.startSeq) % 2 === 0;
-  }
-  if(t.recurrence === 'monthly'){
-    if(year < t.startYear) return false;
-    if(year === t.startYear && m < t.startMonth) return false;
-    return w === t.startW;
-  }
-  return false;
-}
-function tasksForWeek(year, m, w){
-  return DATA.tasks.filter(t => taskAppliesToWeek(t, year, m, w));
-}
-function addTask(label, recurrence, year, m, w){
-  DATA.tasks.push({
-    id: 't'+Date.now()+Math.random().toString(16).slice(2),
-    label, recurrence,
-    startYear: year, startMonth: m, startW: w, startSeq: seq(year, m, w)
-  });
-  saveData();
-}
-function removeTask(id){
-  DATA.tasks = DATA.tasks.filter(t=>t.id!==id);
-  saveData();
-}
-function getDone(wk, itemId){ return !!(DATA.status[wk] && DATA.status[wk][itemId]); }
-function toggleDone(wk, itemId){
-  if(!DATA.status[wk]) DATA.status[wk] = {};
-  DATA.status[wk][itemId] = !DATA.status[wk][itemId];
-  saveData();
-}
-
-/* ---------------- computation ---------------- */
-function computeWeek(year, m, w){
-  const wk = weekKey(year, m, w);
-  const items = [...CHORES, ...tasksForWeek(year, m, w)];
-  const done = items.filter(i => getDone(wk, i.id)).length;
-  return {wk, items, done, total: items.length};
-}
-function computeMonth(){
-  let done = 0, total = 0;
-  for(let w=1; w<=totalWeeksThisMonth; w++){
-    const wc = computeWeek(curYear, curMonth, w);
-    done += wc.done;
-    total += wc.total;
-  }
-  return {done, total};
-}
-
-const RECUR_TAG = { weekly:'weekly', biweekly:'biweekly', monthly:'monthly' };
-
-function renderChoreList(container, wk, items){
-  container.innerHTML = '';
-  items.forEach(item=>{
-    const isCustom = !FIXED_IDS.has(item.id);
-    const done = getDone(wk, item.id);
-    const row = document.createElement('div');
-    row.className = 'chore-item' + (done ? ' done' : '') + (isCustom ? ' custom' : '');
-    const tag = (isCustom && RECUR_TAG[item.recurrence]) ? `<span class="recur-tag">${RECUR_TAG[item.recurrence]}</span>` : '';
-    const delHtml = isCustom ? `<span class="chore-del" data-act="del" data-id="${item.id}">✕</span>` : '';
-    row.innerHTML = `<span class="chore-check ${done?'done':''}" data-act="toggle" data-id="${item.id}">${done?'✓':''}</span><span class="chore-label">${item.label}</span>${tag}${delHtml}`;
-    container.appendChild(row);
-  });
-  container.onclick = (e)=>{
-    const el = e.target.closest('[data-act]');
-    if(!el) return;
-    const id = el.dataset.id;
-    if(el.dataset.act === 'toggle'){ toggleDone(wk, id); renderAll(); }
-    else if(el.dataset.act === 'del'){ removeTask(id); renderAll(); }
-  };
-}
-
-/* ---------------- rendering ---------------- */
-const RING_R = 60;
-const RING_C = 2 * Math.PI * RING_R;
-
-function renderHero(){
-  document.getElementById('monthTitle').textContent = `${monthNames[curMonth]} ${curYear}`;
-  document.getElementById('heroWeekLabel').textContent = `Week of ${weekDateLabel(curYear, curMonth, currentWeekIndex)}`;
-
-  const wc = computeWeek(curYear, curMonth, currentWeekIndex);
-  document.getElementById('weekFraction').textContent = `${wc.done}/${wc.total}`;
-
-  const pct = wc.total ? wc.done / wc.total : 0;
-  const ring = document.getElementById('ringFill');
-  ring.setAttribute('stroke-dasharray', RING_C.toFixed(1));
-  ring.setAttribute('stroke-dashoffset', (RING_C * (1 - pct)).toFixed(1));
-
-  renderChoreList(document.getElementById('heroChoreList'), currentWeekKey, wc.items);
-
-  document.getElementById('heroAddTask').onclick = () =>
-    openTaskModal(curYear, curMonth, currentWeekIndex, `Week of ${weekDateLabel(curYear, curMonth, currentWeekIndex)}`);
-}
-
-function renderMonthPill(){
-  const m = computeMonth();
-  document.getElementById('monthFraction').textContent = `${m.done}/${m.total}`;
-  const pct = m.total ? (m.done / m.total * 100) : 0;
-  document.getElementById('monthFill').style.width = pct + '%';
-}
-
-function renderOtherWeeks(){
-  const wrap = document.getElementById('otherWeeksWrap');
-  wrap.innerHTML = '';
-  if(totalWeeksThisMonth <= 1) return;
-
-  const label = document.createElement('div');
-  label.className = 'section-label';
-  label.textContent = 'Other weeks this month';
-  wrap.appendChild(label);
-
-  for(let w=1; w<=totalWeeksThisMonth; w++){
-    if(w === currentWeekIndex) continue;
-    const wdata = computeWeek(curYear, curMonth, w);
-    wrap.appendChild(renderWeekRow(curYear, curMonth, w, wdata));
-  }
-}
-
-function renderWeekRow(year, m, w, wdata){
-  const wk = wdata.wk;
-  const box = document.createElement('div');
-  box.className = 'week';
-
-  const headRow = document.createElement('div');
-  headRow.className = 'week-head';
-  headRow.innerHTML = `
-    <span class="wl">${weekDateLabel(year,m,w)}</span>
-    <span class="wr"><span class="wp">${wdata.done}/${wdata.total}</span><span class="chev">⌄</span></span>
-  `;
-  headRow.onclick = () => { box.classList.toggle('open'); };
-  box.appendChild(headRow);
-
-  const body = document.createElement('div');
-  body.className = 'week-body';
-  const list = document.createElement('div');
-  list.className = 'chore-list';
-  body.appendChild(list);
-  renderChoreList(list, wk, wdata.items);
-
-  const addLink = document.createElement('a');
-  addLink.className = 'add-task-link';
-  addLink.style.marginLeft = '4px';
-  addLink.textContent = '+ add task';
-  addLink.onclick = (e) => { e.stopPropagation(); openTaskModal(year, m, w, weekDateLabel(year,m,w)); };
-  body.appendChild(addLink);
-
-  box.appendChild(body);
-  return box;
-}
-
-function renderAll(){
-  renderHero();
-  renderMonthPill();
-  renderOtherWeeks();
-}
-
-/* ---------------- task modal ---------------- */
-let taskCtx = null;
-let selectedRecurrence = 'once';
-const RECUR_NOTES = {
-  once: 'Shows up only for this one week.',
-  weekly: 'Shows up every week from now on.',
-  biweekly: 'Shows up every other week from now on.',
-  monthly: 'Shows up in this same week of every month from now on.'
-};
-document.getElementById('recurOptions').addEventListener('click', (e)=>{
-  const btn = e.target.closest('.recur-pill');
-  if(!btn) return;
-  document.querySelectorAll('.recur-pill').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  selectedRecurrence = btn.dataset.val;
-  document.getElementById('recurNote').textContent = RECUR_NOTES[selectedRecurrence];
-});
-
-function openTaskModal(year, m, w, label){
-  taskCtx = {year, m, w};
-  document.getElementById('taskHint').textContent = `Added for the week of ${label}.`;
-  document.getElementById('taskLabel').value = '';
-  selectedRecurrence = 'once';
-  document.querySelectorAll('.recur-pill').forEach(p=>p.classList.toggle('active', p.dataset.val==='once'));
-  document.getElementById('recurNote').textContent = RECUR_NOTES.once;
-  document.getElementById('taskOverlay').classList.add('show');
-  setTimeout(()=>document.getElementById('taskLabel').focus(), 50);
-}
-function closeTaskModal(){
-  document.getElementById('taskOverlay').classList.remove('show');
-  taskCtx = null;
-}
-function saveTask(){
-  if(!taskCtx) return;
-  const label = document.getElementById('taskLabel').value.trim();
-  if(!label) return;
-  addTask(label, selectedRecurrence, taskCtx.year, taskCtx.m, taskCtx.w);
-  closeTaskModal();
-  renderAll();
-}
-document.getElementById('taskOverlay').addEventListener('click', (e)=>{
-  if(e.target.id === 'taskOverlay') closeTaskModal();
-});
-
-/* ---------------- backup modal ---------------- */
-function openBackupModal(){
-  document.getElementById('backupOut').value = JSON.stringify(DATA);
-  document.getElementById('restoreIn').value = '';
-  document.getElementById('copyBackupBtn').textContent = 'Copy';
-  document.getElementById('backupOverlay').classList.add('show');
-}
-function closeBackupModal(){
-  document.getElementById('backupOverlay').classList.remove('show');
-}
-function copyBackup(){
-  const ta = document.getElementById('backupOut');
-  ta.focus(); ta.select(); ta.setSelectionRange(0, 999999);
-  let copied = false;
-  try{ copied = document.execCommand('copy'); }catch(e){}
-  const btn = document.getElementById('copyBackupBtn');
-  if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(ta.value).then(()=>{ btn.textContent = 'Copied ✓'; }).catch(()=>{
-      btn.textContent = copied ? 'Copied ✓' : 'Select & copy manually';
-    });
-  } else {
-    btn.textContent = copied ? 'Copied ✓' : 'Select & copy manually';
-  }
-}
-function restoreBackup(){
-  const raw = document.getElementById('restoreIn').value.trim();
-  if(!raw) return;
-  let parsed;
-  try{ parsed = JSON.parse(raw); }
-  catch(e){ alert("That backup code doesn't look complete. Make sure you copied the whole thing."); return; }
-  DATA = migrate(parsed);
-  saveData();
-  renderAll();
-  closeBackupModal();
-}
-document.getElementById('backupOverlay').addEventListener('click', (e)=>{
-  if(e.target.id === 'backupOverlay') closeBackupModal();
-});
-
-renderAll();
-</script>
+<script src="js/app.js"></script>
 </body>
 </html>
