@@ -11,10 +11,11 @@
 <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-step="home">
 
 <header class="app-header">
-  <div class="header-status" id="connStatus" title="Works offline once loaded">●</div>
+  <div class="nav-slot" id="navBack"></div>
+  <div class="header-status" id="connStatus" title="Works offline once loaded" aria-hidden="true">●</div>
   <div class="brand" id="brandHome">
     <img src="assets/logo.png" alt="MEDPATH" class="brand-logo">
     <span class="brand-name">MEDPATH</span>
@@ -32,7 +33,7 @@
     </button>
 
     <div class="tile-section">
-      <div class="tile-grid tile-grid-2">
+      <div class="tile-grid tile-grid-2 stagger">
         <button class="tile" id="browseAllBtn">
           <span class="tile-icon tint-indigo">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
@@ -47,9 +48,9 @@
         </button>
         <button class="tile" id="toolSizingBtn">
           <span class="tile-icon tint-gold">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="1.5"/><line x1="7" y1="8" x2="7" y2="11"/><line x1="11" y1="8" x2="11" y2="11"/><line x1="15" y1="8" x2="15" y2="11"/><line x1="19" y1="8" x2="19" y2="11"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="9" cy="7" r="2.5" fill="currentColor"/><circle cx="15" cy="17" r="2.5" fill="currentColor"/></svg>
           </span>
-          <span class="tile-label">Tool Sizing</span>
+          <span class="tile-label">Tools</span>
         </button>
         <button class="tile" id="drugRefBtn">
           <span class="tile-icon tint-moss">
@@ -67,7 +68,7 @@
 <template id="tpl-demographic">
   <section class="screen">
     <h2 class="step-title"><span class="step-num">1</span> Adult or Pediatric?</h2>
-    <div class="choice-row">
+    <div class="choice-row stagger">
       <button class="choice-btn" data-demo="adult">
         <span>Adult</span>
       </button>
@@ -82,7 +83,7 @@
 <template id="tpl-cc-list">
   <section class="screen">
     <h2 class="step-title"><span class="step-num">2</span> Chief Complaint</h2>
-    <input type="text" id="ccSearch" class="text-input" placeholder="Search complaints…" autocomplete="off">
+    <input type="text" id="ccSearch" class="text-input search-input" placeholder="Search complaints…" autocomplete="off">
     <div id="ccGrid" class="cc-groups"></div>
   </section>
 </template>
@@ -91,7 +92,7 @@
   <section class="screen">
     <h2 class="step-title"><span class="step-num">3</span> Select Matching Presentation</h2>
     <p class="protocol-context"></p>
-    <div id="branchList" class="branch-list"></div>
+    <div id="branchList" class="branch-list stagger"></div>
   </section>
 </template>
 
@@ -102,7 +103,7 @@
       <p id="protoBranchLabel" class="branch-label"></p>
     </div>
     <div id="vitalsSummarySticky" class="vitals-summary compact"></div>
-    <ol id="stepsList" class="steps-list"></ol>
+    <ol id="stepsList" class="steps-list stagger"></ol>
     <button class="ghost-btn" id="showRefBtn">Show history / signs / differential / pearls</button>
     <div id="refPanel" class="ref-panel hidden"></div>
   </section>
@@ -114,21 +115,34 @@
 
 <template id="tpl-tool-sizing">
   <section class="screen screen-toolsizing">
-    <h2 class="step-title">Tool Sizing</h2>
-    <p class="protocol-context">Enter a patient weight to see sizing across airway, IO access, and defibrillation/cardioversion energy — grouped by category, updated live.</p>
+    <h2 class="step-title">Tools</h2>
 
-    <div class="sizing-weight-card">
-      <span class="inline-vital-label">Patient Weight</span>
-      <div class="weight-toggle-row">
-        <input type="number" step="0.1" min="0" id="tsWeightInput" class="text-input" placeholder="e.g. 180">
-        <div class="unit-toggle" id="tsUnitToggle">
-          <button type="button" class="unit-btn active" data-unit="lb">lb</button>
-          <button type="button" class="unit-btn" data-unit="kg">kg</button>
-        </div>
-      </div>
+    <div class="segmented" id="toolsSeg" role="tablist" aria-label="Tool">
+      <button type="button" class="seg-btn active" role="tab" data-tool="sizing">Sizing</button>
+      <button type="button" class="seg-btn" role="tab" data-tool="gcs">GCS calculator</button>
     </div>
 
-    <div id="tsCategories" class="ts-categories"></div>
+    <div class="tool-pane" id="toolPaneSizing">
+      <p class="protocol-context">Enter a patient weight to see sizing for airway, IO access, and defibrillation and cardioversion energy.</p>
+
+      <div class="sizing-weight-card">
+        <span class="inline-vital-label">Patient weight</span>
+        <div class="weight-toggle-row">
+          <input type="number" inputmode="decimal" step="0.1" min="0" id="tsWeightInput" class="text-input" placeholder="e.g. 180">
+          <div class="unit-toggle" id="tsUnitToggle">
+            <button type="button" class="unit-btn active" data-unit="lb">lb</button>
+            <button type="button" class="unit-btn" data-unit="kg">kg</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="tsCategories" class="ts-categories"></div>
+    </div>
+
+    <div class="tool-pane hidden" id="toolPaneGcs">
+      <p class="protocol-context">Pick one response in each group. The total updates as you go.</p>
+      <div id="toolsGcsMount"></div>
+    </div>
   </section>
 </template>
 
@@ -208,7 +222,7 @@
 
       <div class="arrest-protocol-links">
         <p class="record-label">Arrest Protocols — Quick Reference</p>
-        <div id="arrestProtocolLinksLive" class="arrest-protocol-link-list"></div>
+        <div id="arrestProtocolLinksLive" class="arrest-protocol-link-list list-group"></div>
       </div>
 
       <div class="arrest-medcontrol">

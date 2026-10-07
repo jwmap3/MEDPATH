@@ -114,9 +114,34 @@ function beginProtocolRun(protocolId){
   }
 }
 
+// Depth of each screen in the flow. Moving deeper animates as a push from
+// the right, moving shallower as a pop from the left, same depth as a fade.
+const STEP_DEPTH = {
+  home:0, demographic:1, browseAll:1, drugRef:1, toolSizing:1, arrest:1,
+  ccList:2, branch:3, protocol:4,
+};
+let lastRenderedStep = null;
+
 function render(){
+  const from = lastRenderedStep, to = state.step;
+  let nav = 'fade';
+  if(from && from !== to){
+    const delta = (STEP_DEPTH[to] || 0) - (STEP_DEPTH[from] || 0);
+    nav = delta > 0 ? 'forward' : (delta < 0 ? 'back' : 'fade');
+  }
+  lastRenderedStep = to;
+
+  document.getElementById('navBack').innerHTML = '';
   window.scrollTo(0,0);
   dispatch();
+  document.body.dataset.step = to;
+
+  // Restart the entrance animation for the freshly drawn screen.
+  app.dataset.nav = nav;
+  app.classList.remove('nav-anim');
+  void app.offsetWidth;
+  app.classList.add('nav-anim');
+
   pushHistory();
   refreshArrestFab();
 }
@@ -152,10 +177,15 @@ document.getElementById('brandHome').addEventListener('click', goHome);
 function addBackBtn(onClick){
   const backBtn = document.createElement('button');
   backBtn.className = 'back-btn';
-  backBtn.innerHTML = '←';
+  backBtn.type = 'button';
+  backBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15,5 8,12 15,19"/></svg>';
   backBtn.setAttribute('aria-label', 'Back');
   backBtn.addEventListener('click', onClick);
-  app.prepend(backBtn);
+  // Lives in the navigation bar so it stays reachable while a long
+  // protocol is scrolled.
+  const slot = document.getElementById('navBack');
+  slot.innerHTML = '';
+  slot.appendChild(backBtn);
 }
 
 // ---------- Home ----------
@@ -344,6 +374,7 @@ function detectVitalNeeds(text){
 let activeWeightWidgets = [];
 let activeDoseDisplays = [];
 let activeStickyEls = [];
+let activeGcsWidgets = [];
 
 function kgToDisplayVal(kg, unit){
   if(kg == null || isNaN(kg)) return '';
@@ -353,6 +384,7 @@ function kgToDisplayVal(kg, unit){
 
 function refreshAfterVitalChange(){
   activeWeightWidgets.forEach(w => w.refresh());
+  activeGcsWidgets.forEach(w => w.refresh());
   activeDoseDisplays.forEach(d => {
     const dose = computeDose(d.text, state.vitals.weight);
     d.el.textContent = dose || '';
@@ -441,54 +473,144 @@ function createBpWidget(){
   return wrap;
 }
 
-function createGcsWidget(){
-  const wrap = document.createElement('div');
-  wrap.className = 'inline-vital inline-gcs';
-  const boxText = state.vitals.gcs ? `GCS ${state.vitals.gcs}` : 'Tap to score GCS';
-  wrap.innerHTML = `
-    <button type="button" class="gcs-box inline-gcs-box"><span class="inline-gcs-box-text">${boxText}</span></button>
-    <div class="gcs-panel hidden inline-gcs-panel">
-      <div class="gcs-group"><p class="gcs-group-title">Eye Opening</p><div class="gcs-options inline-gcs-e"></div></div>
-      <div class="gcs-group"><p class="gcs-group-title">Verbal Response</p><div class="gcs-options inline-gcs-v"></div></div>
-      <div class="gcs-group"><p class="gcs-group-title">Motor Response</p><div class="gcs-options inline-gcs-m"></div></div>
-      <button type="button" class="ghost-btn inline-gcs-close">Close</button>
-    </div>`;
-  const box = wrap.querySelector('.inline-gcs-box');
-  const boxTextEl = wrap.querySelector('.inline-gcs-box-text');
-  const panel = wrap.querySelector('.inline-gcs-panel');
-  const sel = {e:null, v:null, m:null};
+// ---------- GCS calculator ----------
+// One component, three homes: inline in any step that calls for a GCS, at
+// the top of every stroke run, and standalone under Tools. It reads and
+// writes its three component scores through getParts/setParts, so the
+// run-bound copies share state.vitals and the Tools copy keeps its own.
+const GCS_GROUPS = [['e','Eye opening'], ['v','Verbal response'], ['m','Motor response']];
 
-  function buildOpts(container, cat){
+function gcsTotal(parts){
+  return (parts && parts.e && parts.v && parts.m) ? parts.e + parts.v + parts.m : null;
+}
+
+function gcsPartsFromVitals(){
+  const v = state.vitals || {};
+  if(v.gcsParts) return v.gcsParts;
+  const m = v.gcs && String(v.gcs).match(/E(\d)\s*V(\d)\s*M(\d)/);
+  return m ? {e:+m[1], v:+m[2], m:+m[3]} : {e:null, v:null, m:null};
+}
+
+function setVitalsGcs(parts){
+  if(!state.vitals) state.vitals = {};
+  const total = gcsTotal(parts);
+  state.vitals.gcsParts = parts;
+  state.vitals.gcs = total ? `${total} (E${parts.e} V${parts.v} M${parts.m})` : null;
+  refreshAfterVitalChange();
+}
+
+function createGcsCalculator({getParts, setParts, collapsible = false, inline = false}){
+  const wrap = document.createElement('div');
+  wrap.className = 'gcs-calc' + (collapsible ? ' is-collapsible' : ' is-open') + (inline ? ' is-inline' : '');
+  const headTag = collapsible ? 'button' : 'div';
+  wrap.innerHTML = `
+    <${headTag} class="gcs-calc-head"${collapsible ? ' type="button" aria-expanded="false"' : ''}>
+      <span class="gcs-calc-heading">
+        <span class="gcs-calc-title">Glasgow Coma Scale</span>
+        <span class="gcs-calc-parts">
+          <span class="gcs-part" data-part="e"></span>
+          <span class="gcs-part" data-part="v"></span>
+          <span class="gcs-part" data-part="m"></span>
+        </span>
+      </span>
+      <span class="gcs-readout" aria-live="polite"><span class="gcs-total">–</span><span class="gcs-of">/15</span></span>
+      ${collapsible ? '<span class="gcs-chevron" aria-hidden="true"></span>' : ''}
+    </${headTag}>
+    <div class="gcs-calc-body"><div class="gcs-calc-body-inner"><div class="gcs-calc-content">
+      ${GCS_GROUPS.map(([cat, title]) => `
+        <div class="gcs-group">
+          <p class="gcs-group-title">${title}</p>
+          <div class="gcs-options" data-cat="${cat}"></div>
+        </div>`).join('')}
+      <button type="button" class="ghost-btn gcs-clear">Clear score</button>
+    </div></div></div>`;
+
+  const head = wrap.querySelector('.gcs-calc-head');
+  const totalEl = wrap.querySelector('.gcs-total');
+  const clearBtn = wrap.querySelector('.gcs-clear');
+  let shownTotal;
+
+  function setOpen(open){
+    wrap.classList.toggle('is-open', open);
+    if(collapsible) head.setAttribute('aria-expanded', String(open));
+  }
+  if(collapsible) head.addEventListener('click', () => setOpen(!wrap.classList.contains('is-open')));
+
+  GCS_GROUPS.forEach(([cat]) => {
+    const container = wrap.querySelector(`.gcs-options[data-cat="${cat}"]`);
     GCS_OPTIONS[cat].forEach(([val, label]) => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'gcs-opt-btn';
-      btn.textContent = `${val} – ${label}`;
+      btn.dataset.val = val;
+      btn.setAttribute('aria-pressed', 'false');
+      btn.innerHTML = `<span class="gcs-opt-score">${val}</span><span>${label}</span>`;
       btn.addEventListener('click', () => {
-        sel[cat] = val;
-        container.querySelectorAll('.gcs-opt-btn').forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-        checkComplete();
+        const before = gcsTotal(getParts());
+        const parts = {...getParts(), [cat]: val};
+        setParts(parts);
+        refresh();
+        // Scoring the last group in a collapsible copy tucks it away again
+        // so the protocol steps come back into view.
+        if(collapsible && !before && gcsTotal(parts)) setTimeout(() => setOpen(false), 450);
       });
       container.appendChild(btn);
     });
-  }
-  buildOpts(wrap.querySelector('.inline-gcs-e'), 'e');
-  buildOpts(wrap.querySelector('.inline-gcs-v'), 'v');
-  buildOpts(wrap.querySelector('.inline-gcs-m'), 'm');
+  });
 
-  function checkComplete(){
-    if(sel.e && sel.v && sel.m){
-      const total = sel.e + sel.v + sel.m;
-      state.vitals.gcs = `${total} (E${sel.e} V${sel.v} M${sel.m})`;
-      boxTextEl.textContent = `GCS ${state.vitals.gcs}`;
-      panel.classList.add('hidden');
-      refreshAfterVitalChange();
+  clearBtn.addEventListener('click', () => {
+    setParts({e:null, v:null, m:null});
+    refresh();
+  });
+
+  function refresh(){
+    const parts = getParts();
+    GCS_GROUPS.forEach(([cat]) => {
+      wrap.querySelectorAll(`.gcs-options[data-cat="${cat}"] .gcs-opt-btn`).forEach(b => {
+        const on = Number(b.dataset.val) === parts[cat];
+        b.classList.toggle('selected', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      const pill = wrap.querySelector(`.gcs-part[data-part="${cat}"]`);
+      pill.textContent = `${cat.toUpperCase()} ${parts[cat] || '–'}`;
+      pill.classList.toggle('is-set', !!parts[cat]);
+    });
+    const total = gcsTotal(parts);
+    wrap.classList.toggle('is-complete', !!total);
+    clearBtn.disabled = !(parts.e || parts.v || parts.m);
+    if(total !== shownTotal){
+      totalEl.textContent = total || '–';
+      if(shownTotal !== undefined){
+        totalEl.classList.remove('pop');
+        void totalEl.offsetWidth;
+        totalEl.classList.add('pop');
+      }
+      shownTotal = total;
     }
   }
-  box.addEventListener('click', () => panel.classList.toggle('hidden'));
-  wrap.querySelector('.inline-gcs-close').addEventListener('click', () => panel.classList.add('hidden'));
+
+  wrap.refresh = refresh;
+  refresh();
   return wrap;
+}
+
+// GCS bound to the current patient run (shared with the vitals summary
+// and the run report).
+function createGcsWidget(opts = {}){
+  const w = createGcsCalculator({
+    getParts: gcsPartsFromVitals,
+    setParts: setVitalsGcs,
+    collapsible: true,
+    inline: opts.inline !== false,
+  });
+  activeGcsWidgets.push(w);
+  return w;
+}
+
+// "All stroke runs": any protocol whose id or title names stroke, in
+// every branch, adult or pediatric.
+function isStrokeProtocol(proto){
+  return /stroke/i.test(`${proto.id} ${proto.title}`);
 }
 
 function createVitalWidget(key){
@@ -554,6 +676,7 @@ function renderProtocolView(){
   activeWeightWidgets = [];
   activeDoseDisplays = [];
   activeStickyEls = [];
+  activeGcsWidgets = [];
 
   addBackBtn(() => {
     state.step = proto.branches.length > 1 ? 'branch' : 'ccList';
@@ -591,12 +714,23 @@ function renderProtocolView(){
     }
   }
 
+  if(isStrokeProtocol(proto)){
+    document.querySelector('.screen-protocol').insertBefore(
+      createGcsWidget({inline: false}), document.getElementById('stepsList'));
+  }
+
   const progress = document.createElement('div');
   progress.className = 'steps-progress';
+  progress.innerHTML = `<div class="steps-progress-track"><div class="steps-progress-fill"></div></div>
+    <div class="steps-progress-label"><strong></strong><span>Tap a circle as you complete it</span></div>`;
   document.querySelector('.screen-protocol').insertBefore(progress, document.getElementById('stepsList'));
+  const progressFill = progress.querySelector('.steps-progress-fill');
+  const progressCount = progress.querySelector('strong');
   let doneCount = 0;
   function updateProgress(){
-    progress.textContent = `${doneCount} of ${branch.steps.length} steps done — tap a circle as you complete it`;
+    const total = branch.steps.length;
+    progressCount.textContent = `${doneCount} of ${total} steps done`;
+    progressFill.style.width = `${total ? (doneCount / total) * 100 : 0}%`;
   }
   updateProgress();
 
@@ -650,7 +784,7 @@ function renderProtocolView(){
     if(step.drug_id && state.drugById[step.drug_id]){
       const drugBtn = document.createElement('button');
       drugBtn.className = 'step-drug-link';
-      drugBtn.textContent = `View ${state.drugById[step.drug_id].name} reference →`;
+      drugBtn.textContent = `View ${state.drugById[step.drug_id].name} reference`;
       drugBtn.addEventListener('click', () => showDrugModal(step.drug_id));
       body.appendChild(drugBtn);
     }
@@ -658,7 +792,7 @@ function renderProtocolView(){
       const target = protocolById(step.goto_protocol);
       const gotoBtn = document.createElement('button');
       gotoBtn.className = 'step-drug-link';
-      gotoBtn.textContent = target ? `Jump to ${target.title} →` : 'Referenced protocol not yet added';
+      gotoBtn.textContent = target ? `Go to ${target.title}` : 'Referenced protocol not yet added';
       gotoBtn.disabled = !target;
       gotoBtn.addEventListener('click', () => {
         if(!target) return;
@@ -699,7 +833,6 @@ function renderProtocolView(){
   reportBtn.type = 'button';
   reportBtn.className = 'ghost-btn';
   reportBtn.textContent = 'Download run report (.txt) for documentation';
-  reportBtn.style.alignSelf = 'flex-start';
   reportBtn.addEventListener('click', () => {
     downloadTextFile(buildProtocolReportText(proto, branch), `medpath-run-report-${dateStamp(new Date())}.txt`);
   });
@@ -755,12 +888,37 @@ function downloadTextFile(text, filename){
   URL.revokeObjectURL(url);
 }
 
+// ---------- Bottom sheets ----------
+// Shared by the drug reference and the arrest quick-pick lists: the sheet
+// rises from the bottom edge, and on close it slides back down before it
+// is removed. Returns the close function.
+function openSheet(card){
+  const backdrop = document.createElement('div');
+  backdrop.className = 'modal-backdrop';
+  backdrop.appendChild(card);
+  document.body.appendChild(backdrop);
+  let closed = false;
+  function onKey(e){ if(e.key === 'Escape') close(); }
+  function close(){
+    if(closed) return;
+    closed = true;
+    document.removeEventListener('keydown', onKey);
+    backdrop.classList.add('closing');
+    const remove = () => { if(backdrop.parentNode) backdrop.parentNode.removeChild(backdrop); };
+    backdrop.addEventListener('animationend', (e) => { if(e.target === backdrop) remove(); });
+    setTimeout(remove, 320); // fallback when animations are disabled
+  }
+  document.addEventListener('keydown', onKey);
+  backdrop.addEventListener('click', (e) => { if(e.target === backdrop) close(); });
+  const closeBtn = card.querySelector('.close-btn');
+  if(closeBtn) closeBtn.addEventListener('click', close);
+  return close;
+}
+
 // ---------- Drug modal ----------
 function showDrugModal(drugId){
   const d = state.drugById[drugId];
   if(!d) return;
-  const backdrop = document.createElement('div');
-  backdrop.className = 'modal-backdrop';
   const card = document.createElement('div');
   card.className = 'drug-card';
   const section = (title, arr) => arr && arr.length ?
@@ -774,7 +932,7 @@ function showDrugModal(drugId){
       </div>`).join('');
   };
   card.innerHTML = `
-    <button class="close-btn">✕</button>
+    <button type="button" class="close-btn" aria-label="Close">✕</button>
     <h3>${d.name}</h3>
     <div class="cert">${(d.certification||[]).join(' · ')}${d.onset ? ' · Onset: '+d.onset : ''}${d.peak_effect ? ' · Peak: '+d.peak_effect : ''}${d.half_life ? ' · Half-life: '+d.half_life : ''}</div>
     ${doseBlock('Adult Dosing', d.adult_dosing)}
@@ -785,11 +943,7 @@ function showDrugModal(drugId){
     ${section('Medical Considerations', d.medical_considerations)}
     ${d.mechanism_of_action ? `<h4>Mechanism</h4><p style="font-size:0.88rem;">${d.mechanism_of_action}</p>` : ''}
   `;
-  backdrop.appendChild(card);
-  document.body.appendChild(backdrop);
-  const close = () => document.body.removeChild(backdrop);
-  card.querySelector('.close-btn').addEventListener('click', close);
-  backdrop.addEventListener('click', (e) => { if(e.target === backdrop) close(); });
+  openSheet(card);
 }
 
 // ---------- Browse all ----------
@@ -807,7 +961,8 @@ function renderBrowseAll(){
   });
   Object.keys(bySection).sort().forEach(sec => {
     const secDiv = document.createElement('div'); secDiv.className = 'browse-section';
-    secDiv.innerHTML = `<h3>${sec}</h3>`;
+    secDiv.innerHTML = `<h3>${sec}</h3><div class="list-group"></div>`;
+    const group = secDiv.querySelector('.list-group');
     bySection[sec].forEach(p => {
       const btn = document.createElement('button');
       btn.className = 'cc-item';
@@ -819,7 +974,7 @@ function renderBrowseAll(){
         beginProtocolRun(p.id);
         render();
       });
-      secDiv.appendChild(btn);
+      group.appendChild(btn);
     });
     app.appendChild(secDiv);
   });
@@ -834,15 +989,21 @@ function renderDrugRef(){
   app.appendChild(h);
 
   const input = document.createElement('input');
-  input.className = 'text-input'; input.placeholder = 'Search medications…';
+  input.className = 'text-input search-input'; input.placeholder = 'Search medications…';
+  input.type = 'text'; input.autocomplete = 'off';
+  input.style.margin = '14px 0';
   app.appendChild(input);
 
   const list = document.createElement('div'); list.className = 'cc-results';
   app.appendChild(list);
+  const empty = document.createElement('p'); empty.className = 'cc-empty hidden';
+  empty.textContent = 'No medications match that search.';
+  app.appendChild(empty);
 
   function renderList(q){
     list.innerHTML = '';
     const items = state.drugs.filter(d => d.name.toLowerCase().includes(q.toLowerCase()));
+    empty.classList.toggle('hidden', items.length > 0);
     items.forEach(d => {
       const btn = document.createElement('button');
       btn.className = 'cc-item';
@@ -855,7 +1016,7 @@ function renderDrugRef(){
   renderList('');
 }
 
-// ---------- Tool Sizing ----------
+// ---------- Tools (equipment sizing + GCS calculator) ----------
 // Weight-based equipment quick reference, grouped by category. IO sizing
 // reuses the exact same logic as the Run An Arrest equipment panel below.
 // Pediatric defibrillation and synchronized cardioversion energies are
@@ -935,12 +1096,38 @@ const TOOL_SIZING_CATEGORIES = [
 
 let toolSizingKg = null;
 let toolSizingUnit = 'lb';
+// Tools remembers which tool was open and the standalone GCS score while
+// the app stays open; neither is tied to a patient run.
+let toolsActive = 'sizing';
+let toolsGcsParts = {e:null, v:null, m:null};
 
 function renderToolSizing(){
   const tpl = document.getElementById('tpl-tool-sizing').content.cloneNode(true);
   app.innerHTML = '';
   app.appendChild(tpl);
   addBackBtn(goHome);
+
+  const segBtns = [...document.querySelectorAll('#toolsSeg .seg-btn')];
+  const panes = {
+    sizing: document.getElementById('toolPaneSizing'),
+    gcs: document.getElementById('toolPaneGcs'),
+  };
+  function showTool(key){
+    toolsActive = key;
+    segBtns.forEach(b => {
+      const on = b.dataset.tool === key;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', String(on));
+    });
+    Object.keys(panes).forEach(k => panes[k].classList.toggle('hidden', k !== key));
+  }
+  segBtns.forEach(b => b.addEventListener('click', () => showTool(b.dataset.tool)));
+  showTool(toolsActive);
+
+  document.getElementById('toolsGcsMount').appendChild(createGcsCalculator({
+    getParts: () => toolsGcsParts,
+    setParts: (parts) => { toolsGcsParts = parts; },
+  }));
 
   const input = document.getElementById('tsWeightInput');
   const unitBtns = [...document.querySelectorAll('#tsUnitToggle .unit-btn')];
@@ -976,11 +1163,14 @@ function renderToolSizing(){
     });
   }
 
-  unitBtns.forEach(b => b.addEventListener('click', () => {
-    toolSizingUnit = b.dataset.unit;
-    unitBtns.forEach(x => x.classList.toggle('active', x === b));
-    input.value = toolSizingKg == null ? '' : kgToDisplayVal(toolSizingKg, toolSizingUnit);
-  }));
+  unitBtns.forEach(b => {
+    b.classList.toggle('active', b.dataset.unit === toolSizingUnit);
+    b.addEventListener('click', () => {
+      toolSizingUnit = b.dataset.unit;
+      unitBtns.forEach(x => x.classList.toggle('active', x === b));
+      input.value = toolSizingKg == null ? '' : kgToDisplayVal(toolSizingKg, toolSizingUnit);
+    });
+  });
 
   input.addEventListener('input', () => {
     const val = parseFloat(input.value);
@@ -1253,32 +1443,27 @@ function openEventModal(kind){
   }[kind];
   if(!cfg) return;
 
-  const backdrop = document.createElement('div');
-  backdrop.className = 'modal-backdrop';
   const card = document.createElement('div');
   card.className = 'drug-card';
-  card.innerHTML = `<button class="close-btn">✕</button><h3>${cfg.title}</h3><div class="quick-modal-list"></div>
+  let close = () => {};
+  card.innerHTML = `<button type="button" class="close-btn" aria-label="Close">✕</button><h3>${cfg.title}</h3><div class="quick-modal-list"></div>
     <div style="margin-top:14px; display:flex; gap:8px;">
       <input type="text" class="text-input" id="quickDetailInput" placeholder="Custom / additional detail…">
-      <button type="button" class="ghost-btn" id="quickLogBtn" style="white-space:nowrap;">Log</button>
+      <button type="button" class="ghost-btn" id="quickLogBtn" style="white-space:nowrap;align-self:center;">Log</button>
     </div>`;
   const list = card.querySelector('.quick-modal-list');
   cfg.options.forEach(opt => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'quick-pick-btn';
-    b.innerHTML = opt.sub ? `${opt.label}<br><span style="font-size:0.74rem;color:var(--sumi-soft);">${opt.sub}</span>` : opt.label;
+    b.innerHTML = opt.sub ? `${opt.label}<br><span style="font-size:0.86rem;color:var(--sumi-soft);">${opt.sub}</span>` : opt.label;
     b.addEventListener('click', () => {
       cfg.onPick(opt.label);
-      document.body.removeChild(backdrop);
+      close();
       redrawArrestLog();
     });
     list.appendChild(b);
   });
-  backdrop.appendChild(card);
-  document.body.appendChild(backdrop);
-  const close = () => { if(document.body.contains(backdrop)) document.body.removeChild(backdrop); };
-  card.querySelector('.close-btn').addEventListener('click', close);
-  backdrop.addEventListener('click', (e) => { if(e.target === backdrop) close(); });
+  close = openSheet(card);
   card.querySelector('#quickLogBtn').addEventListener('click', () => {
     const v = card.querySelector('#quickDetailInput').value.trim();
     if(!v) return;
